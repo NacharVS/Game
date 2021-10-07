@@ -17,9 +17,31 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class Window1 : Window
     {
-        public Window1()
+        MainWindow mw;
+        public Window1(MainWindow mwf)
         {
             InitializeComponent();
+            mw = mwf;
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void createButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool right = true;
+            if (nameObject.Text == "" || nameObject.Text == "" || Health.Text == "" || Rassa.Text == "" || ResistMagic.Text == "" || Convert.ToInt32(Lov.Text) < 1 || Convert.ToInt32(Intelect.Text) < 1)
+            {
+                right = false;
+                MessageBox.Show("Введенны неверные данные");
+
+            }
+            if (right)
+            {
+                mw.AddPersonalGridViewRows(new Person(nameObject.Text, Health.Text, Rassa.Text, ResistMagic.Text, Lov.Text, Intelect.Text, Convert.ToInt32(Strench.Text)));
+                this.Close();
+            }
     }
 }

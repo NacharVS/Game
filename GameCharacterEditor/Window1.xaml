@@ -8,20 +8,22 @@
         Title="Window1" Height="400" Width="207">
     <Grid Margin="0,0,-37,-95" Height="415" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236">
         <TextBox x:Name="nameObject" HorizontalAlignment="Left" Height="23" Margin="37,48,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="Rassa" HorizontalAlignment="Left" Height="23" Margin="37,86,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="ResistMagic" HorizontalAlignment="Left" Height="23" Margin="37,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="Lov" HorizontalAlignment="Left" Height="23" Margin="37,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="Intelect" HorizontalAlignment="Left" Height="23" Margin="37,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="Health" HorizontalAlignment="Left" Height="23" Margin="37,86,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="Rassa" HorizontalAlignment="Left" Height="23" Margin="37,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="ResistMagic" HorizontalAlignment="Left" Height="23" Margin="37,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="Lov" HorizontalAlignment="Left" Height="23" Margin="37,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="Strench" HorizontalAlignment="Left" Height="23" Margin="37,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Button x:Name="createButton" Content="Создать" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="75" Click="createButton_Click"/>
         <Button x:Name="endAddButton" Content="Отмена" HorizontalAlignment="Left" Margin="114,326,0,0" VerticalAlignment="Top" Width="75" Click="endAddButton_Click"/>
         <Label Content="Имя персонажа" HorizontalAlignment="Left" Margin="37,30,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Content="Расса" HorizontalAlignment="Left" Margin="37,68,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Content="Защита от магии" HorizontalAlignment="Left" Margin="37,107,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Content="Ловкость" HorizontalAlignment="Left" Margin="37,143,0,0" VerticalAlignment="Top" Width="100" Height="23"/>
-        <Label Content="Интелект" HorizontalAlignment="Left" Margin="37,189,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="nameOwner" HorizontalAlignment="Left" Height="23" Margin="37,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label Content="Сила" HorizontalAlignment="Left" Margin="37,230,0,0" VerticalAlignment="Top" Width="100"/>
-        
+        <Label Content="Сила" HorizontalAlignment="Left" Margin="37,271,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Здоровье" HorizontalAlignment="Left" Margin="37,68,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Расса" HorizontalAlignment="Left" Margin="37,107,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Защита от магии" HorizontalAlignment="Left" Margin="37,143,0,0" VerticalAlignment="Top" Width="100" Height="23"/>
+        <Label Content="Ловкость" HorizontalAlignment="Left" Margin="37,189,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Intelect" HorizontalAlignment="Left" Height="23" Margin="37,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Label Content="Интелект" HorizontalAlignment="Left" Margin="37,230,0,0" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Window>
 

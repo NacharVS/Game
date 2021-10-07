@@ -23,23 +23,28 @@ namespace GameCharacterEditor
         public MainWindow()
         {
             InitializeComponent();
-            foreach(UIElement el in MainRoot.Children)
-            {
-                if(el is Button)
-                {
-                    ((Button)el).Click += Button_Click;
-                }
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Window1 newForm = new Window1(this);
+            newForm.Show();
 
         }
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Table_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        public void AddPersonalGridViewRows(Person Warior)
+        {
+            PersonalTable.Items.Add(Warior);
+            PersonalTable.Items.Refresh();  
         }
     }
 }
