@@ -23,6 +23,23 @@ namespace GameCharacterEditor
         public MainWindow()
         {
             InitializeComponent();
+            foreach(UIElement el in MainRoot.Children)
+            {
+                if(el is Button)
+                {
+                    ((Button)el).Click += Button_Click;
+                }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCreate_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
