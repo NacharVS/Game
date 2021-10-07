@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="550" Width="800">
+    <Grid x:Name="Fon" Margin="0,4,0,-6">
+        <Button x:Name="Create_character" Content="Создать персонажа" HorizontalAlignment="Left" Margin="540,445,0,0" VerticalAlignment="Top" Width="132" Height="22" Click="Create_character_Click"/>
+        <Label x:Name="Choose_class" Content="Выберите класс персонажа" HorizontalAlignment="Left" Margin="90,35,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="image_character" HorizontalAlignment="Left" Height="380" Margin="470,35,0,0" VerticalAlignment="Top" Width="260"/>
+        <Label x:Name="name_character" Content="Введите имя персонажа" HorizontalAlignment="Left" Margin="100,130,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_name_character" HorizontalAlignment="Left" Height="23" Margin="75,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197"/>
+        <Label x:Name="character_characteristics" Content="Характеристики персонажа" HorizontalAlignment="Left" Margin="90,232,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_hp" HorizontalAlignment="Left" Height="23" Margin="45,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_attack_magic" HorizontalAlignment="Left" Height="23" Margin="230,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_attack" HorizontalAlignment="Left" Height="23" Margin="45,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_protection" HorizontalAlignment="Left" Height="23" Margin="230,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="radBtn_Warrior" Content="Воин" HorizontalAlignment="Left" Margin="62,84,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radBtn_Witch" Content="Волшебник" HorizontalAlignment="Left" Margin="130,84,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radBtn_Rogue" Content="Разбойник" HorizontalAlignment="Left" Margin="230,84,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_speed" HorizontalAlignment="Left" Height="23" Margin="230,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_damage" HorizontalAlignment="Left" Height="23" Margin="45,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="HP" Content="HP" HorizontalAlignment="Left" Margin="45,274,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Protection" Content="Защита" HorizontalAlignment="Left" Margin="230,274,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Speed" Content="Скорость" HorizontalAlignment="Left" Margin="230,389,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Attack_magic" Content="Магическая атака" HorizontalAlignment="Left" Margin="230,331,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Damage" Content="Урон" HorizontalAlignment="Left" Margin="45,389,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Attack" Content="Атака" HorizontalAlignment="Left" Margin="45,331,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
