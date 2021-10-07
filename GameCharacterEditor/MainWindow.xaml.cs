@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace GameCharacterEditor
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void buttonim_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofdPicture = new OpenFileDialog();
+            ofdPicture.Filter = "Image files|*.bmp;*.jpg;*.gif;*.png;*.tif|All files|*.*";
+            ofdPicture.FilterIndex = 1;
+            if (ofdPicture.ShowDialog() == true)
+            {
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(ofdPicture.FileName);
+                image.EndInit();
+                persim.Source = image;
+            }
         }
     }
 }

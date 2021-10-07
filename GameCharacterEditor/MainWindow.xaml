@@ -6,7 +6,32 @@
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid Opacity="9">
+        <Image x:Name="persim" 
+                   HorizontalAlignment="Left" 
+                   Height="294" 
+                   Margin="537,26,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="231" 
+                   OpacityMask="Black" Stretch="Fill"/>
+        <Border x:Name="imp" BorderThickness="2"
+                Background="Transparent"
+                BorderBrush="Black"
+                Height="294" 
+                Margin="537,26,0,0" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="232" Opacity="0.9"></Border>
+        <Button x:Name="buttonim" Content="Choose hero photo" HorizontalAlignment="Left" Height="38" Margin="572,345,0,0" VerticalAlignment="Top" Width="174" Click="buttonim_Click"/>
+        <TextBox x:Name="namepers" HorizontalAlignment="Left" Height="23" Margin="30,25,0,0" TextWrapping="Wrap" Text="Name of hero" VerticalAlignment="Top" Width="113"/>
+        <ComboBox x:Name="typepers" Text="Type of hero" IsEditable="True" IsReadOnly="True" HorizontalAlignment="Left" Height="25" Margin="30,67,0,0" VerticalAlignment="Top" Width="111">
+            <ComboBoxItem Content="Warrior"/>
+            <ComboBoxItem Content="Sorcerer"/>
+            <ComboBoxItem Content="Rogue"/>
+        </ComboBox>
+        <Label x:Name="str" Content="Strength" HorizontalAlignment="Left" Margin="31,115,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="dox" Content="Doxterity" HorizontalAlignment="Left" Margin="31,150,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="intel" Content="Intelegence" HorizontalAlignment="Left" Margin="31,185,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="const" Content="Constitution" HorizontalAlignment="Left" Margin="31,220,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
