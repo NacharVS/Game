@@ -24,5 +24,10 @@ namespace GameCharacterEditor
         {
             InitializeComponent();
         }
+
+        private void SorcererRB_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
