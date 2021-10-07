@@ -41,7 +41,13 @@ namespace GameCharacterEditor
             if (right)
             {
                 mw.AddPersonalGridViewRows(new Person(nameObject.Text, Health.Text, Rassa.Text, ResistMagic.Text, Lov.Text, Intelect.Text, Convert.ToInt32(Strench.Text)));
-                this.Close();
+                this.addWindow.Close();
             }
+        }
+
+        private void endAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.addWindow.Close();
+        }
     }
 }

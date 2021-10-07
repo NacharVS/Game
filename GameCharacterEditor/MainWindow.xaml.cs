@@ -46,5 +46,10 @@ namespace GameCharacterEditor
             PersonalTable.Items.Add(Warior);
             PersonalTable.Items.Refresh();  
         }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
