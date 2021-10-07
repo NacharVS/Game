@@ -7,6 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="395*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Create person" Margin="243,10,272,353" FontSize="36" Grid.Column="1"/>
+        <TextBox Name="tb" Grid.Column="1" Margin="545,97,78,299"/>
+        <ListBox Name="lb" SelectionChanged="PrintText" SelectionMode="Single" Margin="243,71,272,274" FontSize="14" Grid.Column="1">
+            <ListBoxItem Selected="ListBoxItem_Selected">Soldier</ListBoxItem>
+            <ListBoxItem Selected="ListBoxItem_Selected_1">Wizard</ListBoxItem>
+            <ListBoxItem Selected="ListBoxItem_Selected_2">Robber</ListBoxItem>
+        </ListBox>
+        <TextBox x:Name="name" Margin="28,194,576,200" Grid.Column="1"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Height="39" Margin="28,150,0,0" VerticalAlignment="Top" Width="65" FontSize="18" RenderTransformOrigin="0.519,1.488" Grid.Column="1"/>
+        <TextBox x:Name="def" Grid.Column="1" Margin="545,194,135,200"/>
+        <TextBox x:Name="spe" Grid.Column="1" Margin="545,257,135,137"/>
+        <TextBox x:Name="mag" Grid.Column="1" Margin="545,320,135,74"/>
+        <TextBox x:Name="dam" Grid.Column="1" Margin="399,320,272,74"/>
+        <TextBox x:Name="att" Grid.Column="1" Margin="399,257,272,137"/>
+        <TextBox x:Name="hp" Grid.Column="1" Margin="399,194,272,200"/>
+        <Label Content="HP" Grid.Column="1" HorizontalAlignment="Left" Margin="310,0,0,0" VerticalAlignment="Center" Width="75" FontSize="14"/>
+        <Label Content="Attack" Grid.Column="1" HorizontalAlignment="Left" Margin="310,266,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label Content="Damage" Grid.Column="1" HorizontalAlignment="Left" Margin="310,329,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label Content="Defense" Grid.Column="1" HorizontalAlignment="Left" Margin="681,200,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
+        <Label Content="MagAttack" Grid.Column="1" HorizontalAlignment="Left" Margin="681,329,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
+        <Label Content="Speed" Grid.Column="1" HorizontalAlignment="Left" Margin="681,266,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
+        <Button x:Name="btnSave" Content="Save person" Grid.Column="1" Margin="28,320,576,47" FontSize="20" Click="btnSave_Click"/>
     </Grid>
 </Window>
