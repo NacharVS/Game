@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <InkCanvas Background="LightCyan" Margin="25,79,417,90" RenderTransformOrigin="0.5,0.5" >
+            <InkCanvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.052"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </InkCanvas.RenderTransform>
+        </InkCanvas>
+        
     </Grid>
 </Window>
