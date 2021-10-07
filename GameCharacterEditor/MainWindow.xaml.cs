@@ -37,13 +37,6 @@ namespace GameCharacterEditor
                     Bitmap bmp = new Bitmap(fs);
                     image_character.Source = bmp.BitmapToImageSource();
                 }
-
-                textb_attack.Text = "200";
-                textb_attack_magic.Text = "150";
-                textb_damage.Text = "105";
-                textb_hp.Text = "1000";
-                textb_protection.Text = "75";
-                textb_speed.Text = "30";
             }
 
             if (radBtn_Witch.IsChecked == true)
@@ -55,13 +48,6 @@ namespace GameCharacterEditor
                     Bitmap bmp = new Bitmap(fs);
                     image_character.Source = bmp.BitmapToImageSource();
                 }
-
-                textb_attack.Text = "150";
-                textb_attack_magic.Text = "200";
-                textb_damage.Text = "105";
-                textb_hp.Text = "1000";
-                textb_protection.Text = "90";
-                textb_speed.Text = "20";
             }
 
             if (radBtn_Rogue.IsChecked == true)
@@ -73,13 +59,6 @@ namespace GameCharacterEditor
                     Bitmap bmp = new Bitmap(fs);
                     image_character.Source = bmp.BitmapToImageSource();
                 }
-
-                textb_attack.Text = "200";
-                textb_attack_magic.Text = "120";
-                textb_damage.Text = "105";
-                textb_hp.Text = "1000";
-                textb_protection.Text = "60";
-                textb_speed.Text = "40";
             }
 
             MessageBox.Show("Персонаж создан");
