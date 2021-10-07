@@ -6,14 +6,19 @@
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="Main"> 
+    <Grid x:Name="Main" Background="#FF290303"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="inventoryButton" Content="Inventory" Grid.Column="1" Width="120" Height="30" Margin="40 360 40 0"/>
-        <Button x:Name="WarriorButton" Content="Warrior" Grid.Column="0" Width="120" Height="30" Margin="40 0 420 360"/>
-        <Button x:Name="RogueButton" Content="Rogue" Grid.Column="0" Width="120" Height="30" Margin="240 0 240 360"/>
-        <Button x:Name="SorcererButton" Content="Sorcerer" Grid.Column="0" Width="120" Height="30" Margin="420 0 40 360"/>
+        <Button x:Name="inventoryButton" Content="Inventory" Grid.Column="1" Width="120" Height="30" Margin="40 360 40 0" Background="#FF510606" Foreground="#FFE20505"/>
+        <Button x:Name="WarriorButton" Content="Warrior" Grid.Column="0" Width="120" Height="30" Margin="40 0 420 360" Background="#FF510606" Foreground="#FFE20505"/>
+        <Button x:Name="RogueButton" Content="Rogue" Grid.Column="0" Width="120" Height="30" Margin="240 0 240 360" Background="#FF510606" Foreground="#FFE20505"/>
+        <Button x:Name="SorcererButton" Content="Sorcerer" Grid.Column="0" Width="120" Height="30" Margin="420 0 40 360" Background="#FF510606" Foreground="#FFE20505"/>
+        <TextBlock x:Name="Strenght" Background="#FF423434" Margin="120 220 380 190"/>
+        <TextBlock x:Name="Dexterity" Background="#FF423434" Margin="120 260 380 150"/>
+        <TextBlock x:Name="Intelligence" Background="#FF423434" Margin="120 300 380 110"/>
+        <TextBlock x:Name="Constitution" Background="#FF423434" Margin="120 340 380 70"/>
+        
     </Grid>
 </Window>
