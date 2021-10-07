@@ -26,8 +26,11 @@ using System.Text;
         public Warrior()
         {
             strength = 30;
-            physique = 25;
             intellect = 10;
+            physique = 25;
+            
+            healthPoint = 70;
+            manaPoint = 10;
 
         }
     }
@@ -35,8 +38,12 @@ using System.Text;
     {
         public Sorcecer()
         {
-        intellect = 30;
-        strength = 10;
+            intellect = 35;
+            strength = 15;
+            dexterity = 15;
+        
+            healthPoint = 30;
+            manaPoint = 70;
         }
     }
     public class Rogue : Hero
@@ -44,8 +51,9 @@ using System.Text;
         public Rogue()
         {
         dexterity = 30;
-        physique = 15;
-        strength = 15;
-        intellect = 25;
+        intellect = 15;
+
+            healthPoint = 45;
+            manaPoint = 22;
         }
     }
