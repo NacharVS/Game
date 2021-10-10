@@ -25,7 +25,14 @@ namespace Geroi
             InitializeComponent();
         }
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void perehod_mag(object sender, MouseButtonEventArgs e)
+        {
+            Window1 wd = new Window1();
+            wd.Show();
+            this.Close();
+        }
+
+        private void perehod_mechnik(object sender, MouseButtonEventArgs e)
         {
             Window1 wd = new Window1();
             wd.Show();
