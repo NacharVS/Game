@@ -12,9 +12,13 @@
             <ColumnDefinition Width="86*"/>
         </Grid.ColumnDefinitions>
         <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\fon.jpg" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="105,162,0,0" TextWrapping="Wrap" Text="Маг" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
-        <TextBlock HorizontalAlignment="Left" Margin="278,162,0,0" TextWrapping="Wrap" Text="Мечник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
-        <TextBlock HorizontalAlignment="Left" Margin="693,162,0,0" TextWrapping="Wrap" Text="Лучник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="166,162,0,0" TextWrapping="Wrap" Text="Разбойник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="95,192,0,0" TextWrapping="Wrap" Text="Маг" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
+        <TextBlock HorizontalAlignment="Left" Margin="353,192,0,0" TextWrapping="Wrap" Text="Мечник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
+        <TextBlock HorizontalAlignment="Left" Margin="686,192,0,0" TextWrapping="Wrap" Text="Лучник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="182,192,0,0" TextWrapping="Wrap" Text="Разбойник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401" Grid.Column="1"/>
+        <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\mechnik.png" Margin="282,218,116,-123"/>
+        <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\mag.png" Margin="-20,218,447,-97"/>
+        <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\luchnik.png" Margin="608,238,204,-81" Grid.ColumnSpan="2"/>
+        <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\razboinik.png" Margin="169,233,-45,-76" Grid.Column="1"/>
     </Grid>
 </Window>
