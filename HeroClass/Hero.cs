@@ -4,10 +4,10 @@ namespace HeroClass
 {
     public class Hero
     {
-        protected int strenght, dexterity, intelligence,
+        public int strenght, dexterity, intelligence,
             constitution, healthPoint, manaPoint,
             pAttack, mAttack, pResist, mResist, attackSpeed,
-            walkSpeed;
+            walkSpeed, extra;
 
         public Hero()
         {
@@ -23,6 +23,7 @@ namespace HeroClass
             mResist = 20;
             attackSpeed = 20;
             walkSpeed = 20;
+            extra = 20;
         }
     }
 

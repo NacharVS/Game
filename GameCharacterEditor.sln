@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCharacterEditor", "GameCharacterEditor\GameCharacterEditor.csproj", "{B351B0B3-D422-423B-B64C-5F413A8AAC21}"
+	ProjectSection(ProjectDependencies) = postProject
+		{72418FF1-F3D7-42B0-8F78-6309540A3991} = {72418FF1-F3D7-42B0-8F78-6309540A3991}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroClass", "HeroClass\HeroClass.csproj", "{72418FF1-F3D7-42B0-8F78-6309540A3991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroClass", "HeroClass\HeroClass.csproj", "{72418FF1-F3D7-42B0-8F78-6309540A3991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
