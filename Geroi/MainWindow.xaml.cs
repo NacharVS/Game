@@ -38,5 +38,19 @@ namespace Geroi
             wd.Show();
             this.Close();
         }
+
+        private void Perehod_Luchnik(object sender, MouseButtonEventArgs e)
+        {
+            Window1 wd = new Window1();
+            wd.Show();
+            this.Close();
+        }
+
+        private void Perehod_Razboinik(object sender, MouseButtonEventArgs e)
+        {
+            Window1 wd = new Window1();
+            wd.Show();
+            this.Close();
+        }
     }
 }
