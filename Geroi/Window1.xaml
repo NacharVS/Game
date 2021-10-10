@@ -8,5 +8,16 @@
         Title="Window1" Height="638.474" Width="1086.363">
     <Grid>
         <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\fon_classsa.jpg"></Image>
+        <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\strelka.png" Margin="2,-25,873,499" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="59,55,0,0" TextWrapping="Wrap" Text="Назад" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF99128"/>
     </Grid>
 </Window>

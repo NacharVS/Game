@@ -122,5 +122,8 @@
   <ItemGroup>
     <Resource Include="resource\fon_classsa.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\strelka.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
