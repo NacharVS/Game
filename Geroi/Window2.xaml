@@ -1,11 +1,11 @@
-﻿<Window x:Class="Geroi.Window1"
+﻿<Window x:Class="Geroi.Window2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geroi"
         mc:Ignorable="d"
-        Title="Window1" Height="638.474" Width="1086.363">
+        Title="Window2" Height="638.474" Width="1086.363">
     <Grid>
         <Image Source="resource\fon_classsa.jpg"></Image>
         <Image Source="resource\strelka.png" Margin="2,-25,873,499" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
@@ -19,7 +19,7 @@
             </Image.RenderTransform>
         </Image>
         <TextBlock HorizontalAlignment="Left" Margin="59,55,0,0" TextWrapping="Wrap" Text="Назад" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF99128"/>
-        <Image HorizontalAlignment="Left" Height="425" Margin="-1,178,0,0" VerticalAlignment="Top" Width="426" Source="resource/mag.png" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="495" Margin="-1,218,0,-106" VerticalAlignment="Top" Width="482" Source="resource/mechnik.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
