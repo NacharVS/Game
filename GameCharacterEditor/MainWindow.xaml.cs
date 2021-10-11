@@ -112,28 +112,160 @@ namespace GameCharacterEditor
             {
                 case "PA_up":
                     int pa = int.Parse(PA_TB.Text);
-                    ++pa;
-                    PA_TB.Text = pa.ToString();
+                    if(pa < 30)
+                    {
+                        PA_down.IsEnabled = true;
+                        ++pa;
+                        PA_TB.Text = pa.ToString();
+                    }
+                    else
+                    {
+                        PA_up.IsEnabled = false;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
                     break;
                 case "MA_up":
                     int ma = int.Parse(MA_TB.Text);
-                    ++ma;
-                    MA_TB.Text = ma.ToString();
+                    if (ma < 30)
+                    {
+                        MA_down.IsEnabled = true;
+                        ++ma;
+                        MA_TB.Text = ma.ToString();
+                    }
+                    else
+                    {
+                        MA_up.IsEnabled = false;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
                     break;
                 case "PR_up":
                     int pr = int.Parse(PR_TB.Text);
-                    ++pr;
-                    PR_TB.Text = pr.ToString();
+                    if (pr < 30)
+                    {
+                        PR_down.IsEnabled = true;
+                        ++pr;
+                        PR_TB.Text = pr.ToString();
+                    }
+                    else 
+                    {
+                        PR_up.IsEnabled = false;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
                     break;
                 case "MR_up":
                     int mr = int.Parse(MR_TB.Text);
-                    ++mr;
-                    MR_TB.Text = mr.ToString();
+                    if(mr < 30)
+                    {
+                        MR_down.IsEnabled = true;
+                        ++mr;
+                        MR_TB.Text = mr.ToString();
+                    }
+                    else
+                    {
+                        MR_up.IsEnabled = false;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
                     break;
                 default:
                     MessageBox.Show("error");
                     break;
             }           
+        }
+
+        private void ExtraDebuff_Click(object sender, RoutedEventArgs e)
+        {
+            int ex = int.Parse(Extra_TB.Text);
+
+            if (ex < 20)
+            {
+                ++ex;
+                Extra_TB.Text = ex.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Its not enough extra points!");
+                return;
+            }
+
+            string bttn = (string)((Button)sender).Name;
+
+            switch (bttn)
+            {
+                case "PA_down":
+                    int pa = int.Parse(PA_TB.Text);
+                    if(pa > 20)
+                    {
+                        PA_up.IsEnabled = true;
+                        --pa;
+                        PA_TB.Text = pa.ToString();
+                    }
+                    else
+                    {
+                        PA_down.IsEnabled = false;
+                        --ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
+                    break;
+                case "MA_down":
+                    int ma = int.Parse(MA_TB.Text);
+                    if(ma > 20)
+                    {
+                        MA_up.IsEnabled = true;
+                        --ma;
+                        MA_TB.Text = ma.ToString();
+                    }
+                    else 
+                    {
+                        MA_down.IsEnabled = false;
+                        --ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
+                    break;
+                case "PR_down":
+                    int pr = int.Parse(PR_TB.Text);
+                    if (pr > 20)
+                    {
+                        PR_up.IsEnabled = true;
+                        --pr;
+                        PR_TB.Text = pr.ToString();
+                    }
+                    else
+                    {
+                        PR_down.IsEnabled = false;
+                        --ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
+                    break;
+                case "MR_down":
+                    int mr = int.Parse(MR_TB.Text);
+                    if (mr > 20)
+                    {
+                        MR_up.IsEnabled = true;
+                        --mr;
+                        MR_TB.Text = mr.ToString();
+                    }
+                    else
+                    {
+                        MR_down.IsEnabled = false;
+                        --ex;
+                        Extra_TB.Text = ex.ToString();
+                    }
+                    break;
+            }    
+        }
+
+        private void ExtraDebuff(object sender, ContextMenuEventArgs e)
+        {
+
+        }
+
+        private void ExtraDebuff(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
