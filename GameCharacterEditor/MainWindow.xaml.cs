@@ -85,7 +85,55 @@ namespace GameCharacterEditor
                     AS_TB.Text = sorcerer.attackSpeed.ToString();
                     MS_TB.Text = sorcerer.walkSpeed.ToString();
                     break;
+                default:
+                    MessageBox.Show("error");
+                    break;
             }
+        }
+
+        private void ExtraBuff_Click(object sender, RoutedEventArgs e)
+        {
+            int ex = int.Parse(Extra_TB.Text);
+
+            if (ex > 0)
+            {
+                --ex;
+                Extra_TB.Text = ex.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Its not enough extra points!");
+                return;
+            }
+
+            string bttn = (string)((Button)sender).Name;
+
+            switch (bttn)
+            {
+                case "PA_up":
+                    int pa = int.Parse(PA_TB.Text);
+                    ++pa;
+                    PA_TB.Text = pa.ToString();
+                    break;
+                case "MA_up":
+                    int ma = int.Parse(MA_TB.Text);
+                    ++ma;
+                    MA_TB.Text = ma.ToString();
+                    break;
+                case "PR_up":
+                    int pr = int.Parse(PR_TB.Text);
+                    ++pr;
+                    PR_TB.Text = pr.ToString();
+                    break;
+                case "MR_up":
+                    int mr = int.Parse(MR_TB.Text);
+                    ++mr;
+                    MR_TB.Text = mr.ToString();
+                    break;
+                default:
+                    MessageBox.Show("error");
+                    break;
+            }           
         }
     }
 }

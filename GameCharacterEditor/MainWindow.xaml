@@ -84,20 +84,20 @@
                 <TextBlock Text="Phys Attack" Grid.Row="1" Grid.Column="1" Margin="5"/>
                 <Button x:Name="PA_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
                 <TextBox x:Name="PA_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
-                <Button x:Name="PA_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5"/>
+                <Button x:Name="PA_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
                 <TextBlock Text="Magic Attack" Grid.Row="1" Grid.Column="4" Margin="5"/>
                 <Button x:Name="MA_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
                 <TextBox x:Name="MA_TB" Grid.Row="2" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
-                <Button x:Name="MA_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5"/>
+                <Button x:Name="MA_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
 
                 <TextBlock Text="Phys Resist" Grid.Row="3" Grid.Column="1" Margin="5"/>
                 <Button x:Name="PR_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
                 <TextBox x:Name="PR_TB" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
-                <Button x:Name="PR_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5"/>
+                <Button x:Name="PR_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
                 <TextBlock Text="Magic Resist" Grid.Row="3" Grid.Column="4" Margin="5"/>
                 <Button x:Name="MR_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
                 <TextBox x:Name="MR_TB" Grid.Row="4" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
-                <Button x:Name="MR_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5"/>
+                <Button x:Name="MR_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
 
                 <TextBlock Text="Attack speed" Grid.Row="5" Grid.Column="2" Margin="0 20 5 5"/>
                 <TextBox x:Name="AS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="2" Background="Silver" Margin="0 5 20  15"/>
