@@ -111,9 +111,6 @@
     <Resource Include="resource\mag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="luchnik.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="resource\luchnik.png" />
   </ItemGroup>
   <ItemGroup>

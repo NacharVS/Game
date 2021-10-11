@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Window1" Height="638.474" Width="1086.363">
     <Grid>
-        <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\fon_classsa.jpg"></Image>
-        <Image Source="C:\Users\user\Source\Repos\Game1\Geroi\resource\strelka.png" Margin="2,-25,873,499" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
+        <Image Source="resource\fon_classsa.jpg"></Image>
+        <Image Source="resource\strelka.png" Margin="2,-25,873,499" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
