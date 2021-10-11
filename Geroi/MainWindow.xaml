@@ -16,8 +16,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="353,192,0,0" TextWrapping="Wrap" Text="Мечник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
         <TextBlock HorizontalAlignment="Left" Margin="686,192,0,0" TextWrapping="Wrap" Text="Лучник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="182,192,0,0" TextWrapping="Wrap" Text="Разбойник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401" Grid.Column="1"/>
-        <Image Source="resource\mechnik.png" Margin="282,218,116,-123" MouseLeftButtonDown="perehod_mechnik" MouseEnter="Image_MouseEnter"/>
-        <Image Source="resource\mag.png" Margin="-20,218,447,-97" MouseLeftButtonDown="perehod_mag" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="resource\mechnik.png" Margin="282,233,116,-138" MouseLeftButtonDown="perehod_mechnik" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="resource\mag.png" Margin="-15,233,442,-112" MouseLeftButtonDown="perehod_mag" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="resource\luchnik.png" Margin="608,238,204,-81" Grid.ColumnSpan="2" MouseLeftButtonDown="Perehod_Luchnik" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="resource\razboinik.png" Margin="169,233,-45,-76" Grid.Column="1" MouseLeftButtonDown="Perehod_Razboinik" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
     </Grid>
