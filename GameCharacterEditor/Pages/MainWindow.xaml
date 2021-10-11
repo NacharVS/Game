@@ -196,25 +196,25 @@
             <Border BorderThickness="1,0,1,1" BorderBrush="#FF303031"/>
             <Border BorderThickness="0" Background="Black" Opacity="0.6"/>
             <StackPanel Orientation="Vertical">
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenWOWPage}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" 
                         Content="Воин">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Resources/icons/Warrior.png</ImageSource>
                     </Button.Resources>
                 </Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenHSPage}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
                         Content="Лучник">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Resources/icons/Archer.jpg</ImageSource>
                     </Button.Resources>
                 </Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenOWPage}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
                         Content="Разбойник">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Resources/icons/Outlaw.png</ImageSource>
                     </Button.Resources>
                 </Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenD3Page}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
                         Content="Маг">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Resources/icons/Mage.png</ImageSource>
