@@ -62,7 +62,7 @@
 
                 </Grid>
 
-                <Grid Margin="0 15 0 0" ContextMenuClosing="ExtraDebuff">
+                <Grid Margin="0 15 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -73,6 +73,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -110,12 +111,9 @@
                     <TextBlock Text="Movement speed" Grid.Row="5" Grid.Column="3" Margin="0 20 5 5"/>
                     <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="0 5 20  15"/>
 
+                    <Button x:Name="PickButton" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
                 </Grid>
             </StackPanel>
-            <Image x:Name="HeroImage">
-                
-            </Image>
-            
             
         </Grid>
     </Border> 

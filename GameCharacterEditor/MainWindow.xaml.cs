@@ -114,13 +114,11 @@ namespace GameCharacterEditor
                     int pa = int.Parse(PA_TB.Text);
                     if(pa < 30)
                     {
-                        PA_down.IsEnabled = true;
                         ++pa;
                         PA_TB.Text = pa.ToString();
                     }
                     else
                     {
-                        PA_up.IsEnabled = false;
                         ++ex;
                         Extra_TB.Text = ex.ToString();
                     }
@@ -129,13 +127,11 @@ namespace GameCharacterEditor
                     int ma = int.Parse(MA_TB.Text);
                     if (ma < 30)
                     {
-                        MA_down.IsEnabled = true;
                         ++ma;
                         MA_TB.Text = ma.ToString();
                     }
                     else
                     {
-                        MA_up.IsEnabled = false;
                         ++ex;
                         Extra_TB.Text = ex.ToString();
                     }
@@ -144,13 +140,11 @@ namespace GameCharacterEditor
                     int pr = int.Parse(PR_TB.Text);
                     if (pr < 30)
                     {
-                        PR_down.IsEnabled = true;
                         ++pr;
                         PR_TB.Text = pr.ToString();
                     }
                     else 
                     {
-                        PR_up.IsEnabled = false;
                         ++ex;
                         Extra_TB.Text = ex.ToString();
                     }
@@ -159,13 +153,11 @@ namespace GameCharacterEditor
                     int mr = int.Parse(MR_TB.Text);
                     if(mr < 30)
                     {
-                        MR_down.IsEnabled = true;
                         ++mr;
                         MR_TB.Text = mr.ToString();
                     }
                     else
                     {
-                        MR_up.IsEnabled = false;
                         ++ex;
                         Extra_TB.Text = ex.ToString();
                     }
@@ -180,17 +172,6 @@ namespace GameCharacterEditor
         {
             int ex = int.Parse(Extra_TB.Text);
 
-            if (ex < 20)
-            {
-                ++ex;
-                Extra_TB.Text = ex.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Its not enough extra points!");
-                return;
-            }
-
             string bttn = (string)((Button)sender).Name;
 
             switch (bttn)
@@ -199,14 +180,14 @@ namespace GameCharacterEditor
                     int pa = int.Parse(PA_TB.Text);
                     if(pa > 20)
                     {
-                        PA_up.IsEnabled = true;
                         --pa;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
                         PA_TB.Text = pa.ToString();
                     }
                     else
                     {
-                        PA_down.IsEnabled = false;
-                        --ex;
+                        ReduceException(ex);
                         Extra_TB.Text = ex.ToString();
                     }
                     break;
@@ -214,14 +195,14 @@ namespace GameCharacterEditor
                     int ma = int.Parse(MA_TB.Text);
                     if(ma > 20)
                     {
-                        MA_up.IsEnabled = true;
                         --ma;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
                         MA_TB.Text = ma.ToString();
                     }
                     else 
                     {
-                        MA_down.IsEnabled = false;
-                        --ex;
+                        ReduceException(ex);
                         Extra_TB.Text = ex.ToString();
                     }
                     break;
@@ -229,14 +210,14 @@ namespace GameCharacterEditor
                     int pr = int.Parse(PR_TB.Text);
                     if (pr > 20)
                     {
-                        PR_up.IsEnabled = true;
                         --pr;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
                         PR_TB.Text = pr.ToString();
                     }
                     else
                     {
-                        PR_down.IsEnabled = false;
-                        --ex;
+                        ReduceException(ex);
                         Extra_TB.Text = ex.ToString();
                     }
                     break;
@@ -244,28 +225,28 @@ namespace GameCharacterEditor
                     int mr = int.Parse(MR_TB.Text);
                     if (mr > 20)
                     {
-                        MR_up.IsEnabled = true;
                         --mr;
+                        ++ex;
+                        Extra_TB.Text = ex.ToString();
                         MR_TB.Text = mr.ToString();
                     }
                     else
                     {
-                        MR_down.IsEnabled = false;
-                        --ex;
+                        ReduceException(ex);
                         Extra_TB.Text = ex.ToString();
                     }
                     break;
             }    
+
+            int ReduceException(int ability)
+            {
+                return --ability;
+            }
         }
 
-        private void ExtraDebuff(object sender, ContextMenuEventArgs e)
+        private void PickButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ExtraDebuff(object sender, RoutedEventArgs e)
-        {
-
+            ChooseWarrior.IsEnabled = ChooseRogue.IsEnabled = ChooseSorcerer.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_up.IsEnabled = MA_down.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = PR_down.IsEnabled = PR_up.IsEnabled = false;
         }
     }
 }
