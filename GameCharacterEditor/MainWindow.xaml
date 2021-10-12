@@ -12,13 +12,13 @@
             <ColumnDefinition Width="86*"/>
         </Grid.ColumnDefinitions>
         <Image Source="resource\Font.jpg" Grid.ColumnSpan="2" Margin="-6,0,6,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="95,192,0,0" TextWrapping="Wrap" Text="Маг" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue"/>
-        <TextBlock HorizontalAlignment="Left" Margin="353,192,0,0" TextWrapping="Wrap" Text="Мечник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Width="138"/>
-        <TextBlock HorizontalAlignment="Left" Margin="686,192,0,0" TextWrapping="Wrap" Text="Лучник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="182,192,0,0" TextWrapping="Wrap" Text="Разбойник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Grid.Column="1"/>
-        <Image Source="resource\Range.jpg" Margin="325,148,212,-2" MouseLeftButtonDown="Range_hero" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" RenderTransformOrigin="0.535,0.433"/>
-        <Image Source="resource\Mage.jfif" Margin="10,143,494,5" MouseLeftButtonDown="Mage_hero" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,268,0,0" TextWrapping="Wrap" Text="crystal maiden" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Width="267"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,268,0,0" TextWrapping="Wrap" Text="phantom assassin" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Width="268"/>
+        <TextBlock HorizontalAlignment="Left" Margin="625,268,0,0" TextWrapping="Wrap" Text="Windranger" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="128,268,0,0" TextWrapping="Wrap" Text="BountyHunter" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Grid.Column="1" Width="231"/>
+        <Image Source="resource\Range.jpg" Margin="326,147,210,-1" MouseLeftButtonDown="Range_hero" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" RenderTransformOrigin="0.535,0.433"/>
+        <Image Source="resource\Mage.jfif" Margin="12,155,492,-7" MouseLeftButtonDown="Mage_hero" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="resource\Mill.jpg" Margin="593,175,291,24" Grid.ColumnSpan="2" MouseLeftButtonDown="Mill_hero" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-        <Image Source="resource\Hunter.jpg" Margin="145,160,24,26" Grid.Column="1" MouseLeftButtonDown="Hunter_hero" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="resource\Hunter.jpg" Margin="128,172,41,14" Grid.Column="1" MouseLeftButtonDown="Hunter_hero" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
     </Grid>
 </Window>

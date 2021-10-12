@@ -1,4 +1,4 @@
-﻿<Window x:Name="addWindow" x:Class="GameCharacterEditor.Window1"
+﻿<Window x:Name="addWindow" x:Class="GameCharacterEditor.Window3"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -19,7 +19,7 @@
             </Image.RenderTransform>
         </Image>
         <TextBlock HorizontalAlignment="Left" Margin="25,493,0,0" TextWrapping="Wrap" Text="Назад" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="Red"/>
-        <Image HorizontalAlignment="Left" Height="373" Margin="324,293,0,0" VerticalAlignment="Top" Width="564" Source="resource/Mage.jfif" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="323" Margin="472,311,0,0" VerticalAlignment="Top" Width="464" Source="resource/Mill.jpg" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -29,11 +29,11 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="25,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="5" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="25,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="2" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="38,49,0,0" TextWrapping="Wrap" Text="Сила" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="283,49,0,0" TextWrapping="Wrap" Text="Ловкость" VerticalAlignment="Top" Height="68" Width="162" FontSize="36" Foreground="#FF80FF00"/>
         <TextBlock HorizontalAlignment="Left" Margin="573,49,0,0" TextWrapping="Wrap" Text="Интеллект" VerticalAlignment="Top" Height="68" Width="180" FontSize="36" Foreground="#FF00B9FF"/>
-        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="300,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="2" IsEnabled="False" TextChanged="Agility_TextChanged"/>
+        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="300,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="5" IsEnabled="False"/>
         <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="598,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="36" TextAlignment="Center" Text="10" IsEnabled="False"/>
         <TextBox x:Name="Kol" HorizontalAlignment="Left" Height="46" Margin="825,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="20" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="825,49,0,0" TextWrapping="Wrap" Text="Кол-во Очков" VerticalAlignment="Top" Height="99" Width="162" FontSize="36" Foreground="Purple"/>

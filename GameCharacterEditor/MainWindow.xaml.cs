@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GameCharacterEditor;
 
 namespace GameCharacterEditor
 {
@@ -34,17 +33,23 @@ namespace GameCharacterEditor
 
         private void Range_hero(object sender, MouseButtonEventArgs e)
         {
-
+            Window2 wd = new Window2();
+            wd.Show();
+            this.Close();
         }
 
         private void Mill_hero(object sender, MouseButtonEventArgs e)
         {
-
+            Window3 wd = new Window3();
+            wd.Show();
+            this.Close();
         }
 
         private void Hunter_hero(object sender, MouseButtonEventArgs e)
         {
-
+            Window4 wd = new Window4();
+            wd.Show();
+            this.Close();
         }
         private void Image_MouseEnter(object sender, MouseEventArgs e)
         {

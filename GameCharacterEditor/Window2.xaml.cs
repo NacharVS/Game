@@ -2,18 +2,18 @@
 using System.Windows;
 using System.Windows.Input;
 
+
 namespace GameCharacterEditor
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Window2.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Window2 : Window
     {
-        public Window1()
+        public Window2()
         {
             InitializeComponent();
         }
-
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow mw = new MainWindow();
@@ -29,7 +29,6 @@ namespace GameCharacterEditor
         {
             Mouse.OverrideCursor = Cursors.Hand;
         }
-
         private void Plus1_Click(object sender, RoutedEventArgs e)
         {
             int st = Convert.ToInt32(Strenght.Text);
@@ -37,14 +36,18 @@ namespace GameCharacterEditor
             Strenght.Text = st.ToString();
             int kl = Convert.ToInt32(Kol.Text);
             kl -= 1;
-            if (kl == 0)
+            if (kl < 0)
             {
                 Kol.Text = kl.ToString();
                 Plus1.Visibility = Visibility.Hidden;
+                Plus3.Visibility = Visibility.Hidden;
+                Plus2.Visibility = Visibility.Hidden;
             }
             else if (kl > 0)
             {
                 Minus1.Visibility = Visibility.Visible;
+                Minus2.Visibility = Visibility.Visible;
+                Minus3.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -57,9 +60,13 @@ namespace GameCharacterEditor
             {
                 Strenght.Text = st.ToString();
                 Minus1.Visibility = Visibility.Hidden;
+                Minus3.Visibility = Visibility.Hidden;
+                Minus2.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
+                Plus3.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
                 Plus1.Visibility = Visibility.Visible;
                 Strenght.Text = st.ToString();
             }
@@ -77,11 +84,15 @@ namespace GameCharacterEditor
             if (kl == 0)
             {
                 Kol.Text = kl.ToString();
+                Plus3.Visibility = Visibility.Hidden;
+                Plus1.Visibility = Visibility.Hidden;
                 Plus2.Visibility = Visibility.Hidden;
             }
             else if (kl > 0)
             {
                 Minus2.Visibility = Visibility.Visible;
+                Minus1.Visibility = Visibility.Visible;
+                Minus3.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -94,10 +105,14 @@ namespace GameCharacterEditor
             {
                 Agility.Text = st.ToString();
                 Minus2.Visibility = Visibility.Hidden;
+                Minus1.Visibility = Visibility.Hidden;
+                Minus3.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
                 Plus2.Visibility = Visibility.Visible;
+                Plus3.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
                 Agility.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
@@ -115,10 +130,14 @@ namespace GameCharacterEditor
             {
                 Kol.Text = kl.ToString();
                 Plus3.Visibility = Visibility.Hidden;
+                Plus1.Visibility = Visibility.Hidden;
+                Plus2.Visibility = Visibility.Hidden;
             }
             else if (kl > 0)
             {
                 Minus3.Visibility = Visibility.Visible;
+                Minus1.Visibility = Visibility.Visible;
+                Minus2.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -131,10 +150,14 @@ namespace GameCharacterEditor
             {
                 Intelligence.Text = st.ToString();
                 Minus3.Visibility = Visibility.Hidden;
+                Minus1.Visibility = Visibility.Hidden;
+                Minus2.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
                 Plus3.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
                 Intelligence.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
