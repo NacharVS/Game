@@ -33,7 +33,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="38,49,0,0" TextWrapping="Wrap" Text="Сила" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="283,49,0,0" TextWrapping="Wrap" Text="Ловкость" VerticalAlignment="Top" Height="68" Width="162" FontSize="36" Foreground="#FF80FF00"/>
         <TextBlock HorizontalAlignment="Left" Margin="573,49,0,0" TextWrapping="Wrap" Text="Интеллект" VerticalAlignment="Top" Height="68" Width="180" FontSize="36" Foreground="#FF00B9FF"/>
-        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="300,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="2" IsEnabled="False" TextChanged="Agility_TextChanged"/>
+        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="300,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="2" IsEnabled="False"/>
         <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="598,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="36" TextAlignment="Center" Text="10" IsEnabled="False"/>
         <TextBox x:Name="Kol" HorizontalAlignment="Left" Height="46" Margin="825,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="20" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="825,49,0,0" TextWrapping="Wrap" Text="Кол-во Очков" VerticalAlignment="Top" Height="99" Width="162" FontSize="36" Foreground="Purple"/>
