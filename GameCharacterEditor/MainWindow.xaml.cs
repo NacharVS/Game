@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace GameCharacterEditor
 {
@@ -30,7 +31,7 @@ namespace GameCharacterEditor
             tb.Text = " You selected " + lbi.Content.ToString() + "./";
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             MessageBox.Show("person created!!!!!!!");
         }
@@ -63,6 +64,18 @@ namespace GameCharacterEditor
             spe.Text = "70";
             mag.Text = "66";
             hp.Text = "30";
+        }
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Window1 win1 = new Window1();
+        //    win1.Show();
+        //}
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window1 win1 = new Window1();
+            win1.Show();
         }
     }
 }

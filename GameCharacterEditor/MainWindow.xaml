@@ -33,5 +33,6 @@
         <Label Content="MagAttack" Grid.Column="1" HorizontalAlignment="Left" Margin="681,329,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
         <Label Content="Speed" Grid.Column="1" HorizontalAlignment="Left" Margin="681,266,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
         <Button x:Name="btnSave" Content="Save person" Grid.Column="1" Margin="28,320,576,47" FontSize="20" Click="btnSave_Click"/>
+        <Button Content="Choose objects" Grid.Column="1" HorizontalAlignment="Left" Margin="28,268,0,0" VerticalAlignment="Top" Height="43" Width="194" Click="Button_Click_1"/>
     </Grid>
 </Window>
