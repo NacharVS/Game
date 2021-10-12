@@ -6,4 +6,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="min.png" />
+    <None Remove="plus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="min.png" />
+    <Resource Include="plus.png" />
+  </ItemGroup>
+
 </Project>

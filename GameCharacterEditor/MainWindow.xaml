@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -119,26 +119,30 @@
         </Style>
     </Window.Resources>
     <Grid Opacity="9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="389"/>
+        </Grid.ColumnDefinitions>
         <Image x:Name="persim" 
                    HorizontalAlignment="Left" 
                    Height="294" 
-                   Margin="537,26,0,0" 
+                   Margin="200,26,0,0" 
                    VerticalAlignment="Top" 
                    Width="231" 
-                   OpacityMask="Black" Stretch="Fill"/>
+                   OpacityMask="Black" Stretch="Fill" Grid.Column="1"/>
         <Border x:Name="imp" BorderThickness="2"
                 Background="Transparent"
                 BorderBrush="Black"
                 Height="294" 
-                Margin="537,26,0,0" 
+                Margin="120,25,0,0" 
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Top" 
-                Width="232" Opacity="0.9">
+                Width="232" Opacity="0.9" Grid.Column="1">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
             </Border.Effect>
         </Border>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="buttonim"  Content="Choose hero photo" HorizontalAlignment="Left" Height="38" Margin="572,345,0,0" VerticalAlignment="Top" Width="174" Click="buttonim_Click" FontFamily="Comic Sans MS" FontSize="14">
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="buttonim"  Content="Choose hero photo" HorizontalAlignment="Left" Height="38" Margin="152,345,0,0" VerticalAlignment="Top" Width="174" Click="buttonim_Click" FontFamily="Comic Sans MS" FontSize="14" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
             </Button.Effect>
@@ -149,93 +153,92 @@
             <ComboBoxItem Content="Sorcerer"/>
             <ComboBoxItem Content="Rogue"/>
         </ComboBox>
-        <Border Background="#FF7CD4D2" Margin="30,123,434,98" CornerRadius="10">
+        <Border Background="#FF7CD4D2" Margin="30,123,1,92" CornerRadius="10">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20" />
             </Border.Effect>
-            <StackPanel HorizontalAlignment="Left" Height="211" VerticalAlignment="Center" Width="108" Background="Transparent">
-                <Label x:Name="str" Content="Strength" Height="31" Width="73" HorizontalAlignment ="Left" Margin="15,15,0,0" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" FontStyle="Italic"/>
-                <Label x:Name="dox" Content="Doxterity" Height="31" Width="58" HorizontalAlignment ="Left" Margin="15,15,0,0" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" FontStyle="Italic"/>
-                <Label x:Name="intel" Content="Intelegence" Height="31" Width="95" HorizontalAlignment ="Left" Margin="15,15,0,0" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14"/>
-                <Label x:Name="const" Content="Constitution" Height="31" Width="93" HorizontalAlignment ="Left" Margin="15,15,0,0" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14"/>
-            </StackPanel>
         </Border>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="26" Margin="183,143,0,0" VerticalAlignment="Top" Width="136" Background="White">
-            <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
-        </Border>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="26" Margin="183,189,0,0" VerticalAlignment="Top" Width="136" Background="White">
-            <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
-        </Border>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="26" Margin="183,235,0,0" VerticalAlignment="Top" Width="136" Background="White">
-            <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
-        </Border>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="26" Margin="183,281,0,0" VerticalAlignment="Top" Width="136" Background="White">
-            <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
-        </Border>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="306,139,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="plus.png" Height="25" Width="27" />
-            </StackPanel>
-        </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="163,139,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="min.png" Height="21" Width="28" />
-            </StackPanel>
-        </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="306,185,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/plus.png" Height="25" Width="27" />
-            </StackPanel>
-        </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="306,231,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/plus.png" Height="25" Width="27" />
-            </StackPanel>
-        </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="306,277,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/plus.png" Height="25" Width="27" />
-            </StackPanel>
-        </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="163,231,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/min.png" Height="21" Width="28" />
-            </StackPanel>
-        </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="163,185,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/min.png" Height="21" Width="28" />
-            </StackPanel>
-        </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="34" Margin="163,277,0,0" VerticalAlignment="Top" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-            </Button.Effect>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/min.png" Height="21" Width="28" />
-            </StackPanel>
-        </Button>
-
+        <Canvas Margin="32,125,22,97">
+            <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="18">
+                <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+            </Border>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="155" Canvas.Top="13.5">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="min.png" Height="21" Width="28" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="305" Canvas.Top="13.5">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="plus.png" Height="25" Width="27" />
+                </StackPanel>
+            </Button>
+            <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="62">
+                <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="106">
+                <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="150">
+                <Label Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+            </Border>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="305" Canvas.Top="58">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/plus.png" Height="25" Width="27" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="305" Canvas.Top="102.5">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/plus.png" Height="25" Width="27" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="305" Canvas.Top="147">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/plus.png" Height="25" Width="27" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="155" Canvas.Top="58">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/min.png" Height="21" Width="28" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="155" Canvas.Top="102.5">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/min.png" Height="21" Width="28" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="155" Canvas.Top="147">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/min.png" Height="21" Width="28" />
+                </StackPanel>
+            </Button>
+            <Label x:Name="str" Content="Strength" Width="73" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" FontStyle="Italic" Height="31" Canvas.Left="28" Canvas.Top="15"/>
+            <Label x:Name="dox" Content="Doxterity" Width="58" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" FontStyle="Italic" Height="31" Canvas.Left="28" Canvas.Top="56"/>
+            <Label x:Name="intel" Content="Intelegence" Width="95" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="28" Canvas.Top="101"/>
+            <Label x:Name="const" Content="Constitution" Width="93" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="28" Canvas.Top="150"/>
+        </Canvas>
     </Grid>
 </Window>
