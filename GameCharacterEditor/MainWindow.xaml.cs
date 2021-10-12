@@ -27,7 +27,7 @@ namespace GameCharacterEditor
         void PrintText(object sender, SelectionChangedEventArgs args)
         {
             ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
-            tb.Text = " You selected " + lbi.Content.ToString() + ".";
+            tb.Text = " You selected " + lbi.Content.ToString() + "./";
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
