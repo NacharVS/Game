@@ -141,5 +141,80 @@ namespace GameCharacterEditor
             kl += 1;
             Kol.Text = kl.ToString();
         }
+        private void Plus4_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Attack_speed.Text);
+            st += 1;
+            Attack_speed.Text = st.ToString();
+            int kl = Convert.ToInt32(Kol.Text);
+            kl -= 1;
+            if (kl == 0)
+            {
+                Kol.Text = kl.ToString();
+                Plus4.Visibility = Visibility.Hidden;
+            }
+            else if (kl > 0)
+            {
+                Minus4.Visibility = Visibility.Visible;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void Minus4_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Attack_speed.Text);
+            st -= 1;
+            if (st == 0)
+            {
+                Attack_speed.Text = st.ToString();
+                Minus4.Visibility = Visibility.Hidden;
+            }
+            else if (st > 0)
+            {
+                Plus4.Visibility = Visibility.Visible;
+                Attack_speed.Text = st.ToString();
+            }
+            int kl = Convert.ToInt32(Kol.Text);
+            kl += 1;
+            Kol.Text = kl.ToString();
+        }
+        private void Plus5_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Armor.Text);
+            st += 1;
+            Armor.Text = st.ToString();
+            int kl = Convert.ToInt32(Kol.Text);
+            kl -= 1;
+            if (kl == 0)
+            {
+                Kol.Text = kl.ToString();
+                Plus4.Visibility = Visibility.Hidden;
+            }
+            else if (kl > 0)
+            {
+                Minus4.Visibility = Visibility.Visible;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void Minus5_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Armor.Text);
+            st -= 1;
+            if (st == 0)
+            {
+                Armor.Text = st.ToString();
+                Minus4.Visibility = Visibility.Hidden;
+            }
+            else if (st > 0)
+            {
+                Plus4.Visibility = Visibility.Visible;
+                Armor.Text = st.ToString();
+            }
+            int kl = Convert.ToInt32(Kol.Text);
+            kl += 1;
+            Kol.Text = kl.ToString();
+        }
+
     }
 }
