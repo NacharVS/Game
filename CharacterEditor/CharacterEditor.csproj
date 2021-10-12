@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewPages\MainViewPages.cs" />
+    <Compile Include="ViewPages\PagesFoundation.cs" />
+    <Page Include="Pages\APage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +69,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Pages\APage.xaml.cs">
+      <DependentUpon>APage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\MPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\MPage.xaml.cs">
+      <DependentUpon>MPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OPage.xaml.cs">
+      <DependentUpon>OPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WPage.xaml.cs">
+      <DependentUpon>WPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -95,13 +125,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewPages\" />
+    <Folder Include="Pages\Res\BackGround\" />
+    <Folder Include="Pages\Res\Top\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pages\Res\icons\Archer.jpg" />
     <Resource Include="Pages\Res\icons\Mage.png" />
     <Resource Include="Pages\Res\icons\Outlaw.png" />
     <Resource Include="Pages\Res\icons\Warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\Res\icons\Archer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
