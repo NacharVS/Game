@@ -18,4 +18,5 @@
         <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
                Stretch="Fill" Source="Res/BackGround/BWarrior.jpg"/>
     </Grid>
+    
 </Page>
