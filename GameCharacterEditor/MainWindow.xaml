@@ -5,44 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button HorizontalAlignment="Left" Height="53" Margin="662,72,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click">
-            <TextBlock x:Name="addPerson" TextWrapping="Wrap" Text="Новый персонаж"/>
-        </Button>
-        <DataGrid x:Name="PersonalTable" HorizontalAlignment="Left" Height="284" Margin="71,99,0,0" VerticalAlignment="Top" Width="464" ItemsSource="{Binding}" AutoGenerateColumns="True" HorizontalGridLinesBrush="DarkGray"
-    RowBackground="LightGray" AlternatingRowBackground="White" RenderTransformOrigin="0.471,0.676" SelectionChanged="Table_SelectionChanged">
-            <DataGrid.Items>
-
-            </DataGrid.Items>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя персонажа" Binding="{Binding Path=nameObject}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Здоровье" Binding="{Binding Path= Health}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Расса" Binding="{Binding Path= Rassa}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Защита от магии" Binding="{Binding Path= ResistMagic}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Ловкость" Binding="{Binding Path= Lov}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Интелект" Binding="{Binding Path= Intelect}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Сила" Binding="{Binding Path= Strench}"></DataGridTextColumn>
-            </DataGrid.Columns>
-
-        </DataGrid>
-
-        <DataGrid x:Name="tableGameTable" HorizontalAlignment="Left" Height="284" Margin="22,103,0,0" VerticalAlignment="Top" Width="562" ItemsSource="{Binding}" AutoGenerateColumns="True" HorizontalGridLinesBrush="DarkGray"
-    RowBackground="LightGray" AlternatingRowBackground="White" Visibility="Hidden">
-            <DataGrid.Items>
-
-            </DataGrid.Items>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя персонажа" Binding="{Binding Path=nameObject}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Здоровье" Binding="{Binding Path= Health}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Расса" Binding="{Binding Path= Rassa}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Защита от магии" Binding="{Binding Path= ResistMagic}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Ловкость" Binding="{Binding Path= Lov}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Интелект" Binding="{Binding Path= Intelect}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Сила" Binding="{Binding Path= Strench}"></DataGridTextColumn>
-            </DataGrid.Columns>
-
-        </DataGrid>
-        <Button x:Name="saveButton" Content="Сохранить" HorizontalAlignment="Left" Margin="662,245,0,0" VerticalAlignment="Top" Width="114" Click="saveButton_Click" Height="62"/>
+        Title="MainWindow" Height="628" Width="1100">
+    <Grid Margin="-12,0,-23,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="169*"/>
+            <ColumnDefinition Width="86*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="resource\Font.jpg" Grid.ColumnSpan="2" Margin="-6,0,6,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="95,192,0,0" TextWrapping="Wrap" Text="Маг" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue"/>
+        <TextBlock HorizontalAlignment="Left" Margin="353,192,0,0" TextWrapping="Wrap" Text="Мечник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Width="138"/>
+        <TextBlock HorizontalAlignment="Left" Margin="686,192,0,0" TextWrapping="Wrap" Text="Лучник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="182,192,0,0" TextWrapping="Wrap" Text="Разбойник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="blue" Grid.Column="1"/>
+        <Image Source="resource\Range.jpg" Margin="325,148,212,-2" MouseLeftButtonDown="perehod_mechnik" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" RenderTransformOrigin="0.535,0.433"/>
+        <Image Source="resource\Mage.jfif" Margin="10,143,494,5" MouseLeftButtonDown="perehod_mag" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="resource\Mill.jpg" Margin="593,175,291,24" Grid.ColumnSpan="2" MouseLeftButtonDown="Perehod_Luchnik" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="resource\Hunter.jpg" Margin="145,160,24,26" Grid.Column="1" MouseLeftButtonDown="Perehod_Razboinik" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
     </Grid>
 </Window>
