@@ -27,7 +27,7 @@ namespace Geroi
 
         private void perehod_mag(object sender, MouseButtonEventArgs e)
         {
-            Window1 wd = new Window1();
+            Class_Mag wd = new Class_Mag();
             wd.Show();
             this.Close();
         }
