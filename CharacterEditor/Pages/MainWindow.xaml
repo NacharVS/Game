@@ -1,0 +1,39 @@
+﻿<Window x:Class="CharacterEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CharacterEditor"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="600" Width="1000" MaxHeight="600" MaxWidth="1000"
+        MinHeight="600" MinWidth="1000" Background="#FF110203"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Name="TopMenu" Grid.Row="0" Grid.ColumnSpan="2">
+            <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="100"/>
+                    <Button Width="100"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid Name="SlideMenu" Grid.Column="0" Grid.Row="1">
+            <Border BorderThickness="1, 0, 0, 1" BorderBrush="DarkGray"/>
+            <Border BorderThickness="0" Background="Black" Opacity="0.6"/>
+            <StackPanel Orientation="Vertical">
+                <Button Height="100"/>
+                <Button Height="100"/>
+                <Button Height="100"/>
+                <Button Height="100"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

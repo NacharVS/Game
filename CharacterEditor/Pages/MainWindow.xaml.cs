@@ -9,11 +9,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace GameCharacterEditor.Pages
+namespace CharacterEditor
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -23,14 +23,6 @@ namespace GameCharacterEditor.Pages
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
         }
     }
 }
