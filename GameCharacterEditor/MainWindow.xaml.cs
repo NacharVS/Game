@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GameCharacterEditor;
 
 namespace GameCharacterEditor
 {
@@ -24,32 +25,35 @@ namespace GameCharacterEditor
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Mage_hero(object sender, MouseButtonEventArgs e)
         {
-            Window1 newForm = new Window1(this);
-            newForm.Show();
+            Window1 wd = new Window1();
+            wd.Show();
+            this.Close();
+        }
+
+        private void Range_hero(object sender, MouseButtonEventArgs e)
+        {
 
         }
 
-        private void BtnCreate_Click(object sender, RoutedEventArgs e)
+        private void Mill_hero(object sender, MouseButtonEventArgs e)
         {
 
         }
 
-        private void Table_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Hunter_hero(object sender, MouseButtonEventArgs e)
         {
 
         }
-        public void AddPersonalGridViewRows(Person Warior)
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
         {
-            PersonalTable.Items.Add(Warior);
-            PersonalTable.Items.Refresh();  
+            Mouse.OverrideCursor = Cursors.Hand;
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e)
+        private void Image_MouseLeave(object sender, MouseEventArgs e)
         {
-
+            Mouse.OverrideCursor = Cursors.Arrow;
         }
     }
 }

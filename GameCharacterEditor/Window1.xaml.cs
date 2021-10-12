@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GameCharacterEditor;
 
 namespace GameCharacterEditor
 {
@@ -17,37 +18,137 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class Window1 : Window
     {
-        MainWindow mw;
-        public Window1(MainWindow mwf)
+        public Window1()
         {
             InitializeComponent();
-            mw = mwf;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
         }
 
-        private void createButton_Click(object sender, RoutedEventArgs e)
+        private void Image_MouseLeave1(object sender, MouseEventArgs e)
         {
-            bool right = true;
-            if (nameObject.Text == "" || nameObject.Text == "" || Health.Text == "" || Rassa.Text == "" || ResistMagic.Text == "" || Convert.ToInt32(Lov.Text) < 1 || Convert.ToInt32(Intelect.Text) < 1)
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void Image_MouseEnter1(object sender, MouseEventArgs e)
+        {
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void Plus1_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Strenght.Text);
+            st += 1;
+            Strenght.Text = st.ToString();
+            int kl = Convert.ToInt32(Kol.Text);
+            kl -= 1;
+            if (kl == 0)
             {
-                right = false;
-                MessageBox.Show("Введенны неверные данные");
-
+                Kol.Text = kl.ToString();
+                Plus1.Visibility = Visibility.Hidden;
             }
-            if (right)
+            else if (kl > 0)
             {
-                mw.AddPersonalGridViewRows(new Person(nameObject.Text, Health.Text, Rassa.Text, ResistMagic.Text, Lov.Text, Intelect.Text, Convert.ToInt32(Strench.Text)));
-                this.addWindow.Close();
+                Minus1.Visibility = Visibility.Visible;
+                Kol.Text = kl.ToString();
             }
         }
 
-        private void endAddButton_Click(object sender, RoutedEventArgs e)
+        private void Minus1_Click(object sender, RoutedEventArgs e)
         {
-            this.addWindow.Close();
+            int st = Convert.ToInt32(Strenght.Text);
+            st -= 1;
+            if (st == 0)
+            {
+                Strenght.Text = st.ToString();
+                Minus1.Visibility = Visibility.Hidden;
+            }
+            else if (st > 0)
+            {
+                Plus1.Visibility = Visibility.Visible;
+                Strenght.Text = st.ToString();
+            }
+            int kl = Convert.ToInt32(Kol.Text);
+            kl += 1;
+            Kol.Text = kl.ToString();
+        }
+        private void Plus2_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Agility.Text);
+            st += 1;
+            Agility.Text = st.ToString();
+            int kl = Convert.ToInt32(Kol.Text);
+            kl -= 1;
+            if (kl == 0)
+            {
+                Kol.Text = kl.ToString();
+                Plus2.Visibility = Visibility.Hidden;
+            }
+            else if (kl > 0)
+            {
+                Minus2.Visibility = Visibility.Visible;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void Minus2_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Agility.Text);
+            st -= 1;
+            if (st == 0)
+            {
+                Agility.Text = st.ToString();
+                Minus2.Visibility = Visibility.Hidden;
+            }
+            else if (st > 0)
+            {
+                Plus2.Visibility = Visibility.Visible;
+                Agility.Text = st.ToString();
+            }
+            int kl = Convert.ToInt32(Kol.Text);
+            kl += 1;
+            Kol.Text = kl.ToString();
+        }
+        private void Plus3_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Intelligence.Text);
+            st += 1;
+            Intelligence.Text = st.ToString();
+            int kl = Convert.ToInt32(Kol.Text);
+            kl -= 1;
+            if (kl == 0)
+            {
+                Kol.Text = kl.ToString();
+                Plus3.Visibility = Visibility.Hidden;
+            }
+            else if (kl > 0)
+            {
+                Minus3.Visibility = Visibility.Visible;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void Minus3_Click(object sender, RoutedEventArgs e)
+        {
+            int st = Convert.ToInt32(Intelligence.Text);
+            st -= 1;
+            if (st == 0)
+            {
+                Intelligence.Text = st.ToString();
+                Minus3.Visibility = Visibility.Hidden;
+            }
+            else if (st > 0)
+            {
+                Plus3.Visibility = Visibility.Visible;
+                Intelligence.Text = st.ToString();
+            }
+            int kl = Convert.ToInt32(Kol.Text);
+            kl += 1;
+            Kol.Text = kl.ToString();
         }
     }
 }
