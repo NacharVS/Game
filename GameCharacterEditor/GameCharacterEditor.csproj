@@ -7,7 +7,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="resource\" />
+    <None Remove="Font.jpg" />
+    <None Remove="Hunter.jpg" />
+    <None Remove="kristal.jpg" />
+    <None Remove="Mage.jpg" />
+    <None Remove="Mill.jpg" />
+    <None Remove="Range.jpg" />
+    <None Remove="Rapier.png" />
+    <None Remove="resource\BattleFury.jpg" />
+    <None Remove="resource\Font.jpg" />
+    <None Remove="resource\Font1.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Font.jpg" />
+    <Resource Include="Hunter.jpg" />
+    <Resource Include="kristal.jpg" />
+    <Resource Include="Mage.jpg" />
+    <Resource Include="Mill.jpg" />
+    <Resource Include="Range.jpg" />
+    <Resource Include="Rapier.png" />
+    <Resource Include="resource\BattleFury.jpg" />
+    <Resource Include="resource\Font.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resource\Font1.jpeg" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,7 @@
         Title="Window2" Height="638.474" Width="1086.363">
     <Grid>
         <Image Source="resource\Font1.jpeg" Margin="-195,-51,-194,-51"></Image>
-        <Image Source="resource\Rapier.png" Margin="0,413,939,100" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
+        <Image Source="/Rapier.png" Margin="0,413,939,100" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -18,7 +18,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBlock HorizontalAlignment="Left" Margin="28,499,0,0" TextWrapping="Wrap" Text="Назад" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="Red"/>
         <Image HorizontalAlignment="Left" Height="352" Margin="573,276,0,0" VerticalAlignment="Top" Width="440" Source="resource/Range.jpg" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -29,14 +28,14 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="73,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="10" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="73,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="40" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="94,45,0,0" TextWrapping="Wrap" Text="Сила" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="285,45,0,0" TextWrapping="Wrap" Text="Ловкость" VerticalAlignment="Top" Height="68" Width="162" FontSize="36" Foreground="#FF80FF00"/>
         <TextBlock HorizontalAlignment="Left" Margin="543,45,0,0" TextWrapping="Wrap" Text="Интеллект" VerticalAlignment="Top" Height="68" Width="180" FontSize="36" Foreground="#FF00B9FF"/>
-        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="285,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" TextAlignment="Center" FontSize="36" Text="15" IsEnabled="False"/>
-        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="549,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" Text="5" IsEnabled="False"/>
-        <TextBox x:Name="Kol" HorizontalAlignment="Left" Height="46" Margin="72,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="20" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,276,0,0" TextWrapping="Wrap" Text="Кол-во Очков" VerticalAlignment="Top" Height="99" Width="258" FontSize="36" Foreground="Purple"/>
+        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="285,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" TextAlignment="Center" FontSize="36" Text="110" IsEnabled="False"/>
+        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="549,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" Text="25" IsEnabled="False"/>
+        <TextBox x:Name="Kol" HorizontalAlignment="Left" Height="46" Margin="857,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="40" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="793,45,0,0" TextWrapping="Wrap" Text="Очки прокачки" VerticalAlignment="Top" Height="99" Width="258" FontSize="36" Foreground="Purple"/>
         <Button x:Name="Minus1" Content="-" HorizontalAlignment="Left" Margin="73,185,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus1_Click"/>
         <Button x:Name="Plus1" Content="+" HorizontalAlignment="Left" Margin="154,185,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus1_Click"/>
         <Button x:Name="Minus2" Content="-" HorizontalAlignment="Left" Margin="285,185,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus2_Click"/>
