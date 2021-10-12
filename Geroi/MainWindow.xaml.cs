@@ -34,21 +34,21 @@ namespace Geroi
 
         private void perehod_mechnik(object sender, MouseButtonEventArgs e)
         {
-            Window2 wd = new Window2();
+            Class_Mechnik wd = new Class_Mechnik();
             wd.Show();
             this.Close();
         }
 
         private void Perehod_Luchnik(object sender, MouseButtonEventArgs e)
         {
-            Window3 wd = new Window3();
+            Class_Luchnik wd = new Class_Luchnik();
             wd.Show();
             this.Close();
         }
 
         private void Perehod_Razboinik(object sender, MouseButtonEventArgs e)
         {
-            Window4 wd = new Window4();
+            Class_Razboinik wd = new Class_Razboinik();
             wd.Show();
             this.Close();
         }

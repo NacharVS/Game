@@ -8,12 +8,11 @@ using System.Windows.Input;
 
 namespace Geroi
 {
-    public partial class Class_Mag
+    public partial class Class_Luchnik
     {
-        public Class_Mag()
+        public Class_Luchnik()
         {
             InitializeComponent();
-
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -30,7 +29,6 @@ namespace Geroi
         {
             Mouse.OverrideCursor = Cursors.Hand;
         }
-
         private void Plus1_Click(object sender, RoutedEventArgs e)
         {
             int st = Convert.ToInt32(Strenght.Text);

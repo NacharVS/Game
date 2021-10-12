@@ -55,7 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class_Luchnik.cs" />
     <Compile Include="Class_Mag.cs" />
+    <Compile Include="Class_Mechnik.cs" />
+    <Compile Include="Class_Razboinik.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
