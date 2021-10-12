@@ -1,4 +1,6 @@
-﻿namespace GameCharacterEditor
+﻿using System.Collections.Generic;
+
+namespace GameCharacterEditor
 {
     class Unit
     {
@@ -15,16 +17,19 @@
         protected double mDefence;
         protected double pAttack;
         protected double mAttack;
+        Inventar inventar = new Inventar();
+
 
         public double Hp { get => hp; set => hp = value; }
+        public string Name { get => name; set => name = value; }
+        public double Extra { get => extra; set => extra = value; }
         public double Strength { get => strength; set => strength = value; }
         public double Dexterity { get => dexterity; set => dexterity = value; }
         public double Intelegence { get => intelegence; set => intelegence = value; }
-        public double Constitution { get => constitution; set => constitution = value; }
-        public double Extra { get => extra; set => extra = value; }
         public double AttackSpeed { get => attackSpeed; set => attackSpeed = value; }
+        public Inventar Inventar { get => inventar; private set => inventar = value; }
+        public double Constitution { get => constitution; set => constitution = value; }
         public double WalkingSpeed { get => walkingSpeed; set => walkingSpeed = value; }
-        public string Name { get => name; set => name = value; }
 
         public Unit(double strength, double dexterity, double constitution, double intelegence)
         {
@@ -40,6 +45,7 @@
             mDefence += intelegence * 5;
             pDefence += constitution * 5;
             pAttack = strength * 5 > 20 ? strength * 5 : extra;
+            inventar.FillAllItemsList();
         }
 
         public void PhysAttack()

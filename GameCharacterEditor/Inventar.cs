@@ -8,15 +8,17 @@ namespace GameCharacterEditor
     {
         private List<Item> allItems = new List<Item>();
         public List<Item> AllItems { get => allItems; private set => allItems = value; }
+        private List<Item> existItem = new List<Item>();
+        public List<Item> ExistItem { get => existItem; private set => existItem = value; }
 
-        public void Add(List<Item> existItems, int index)
+        public void Add(int index)
         {
-            existItems.Add(allItems[index]);
+            existItem.Add(allItems[index]);
         }
 
-        public void Delete(List<Item> existItems, int index)
+        public void Delete(int index)
         {
-            existItems.Remove(allItems[index]);
+            existItem.Remove(allItems[index]);
         }
 
         public void FillAllItemsList()

@@ -11,7 +11,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GameCharacterEditor
@@ -21,6 +20,9 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Unit> unitLst = new List<Unit>();
+        int x = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -60,16 +62,17 @@ namespace GameCharacterEditor
             //}
         }
 
-        private void GetUnitInfo(Unit unit)
+        private void GetUnitInfo(int index)
         {
-            txtStrength.Text = unit.Strength.ToString();
-            txtDexterity.Text = unit.Dexterity.ToString();
-            txtConstitution.Text = unit.Constitution.ToString();
-            txtIntelegence.Text = unit.Intelegence.ToString();
-            txtExtra.Text = unit.Extra.ToString();
-            txtAttackSpeed.Text = unit.AttackSpeed.ToString();
-            txtWalkingSpeed.Text = unit.WalkingSpeed.ToString();
-            txthp.Text = unit.Hp.ToString();
+            txtStrength.Text = unitLst[index].Strength.ToString();
+            txtDexterity.Text = unitLst[index].Dexterity.ToString();
+            txtConstitution.Text = unitLst[index].Constitution.ToString();
+            txtIntelegence.Text = unitLst[index].Intelegence.ToString();
+            txtExtra.Text = unitLst[index].Extra.ToString();
+            txtAttackSpeed.Text = unitLst[index].AttackSpeed.ToString();
+            txtWalkingSpeed.Text = unitLst[index].WalkingSpeed.ToString();
+            txthp.Text = unitLst[index].Hp.ToString();
+            txtName.Text = unitLst[index].Name.ToString();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -79,19 +82,36 @@ namespace GameCharacterEditor
                 case 0:
                     Warrior warrior = new Warrior(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
                     MessageBox.Show($"Unit is created {warrior.Name}");
-                    GetUnitInfo(warrior);
+                    unitLst.Add(warrior);
+                    GetUnitInfo(unitLst.Count - 1);
+                    x = unitLst.Count;
                     break;
                 case 1:
                     Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
                     MessageBox.Show($"Unit is created {rogue.Name}");
-                    GetUnitInfo(rogue);
+                    unitLst.Add(rogue);
+                    GetUnitInfo(unitLst.Count - 1);
+                    x = unitLst.Count;
                     break;
                 case 2:
                     Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
                     MessageBox.Show($"Unit is created {sorcerer.Name}");
-                    GetUnitInfo(sorcerer);
+                    unitLst.Add(sorcerer);
+                    GetUnitInfo(unitLst.Count - 1);
+                    x = unitLst.Count;
                     break;
             }
+        }
+
+        private void Render(int index)
+        {
+            List<string> itemLst = new List<string>();
+            foreach (var item in unitLst[index].Inventar.ExistItem)
+            {
+                itemLst.Add(item.ToString().Substring(20) + "\n");
+            }
+
+            cmbBoxItem.ItemsSource = itemLst;
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -99,11 +119,52 @@ namespace GameCharacterEditor
             Inventar inventar = new Inventar();
             inventar.FillAllItemsList();
             List<string> lst = new List<string>();
+
             foreach (var item in inventar.AllItems)
             {
                 lst.Add(item.ToString().Substring(20) + "\n");
             }
             cmbBoxInventar.ItemsSource = lst;
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            if (x + 1 <= unitLst.Count - 1)
+            {
+                x++;
+                GetUnitInfo(x);
+            }
+            else
+            {
+                x = 0;
+                GetUnitInfo(x);
+            }
+        }
+
+        private void Prev_Click(object sender, RoutedEventArgs e)
+        {
+            if (x - 1 <= 0)
+            {
+                x--;
+                GetUnitInfo(x);
+            }
+            else
+            {
+                x = unitLst.Count - 1;
+                GetUnitInfo(x);
+            }
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex);
+            Render(x);
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            unitLst[x].Inventar.Delete(cmbBoxItem.SelectedIndex);
+            Render(x);
         }
     }
 }
