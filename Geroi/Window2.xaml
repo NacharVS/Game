@@ -43,5 +43,20 @@
         <Button x:Name="Plus2" Content="+" HorizontalAlignment="Left" Margin="705,352,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus2_Click"/>
         <Button x:Name="Minus3" Content="-" HorizontalAlignment="Left" Margin="486,476,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus3_Click"/>
         <Button x:Name="Plus3" Content="+" HorizontalAlignment="Left" Margin="705,476,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus3_Click"/>
+        <Border Padding="10" Margin="868,0,0,397" BorderThickness="1" BorderBrush="Gray"
+        Height="210" Width="210">
+            <Image Source="{Binding SelectedItem.Source, ElementName=ImageChooser}"/>
+        </Border>
+        <ListBox HorizontalAlignment="Center" x:Name="ImageChooser" BorderThickness="0" Margin="280,0,632,457" Visibility="Visible" Opacity="1" Background="#FF9C1D1D">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <Image ToolTip="+2 к Интеллекту" Source="resource/Manta.png" Width="64" Margin="4,0" Opacity="2"/>
+            <Image ToolTip="+2 к Силе" Source="resource/belt.png" Width="64" Margin="4"/>
+            <Image ToolTip="+2 к Ловкости" Source="resource/blade.png" Width="64" Margin="4"/>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="467,0,0,0" TextWrapping="Wrap" Text="Начальный Предмет" VerticalAlignment="Top" Height="101" Width="199" FontSize="36" Foreground="Red"/>
     </Grid>
 </Window>
