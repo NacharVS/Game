@@ -39,5 +39,6 @@ namespace GameCharacterEditor
                 persim.Source = image;
             }
         }
+
     }
 }
