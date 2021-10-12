@@ -7,6 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <ComboBox x:Name="cmbbox" HorizontalAlignment="Left" Margin="32,27,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Warrior"/>
+            <ComboBoxItem Content="Rogue"/>
+            <ComboBoxItem Content="Sorcerer"/>
+        </ComboBox>
+        <TextBox x:Name="txtStrength" HorizontalAlignment="Left" Margin="33,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" InputScope="Number"/>
+        <TextBox x:Name="txtIntelegence" HorizontalAlignment="Left" Margin="35,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Height="22"/>
+        <TextBox x:Name="txtConstitution" HorizontalAlignment="Left" Margin="202,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtExtra" IsReadOnly="True" HorizontalAlignment="Left" Margin="37,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="20" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="txtWalkingSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="38,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="txtAttackSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="202,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+        <Button Content="P.Attack" HorizontalAlignment="Left" Margin="33,298,0,0" VerticalAlignment="Top" Height="29" Width="89" Click="Button_Click"/>
+        <Button Content="M.Attack" HorizontalAlignment="Left" Margin="185,298,0,0" VerticalAlignment="Top" Height="29" Width="89" Click="Button_Click_2"/>
+        <Button Content="P.Defence" HorizontalAlignment="Left" Margin="33,354,0,0" VerticalAlignment="Top" Height="29" Width="89" Click="Button_Click_1"/>
+        <Button Content="M.Defence" HorizontalAlignment="Left" Margin="185,354,0,0" VerticalAlignment="Top" Height="29" Width="89"/>
+        <Label Content="Strength&#xD;&#xA;" HorizontalAlignment="Left" Margin="34,60,0,0" VerticalAlignment="Top" Width="118" Height="27"/>
+        <Label Content="Dexterity&#xD;&#xA;" HorizontalAlignment="Left" Margin="196,61,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="intelegence&#xD;&#xA;" HorizontalAlignment="Left" Margin="34,104,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.763,0.695" Width="119" Height="25"/>
+        <Label Content=" Constitution" HorizontalAlignment="Left" Margin="198,106,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Extra" HorizontalAlignment="Left" Margin="34,163,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label Content="AttackSpeed" HorizontalAlignment="Left" Margin="196,170,0,0" VerticalAlignment="Top" Width="127"/>
+        <Label Content="WalkingSpeed" HorizontalAlignment="Left" Margin="36,222,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDexterity" HorizontalAlignment="Left" Height="20" Margin="201,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+        <Button Content="Coздать" HorizontalAlignment="Left" Margin="347,305,0,0" VerticalAlignment="Top" Height="68" Width="168" Click="Button_Click_3"/>
+        <Image HorizontalAlignment="Left" Height="223" Margin="565,41,0,0" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txthp" IsReadOnly="True"  HorizontalAlignment="Left" Margin="202,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+        <Label Content="HP" HorizontalAlignment="Left" Margin="201,218,0,0" VerticalAlignment="Top" Height="27" Width="121"/>
     </Grid>
 </Window>

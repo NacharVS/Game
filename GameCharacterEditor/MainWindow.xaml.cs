@@ -24,5 +24,73 @@ namespace GameCharacterEditor
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //switch (cmbbox.SelectedIndex)
+            //{
+            //    case 0:
+            //        Warrior warior = new Warrior();
+            //        GetUnitInfo(warior);
+            //        break;
+            //    case 1:
+            //        Rogue rogue = new Rogue();
+            //        GetUnitInfo(rogue);
+            //        break;
+            //    case 2:
+            //        Sorcerer sorcerer = new Sorcerer();
+            //        GetUnitInfo(sorcerer);
+            //        break;
+            //}
+        }
+
+        private void GetUnitInfo(Unit unit)
+        {
+            txtStrength.Text = unit.Strength.ToString();
+            txtDexterity.Text = unit.Dexterity.ToString();
+            txtConstitution.Text = unit.Constitution.ToString();
+            txtIntelegence.Text = unit.Intelegence.ToString();
+            txtExtra.Text = unit.Extra.ToString();
+            txtAttackSpeed.Text = unit.AttackSpeed.ToString();
+            txtWalkingSpeed.Text = unit.WalkingSpeed.ToString();
+            txthp.Text = unit.Hp.ToString();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            switch (cmbbox.SelectedIndex)
+            {
+                case 0:
+                    Warrior warrior = new Warrior(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
+                    MessageBox.Show($"Unit is created {warrior.Name}");
+                    GetUnitInfo(warrior);
+                    break;
+                case 1:
+                    Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
+                    MessageBox.Show($"Unit is created {rogue.Name}");
+                    GetUnitInfo(rogue);
+                    break;
+                case 2:
+                    Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
+                    MessageBox.Show($"Unit is created {sorcerer.Name}");
+                    GetUnitInfo(sorcerer);
+                    break;
+            }
+        }
     }
 }
