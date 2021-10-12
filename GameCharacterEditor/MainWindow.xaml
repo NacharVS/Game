@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <Label Content="Create person" Margin="243,10,272,353" FontSize="36" Grid.Column="1"/>
         <TextBox Name="tb" Grid.Column="1" Margin="545,97,78,299"/>
-        <ListBox Name="lb" SelectionChanged="PrintText" SelectionMode="Single" Margin="243,71,272,264" FontSize="14" Grid.Column="1">
+        <ListBox Name="lb" SelectionChanged="PrintText" SelectionMode="Single" Margin="220,70,295,264" FontSize="14" Grid.Column="1">
             <ListBoxItem Selected="ListBoxItem_Selected">Soldier</ListBoxItem>
             <ListBoxItem Selected="ListBoxItem_Selected_1">Wizard</ListBoxItem>
             <ListBoxItem Selected="ListBoxItem_Selected_2">Robber</ListBoxItem>
