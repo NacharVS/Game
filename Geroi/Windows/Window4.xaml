@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geroi"
         mc:Ignorable="d"
-        Title="Window4" Height="638.474" Width="1086.363">
+        Title="Window4" Height="638.474" Width="1086.363" ResizeMode="NoResize">
     <Grid>
         <Image Source="/Geroi;component/resource\fon_classsa.jpg"></Image>
         <Image Source="/Geroi;component/resource\strelka.png" Margin="2,-25,873,499" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
