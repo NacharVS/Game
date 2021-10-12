@@ -61,7 +61,11 @@ namespace GameCharacterEditor
                 }
             }
 
-            MessageBox.Show("Персонаж создан");
+            if (radBtn_Rogue.IsChecked == false & radBtn_Warrior.IsChecked == false & radBtn_Witch.IsChecked == false)
+            {
+                MessageBox.Show("Выберите класс персонажа");
+            }
+
         }
     }
 

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
+        Title="MainWindow" Height="700" Width="800">
     <Grid x:Name="Fon" Margin="0,4,0,-6">
-        <Button x:Name="Create_character" Content="Создать персонажа" HorizontalAlignment="Left" Margin="540,445,0,0" VerticalAlignment="Top" Width="132" Height="22" Click="Create_character_Click"/>
+        <Button x:Name="Create_character" Content="Создать персонажа" HorizontalAlignment="Left" Margin="538,310,0,0" VerticalAlignment="Top" Width="132" Height="22" Click="Create_character_Click"/>
         <Label x:Name="Choose_class" Content="Выберите класс персонажа" HorizontalAlignment="Left" Margin="90,35,0,0" VerticalAlignment="Top"/>
-        <Image x:Name="image_character" HorizontalAlignment="Left" Height="380" Margin="470,35,0,0" VerticalAlignment="Top" Width="260"/>
+        <Image x:Name="image_character" HorizontalAlignment="Left" Height="250" Margin="470,35,0,0" VerticalAlignment="Top" Width="260"/>
         <Label x:Name="name_character" Content="Введите имя персонажа" HorizontalAlignment="Left" Margin="100,130,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textb_name_character" HorizontalAlignment="Left" Height="23" Margin="75,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197"/>
         <Label x:Name="character_characteristics" Content="Характеристики персонажа" HorizontalAlignment="Left" Margin="90,232,0,0" VerticalAlignment="Top"/>
@@ -23,11 +23,23 @@
         <TextBox x:Name="textb_speed" HorizontalAlignment="Left" Height="23" Margin="230,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textb_damage" HorizontalAlignment="Left" Height="23" Margin="45,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="HP" Content="HP" HorizontalAlignment="Left" Margin="45,274,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Protection" Content="Защита" HorizontalAlignment="Left" Margin="230,274,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Speed" Content="Скорость" HorizontalAlignment="Left" Margin="230,389,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Attack_magic" Content="Магическая атака" HorizontalAlignment="Left" Margin="230,331,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Damage" Content="Урон" HorizontalAlignment="Left" Margin="45,389,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Attack" Content="Атака" HorizontalAlignment="Left" Margin="45,331,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Mana" Content="Мана" HorizontalAlignment="Left" Margin="230,274,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="attack_Speed" Content="Скорость атаки" HorizontalAlignment="Left" Margin="230,389,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Attack_magic" Content="маг. Атака" HorizontalAlignment="Left" Margin="230,331,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="walk_Speed" Content="Скорость ходьбы" HorizontalAlignment="Left" Margin="45,389,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="p__Attack" Content="физ. Атака" HorizontalAlignment="Left" Margin="45,331,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_mResist" HorizontalAlignment="Left" Margin="230,582,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_pResist" HorizontalAlignment="Left" Margin="45,582,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_constitution" HorizontalAlignment="Left" Margin="230,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_dexterity" HorizontalAlignment="Left" Margin="230,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_intelligent" HorizontalAlignment="Left" Margin="46,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_strenght" HorizontalAlignment="Left" Margin="45,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Strenght" Content="Сила" HorizontalAlignment="Left" Margin="45,443,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Constitution" Content="Телосложение" HorizontalAlignment="Left" Margin="230,497,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="m_Resist" Content="маг. Сопротивление" HorizontalAlignment="Left" Margin="230,551,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="p__Resist" Content="физ. Сопростивление" HorizontalAlignment="Left" Margin="45,551,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Intelligently" Content="Интелект" HorizontalAlignment="Left" Margin="46,497,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Dexterity" Content="Ловкость" HorizontalAlignment="Left" Margin="230,443,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
