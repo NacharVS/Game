@@ -6,4 +6,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Diablo-Immortal-Update-Diablo-III-Blizzard-News.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Diablo-Immortal-Update-Diablo-III-Blizzard-News.jpg" />
+  </ItemGroup>
+
 </Project>

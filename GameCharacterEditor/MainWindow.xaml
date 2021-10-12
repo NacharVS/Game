@@ -7,16 +7,41 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <InkCanvas Background="LightCyan" Margin="25,79,417,90" RenderTransformOrigin="0.5,0.5" >
-            <InkCanvas.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.052"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </InkCanvas.RenderTransform>
-        </InkCanvas>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="Diablo-Immortal-Update-Diablo-III-Blizzard-News.jpg"/>
+        </Grid.Background>
+        <Button Content="Rogue" HorizontalAlignment="Left" Margin="20,9,0,0" VerticalAlignment="Top" Height="20" Width="90" Click="Button_Click"/>
+        <Button Content="Warrior" HorizontalAlignment="Left" Margin="125,9,0,0" VerticalAlignment="Top" Height="20" Width="90" Click="Button_Click_1"/>
+        <Button Content="Sorcecer" HorizontalAlignment="Left" Margin="230,9,0,0" VerticalAlignment="Top" Width="90" Height="20" Click="Button_Click_2"/>
+        <Label Content="HP:" HorizontalAlignment="Left" Margin="20,109,0,0" VerticalAlignment="Top" FontSize="14" Background="White"/>
+        <Label Content="Mana:" HorizontalAlignment="Left" Margin="20,154,0,0" VerticalAlignment="Top" Background="White"/>
+        <Label Content="Strength" HorizontalAlignment="Left" Margin="20,233,0,0" VerticalAlignment="Top" Width="60" Background="White"/>
+        <Label Content="Dexterity" HorizontalAlignment="Left" Margin="110,233,0,0" VerticalAlignment="Top" Width="60" Background="White"/>
+        <Label Content="Intellect" HorizontalAlignment="Left" Margin="200,233,0,0" VerticalAlignment="Top" Background="White" Width="60"/>
+        <Label Content="Physique" HorizontalAlignment="Left" Margin="110,312,0,0" VerticalAlignment="Top" Width="60" Background="White"/>
+        <Label Content="Attack Speed" HorizontalAlignment="Left" Margin="240,312,0,0" VerticalAlignment="Top" Width="80" Background="White" RenderTransformOrigin="0.5,0.5"></Label>
+        <Label Content="Move Speed" HorizontalAlignment="Left" Margin="295,233,0,0" VerticalAlignment="Top" Width="80" Background="White"/>
+        <Label Content="Physique Attack" HorizontalAlignment="Left" Margin="400,233,0,0" VerticalAlignment="Top" Width="95" Background="White"/>
+        <Label Content="Magic Attack" HorizontalAlignment="Left" Margin="400,312,0,0" VerticalAlignment="Top" Width="95" Background="White"/>
+        <Label Content="Armor" HorizontalAlignment="Left" Margin="20,312,0,0" VerticalAlignment="Top" Width="60" Background="White"/>
+        <TextBox x:Name="TbStrength" HorizontalAlignment="Left" Margin="20,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbMgAttack" HorizontalAlignment="Left" Margin="418,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbAttackSpeed" HorizontalAlignment="Left" Margin="250,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbMoveSpeed" HorizontalAlignment="Left" Margin="305,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbPhAttack" HorizontalAlignment="Left" Margin="418,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbIntellect" HorizontalAlignment="Left" Margin="200,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbPhysique" HorizontalAlignment="Left" Margin="110,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbDexterity" HorizontalAlignment="Left" Margin="110,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbArmor" HorizontalAlignment="Left" Margin="20,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbHP" HorizontalAlignment="Left" Margin="80,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <TextBox x:Name="TbMana" HorizontalAlignment="Left" Margin="80,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsReadOnly="True"/>
+        <Label Content="WE HAVE" HorizontalAlignment="Left" Margin="514,253,0,0" VerticalAlignment="Top" Width="72" Foreground="Red" FontSize="16" Height="29" FontFamily="Tw Cen MT Condensed Extra Bold"/>
+        <TextBox x:Name="TbExtraPoints" HorizontalAlignment="Left" Margin="525,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="20"/>
+        <Label Content="STARS" HorizontalAlignment="Left" Margin="526,312,0,0" VerticalAlignment="Top" Foreground="Red" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="16"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="390,275,0,0" VerticalAlignment="Top" Width="20" Click="Button_Click_3"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="485,276,0,0" VerticalAlignment="Top" Width="20" Click="Button_Click_4"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="485,355,0,0" VerticalAlignment="Top" Width="20"/>
+        <Button Content="-" HorizontalAlignment="Center" Margin="0,356,0,0" VerticalAlignment="Top" Width="20"/>
+
     </Grid>
 </Window>
