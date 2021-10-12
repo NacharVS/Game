@@ -246,7 +246,13 @@ namespace GameCharacterEditor
 
         private void PickButton_Click(object sender, RoutedEventArgs e)
         {
-            ChooseWarrior.IsEnabled = ChooseRogue.IsEnabled = ChooseSorcerer.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_up.IsEnabled = MA_down.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = PR_down.IsEnabled = PR_up.IsEnabled = false;
+
+        }
+
+        private void Inventory_Click(object sender, RoutedEventArgs e)
+        {
+            InventoryWindow inv = new InventoryWindow();
+            inv.Show();
         }
     }
 }

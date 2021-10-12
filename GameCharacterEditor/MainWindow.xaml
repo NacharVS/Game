@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="RPGame" Height="600" Width="800" Background="#FF891010">
+        Title="RPGame" Height="700" Width="1100" Background="#FF891010">
 
     <Border Padding="10">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel>
                 <TextBlock Text="Choose your Character" HorizontalAlignment="Center" FontSize="20" Margin="0 10 0 15"/>
                 <Grid x:Name="ChooseCharacter" Margin="0 0 0 15">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <Button x:Name="ChooseWarrior" Content="Warrior" Grid.Column="0" Width="100" Height="30" Click="ChooseWarrior_Click"/>
@@ -29,10 +29,10 @@
                 <TextBlock Text="Stats" Margin="10 15 0 10" FontSize="18" HorizontalAlignment="Center"/>
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -64,12 +64,12 @@
 
                 <Grid Margin="0 15 0 0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
@@ -111,10 +111,28 @@
                     <TextBlock Text="Movement speed" Grid.Row="5" Grid.Column="3" Margin="0 20 5 5"/>
                     <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="0 5 20  15"/>
 
+                    <Button x:Name="Inventory" Content="Inventory" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Width="60" Height="20" Margin="10 50 10 10" FontSize="10" Click="Inventory_Click"/>
                     <Button x:Name="PickButton" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
                 </Grid>
             </StackPanel>
-            
+            <Grid  Grid.Column="1" Width="700" Margin="10">
+                <DataGrid x:Name="CharacterLust">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Character"/>
+                        <DataGridTextColumn Header="Health"/>
+                        <DataGridTextColumn Header="Strenght"/>
+                        <DataGridTextColumn Header="Dexterity"/>
+                        <DataGridTextColumn Header="Intelligence"/>
+                        <DataGridTextColumn Header="Consitution"/>
+                        <DataGridTextColumn Header="P Attack"/>
+                        <DataGridTextColumn Header="M Attack"/>
+                        <DataGridTextColumn Header="P Resist"/>
+                        <DataGridTextColumn Header="M Resist"/>
+                        <DataGridTextColumn Header="A Speed"/>
+                        <DataGridTextColumn Header="M Speed"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </Grid>
     </Border> 
 
