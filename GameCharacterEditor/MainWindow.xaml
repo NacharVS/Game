@@ -30,9 +30,16 @@
         <Label Content="AttackSpeed" HorizontalAlignment="Left" Margin="196,170,0,0" VerticalAlignment="Top" Width="127"/>
         <Label Content="WalkingSpeed" HorizontalAlignment="Left" Margin="36,222,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtDexterity" HorizontalAlignment="Left" Height="20" Margin="201,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <Button Content="Coздать" HorizontalAlignment="Left" Margin="347,305,0,0" VerticalAlignment="Top" Height="68" Width="168" Click="Button_Click_3"/>
-        <Image HorizontalAlignment="Left" Height="223" Margin="565,41,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Coздать" HorizontalAlignment="Left" Margin="313,300,0,0" VerticalAlignment="Top" Height="68" Width="168" Click="Button_Click_3"/>
+        <Image HorizontalAlignment="Left" Height="226" Margin="565,41,0,0" VerticalAlignment="Top" Width="175"/>
         <TextBox x:Name="txthp" IsReadOnly="True"  HorizontalAlignment="Left" Margin="202,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
         <Label Content="HP" HorizontalAlignment="Left" Margin="201,218,0,0" VerticalAlignment="Top" Height="27" Width="121"/>
+        <Button Content="Inventar" HorizontalAlignment="Left" Margin="592,349,0,0" VerticalAlignment="Top" Height="34" Width="157" Click="Button_Click_4">
+
+        </Button>
+
+        <ComboBox x:Name="cmbBoxInventar" HorizontalAlignment="Left" Margin="331,33,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="All things&#xD;&#xA;" HorizontalAlignment="Left" Margin="327,8,0,0" VerticalAlignment="Top" Width="128" Height="25"/>
+        <Button Content="Добавить в свой инвентарь" HorizontalAlignment="Left" Margin="329,59,0,0" VerticalAlignment="Top" Height="37" Width="123"/>
     </Grid>
 </Window>

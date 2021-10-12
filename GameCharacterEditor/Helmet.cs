@@ -4,34 +4,33 @@ using System.Text;
 
 namespace GameCharacterEditor
 {
-    class BodyArmor : Item
+    class Helmet : Item
     {
         protected double hp;
         public double Hp { get => hp; set => hp = value; }
     }
 
-    class Robe : BodyArmor
+    class RobeHelmet : Helmet
     {
-        public Robe()
+        public RobeHelmet()
         {
             hp = 50;
         }
     }
 
-    class Leather : BodyArmor
+    class LeatherHelmet : Helmet
     {
-        public Leather()
+        public LeatherHelmet()
         {
             hp = 100;
         }
     }
 
-    class Hecoy : BodyArmor
+    class HoceyHelmet : Helmet
     {
-        public Hecoy()
+        public HoceyHelmet()
         {
             hp = 200;
         }
-
     }
 }

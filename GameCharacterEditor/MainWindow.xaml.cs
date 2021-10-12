@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Navigation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -91,6 +92,18 @@ namespace GameCharacterEditor
                     GetUnitInfo(sorcerer);
                     break;
             }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Inventar inventar = new Inventar();
+            inventar.FillAllItemsList();
+            List<string> lst = new List<string>();
+            foreach (var item in inventar.AllItems)
+            {
+                lst.Add(item.ToString().Substring(20) + "\n");
+            }
+            cmbBoxInventar.ItemsSource = lst;
         }
     }
 }
