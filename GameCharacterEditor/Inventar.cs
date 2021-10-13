@@ -23,14 +23,19 @@ namespace GameCharacterEditor
 
         public void FillAllItemsList()
         {
-            allItems.Add(new BodyArmor());
-            allItems.Add(new Helmet());
+            allItems.Add(new Robe());
+            allItems.Add(new Leather());
+            allItems.Add(new Hecoy());
+            allItems.Add(new RobeHelmet());
+            allItems.Add(new LeatherHelmet());
+            allItems.Add(new HoceyHelmet());
         }
     }
 
     class Item
     {
-
+        protected double hp;
+        public virtual double Hp { get => hp; private set => hp = value; }
     }
 
 }

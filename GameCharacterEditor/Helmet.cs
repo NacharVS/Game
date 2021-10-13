@@ -4,10 +4,9 @@ using System.Text;
 
 namespace GameCharacterEditor
 {
-    class Helmet : Item
+    abstract class Helmet : Item
     {
-        protected double hp;
-        public double Hp { get => hp; set => hp = value; }
+
     }
 
     class RobeHelmet : Helmet

@@ -1,4 +1,6 @@
-﻿using System;
+﻿// сделать изменение и добавление имени юнита
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -112,6 +114,7 @@ namespace GameCharacterEditor
             }
 
             cmbBoxItem.ItemsSource = itemLst;
+            GetUnitInfo(x);
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -141,6 +144,7 @@ namespace GameCharacterEditor
             }
         }
 
+        // индекс выходит за пределы, исправить
         private void Prev_Click(object sender, RoutedEventArgs e)
         {
             if (x - 1 <= 0)
@@ -158,12 +162,14 @@ namespace GameCharacterEditor
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex);
+            unitLst[x].Hp += unitLst[x].Inventar.AllItems[x].Hp;
             Render(x);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             unitLst[x].Inventar.Delete(cmbBoxItem.SelectedIndex);
+            unitLst[x].Hp -= unitLst[x].Inventar.AllItems[x].Hp;
             Render(x);
         }
     }

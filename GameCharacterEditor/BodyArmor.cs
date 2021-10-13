@@ -4,10 +4,9 @@ using System.Text;
 
 namespace GameCharacterEditor
 {
-    class BodyArmor : Item
+    abstract class BodyArmor : Item
     {
-        protected double hp;
-        public double Hp { get => hp; set => hp = value; }
+        // public override double Hp { get => base.Hp; set => base.Hp = value; }
     }
 
     class Robe : BodyArmor
