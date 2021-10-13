@@ -1,4 +1,5 @@
-﻿// сделать изменение и добавление имени юнита
+﻿// доделать инвентарь (шлем)
+// не работает кнопка назад
 
 using System;
 using System.Collections.Generic;
@@ -82,21 +83,21 @@ namespace GameCharacterEditor
             switch (cmbbox.SelectedIndex)
             {
                 case 0:
-                    Warrior warrior = new Warrior(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
+                    Warrior warrior = new Warrior(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
                     MessageBox.Show($"Unit is created {warrior.Name}");
                     unitLst.Add(warrior);
                     GetUnitInfo(unitLst.Count - 1);
                     x = unitLst.Count;
                     break;
                 case 1:
-                    Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
+                    Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
                     MessageBox.Show($"Unit is created {rogue.Name}");
                     unitLst.Add(rogue);
                     GetUnitInfo(unitLst.Count - 1);
                     x = unitLst.Count;
                     break;
                 case 2:
-                    Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text));
+                    Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
                     MessageBox.Show($"Unit is created {sorcerer.Name}");
                     unitLst.Add(sorcerer);
                     GetUnitInfo(unitLst.Count - 1);
@@ -135,11 +136,13 @@ namespace GameCharacterEditor
             if (x + 1 <= unitLst.Count - 1)
             {
                 x++;
+                Render(x);
                 GetUnitInfo(x);
             }
             else
             {
                 x = 0;
+                Render(x);
                 GetUnitInfo(x);
             }
         }
@@ -150,19 +153,37 @@ namespace GameCharacterEditor
             if (x - 1 <= 0)
             {
                 x--;
+                Render(x);
                 GetUnitInfo(x);
             }
             else
             {
                 x = unitLst.Count - 1;
+                Render(x);
                 GetUnitInfo(x);
             }
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex);
+            try
+            {
+                unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex, unitLst[x].Strength, unitLst[x].Dexterity, unitLst[x].Constitution, unitLst[x].Intelegence, unitLst[x].Lvl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             unitLst[x].Hp += unitLst[x].Inventar.AllItems[x].Hp;
+            unitLst[x].PAttack += unitLst[x].Inventar.AllItems[x].PDamage;
+            unitLst[x].MAttack += unitLst[x].Inventar.AllItems[x].MDamage;
+            unitLst[x].PDefence += unitLst[x].Inventar.AllItems[x].PDefence;
+            unitLst[x].MDefence += unitLst[x].Inventar.AllItems[x].MDefence;
+            unitLst[x].Strength += unitLst[x].Inventar.AllItems[x].Strength;
+            unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
+            unitLst[x].Constitution += unitLst[x].Inventar.AllItems[x].Constitution;
+            unitLst[x].Dexterity += unitLst[x].Inventar.AllItems[x].Dexterity;
+            unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
             Render(x);
         }
 
@@ -170,6 +191,15 @@ namespace GameCharacterEditor
         {
             unitLst[x].Inventar.Delete(cmbBoxItem.SelectedIndex);
             unitLst[x].Hp -= unitLst[x].Inventar.AllItems[x].Hp;
+            unitLst[x].PAttack -= unitLst[x].Inventar.AllItems[x].PDamage;
+            unitLst[x].MAttack -= unitLst[x].Inventar.AllItems[x].MDamage;
+            unitLst[x].PDefence -= unitLst[x].Inventar.AllItems[x].PDefence;
+            unitLst[x].MDefence -= unitLst[x].Inventar.AllItems[x].MDefence;
+            unitLst[x].Strength -= unitLst[x].Inventar.AllItems[x].Strength;
+            unitLst[x].Intelegence -= unitLst[x].Inventar.AllItems[x].Intelegence;
+            unitLst[x].Constitution -= unitLst[x].Inventar.AllItems[x].Constitution;
+            unitLst[x].Dexterity -= unitLst[x].Inventar.AllItems[x].Dexterity;
+            unitLst[x].Intelegence -= unitLst[x].Inventar.AllItems[x].Intelegence;
             Render(x);
         }
     }

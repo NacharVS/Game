@@ -51,5 +51,7 @@
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="643,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Prev" Content="&lt;" HorizontalAlignment="Left" Margin="594,295,0,0" VerticalAlignment="Top" Height="35" Width="35" FontSize="20" FontWeight="Bold" Click="Prev_Click"/>
         <Button x:Name="Next" Content="&gt;" HorizontalAlignment="Left" Margin="716,295,0,0" VerticalAlignment="Top" Height="35" Width="35" FontWeight="Bold" FontSize="20" Click="Next_Click"/>
+        <TextBox x:Name="txtLvl" HorizontalAlignment="Left" Margin="200,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Level" HorizontalAlignment="Left" Height="25" Margin="200,12,0,0" VerticalAlignment="Top" Width="114"/>
     </Grid>
 </Window>

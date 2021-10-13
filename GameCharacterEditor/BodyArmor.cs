@@ -6,14 +6,23 @@ namespace GameCharacterEditor
 {
     abstract class BodyArmor : Item
     {
-        // public override double Hp { get => base.Hp; set => base.Hp = value; }
+        public abstract void Render();
     }
 
     class Robe : BodyArmor
     {
         public Robe()
         {
-            hp = 50;
+            Render();
+        }
+
+        public override void Render()
+        {
+            intelegence = 50;
+            mP = 50;
+            mDamage = 50;
+            pDefence = 50;
+            mDefence = 150;
         }
     }
 
@@ -21,7 +30,16 @@ namespace GameCharacterEditor
     {
         public Leather()
         {
-            hp = 100;
+            Render();
+        }
+
+        public override void Render()
+        {
+            dexterity = 80;
+            mP = 80;
+            pDamage = 80;
+            pDefence = 80;
+            mDefence = 160;
         }
     }
 
@@ -29,8 +47,16 @@ namespace GameCharacterEditor
     {
         public Hecoy()
         {
-            hp = 200;
+            Render();
         }
 
+        public override void Render()
+        {
+            strength = 130;
+            constitution = 130;
+            pDefence = 130;
+            hp = 260;
+
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace GameCharacterEditor
     {
         public RobeHelmet()
         {
-            hp = 50;
+            pDefence = 50;
         }
     }
 
@@ -21,7 +21,7 @@ namespace GameCharacterEditor
     {
         public LeatherHelmet()
         {
-            hp = 100;
+            pDefence = 100;
         }
     }
 
@@ -29,7 +29,7 @@ namespace GameCharacterEditor
     {
         public HoceyHelmet()
         {
-            hp = 200;
+            pDefence = 200;
         }
     }
 }
