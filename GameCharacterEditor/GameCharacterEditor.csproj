@@ -6,4 +6,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Задний фон.jpg" />
+    <None Remove="Русский_воин.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Задний фон.jpg" />
+    <Resource Include="Русский_воин.jpeg" />
+  </ItemGroup>
+
 </Project>

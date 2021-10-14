@@ -43,6 +43,6 @@ namespace GameCharacterEditor
         {
             Phisical_Defence += constitution * 5;
             Hp_Unit += constitution * 10;
-        }
+        }                                                                                                        
     }
 }
