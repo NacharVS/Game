@@ -36,15 +36,19 @@ namespace GameCharacterEditor
             switch (Hero.SelectedIndex)
             {
                 case 0:
+                    Characters(new Warrior());
                     Choosehero();
                     break;
                 case 1:
+                    Characters(new Rogue());
                     Choosehero();
                     break;
                 case 2:
+                    Characters(new Magic_dude());
                     Choosehero();
                     break;
                 case 3:
+                    Characters(new Archer());
                     Choosehero();
                     break;
 
@@ -63,7 +67,16 @@ namespace GameCharacterEditor
                 image.EndInit();
                 ChooseHero.Source = image;
             }
-            
+          
         }
+        private void Characters(Unit unit)
+        {
+            labelstrenght.Text = unit.Strenght.ToString();
+            labeldexterity.Text = unit.Dexterity.ToString();
+            labelintelegence.Text = unit.Intelegence.ToString();
+            constitutionlabel.Text = unit.Constitution.ToString();
+        }
+
+       
     }
 }

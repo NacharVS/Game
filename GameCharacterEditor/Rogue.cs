@@ -6,7 +6,7 @@ namespace GameCharacterEditor
 {
     class Rogue : Unit
     {
-        public void Properties_Rogue()
+        public Rogue()
         {
             dexterity = 250;
             strenght = 65;

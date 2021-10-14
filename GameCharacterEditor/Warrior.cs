@@ -6,7 +6,7 @@ namespace GameCharacterEditor
 {
     class Warrior : Unit
     {
-        public void Properties_Warrior()
+        public Warrior()
         {
             strenght = 250;
             dexterity = 70;

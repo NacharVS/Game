@@ -6,7 +6,7 @@ namespace GameCharacterEditor
 {
     class Magic_dude : Unit
     {
-        public void Properties_Mag()
+        public Magic_dude()
         {
             strenght = 50;
             dexterity = 25;
