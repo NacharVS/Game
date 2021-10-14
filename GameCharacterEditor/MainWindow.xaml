@@ -120,8 +120,8 @@
             <Grid  Grid.Column="3" Width="700" Margin="15,10,15,10">
                 <DataGrid x:Name="CharacterList" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="True" Header="ID"/>
-                        <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="True" Header="Character"/>
+                        <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="False" Header="ID"/>
+                        <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="False" Header="Character"/>
                         <DataGridTextColumn Binding="{Binding Path = HP}" IsReadOnly="True" Header="Health"/>
                         <DataGridTextColumn Binding="{Binding Path = MP}" IsReadOnly="True" Header="Mana"/>
                         <DataGridTextColumn Binding="{Binding Path = Strenght}" IsReadOnly="True" Header="Strenght"/>

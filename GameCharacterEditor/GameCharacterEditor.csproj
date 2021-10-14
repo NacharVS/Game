@@ -12,8 +12,4 @@
     <PackageReference Include="MongoDB.Driver.Core" Version="2.13.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HeroClass\HeroClass.csproj" />
-  </ItemGroup>
-
 </Project>

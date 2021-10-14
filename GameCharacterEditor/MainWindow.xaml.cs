@@ -14,7 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GameCharacterEditor.Models;
-using HeroClass;
 
 namespace GameCharacterEditor
 {
@@ -252,8 +251,16 @@ namespace GameCharacterEditor
         {
             _todoData = new BindingList<TodoModel>()
             {
-                new TodoModel(){Character = (string)((Button) sender).Name, HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text), Strenght = int.Parse(Strenght_TB.Text) }
+                new TodoModel()
+                {
+                    HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
+                    Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligenct_TB.Text),
+                    Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
+                    PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
+                }
             };
+
+            CharacterList.Items.Add(_todoData);
 
         }
 
@@ -265,12 +272,6 @@ namespace GameCharacterEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _todoData = new BindingList<TodoModel>()
-            {
-                new TodoModel(){ID = 1, Character = "Rogue", Strenght = 20, Dexterity = 30, Intelligence = 15, Constitution = 20, PAttack = 30, MAttack = 20, PResist = 30, MResist = 20, ASpeed = 20, MSpeed = 20}
-            };
-
-            CharacterList.ItemsSource = _todoData;
 
         }
     }
