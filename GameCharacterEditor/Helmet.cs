@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GameCharacterEditor
 {
@@ -40,7 +39,6 @@ namespace GameCharacterEditor
             pDamage = 80;
             pDefence = 80;
             mDefence = 160;
-
         }
     }
 

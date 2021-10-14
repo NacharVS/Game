@@ -51,11 +51,10 @@ namespace GameCharacterEditor
             hp += strength * 5 + constitution * 10;
             attackSpeed += dexterity * 5;
             walkingSpeed += dexterity * 2;
-            pDefence += dexterity * 3;
+            pDefence += dexterity * 3 + constitution * 5;
             mAttack += intelegence * 10;
             mp += intelegence * 5;
             mDefence += intelegence * 5;
-            pDefence += constitution * 5;
             pAttack = strength * 5;
             inventar.FillAllItemsList();
         }
@@ -70,9 +69,14 @@ namespace GameCharacterEditor
             hp -= mAttack;
         }
 
-        public void Defence()
+        public void PhysDefence()
         {
+            hp += pDefence;
+        }
 
+        public void MagicDefence()
+        {
+            hp += mDefence;
         }
     }
 

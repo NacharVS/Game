@@ -1,67 +1,89 @@
 ﻿<Window x:Class="GameCharacterEditor.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:local="clr-namespace:GameCharacterEditor"
+        TextElement.Foreground="#FFCDC3C3"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="16"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="Global Monospace"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="1100" Background="#FF181F43" ResizeMode="CanMinimize">
     <Grid>
-        <ComboBox x:Name="cmbbox" HorizontalAlignment="Left" Margin="32,27,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/1621583331_8-phonoteka_org-p-fon-varkraft-8.jpg"/>
+        </Grid.Background>
+        <ComboBox x:Name="cmbbox" HorizontalAlignment="Left" Margin="12,36,0,0" materialDesign:HintAssist.Hint="Выбор юнита"  materialDesign:HintAssist.Foreground="Black"  materialDesign:HintAssist.FontFamily="Global Monospace" VerticalAlignment="Top" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignOutlinedComboBox}" BorderThickness="3,3,3,3" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="BlueViolet" BorderBrush="#BC000C94" FontSize="20" UseLayoutRounding="True">
             <ComboBoxItem Content="Warrior"/>
             <ComboBoxItem Content="Rogue"/>
             <ComboBoxItem Content="Sorcerer"/>
         </ComboBox>
-        <TextBox x:Name="txtStrength" HorizontalAlignment="Left" Margin="33,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" InputScope="Number"/>
-        <TextBox x:Name="txtIntelegence" HorizontalAlignment="Left" Margin="35,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
-        <TextBox x:Name="txtConstitution" HorizontalAlignment="Left" Margin="202,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtExtra" IsReadOnly="True" HorizontalAlignment="Left" Margin="37,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="20" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="txtWalkingSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="38,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="txtAttackSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="202,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <Button Content="P.Attack" HorizontalAlignment="Left" Margin="33,298,0,0" VerticalAlignment="Top" Height="29" Width="89" Click="Button_Click"/>
-        <Button Content="M.Attack" HorizontalAlignment="Left" Margin="185,298,0,0" VerticalAlignment="Top" Height="29" Width="89" Click="Button_Click_2"/>
-        <Button Content="P.Defence" HorizontalAlignment="Left" Margin="33,354,0,0" VerticalAlignment="Top" Height="29" Width="89" Click="Button_Click_1"/>
-        <Button Content="M.Defence" HorizontalAlignment="Left" Margin="185,354,0,0" VerticalAlignment="Top" Height="29" Width="89"/>
-        <Label Content="Strength&#xD;&#xA;" HorizontalAlignment="Left" Margin="34,60,0,0" VerticalAlignment="Top" Width="118" Height="27"/>
-        <Label Content="Dexterity&#xD;&#xA;" HorizontalAlignment="Left" Margin="196,61,0,0" VerticalAlignment="Top" Width="89"/>
-        <Label Content="intelegence&#xD;&#xA;" HorizontalAlignment="Left" Margin="34,104,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.763,0.695" Width="119" Height="25"/>
-        <Label Content=" Constitution" HorizontalAlignment="Left" Margin="198,106,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label Content="Extra" HorizontalAlignment="Left" Margin="34,163,0,0" VerticalAlignment="Top" Width="116"/>
-        <Label Content="AttackSpeed" HorizontalAlignment="Left" Margin="196,170,0,0" VerticalAlignment="Top" Width="127"/>
-        <Label Content="WalkingSpeed" HorizontalAlignment="Left" Margin="36,222,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDexterity" HorizontalAlignment="Left" Height="20" Margin="201,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <Button Content="Coздать" HorizontalAlignment="Left" Margin="313,300,0,0" VerticalAlignment="Top" Height="68" Width="168" Click="Button_Click_3"/>
-        <Image HorizontalAlignment="Left" Height="226" Margin="614,46,0,0" VerticalAlignment="Top" Width="175"/>
-        <TextBox x:Name="txthp" IsReadOnly="True"  HorizontalAlignment="Left" Margin="202,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <Label Content="HP" HorizontalAlignment="Left" Margin="201,218,0,0" VerticalAlignment="Top" Height="27" Width="121"/>
-        <Button Content="Inventar" HorizontalAlignment="Left" Margin="594,334,0,0" VerticalAlignment="Top" Height="34" Width="157" Click="Button_Click_4">
-
+        <TextBox x:Name="txtStrength" HorizontalAlignment="Left" Margin="26,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <TextBox x:Name="txtIntelegence" HorizontalAlignment="Left" Margin="25,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <TextBox x:Name="txtConstitution" HorizontalAlignment="Left" Margin="226,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <TextBox x:Name="txtExtra" IsReadOnly="True" HorizontalAlignment="Left" Margin="27,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="txtWalkingSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="28,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <TextBox x:Name="txtAttackSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="228,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <Button Content="P.Attack" HorizontalAlignment="Left" Margin="30,450,0,0" VerticalAlignment="Top" Height="36" Width="107" Click="Button_Click"/>
+        <Button Content="M.Attack" HorizontalAlignment="Left" Margin="250,450,0,0" VerticalAlignment="Top" Height="36" Width="107" Click="Button_Click_2"/>
+        <Button Content="P.Defence" HorizontalAlignment="Left" Margin="30,519,0,0" VerticalAlignment="Top" Height="37" Width="112" Click="Button_Click_1"/>
+        <Button Content="M.Defence" HorizontalAlignment="Left" Margin="250,519,0,0" VerticalAlignment="Top" Height="37" Width="107" Click="Button_Click_8"/>
+        <Label Content="Strength&#xD;&#xA;" HorizontalAlignment="Left" Margin="27,137,0,0" VerticalAlignment="Top" Width="117" Height="31" Foreground="White" FontSize="16"/>
+        <Label Content="Dexterity&#xD;&#xA;" HorizontalAlignment="Left" Margin="223,135,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
+        <Label Content="Intelegence&#xA;" HorizontalAlignment="Left" Margin="24,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.763,0.695" Width="118" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
+        <Label Content=" Constitution" HorizontalAlignment="Left" Margin="222,216,0,0" VerticalAlignment="Top" Width="123" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
+        <Label Content="Extra" HorizontalAlignment="Left" Margin="24,295,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
+        <Label Content="AttackSpeed" HorizontalAlignment="Left" Margin="222,298,0,0" VerticalAlignment="Top" Width="136" Height="31"  Foreground="#DDFFFFFF" FontSize="16"/>
+        <Label Content="WalkingSpeed" HorizontalAlignment="Left" Margin="26,363,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
+        <TextBox x:Name="txtDexterity" HorizontalAlignment="Left" Width="136" Height="33" Margin="228,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Cursor="IBeam" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" Padding="0,0,0,0"/>
+        <Button HorizontalAlignment="Left" Margin="480,379,0,0" VerticalAlignment="Top" Height="168" Width="170" Click="Button_Click_3"
+            Style="{StaticResource MaterialDesignFloatingActionButton}"
+            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+            materialDesign:ButtonProgressAssist.Value="-1"
+            materialDesign:ButtonProgressAssist.IsIndeterminate="True" FontSize="24">
+            <TextBlock Text="Создать юнита" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" ToolTip="rfff" VerticalAlignment="Center" FlowDirection="LeftToRight" TextAlignment="Center">
+            </TextBlock>
         </Button>
+        <Image HorizontalAlignment="Left" Height="289" Margin="797,165,0,0" VerticalAlignment="Top" Width="196"/>
+        <TextBox x:Name="txthp" IsReadOnly="True"  HorizontalAlignment="Left" Margin="234,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <Label Content="HP" FontSize="16" HorizontalAlignment="Left" Margin="233,367,0,0" VerticalAlignment="Top" Width="136" Height="31"  Foreground="#DDFFFFFF"/>
+        <Button Content="Inventar" HorizontalAlignment="Left" Margin="805,499,0,0" VerticalAlignment="Top" Height="42" Width="180" Click="Button_Click_4"/>
 
-        <ComboBox x:Name="cmbBoxInventar" HorizontalAlignment="Left" Margin="338,192,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="All things&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Width="128" Height="29"/>
-        <Button HorizontalAlignment="Center" Margin="0,238,0,0" VerticalAlignment="Top" Height="37" Width="123" Click="Button_Click_5">
+        <ComboBox FocusVisualStyle="{DynamicResource ComboBoxFocusVisualStyle1}" x:Name="cmbBoxInventar" HorizontalAlignment="Left" Margin="412,22,0,0" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="All things"  materialDesign:HintAssist.Foreground="Black"  materialDesign:HintAssist.FontFamily="Global Monospace" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="BlueViolet" BorderBrush="#BC000000" FontSize="20" UseLayoutRounding="True"/>
+        <Button HorizontalAlignment="Left" Margin="413,103,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="Button_Click_5" Cursor="Hand">
             <TextBlock Text="Добавить в свой инвентарь" TextWrapping="Wrap" TextAlignment="Center"/>
         </Button>
-        <ComboBox x:Name="cmbBoxItem" HorizontalAlignment="Left" Margin="477,192,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button HorizontalAlignment="Left" Margin="478,238,0,0" VerticalAlignment="Top" Height="37" Width="123" Click="Button_Click_6">
+        <ComboBox x:Name="cmbBoxItem" HorizontalAlignment="Left" Margin="594,22,0,0"  materialDesign:HintAssist.Hint="Your Inventar"  materialDesign:HintAssist.Foreground="Black"  materialDesign:HintAssist.FontFamily="Global Monospace" VerticalAlignment="Top" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF2C0054" BorderBrush="#BC000000" FontSize="18" UseLayoutRounding="True" FontWeight="Bold">
+
+        </ComboBox>
+        <Button HorizontalAlignment="Left" Margin="599,103,0,0" VerticalAlignment="Top" Height="55" Width="150" Click="Button_Click_6">
             <TextBlock Text="Удалить из инвентаря" TextWrapping="Wrap" TextAlignment="Center"/>
         </Button>
-        <Label Content="Your Inventar" HorizontalAlignment="Left" Margin="477,161,0,0" VerticalAlignment="Top" Width="128" Height="29"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="639,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Prev" Content="&lt;" HorizontalAlignment="Left" Margin="594,295,0,0" VerticalAlignment="Top" Height="35" Width="35" FontSize="20" FontWeight="Bold" Click="Prev_Click"/>
-        <Button x:Name="Next" Content="&gt;" HorizontalAlignment="Left" Margin="716,295,0,0" VerticalAlignment="Top" Height="35" Width="35" FontWeight="Bold" FontSize="20" Click="Next_Click"/>
-        <TextBox x:Name="txtLvl" IsReadOnly="True" HorizontalAlignment="Left" Margin="200,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Level" HorizontalAlignment="Left" Height="25" Margin="200,12,0,0" VerticalAlignment="Top" Width="114"/>
-        <TextBox x:Name="txtExp" HorizontalAlignment="Left" Margin="344,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtExp_TextChanged"/>
-        <Label Content="Experience" HorizontalAlignment="Left" Margin="346,15,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="^" HorizontalAlignment="Left" Margin="153,84,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal"  BorderThickness="1,0,1,0" Click="Button_Click_7"/>
-        <Button Content="∨" HorizontalAlignment="Left" Margin="153,93,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_15"/>
-        <Button Content="^" HorizontalAlignment="Left" Margin="311,86,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal" BorderThickness="1,0,1,0" Click="Button_Click_9"></Button>
-        <Button Content="∨" HorizontalAlignment="Left" Margin="311,95,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_12"/>
-        <Button Content="^" HorizontalAlignment="Left" Margin="152,128,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal" BorderThickness="1,0,1,0" Click="Button_Click_10"/>
-        <Button Content="∨" HorizontalAlignment="Left" Margin="152,137,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_13"/>
-        <Button Content="^" HorizontalAlignment="Left" Margin="321,130,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal" BorderThickness="1,0,1,0" Click="Button_Click_11"/>
-        <Button Content="∨" HorizontalAlignment="Left" Margin="321,139,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_14"/>
+        <TextBox x:Name="txtName" materialDesign:HintAssist.Hint="Name" materialDesign:HintAssist.HelperText="Helper text longer than error" HorizontalAlignment="Left" Margin="827,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="37" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold" FontStyle="Normal" TextDecorations="{x:Null}" FontFamily="Global Monospace" Cursor="IBeam">
+            <TextBox.Text>
+                <Binding
+                  Path="Name"
+                  UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button x:Name="Prev" Content="&lt;" HorizontalAlignment="Left" Margin="805,452,0,0" VerticalAlignment="Top" Height="42" Width="40" FontSize="20" FontWeight="Bold" Click="Prev_Click" Padding="0,0,0,0" UseLayoutRounding="False" BorderThickness="0,0,0,0" SnapsToDevicePixels="True"/>
+        <Button x:Name="Next" Content="&gt;" HorizontalAlignment="Left" Margin="945,452,0,0" VerticalAlignment="Top" Height="42" Width="40" FontWeight="Bold" FontSize="20" Click="Next_Click" Padding="0,0,0,0" BorderThickness="0,0,0,0"/>
+        <TextBox x:Name="txtLvl" IsReadOnly="True" HorizontalAlignment="Left" Margin="225,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Level" FontSize="16" HorizontalAlignment="Left" Width="122" Height="31" Margin="225,70,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+        <TextBox x:Name="txtExp" HorizontalAlignment="Left" Margin="224,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtExp_TextChanged"/>
+        <Label Content="Experience" FontSize="16" HorizontalAlignment="Left" Margin="226,9,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF"/>
+        <Button Content="∧" HorizontalAlignment="Left" Margin="146,161,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal"  BorderThickness="1,0,1,0" Click="Button_Click_7"/>
+        <Button Content="∨" HorizontalAlignment="Left" Margin="146,170,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_15"/>
+        <Button Content="∧" HorizontalAlignment="Left" Margin="338,160,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal" BorderThickness="1,0,1,0" Click="Button_Click_9"></Button>
+        <Button Content="∨" HorizontalAlignment="Left" Margin="338,169,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_12"/>
+        <Button Content="∧" HorizontalAlignment="Left" Margin="142,239,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal" BorderThickness="1,0,1,0" Click="Button_Click_10"/>
+        <Button Content="∨" HorizontalAlignment="Left" Margin="142,248,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_13"/>
+        <Button Content="∧" HorizontalAlignment="Left" Margin="345,240,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal" BorderThickness="1,0,1,0" Click="Button_Click_11"/>
+        <Button Content="∨" HorizontalAlignment="Left" Margin="345,249,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_14"/>
     </Grid>
 </Window>

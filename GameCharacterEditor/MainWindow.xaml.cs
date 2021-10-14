@@ -1,7 +1,4 @@
-﻿// доделать инвентарь (шлем)
-// не работает кнопка назад
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,17 +30,22 @@ namespace GameCharacterEditor
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            unitLst[x].PhysAttack();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            unitLst[x].PhysDefence();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            unitLst[x].MagicAttack();
+        }
 
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            unitLst[x].MagicDefence();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,27 +69,27 @@ namespace GameCharacterEditor
 
         private void GetUnitInfo(int index)
         {
-            txtStrength.Text = unitLst[index].Strength.ToString();
-            txtDexterity.Text = unitLst[index].Dexterity.ToString();
-            txtConstitution.Text = unitLst[index].Constitution.ToString();
-            txtIntelegence.Text = unitLst[index].Intelegence.ToString();
-            txtExtra.Text = unitLst[index].Extra.ToString();
-            txtAttackSpeed.Text = unitLst[index].AttackSpeed.ToString();
-            txtWalkingSpeed.Text = unitLst[index].WalkingSpeed.ToString();
             txthp.Text = unitLst[index].Hp.ToString();
             txtName.Text = unitLst[index].Name.ToString();
+            txtExtra.Text = unitLst[index].Extra.ToString();
+            txtStrength.Text = unitLst[index].Strength.ToString();
+            txtDexterity.Text = unitLst[index].Dexterity.ToString();
+            txtIntelegence.Text = unitLst[index].Intelegence.ToString();
+            txtAttackSpeed.Text = unitLst[index].AttackSpeed.ToString();
+            txtConstitution.Text = unitLst[index].Constitution.ToString();
+            txtWalkingSpeed.Text = unitLst[index].WalkingSpeed.ToString();
         }
         private void GetUnitInfo(Unit unit)
         {
-            txtStrength.Text = unit.Strength.ToString();
-            txtDexterity.Text = unit.Dexterity.ToString();
-            txtConstitution.Text = unit.Constitution.ToString();
-            txtIntelegence.Text = unit.Intelegence.ToString();
-            txtExtra.Text = unit.Extra.ToString();
-            txtAttackSpeed.Text = unit.AttackSpeed.ToString();
-            txtWalkingSpeed.Text = unit.WalkingSpeed.ToString();
             txthp.Text = unit.Hp.ToString();
             txtName.Text = unit.Name.ToString();
+            txtExtra.Text = unit.Extra.ToString();
+            txtStrength.Text = unit.Strength.ToString();
+            txtDexterity.Text = unit.Dexterity.ToString();
+            txtIntelegence.Text = unit.Intelegence.ToString();
+            txtAttackSpeed.Text = unit.AttackSpeed.ToString();
+            txtConstitution.Text = unit.Constitution.ToString();
+            txtWalkingSpeed.Text = unit.WalkingSpeed.ToString();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -121,13 +123,20 @@ namespace GameCharacterEditor
         private void Render(int index)
         {
             List<string> itemLst = new List<string>();
-            unitLst[index].Inventar.ExistItem.ForEach(item =>
+            try
             {
-                itemLst.Add(item.ToString().Substring(20) + "\n");
-            });
+                unitLst[index].Inventar.ExistItem.ForEach(item =>
+                {
+                    itemLst.Add(item.ToString().Substring(20) + "\n");
+                });
 
-            cmbBoxItem.ItemsSource = itemLst;
-            GetUnitInfo(x);
+                cmbBoxItem.ItemsSource = itemLst;
+                GetUnitInfo(x);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удается отрендерить\n{ex.Message}");
+            }
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -150,30 +159,25 @@ namespace GameCharacterEditor
             {
                 x++;
                 Render(x);
-                GetUnitInfo(x);
             }
             else
             {
                 x = 0;
                 Render(x);
-                GetUnitInfo(x);
             }
         }
 
-        // индекс выходит за пределы, исправить
         private void Prev_Click(object sender, RoutedEventArgs e)
         {
             if (x - 1 >= 0)
             {
                 x--;
                 Render(x);
-                GetUnitInfo(x);
             }
             else
             {
                 x = unitLst.Count - 1;
                 Render(x);
-                GetUnitInfo(x);
             }
         }
 
@@ -182,22 +186,22 @@ namespace GameCharacterEditor
             try
             {
                 unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex, unitLst[x].Strength, unitLst[x].Dexterity, unitLst[x].Constitution, unitLst[x].Intelegence, unitLst[x].Lvl);
+                unitLst[x].Hp += unitLst[x].Inventar.AllItems[x].Hp;
+                unitLst[x].PAttack += unitLst[x].Inventar.AllItems[x].PDamage;
+                unitLst[x].MAttack += unitLst[x].Inventar.AllItems[x].MDamage;
+                unitLst[x].PDefence += unitLst[x].Inventar.AllItems[x].PDefence;
+                unitLst[x].MDefence += unitLst[x].Inventar.AllItems[x].MDefence;
+                unitLst[x].Strength += unitLst[x].Inventar.AllItems[x].Strength;
+                unitLst[x].Dexterity += unitLst[x].Inventar.AllItems[x].Dexterity;
+                unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
+                unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
+                unitLst[x].Constitution += unitLst[x].Inventar.AllItems[x].Constitution;
+                Render(x);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            unitLst[x].Hp += unitLst[x].Inventar.AllItems[x].Hp;
-            unitLst[x].PAttack += unitLst[x].Inventar.AllItems[x].PDamage;
-            unitLst[x].MAttack += unitLst[x].Inventar.AllItems[x].MDamage;
-            unitLst[x].PDefence += unitLst[x].Inventar.AllItems[x].PDefence;
-            unitLst[x].MDefence += unitLst[x].Inventar.AllItems[x].MDefence;
-            unitLst[x].Strength += unitLst[x].Inventar.AllItems[x].Strength;
-            unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
-            unitLst[x].Constitution += unitLst[x].Inventar.AllItems[x].Constitution;
-            unitLst[x].Dexterity += unitLst[x].Inventar.AllItems[x].Dexterity;
-            unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
-            Render(x);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
@@ -209,10 +213,10 @@ namespace GameCharacterEditor
             unitLst[x].PDefence -= unitLst[x].Inventar.AllItems[x].PDefence;
             unitLst[x].MDefence -= unitLst[x].Inventar.AllItems[x].MDefence;
             unitLst[x].Strength -= unitLst[x].Inventar.AllItems[x].Strength;
-            unitLst[x].Intelegence -= unitLst[x].Inventar.AllItems[x].Intelegence;
-            unitLst[x].Constitution -= unitLst[x].Inventar.AllItems[x].Constitution;
             unitLst[x].Dexterity -= unitLst[x].Inventar.AllItems[x].Dexterity;
             unitLst[x].Intelegence -= unitLst[x].Inventar.AllItems[x].Intelegence;
+            unitLst[x].Intelegence -= unitLst[x].Inventar.AllItems[x].Intelegence;
+            unitLst[x].Constitution -= unitLst[x].Inventar.AllItems[x].Constitution;
             Render(x);
         }
 
@@ -225,41 +229,65 @@ namespace GameCharacterEditor
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             txtStrength.Text = (int.Parse(txtStrength.Text) + 1).ToString();
+            Refresh();
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
             txtDexterity.Text = (int.Parse(txtDexterity.Text) + 1).ToString();
+            Refresh();
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
             txtIntelegence.Text = (int.Parse(txtIntelegence.Text) + 1).ToString();
+            Refresh();
         }
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
             txtConstitution.Text = (int.Parse(txtConstitution.Text) + 1).ToString();
+            Refresh();
         }
 
         private void Button_Click_12(object sender, RoutedEventArgs e)
         {
-            txtDexterity.Text = (int.Parse(txtDexterity.Text) - 1).ToString();
+            if (int.Parse(txtDexterity.Text) - 1 >= 20)
+                txtDexterity.Text = (int.Parse(txtDexterity.Text) - 1).ToString();
+            Refresh();
         }
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
-            txtIntelegence.Text = (int.Parse(txtIntelegence.Text) - 1).ToString();
+            if (int.Parse(txtIntelegence.Text) - 1 >= 20)
+                txtIntelegence.Text = (int.Parse(txtIntelegence.Text) - 1).ToString();
+            Refresh();
         }
 
         private void Button_Click_14(object sender, RoutedEventArgs e)
         {
-            txtConstitution.Text = (int.Parse(txtConstitution.Text) - 1).ToString();
+            if (int.Parse(txtConstitution.Text) - 1 >= 20)
+                txtConstitution.Text = (int.Parse(txtConstitution.Text) - 1).ToString();
+            Refresh();
         }
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
-            txtStrength.Text = (int.Parse(txtStrength.Text) - 1).ToString();
+            if (int.Parse(txtStrength.Text) - 1 >= 20)
+                txtStrength.Text = (int.Parse(txtStrength.Text) - 1).ToString();
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            txthp.Text = (int.Parse(txtStrength.Text) * 5 + int.Parse(txtConstitution.Text) * 10).ToString();
+            txtAttackSpeed.Text = (int.Parse(txtDexterity.Text) * 5).ToString();
+            txtWalkingSpeed.Text = (int.Parse(txtDexterity.Text) * 2).ToString();
+            //pDefence += dexterity * 3 + constitution * 5;
+            //mAttack += intelegence * 10;
+            //mp += intelegence * 5;
+            //mDefence += intelegence * 5;
+            //pAttack = strength * 5;
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GameCharacterEditor
 {
@@ -8,7 +7,6 @@ namespace GameCharacterEditor
     {
         private List<Item> allItems = new List<Item>();
         private List<Item> existItem = new List<Item>();
-
         public List<Item> AllItems { get => allItems; private set => allItems = value; }
         public List<Item> ExistItem { get => existItem; private set => existItem = value; }
 
@@ -62,10 +60,6 @@ namespace GameCharacterEditor
                 else
                     throw new Exception("Не хватает статов");
             }
-
-            else
-                throw new Exception("Не хватает статов");
-
         }
 
         public void Delete(int index)
@@ -83,30 +77,4 @@ namespace GameCharacterEditor
             allItems.Add(new LeatherHelmet());
         }
     }
-
-    class Item
-    {
-        protected double mP = 0;
-        protected double hp = 0;
-        protected double pDamage = 0;
-        protected double mDamage = 0;
-        protected double pDefence = 0;
-        protected double mDefence = 0;
-        protected double strength = 0;
-        protected double dexterity = 0;
-        protected double intelegence = 0;
-        protected double constitution = 0;
-
-        public double Hp { get => hp; private set => hp = value; }
-        public double MP { get => mP; private set => mP = value; }
-        public double Strength { get => strength; set => strength = value; }
-        public double Dexterity { get => dexterity; set => dexterity = value; }
-        public double PDamage { get => pDamage; private set => pDamage = value; }
-        public double MDamage { get => mDamage; private set => mDamage = value; }
-        public double PDefence { get => pDefence; private set => pDefence = value; }
-        public double MDefence { get => mDefence; private set => mDefence = value; }
-        public double Constitution { get => constitution; set => constitution = value; }
-        public double Intelegence { get => intelegence; private set => intelegence = value; }
-    }
-
 }

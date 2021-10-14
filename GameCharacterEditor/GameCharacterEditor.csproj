@@ -6,4 +6,21 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="1621583331_8-phonoteka_org-p-fon-varkraft-8.jpg" />
+    <None Remove="893a284cd66632c9519c7a84a91f8e5b.jpg" />
+    <None Remove="oscar-shadowpriest-lazo-high-elf-priestess-final.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.3" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1621583331_8-phonoteka_org-p-fon-varkraft-8.jpg" />
+    <Resource Include="893a284cd66632c9519c7a84a91f8e5b.jpg" />
+    <Resource Include="oscar-shadowpriest-lazo-high-elf-priestess-final.jpg" />
+  </ItemGroup>
+
 </Project>
