@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="RPGame" Height="700" Width="1100" Background="#FF891010">
+        Title="RPGame" Height="700" Width="1100" Background="#FF891010" Loaded="Window_Loaded">
 
     <Border Padding="10">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="7.213"/>
+                <ColumnDefinition Width="11.476"/>
+                <ColumnDefinition Width="331.311"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel>
+            <StackPanel Grid.ColumnSpan="3">
                 <TextBlock Text="Choose your Character" HorizontalAlignment="Center" FontSize="20" Margin="0 10 0 15"/>
                 <Grid x:Name="ChooseCharacter" Margin="0 0 0 15">
                     <Grid.ColumnDefinitions>
@@ -115,25 +117,27 @@
                     <Button x:Name="PickButton" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
                 </Grid>
             </StackPanel>
-            <Grid  Grid.Column="1" Width="700" Margin="10">
-                <DataGrid x:Name="CharacterLust">
+            <Grid  Grid.Column="3" Width="700" Margin="15,10,15,10">
+                <DataGrid x:Name="CharacterList" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Character"/>
-                        <DataGridTextColumn Header="Health"/>
-                        <DataGridTextColumn Header="Strenght"/>
-                        <DataGridTextColumn Header="Dexterity"/>
-                        <DataGridTextColumn Header="Intelligence"/>
-                        <DataGridTextColumn Header="Consitution"/>
-                        <DataGridTextColumn Header="P Attack"/>
-                        <DataGridTextColumn Header="M Attack"/>
-                        <DataGridTextColumn Header="P Resist"/>
-                        <DataGridTextColumn Header="M Resist"/>
-                        <DataGridTextColumn Header="A Speed"/>
-                        <DataGridTextColumn Header="M Speed"/>
+                        <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="True" Header="ID"/>
+                        <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="True" Header="Character"/>
+                        <DataGridTextColumn Binding="{Binding Path = HP}" IsReadOnly="True" Header="Health"/>
+                        <DataGridTextColumn Binding="{Binding Path = MP}" IsReadOnly="True" Header="Mana"/>
+                        <DataGridTextColumn Binding="{Binding Path = Strenght}" IsReadOnly="True" Header="Strenght"/>
+                        <DataGridTextColumn Binding="{Binding Path = Dexterity}" IsReadOnly="True" Header="Dexterity"/>
+                        <DataGridTextColumn Binding="{Binding Path = Intelligence}" IsReadOnly="True" Header="Intelligence"/>
+                        <DataGridTextColumn Binding="{Binding Path = Constitution}" IsReadOnly="True" Header="Consitution"/>
+                        <DataGridTextColumn Binding="{Binding Path = PAttack}" IsReadOnly="True" Header="P Attack"/>
+                        <DataGridTextColumn Binding="{Binding Path = MAttack}" IsReadOnly="True" Header="M Attack"/>
+                        <DataGridTextColumn Binding="{Binding Path = PResist}" IsReadOnly="True" Header="P Resist"/>
+                        <DataGridTextColumn Binding="{Binding Path = MResist}" IsReadOnly="True" Header="M Resist"/>
+                        <DataGridTextColumn Binding="{Binding Path = ASpeed}" IsReadOnly="True" Header="A Speed"/>
+                        <DataGridTextColumn Binding="{Binding Path = MSpeed}" IsReadOnly="True" Header="M Speed"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
         </Grid>
-    </Border> 
+    </Border>
 
 </Window>

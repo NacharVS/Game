@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GameCharacterEditor.Models;
 using HeroClass;
 
 namespace GameCharacterEditor
@@ -21,6 +23,8 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BindingList<TodoModel> _todoData;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -253,6 +257,16 @@ namespace GameCharacterEditor
         {
             InventoryWindow inv = new InventoryWindow();
             inv.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _todoData = new BindingList<TodoModel>()
+            {
+                new TodoModel(){ID = 1, Character = "Rogue", Strenght = 20, Dexterity = 30, Intelligence = 15, Constitution = 20, PAttack = 30, MAttack = 20, PResist = 30, MResist = 20, ASpeed = 20, MSpeed = 20}
+            };
+
+            CharacterList.ItemsSource = _todoData;
         }
     }
 }
