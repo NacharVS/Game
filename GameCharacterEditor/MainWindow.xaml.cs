@@ -75,8 +75,19 @@ namespace GameCharacterEditor
             labeldexterity.Text = unit.Dexterity.ToString();
             labelintelegence.Text = unit.Intelegence.ToString();
             constitutionlabel.Text = unit.Constitution.ToString();
+            Manatxt.Text = unit.MP_Unit.ToString();
+            Healthtxt.Text = unit.HP_Unit.ToString();
         }
 
-       
+        private void bnt_clickm1_Click(object sender, RoutedEventArgs e)
+        {
+            labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) - 1).ToString();
+        }
+
+        private void bnt_clickp1_Click(object sender, RoutedEventArgs e)
+        {
+            
+            labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) + 1).ToString();
+        }
     }
 }

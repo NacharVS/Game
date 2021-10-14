@@ -12,10 +12,8 @@ namespace GameCharacterEditor
             dexterity = 25;
             intelegence = 250;
             constitution = 25;
-        }
-        public void Health_Unit()
-        {
             Hp_Unit += strenght * 5;
+
         }
         public void Attack_Unit()
         {
