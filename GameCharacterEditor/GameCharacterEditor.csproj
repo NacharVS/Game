@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="hp.png" />
     <None Remove="min.png" />
+    <None Remove="mp.png" />
     <None Remove="plus.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="hp.png" />
     <Resource Include="min.png" />
+    <Resource Include="mp.png" />
     <Resource Include="plus.png" />
   </ItemGroup>
 
