@@ -4,8 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
+        Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="Inventory" Height="800" Width="300">
+        Title="Inventory" Height="500" Width="300">
     <Grid>
+        <TreeView x:Name="InventoryTree">
+            <TreeViewItem Header="Helmet">
+            </TreeViewItem>
+        </TreeView>
+
     </Grid>
 </Window>
