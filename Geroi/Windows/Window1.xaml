@@ -58,5 +58,11 @@
             <Image ToolTip="+2 к Ловкости" Source="/Geroi;component/resource/blade.png" Width="64" Margin="4"/>
         </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="467,0,0,0" TextWrapping="Wrap" Text="Начальный Предмет" VerticalAlignment="Top" Height="101" Width="199" FontSize="36" Foreground="Red"/>
+        <Button x:Name="level1" HorizontalAlignment="Left" Margin="925,418,0,0" VerticalAlignment="Top" Width="145" Height="58" Content="1000" FontSize="36" Click="level1_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="813,443,0,0" TextWrapping="Wrap" Text="Опыт" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF99128"/>
+        <Button x:Name="level2" HorizontalAlignment="Left" Margin="925,488,0,0" VerticalAlignment="Top" Width="145" Height="58" Content="2000" FontSize="36" Click="level2_Click"/>
+        <TextBox x:Name="Опыт" HorizontalAlignment="Left" Height="46" Margin="664,553,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="4000" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="605,558,0,0" TextWrapping="Wrap" Text="Из" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF99128"/>
+        <TextBox x:Name="LL" HorizontalAlignment="Left" Height="46" Margin="450,553,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="0" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
     </Grid>
 </Window>
