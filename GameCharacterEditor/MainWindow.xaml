@@ -19,25 +19,42 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Border.RenderTransform>
-            <Image HorizontalAlignment="Center" Height="140" VerticalAlignment="Center" Width="144" Source="/Русский_воин.jpeg" Stretch="Fill" StretchDirection="Both"/>
+            <Image x:Name="ChooseHero" HorizontalAlignment="Center" Height="140" VerticalAlignment="Center" Width="144" Source="/Русский_воин.jpeg" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="ChooseHero_MouseLeftButtonDown"/>
         </Border>
         <Label Content="Выберите своего героя!" HorizontalAlignment="Left" Margin="597,193,0,0" VerticalAlignment="Top" Width="152" Cursor="Arrow" Background="#FF5ADAD8" FontFamily="Arial Rounded MT Bold"/>
-        <TextBox HorizontalAlignment="Left" Margin="428,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
+        <TextBox x:Name="labelintelegence" HorizontalAlignment="Left" Margin="428,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
         <Label Content="Сила" HorizontalAlignment="Left" Margin="428,21,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="14"/>
         <Label Content="Ловкость" HorizontalAlignment="Left" Margin="428,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.533" FontFamily="Bookman Old Style" FontSize="14"/>
         <Label Content="Интеллект" HorizontalAlignment="Left" Margin="428,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.495,2.174" FontFamily="Bookman Old Style" FontSize="14"/>
         <Label Content="Телосложение" HorizontalAlignment="Left" Margin="428,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.533" FontFamily="Bookman Old Style" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Margin="428,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Margin="428,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Margin="428,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
-        <Button x:Name="bnt_clickm1" Content="-" HorizontalAlignment="Left" Margin="400,48,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2"/>
-        <Button x:Name="bnt_clickp1" Content="+" HorizontalAlignment="Left" Margin="553,48,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737"/>
-        <Button x:Name="bnt_clickm2" Content="-" HorizontalAlignment="Left" Margin="400,102,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2"/>
-        <Button x:Name="bnt_clickm3" Content="-" HorizontalAlignment="Left" Margin="400,156,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2"/>
-        <Button x:Name="bnt_clickm4" Content="-" HorizontalAlignment="Left" Margin="400,210,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2"/>
-        <Button x:Name="bnt_clickp2" Content="+" HorizontalAlignment="Left" Margin="553,102,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737"/>
-        <Button x:Name="bnt_clickp3" Content="+" HorizontalAlignment="Left" Margin="553,156,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737"/>
-        <Button x:Name="bnt_clickp4" Content="+" HorizontalAlignment="Left" Margin="553,210,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737"/>
+        <TextBox x:Name="constitutionlabel" HorizontalAlignment="Left" Margin="428,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
+        <TextBox x:Name="labeldexterity" HorizontalAlignment="Left" Margin="428,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
+        <TextBox x:Name="labelstrenght" HorizontalAlignment="Left" Margin="428,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False"/>
+        <Button x:Name="bnt_clickm1" Content="-" HorizontalAlignment="Left" Margin="400,48,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2" Cursor="Hand"/>
+        <Button x:Name="bnt_clickp1" Content="+" HorizontalAlignment="Left" Margin="553,48,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737" Cursor="Hand"/>
+        <Button x:Name="bnt_clickm2" Content="-" HorizontalAlignment="Left" Margin="400,102,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2" Cursor="Hand"/>
+        <Button x:Name="bnt_clickm3" Content="-" HorizontalAlignment="Left" Margin="400,156,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2" Cursor="Hand"/>
+        <Button x:Name="bnt_clickm4" Content="-" HorizontalAlignment="Left" Margin="400,210,0,0" VerticalAlignment="Top" Width="21" Background="#FF20B4E2" Cursor="Hand"/>
+        <Button x:Name="bnt_clickp2" Content="+" HorizontalAlignment="Left" Margin="553,102,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737" Cursor="Hand"/>
+        <Button x:Name="bnt_clickp3" Content="+" HorizontalAlignment="Left" Margin="553,156,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737" Cursor="Hand"/>
+        <Button x:Name="bnt_clickp4" Content="+" HorizontalAlignment="Left" Margin="553,210,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Margin="79,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False" Text="20" TextAlignment="Center" FontSize="20"/>
+        <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Margin="79,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False" Text="0" TextAlignment="Center" FontSize="20"/>
+        <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="36,187,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="14"/>
+        <Button x:Name="bnt_clickp4_Copy" Content="Повышение уровня" HorizontalAlignment="Left" Margin="55,260,0,0" VerticalAlignment="Top" Width="167" Background="#FF8DEB92" Cursor="Hand" Height="25"/>
+        <ComboBox x:Name="Hero" HorizontalAlignment="Left" Margin="613,223,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFDD1919" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="Воин"/>
+            <ComboBoxItem Content="Изгой"/>
+            <ComboBoxItem Content="Магический_чувак"/>
+            <ComboBoxItem Content="Лучник"/>
+        </ComboBox>
 
 
     </Grid>
