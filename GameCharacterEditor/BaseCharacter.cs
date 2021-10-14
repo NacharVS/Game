@@ -11,7 +11,7 @@ namespace GameCharacterEditor
         public int InteligenceParameter { get; set; }
         public int ConstitutionParameter { get; set; }
 
-        public int HealtPoints { get; private set ; }
+        public int HealtPoints { get; set ; }
         public int ManaPoints { get; set; }
         public int PhysicalAttack { get; set; }
         public int PhysicalDefence { get; set; }

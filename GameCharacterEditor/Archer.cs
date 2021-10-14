@@ -12,6 +12,8 @@ namespace GameCharacterEditor
             DexterityParameter = 35;
             InteligenceParameter = 25;
             ConstitutionParameter = 20;
-        }
+
+            HealtPoints = 100 + StrengthParameter * 5;
     }
+}
 }

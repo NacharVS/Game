@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,0,0,-6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="395*"/>
@@ -26,7 +26,8 @@
         <Label Content="Dexterity" Grid.Column="1" HorizontalAlignment="Left" Margin="21,172,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
         <Label Content="Intelegense" Grid.Column="1" HorizontalAlignment="Left" Margin="258,176,0,0" VerticalAlignment="Top" Width="100" FontSize="14"/>
         <Label Content="Constitution" Grid.Column="1" HorizontalAlignment="Left" Margin="258,112,0,0" VerticalAlignment="Top" Width="100" FontSize="14"/>
-        <Button x:Name="btnSave" Content="Save person" Grid.Column="1" Margin="574,345,30,22" FontSize="20" Click="btnSave_Click"/>
-        <Button Content="Choose objects" Grid.Column="1" HorizontalAlignment="Left" Margin="574,297,0,0" VerticalAlignment="Top" Height="43" Width="194" Click="Button_Click_1"/>
+        <Button x:Name="btnSave" Content="Save person" Grid.Column="1" Margin="8,345,596,22" FontSize="20" Click="btnSave_Click"/>
+        <Button Content="Choose objects" Grid.Column="1" HorizontalAlignment="Left" Margin="8,297,0,0" VerticalAlignment="Top" Height="43" Width="194" Click="Button_Click_1"/>
+        <TextBox x:Name="dext_Copy" Grid.Column="1" Margin="640,126,95,260" Text="20"/>
     </Grid>
 </Window>
