@@ -38,10 +38,10 @@
         <Label Content="WE HAVE" HorizontalAlignment="Left" Margin="514,253,0,0" VerticalAlignment="Top" Width="72" Foreground="Red" FontSize="16" Height="29" FontFamily="Tw Cen MT Condensed Extra Bold"/>
         <TextBox x:Name="TbExtraPoints" HorizontalAlignment="Left" Margin="525,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="20"/>
         <Label Content="STARS" HorizontalAlignment="Left" Margin="526,312,0,0" VerticalAlignment="Top" Foreground="Red" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="16"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="390,275,0,0" VerticalAlignment="Top" Width="20" Click="Button_Click_3"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="485,276,0,0" VerticalAlignment="Top" Width="20" Click="Button_Click_4"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="485,355,0,0" VerticalAlignment="Top" Width="20"/>
-        <Button Content="-" HorizontalAlignment="Center" Margin="0,356,0,0" VerticalAlignment="Top" Width="20"/>
+        <Button x:Name="PhysA_Down" Content="-" HorizontalAlignment="Left" Margin="390,275,0,0" VerticalAlignment="Top" Width="20" Click="AbilityDown_Click"/>
+        <Button x:Name="PhysA_Up" Content="+" HorizontalAlignment="Left" Margin="485,276,0,0" VerticalAlignment="Top" Width="20" Click="AbilityUp_Click"/>
+        <Button x:Name="MagA_Up" Content="+" HorizontalAlignment="Left" Margin="485,355,0,0" VerticalAlignment="Top" Width="20" Click="AbilityUp_Click"/>
+        <Button x:Name="MagA_Down" Content="-" HorizontalAlignment="Center" Margin="0,356,0,0" VerticalAlignment="Top" Width="20" Click="AbilityDown_Click"/>
 
     </Grid>
 </Window>

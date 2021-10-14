@@ -20,11 +20,9 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        int a;
         public MainWindow()
         {
             InitializeComponent();
-            a = Convert.ToInt32(TbExtraPoints.Text);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -75,14 +73,89 @@ namespace GameCharacterEditor
             TbStrength.Text = sorc.strength.ToString();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void AbilityDown_Click(object sender, RoutedEventArgs e)
         {
-            TbPhAttack.Text = Convert.ToString(Convert.ToInt32(TbPhAttack.Text) - 1);
+            int ex = int.Parse(TbExtraPoints.Text);
+            string button = (string)((Button)sender).Name;
+
+            switch (button)
+            {
+                case "PhysA_Down":
+                    int Pa = int.Parse(TbPhAttack.Text);
+                    if(Pa > 20)
+                    {
+                        --Pa;
+                        ++ex;
+                        TbExtraPoints.Text = ex.ToString();
+                        TbPhAttack.Text = Pa.ToString();
+                    }
+                    else
+                    {
+                        Exception(ex);
+                        TbExtraPoints.Text = ex.ToString();
+                    }
+                    break;
+                case "MagA_Down":
+                    int ma = int.Parse(TbMgAttack.Text);
+                    if(ma > 20)
+                    {
+                        --ma;
+                        ++ex;
+                        TbExtraPoints.Text = ex.ToString();
+                        TbMgAttack.Text = ma.ToString();
+                    }
+                    else
+                    {
+                        Exception(ex);
+                        TbExtraPoints.Text = ex.ToString();
+                    }
+                    break;
+            }
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void AbilityUp_Click(object sender, RoutedEventArgs e)
         {
+            int ex = int.Parse(TbExtraPoints.Text);
+            string button = (string)((Button)sender).Name;
 
+            switch(button)
+            {
+                case "PhysA_Up":
+                    int pa = int.Parse(TbPhAttack.Text);
+                    if(pa < 30)
+                    {
+                        ++pa;
+                        --ex;
+                        TbExtraPoints.Text = ex.ToString();
+                        TbPhAttack.Text = pa.ToString();
+                    }
+                    else
+                    {
+                        Exception(ex);
+                        TbExtraPoints.Text = ex.ToString();
+                    }
+                    break;
+                case "MagA_Up":
+                    int ma = int.Parse(TbMgAttack.Text);
+                    if(ma < 30)
+                    {
+                        ++ma;
+                        --ex;
+                        TbExtraPoints.Text = ex.ToString();
+                        TbMgAttack.Text = ma.ToString();
+                    }
+                    else
+                    {
+                        Exception(ex);
+                        TbExtraPoints.Text = ex.ToString();
+                    }
+                    break;
+            }
+        }
+
+        private void Exception(int ability)
+        {
+            --ability;
         }
     }
 }
