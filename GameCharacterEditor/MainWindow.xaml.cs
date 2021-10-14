@@ -28,7 +28,7 @@ namespace GameCharacterEditor
         void PrintText(object sender, SelectionChangedEventArgs args)
         {
             ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
-            tb.Text = " You selected " + lbi.Content.ToString() + "./";
+            tb.Text = " You selected " + lbi.Content.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -38,32 +38,27 @@ namespace GameCharacterEditor
 
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
-            dam.Text = "200";
-            def.Text = "400";
-            att.Text = "111";
-            spe.Text = "700";
-            mag.Text = "666";
-            hp.Text = "300";
+            
+            inte.Text = new Warrior().InteligenceParameter.ToString(); 
+            dext.Text = new Warrior().DexterityParameter.ToString();
+            stre.Text = new Warrior().StrengthParameter.ToString();
+            cons.Text = new Warrior().ConstitutionParameter.ToString();
         }
 
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
-            dam.Text = "2000";
-            def.Text = "4000";
-            att.Text = "1101";
-            spe.Text = "7000";
-            mag.Text = "6606";
-            hp.Text = "3000";
+            inte.Text = new Sorcerer().InteligenceParameter.ToString();
+            dext.Text = new Sorcerer().DexterityParameter.ToString();
+            stre.Text = new Sorcerer().StrengthParameter.ToString();
+            cons.Text = new Sorcerer().ConstitutionParameter.ToString();
         }
 
         private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
         {
-            dam.Text = "20";
-            def.Text = "40";
-            att.Text = "11";
-            spe.Text = "70";
-            mag.Text = "66";
-            hp.Text = "30";
+            inte.Text = new Archer().InteligenceParameter.ToString();
+            dext.Text = new Archer().DexterityParameter.ToString();
+            stre.Text = new Archer().StrengthParameter.ToString();
+            cons.Text = new Archer().ConstitutionParameter.ToString();
         }
 
         //private void Button_Click(object sender, RoutedEventArgs e)
@@ -76,6 +71,11 @@ namespace GameCharacterEditor
         {
             Window1 win1 = new Window1();
             win1.Show();
+        }
+
+        private void tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
