@@ -238,5 +238,55 @@ namespace GameCharacterEditor
             kl += 1;
             Kol.Text = kl.ToString();
         }
+        private void LvlOne(object sender, RoutedEventArgs e)
+        {
+            int Db = Convert.ToInt32(Number_Lvl.Text);
+            int Fv = Convert.ToInt32(Xp.Text);
+            Db += 100;
+            Number_Lvl.Text = Db.ToString();
+            if (Db >= Fv)
+            {
+                Fv += 5000;
+                Xp.Text = Fv.ToString();
+                MessageBox.Show("Поздравляем ваш уровень повышен");
+                int kl = Convert.ToInt32(Kol.Text);
+                kl += 5;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void LvlTwo(object sender, RoutedEventArgs e)
+        {
+            int Db = Convert.ToInt32(Number_Lvl.Text);
+            int Fv = Convert.ToInt32(Xp.Text);
+            Db += 500;
+            Number_Lvl.Text = Db.ToString();
+            if (Db > Fv || Db == Fv)
+            {
+                Fv += 5000;
+                Xp.Text = Fv.ToString();
+                MessageBox.Show("Поздравляем ваш уровень повышен");
+                int kl = Convert.ToInt32(Kol.Text);
+                kl += 5;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void LvlThree(object sender, RoutedEventArgs e)
+        {
+            int Db = Convert.ToInt32(Number_Lvl.Text);
+            int Fv = Convert.ToInt32(Xp.Text);
+            Db += 1000;
+            Number_Lvl.Text = Db.ToString();
+            if (Db > Fv || Db == Fv || Db == Fv)
+            {
+                Fv += 5000;
+                Xp.Text = Fv.ToString();
+                MessageBox.Show("Поздравляем ваш уровень повышен");
+                int kl = Convert.ToInt32(Kol.Text);
+                kl += 5;
+                Kol.Text = kl.ToString();
+            }
+        }
     }
 }

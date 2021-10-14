@@ -41,10 +41,20 @@ namespace GameCharacterEditor
             {
                 Kol.Text = kl.ToString();
                 Plus1.Visibility = Visibility.Hidden;
+                Plus2.Visibility = Visibility.Hidden;
+                Plus3.Visibility = Visibility.Hidden;
+                Plus4.Visibility = Visibility.Hidden;
+                Plus5.Visibility = Visibility.Hidden;
+
             }
             else if (kl > 0)
             {
                 Minus1.Visibility = Visibility.Visible;
+                Minus2.Visibility = Visibility.Visible;
+                Minus3.Visibility = Visibility.Visible;
+                Minus4.Visibility = Visibility.Visible;
+                Minus5.Visibility = Visibility.Visible;
+
                 Kol.Text = kl.ToString();
             }
         }
@@ -57,10 +67,18 @@ namespace GameCharacterEditor
             {
                 Strenght.Text = st.ToString();
                 Minus1.Visibility = Visibility.Hidden;
+                Minus2.Visibility = Visibility.Hidden;
+                Minus3.Visibility = Visibility.Hidden;
+                Minus4.Visibility = Visibility.Hidden;
+                Minus5.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
                 Plus1.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
+                Plus3.Visibility = Visibility.Visible;
+                Plus4.Visibility = Visibility.Visible;
+                Plus5.Visibility = Visibility.Visible;
                 Strenght.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
@@ -78,10 +96,19 @@ namespace GameCharacterEditor
             {
                 Kol.Text = kl.ToString();
                 Plus2.Visibility = Visibility.Hidden;
+                Plus1.Visibility = Visibility.Hidden;
+                Plus3.Visibility = Visibility.Hidden;
+                Plus4.Visibility = Visibility.Hidden;
+                Plus5.Visibility = Visibility.Hidden;
             }
             else if (kl > 0)
             {
                 Minus2.Visibility = Visibility.Visible;
+                Minus1.Visibility = Visibility.Visible;
+                Minus3.Visibility = Visibility.Visible;
+                Minus4.Visibility = Visibility.Visible;
+                Minus5.Visibility = Visibility.Visible;
+
                 Kol.Text = kl.ToString();
             }
         }
@@ -94,10 +121,14 @@ namespace GameCharacterEditor
             {
                 Agility.Text = st.ToString();
                 Minus2.Visibility = Visibility.Hidden;
+                Minus1.Visibility = Visibility.Hidden;
+                Minus3.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
                 Plus2.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
+                Plus3.Visibility = Visibility.Visible;
                 Agility.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
@@ -115,10 +146,14 @@ namespace GameCharacterEditor
             {
                 Kol.Text = kl.ToString();
                 Plus3.Visibility = Visibility.Hidden;
+                Plus2.Visibility = Visibility.Hidden;
+                Plus1.Visibility = Visibility.Hidden;
             }
             else if (kl > 0)
             {
                 Minus3.Visibility = Visibility.Visible;
+                Minus2.Visibility = Visibility.Visible;
+                Minus1.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -131,10 +166,14 @@ namespace GameCharacterEditor
             {
                 Intelligence.Text = st.ToString();
                 Minus3.Visibility = Visibility.Hidden;
+                Minus1.Visibility = Visibility.Hidden;
+                Minus2.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
                 Plus3.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
                 Intelligence.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
@@ -150,13 +189,17 @@ namespace GameCharacterEditor
             kl -= 1;
             if (kl == 0)
             {
-                Kol.Text = kl.ToString();
+                Intelligence.Text = st.ToString();
                 Plus4.Visibility = Visibility.Hidden;
+                Minus1.Visibility = Visibility.Hidden;
+                Minus2.Visibility = Visibility.Hidden;
             }
-            else if (kl > 0)
+            else if (st > 0)
             {
-                Minus4.Visibility = Visibility.Visible;
-                Kol.Text = kl.ToString();
+                Plus3.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
+                Intelligence.Text = st.ToString();
             }
         }
 
@@ -166,18 +209,23 @@ namespace GameCharacterEditor
             st -= 1;
             if (st == 0)
             {
-                Attack_speed.Text = st.ToString();
-                Minus4.Visibility = Visibility.Hidden;
+                Intelligence.Text = st.ToString();
+                Minus3.Visibility = Visibility.Hidden;
+                Minus1.Visibility = Visibility.Hidden;
+                Minus2.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
-                Plus4.Visibility = Visibility.Visible;
-                Attack_speed.Text = st.ToString();
+                Plus3.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
+                Intelligence.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
             kl += 1;
             Kol.Text = kl.ToString();
         }
+
         private void Plus5_Click(object sender, RoutedEventArgs e)
         {
             int st = Convert.ToInt32(Armor.Text);
@@ -216,5 +264,66 @@ namespace GameCharacterEditor
             Kol.Text = kl.ToString();
         }
 
+
+        private void Xp_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Number_lvl_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void LvlOne(object sender, RoutedEventArgs e)
+        {
+            int Db = Convert.ToInt32(Number_Lvl.Text);
+            int Fv = Convert.ToInt32(Xp.Text);
+            Db += 100;
+            Number_Lvl.Text = Db.ToString();
+            if (Db >= Fv)
+            {
+                Fv += 5000;
+                Xp.Text = Fv.ToString();
+                MessageBox.Show("Поздравляем ваш уровень повышен");
+                int kl = Convert.ToInt32(Kol.Text);
+                kl += 5;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void LvlTwo(object sender, RoutedEventArgs e)
+        {
+            int Db = Convert.ToInt32(Number_Lvl.Text);
+            int Fv = Convert.ToInt32(Xp.Text);
+            Db += 500;
+            Number_Lvl.Text = Db.ToString();
+            if (Db > Fv || Db == Fv)
+            {
+                Fv += 5000;
+                Xp.Text = Fv.ToString();
+                MessageBox.Show("Поздравляем ваш уровень повышен");
+                int kl = Convert.ToInt32(Kol.Text);
+                kl += 5;
+                Kol.Text = kl.ToString();
+            }
+        }
+
+        private void LvlThree(object sender, RoutedEventArgs e)
+        {
+            int Db = Convert.ToInt32(Number_Lvl.Text);
+            int Fv = Convert.ToInt32(Xp.Text);
+            Db += 1000;
+            Number_Lvl.Text = Db.ToString();
+            if (Db > Fv || Db == Fv || Db == Fv)
+            {
+                Fv += 5000;
+                Xp.Text = Fv.ToString();
+                MessageBox.Show("Поздравляем ваш уровень повышен");
+                int kl = Convert.ToInt32(Kol.Text);
+                kl += 5;
+                Kol.Text = kl.ToString();
+            }
+        }
     }
 }

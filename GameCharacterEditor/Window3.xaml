@@ -8,7 +8,7 @@
         Title="Window3" Height="638.474" Width="1086.363">
     <Grid>
         <Image Source="resource\Font1.jpeg" Margin="-195,-51,-194,-51"></Image>
-        <Image Source="/Rapier.png" Margin="917,506,22,7" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
+        <Image Source="/Rapier.png" Margin="917,530,22,-16" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeave="Image_MouseLeave1" MouseEnter="Image_MouseEnter1">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -18,7 +18,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image HorizontalAlignment="Left" Height="425" Margin="622,267,0,0" VerticalAlignment="Top" Width="426" Source="/Mill.jpg" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="243" Margin="693,179,0,0" VerticalAlignment="Top" Width="369" Source="/Mill.jpg" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -50,6 +50,12 @@
         <Button x:Name="Plus4" Content="+" HorizontalAlignment="Left" Margin="170,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus4_Click"/>
         <Button x:Name="Minus5" Content="-" HorizontalAlignment="Left" Margin="387,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus5_Click"/>
         <Button x:Name="Plus5" Content="+" HorizontalAlignment="Left" Margin="467,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus5_Click"/>
+        <Button x:Name="Lvl1" HorizontalAlignment="Left" Margin="700,414,0,0" VerticalAlignment="Top" Width="159" Height="58" Content="100" FontSize="36" Click="LvlOne" RenderTransformOrigin="0.841,-0.327"/>
+        <Button x:Name="Lvl2" HorizontalAlignment="Left" Margin="894,414,0,0" VerticalAlignment="Top" Width="161" Height="58" Content="500" FontSize="36" Click="LvlTwo"/>
+        <Button x:Name="Lvl3" HorizontalAlignment="Left" Margin="798,484,0,0" VerticalAlignment="Top" Width="159" Height="58" Content="1000" FontSize="36" Click="LvlThree" RenderTransformOrigin="0.841,-0.327"/>
+        <TextBox x:Name="Xp" HorizontalAlignment="Left" Height="46" Margin="431,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Text="5400" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="157,501,0,0" TextWrapping="Wrap" Text="Осталось до следующего уровня" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="White" Width="513"/>
+        <TextBox x:Name="Number_Lvl" HorizontalAlignment="Left" Height="46" Margin="239,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Text="0" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
     </Grid>
 </Window>
 
