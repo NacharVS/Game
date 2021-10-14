@@ -250,6 +250,10 @@ namespace GameCharacterEditor
 
         private void PickButton_Click(object sender, RoutedEventArgs e)
         {
+            _todoData = new BindingList<TodoModel>()
+            {
+                new TodoModel(){Character = (string)((Button) sender).Name, HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text), Strenght = int.Parse(Strenght_TB.Text) }
+            };
 
         }
 
@@ -267,6 +271,7 @@ namespace GameCharacterEditor
             };
 
             CharacterList.ItemsSource = _todoData;
+
         }
     }
 }
