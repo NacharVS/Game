@@ -19,18 +19,48 @@ namespace GameCharacterEditor
             {
                 if (intelegence > 70 && lvl > 2)
                     existItem.Add(allItems[index]);
+                else
+                    throw new Exception("Не хватает статов");
             }
 
             else if (a == "Leather")
             {
                 if (strength > 110 && dexterity > 150 && lvl > 4)
                     existItem.Add(allItems[index]);
+                else
+                    throw new Exception("Не хватает статов");
             }
 
             else if (a == "Hecoy")
             {
                 if (strength > 250 && constitution > 300 && lvl > 7)
                     existItem.Add(allItems[index]);
+                else
+                    throw new Exception("Не хватает статов");
+            }
+
+            else if (a == "RobeHelmet")
+            {
+                if (strength > 250 && constitution > 300 && lvl > 7)
+                    existItem.Add(allItems[index]);
+                else
+                    throw new Exception("Не хватает статов");
+            }
+
+            else if (a == "LeatherHelmet")
+            {
+                if (strength > 250 && constitution > 300 && lvl > 7)
+                    existItem.Add(allItems[index]);
+                else
+                    throw new Exception("Не хватает статов");
+            }
+
+            else if (a == "HoceyHelmet")
+            {
+                if (strength > 250 && constitution > 300 && lvl > 7)
+                    existItem.Add(allItems[index]);
+                else
+                    throw new Exception("Не хватает статов");
             }
 
             else

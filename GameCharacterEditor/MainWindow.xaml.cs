@@ -48,21 +48,21 @@ namespace GameCharacterEditor
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //switch (cmbbox.SelectedIndex)
-            //{
-            //    case 0:
-            //        Warrior warior = new Warrior();
-            //        GetUnitInfo(warior);
-            //        break;
-            //    case 1:
-            //        Rogue rogue = new Rogue();
-            //        GetUnitInfo(rogue);
-            //        break;
-            //    case 2:
-            //        Sorcerer sorcerer = new Sorcerer();
-            //        GetUnitInfo(sorcerer);
-            //        break;
-            //}
+            switch (cmbbox.SelectedIndex)
+            {
+                case 0:
+                    Warrior warior = new Warrior();
+                    GetUnitInfo(warior);
+                    break;
+                case 1:
+                    Rogue rogue = new Rogue();
+                    GetUnitInfo(rogue);
+                    break;
+                case 2:
+                    Sorcerer sorcerer = new Sorcerer();
+                    GetUnitInfo(sorcerer);
+                    break;
+            }
         }
 
         private void GetUnitInfo(int index)
@@ -77,27 +77,39 @@ namespace GameCharacterEditor
             txthp.Text = unitLst[index].Hp.ToString();
             txtName.Text = unitLst[index].Name.ToString();
         }
+        private void GetUnitInfo(Unit unit)
+        {
+            txtStrength.Text = unit.Strength.ToString();
+            txtDexterity.Text = unit.Dexterity.ToString();
+            txtConstitution.Text = unit.Constitution.ToString();
+            txtIntelegence.Text = unit.Intelegence.ToString();
+            txtExtra.Text = unit.Extra.ToString();
+            txtAttackSpeed.Text = unit.AttackSpeed.ToString();
+            txtWalkingSpeed.Text = unit.WalkingSpeed.ToString();
+            txthp.Text = unit.Hp.ToString();
+            txtName.Text = unit.Name.ToString();
+        }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             switch (cmbbox.SelectedIndex)
             {
                 case 0:
-                    Warrior warrior = new Warrior(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
+                    Warrior warrior = new Warrior(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text);
                     MessageBox.Show($"Unit is created {warrior.Name}");
                     unitLst.Add(warrior);
                     GetUnitInfo(unitLst.Count - 1);
                     x = unitLst.Count;
                     break;
                 case 1:
-                    Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
+                    Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text);
                     MessageBox.Show($"Unit is created {rogue.Name}");
                     unitLst.Add(rogue);
                     GetUnitInfo(unitLst.Count - 1);
                     x = unitLst.Count;
                     break;
                 case 2:
-                    Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
+                    Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text);
                     MessageBox.Show($"Unit is created {sorcerer.Name}");
                     unitLst.Add(sorcerer);
                     GetUnitInfo(unitLst.Count - 1);
@@ -109,10 +121,10 @@ namespace GameCharacterEditor
         private void Render(int index)
         {
             List<string> itemLst = new List<string>();
-            foreach (var item in unitLst[index].Inventar.ExistItem)
+            unitLst[index].Inventar.ExistItem.ForEach(item =>
             {
                 itemLst.Add(item.ToString().Substring(20) + "\n");
-            }
+            });
 
             cmbBoxItem.ItemsSource = itemLst;
             GetUnitInfo(x);
@@ -124,10 +136,11 @@ namespace GameCharacterEditor
             inventar.FillAllItemsList();
             List<string> lst = new List<string>();
 
-            foreach (var item in inventar.AllItems)
+            inventar.AllItems.ForEach(item =>
             {
                 lst.Add(item.ToString().Substring(20) + "\n");
-            }
+            });
+
             cmbBoxInventar.ItemsSource = lst;
         }
 
@@ -150,7 +163,7 @@ namespace GameCharacterEditor
         // индекс выходит за пределы, исправить
         private void Prev_Click(object sender, RoutedEventArgs e)
         {
-            if (x - 1 <= 0)
+            if (x - 1 >= 0)
             {
                 x--;
                 Render(x);
@@ -201,6 +214,52 @@ namespace GameCharacterEditor
             unitLst[x].Dexterity -= unitLst[x].Inventar.AllItems[x].Dexterity;
             unitLst[x].Intelegence -= unitLst[x].Inventar.AllItems[x].Intelegence;
             Render(x);
+        }
+
+        private void txtExp_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            unitLst[x].Lvl = int.Parse(txtExp.Text) / 1000;
+            //txtExp.Text = 
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            txtStrength.Text = (int.Parse(txtStrength.Text) + 1).ToString();
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            txtDexterity.Text = (int.Parse(txtDexterity.Text) + 1).ToString();
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            txtIntelegence.Text = (int.Parse(txtIntelegence.Text) + 1).ToString();
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            txtConstitution.Text = (int.Parse(txtConstitution.Text) + 1).ToString();
+        }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            txtDexterity.Text = (int.Parse(txtDexterity.Text) - 1).ToString();
+        }
+
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            txtIntelegence.Text = (int.Parse(txtIntelegence.Text) - 1).ToString();
+        }
+
+        private void Button_Click_14(object sender, RoutedEventArgs e)
+        {
+            txtConstitution.Text = (int.Parse(txtConstitution.Text) - 1).ToString();
+        }
+
+        private void Button_Click_15(object sender, RoutedEventArgs e)
+        {
+            txtStrength.Text = (int.Parse(txtStrength.Text) - 1).ToString();
         }
     }
 }

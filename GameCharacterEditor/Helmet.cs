@@ -6,14 +6,23 @@ namespace GameCharacterEditor
 {
     abstract class Helmet : Item
     {
-
+        public abstract void Render();
     }
 
     class RobeHelmet : Helmet
     {
         public RobeHelmet()
         {
+            Render();
+        }
+
+        public override void Render()
+        {
+            intelegence = 50;
+            mP = 50;
+            mDamage = 50;
             pDefence = 50;
+            mDefence = 150;
         }
     }
 
@@ -21,7 +30,17 @@ namespace GameCharacterEditor
     {
         public LeatherHelmet()
         {
-            pDefence = 100;
+            Render();
+        }
+
+        public override void Render()
+        {
+            dexterity = 80;
+            mP = 80;
+            pDamage = 80;
+            pDefence = 80;
+            mDefence = 160;
+
         }
     }
 
@@ -29,7 +48,15 @@ namespace GameCharacterEditor
     {
         public HoceyHelmet()
         {
-            pDefence = 200;
+            Render();
+        }
+
+        public override void Render()
+        {
+            strength = 130;
+            constitution = 130;
+            pDefence = 130;
+            hp = 260;
         }
     }
 }

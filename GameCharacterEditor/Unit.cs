@@ -19,6 +19,7 @@ namespace GameCharacterEditor
         protected double mDefence;
         protected double pAttack;
         protected double mAttack;
+        protected double experience;
         Inventar inventar = new Inventar();
 
 
@@ -38,15 +39,15 @@ namespace GameCharacterEditor
         public double MDefence { get => mDefence; set => mDefence = value; }
         public double PAttack { get => pAttack; set => pAttack = value; }
         public double MAttack { get => mAttack; set => mAttack = value; }
+        public double Experience { get => experience; set => experience = value; }
 
-        public Unit(double strength, double dexterity, double constitution, double intelegence, string name, int lvl)
+        public Unit(double strength, double dexterity, double constitution, double intelegence, string name)
         {
-            this.strength = strength;
-            this.dexterity = dexterity;
-            this.intelegence = intelegence;
-            this.constitution = constitution;
+            this.strength = strength > extra ? strength : extra;
+            this.dexterity = dexterity > extra ? dexterity : extra;
+            this.intelegence = intelegence > extra ? intelegence : extra;
+            this.constitution = constitution > extra ? constitution : extra;
             this.name = name;
-            this.lvl = lvl;
             hp += strength * 5 + constitution * 10;
             attackSpeed += dexterity * 5;
             walkingSpeed += dexterity * 2;
@@ -55,7 +56,7 @@ namespace GameCharacterEditor
             mp += intelegence * 5;
             mDefence += intelegence * 5;
             pDefence += constitution * 5;
-            pAttack = strength * 5 > 20 ? strength * 5 : extra;
+            pAttack = strength * 5;
             inventar.FillAllItemsList();
         }
 
@@ -77,15 +78,15 @@ namespace GameCharacterEditor
 
     class Warrior : Unit
     {
-        public Warrior() : base(250, 10, 100, 50, "Warrior 1.0", 1)
+        public Warrior() : base(250, 70, 100, 50, "Warrior 1.0")
         {
             strength = 250;
-            dexterity = 10;
+            dexterity = 70;
             constitution = 100;
             intelegence = 50;
             name = "Warrior 1.0";
         }
-        public Warrior(double strength, double dexterity, double constitution, double intelegence, string name, int lvl) : base(strength, dexterity, constitution, intelegence, name, lvl)
+        public Warrior(double strength, double dexterity, double constitution, double intelegence, string name) : base(strength, dexterity, constitution, intelegence, name)
         {
 
         }
@@ -93,7 +94,7 @@ namespace GameCharacterEditor
 
     class Sorcerer : Unit
     {
-        public Sorcerer() : base(50, 50, 50, 250, "Sorcerer 1.0", 1)
+        public Sorcerer() : base(50, 50, 50, 250, "Sorcerer 1.0")
         {
             intelegence = 250;
             strength = 50;
@@ -101,7 +102,7 @@ namespace GameCharacterEditor
             dexterity = 50;
             name = "Sorcerer 1.0";
         }
-        public Sorcerer(double strength, double dexterity, double constitution, double intelegence, string name, int lvl) : base(strength, dexterity, constitution, intelegence, name, lvl)
+        public Sorcerer(double strength, double dexterity, double constitution, double intelegence, string name) : base(strength, dexterity, constitution, intelegence, name)
         {
 
         }
@@ -109,7 +110,7 @@ namespace GameCharacterEditor
 
     class Rogue : Unit
     {
-        public Rogue() : base(60, 250, 60, 100, "Rogue 1.0", 1)
+        public Rogue() : base(60, 250, 60, 100, "Rogue 1.0")
         {
             dexterity = 250;
             strength = 60;
@@ -117,7 +118,7 @@ namespace GameCharacterEditor
             constitution = 60;
             name = "Rogue 1.0";
         }
-        public Rogue(double strength, double dexterity, double constitution, double intelegence, string name, int lvl) : base(strength, dexterity, constitution, intelegence, name, lvl)
+        public Rogue(double strength, double dexterity, double constitution, double intelegence, string name) : base(strength, dexterity, constitution, intelegence, name)
         {
 
         }

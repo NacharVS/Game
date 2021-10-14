@@ -56,7 +56,6 @@ namespace GameCharacterEditor
             constitution = 130;
             pDefence = 130;
             hp = 260;
-
         }
     }
 }
