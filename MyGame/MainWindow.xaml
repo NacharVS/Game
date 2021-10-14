@@ -1,0 +1,132 @@
+﻿<Window x:Class="MyGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyGame"
+        mc:Ignorable="d"
+        Title="Diablo Remastered by Karpov" Height="600" Width="1000"
+        MaxHeight="600" MinHeight="600" MaxWidth="1000" MinWidth="1000"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="DarkRed">
+    <Window.Resources>
+        <ControlTemplate x:Key="TopMenuBtn" TargetType="Button">
+            <Grid x:Name="Btn" Height="40" Margin="20, 0, 0, 0">
+                <Border>
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}"
+                               Background="Transparent" FontSize="23"
+                               VerticalAlignment="Center">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="#FF9D9999"/>
+                                    <Style.Triggers>
+                                        <!--Меняет цвет при зажатии конпки-->
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Btn}"
+                                                     Value="True">
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding = "{Binding RelativeSource={RelativeSource
+                                            Mode = FindAncestor,
+                                            AncestorType={x:Type Button}},
+                                            Path = IsPressed}" Value="true">
+                                            <Setter Property="Foreground" Value="#FF9D9999"/>
+                                        </DataTrigger>
+                                        <!--Сохраняет цвет при нажатии-->
+                                        <DataTrigger Binding = "{Binding RelativeSource={RelativeSource
+                                            Mode = FindAncestor,
+                                            AncestorType={x:Type Button}},
+                                            Path = IsFocused}" Value="true">
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                        <!--Блюр эффект свечения с размытием при помощьи создания нового Label-->
+                        <Label Content="{TemplateBinding Content}"
+                           Background="Transparent" Margin="-3, 0, 0, 0"
+                           VerticalAlignment="Center" FontSize="23" FontWeight="Bold">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding = "{Binding RelativeSource={RelativeSource
+                                            Mode = FindAncestor,
+                                            AncestorType={x:Type Button}},
+                                            Path = IsFocused}" Value="true">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <BlurEffect Radius="25"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                    </Grid>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <!--3D Нажатие кнопки или же Впадание кнопки-->
+                                <DataTrigger Binding = "{Binding RelativeSource={RelativeSource
+                                            Mode = FindAncestor,
+                                            AncestorType={x:Type Button}},
+                                            Path = IsPressed}" Value="true">
+                                    <Setter Property="Margin" Value="0, 2, 0, 0"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="SlideMenuBtn" TargetType="Button">
+            <Grid x:Name="Btn" Height="45">
+                <Border>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="{DynamicResource ResourceKey=Img}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="TopMenu" Grid.Row="0" Grid.ColumnSpan="2">
+            <Border BorderThickness="1" BorderBrush="AliceBlue"  Background="Transparent">
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="100" Template="{StaticResource ResourceKey=TopMenuBtn}" Content="Игры"/>
+                    <Button Width="100" Template="{StaticResource ResourceKey=TopMenuBtn}" Content="Игры"/>
+                    <Button Width="100" Template="{StaticResource ResourceKey=TopMenuBtn}" Content="Игры"/>
+                    <Button Width="100" Template="{StaticResource ResourceKey=TopMenuBtn}" Content="Игры"/>
+                    <Button Width="100" Template="{StaticResource ResourceKey=TopMenuBtn}" Content="Игры"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid x:Name="SlideMenu" Grid.Column="0" Grid.Row="1">
+            <Border BorderThickness="1, 0, 1, 1" BorderBrush="AliceBlue"/>
+            <Border BorderThickness="0" BorderBrush="Black" Opacity="0.6"/>
+            <StackPanel Orientation="Vertical">
+                <!--Искандер Привет!-->
+                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                        Content="World Of Warcraft">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">MyRessource/Icons/hs.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
