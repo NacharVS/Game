@@ -3,28 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGame", "MyGame\MyGame.csproj", "{E1A4292E-DF43-4FDB-B810-9EE133927DE1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{E1B09116-FE4A-4EA1-8F7D-C8003F92B27F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{78803437-74F0-46D1-BE28-1EF2C7BBEA38}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{A4CC0CD8-A569-4F19-9CBB-32CE1F14B7D0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Res", "Res", "{21361DE8-0700-48AA-A084-6AC83F6804AF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyRessource", "MyRessource", "{DD770843-938A-42B5-A9DF-4A75B51FB20B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Background", "Background", "{97F19599-8CA4-4AB5-AC56-432299C9CDD8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icons", "Icons", "{F4B6CBE7-FFE5-46DC-B34C-B510D621F29F}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Downloads\Иконки игр\hs.png = ..\..\..\Downloads\Иконки игр\hs.png
-		..\..\..\Downloads\Иконки игр\overwatch.png = ..\..\..\Downloads\Иконки игр\overwatch.png
-		..\..\..\Downloads\Иконки игр\WOW.PNG = ..\..\..\Downloads\Иконки игр\WOW.PNG
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{55CC95F2-956D-4707-910A-2D9052C90B38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{C5678D42-04AD-49A1-A3BD-8FAC31EB4A5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,21 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1A4292E-DF43-4FDB-B810-9EE133927DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1A4292E-DF43-4FDB-B810-9EE133927DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1A4292E-DF43-4FDB-B810-9EE133927DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1A4292E-DF43-4FDB-B810-9EE133927DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5678D42-04AD-49A1-A3BD-8FAC31EB4A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5678D42-04AD-49A1-A3BD-8FAC31EB4A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5678D42-04AD-49A1-A3BD-8FAC31EB4A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5678D42-04AD-49A1-A3BD-8FAC31EB4A5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{E1A4292E-DF43-4FDB-B810-9EE133927DE1} = {A4CC0CD8-A569-4F19-9CBB-32CE1F14B7D0}
-		{21361DE8-0700-48AA-A084-6AC83F6804AF} = {A4CC0CD8-A569-4F19-9CBB-32CE1F14B7D0}
-		{DD770843-938A-42B5-A9DF-4A75B51FB20B} = {A4CC0CD8-A569-4F19-9CBB-32CE1F14B7D0}
-		{97F19599-8CA4-4AB5-AC56-432299C9CDD8} = {DD770843-938A-42B5-A9DF-4A75B51FB20B}
-		{F4B6CBE7-FFE5-46DC-B34C-B510D621F29F} = {DD770843-938A-42B5-A9DF-4A75B51FB20B}
-		{55CC95F2-956D-4707-910A-2D9052C90B38} = {DD770843-938A-42B5-A9DF-4A75B51FB20B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C040425-D656-4686-A879-8886B99C224C}
