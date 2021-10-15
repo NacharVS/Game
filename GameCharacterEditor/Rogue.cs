@@ -12,11 +12,14 @@ namespace GameCharacterEditor
             strenght = 65;
             intelegence = 100;
             constitution = 50;
-        }
-        public void Health_Unit()
-        {
+            Mp_Unit = intelegence * 5;
             Hp_Unit += strenght * 5;
+            Hp_Unit += constitution * 10;
         }
+        //public void Health_Unit()
+        //{
+          
+        //}
         public void Attack_Unit()
         {
             if ((strenght * 5) > 20)
@@ -37,13 +40,13 @@ namespace GameCharacterEditor
         public void Agility_Buffs_Intelegence()
         {
             Magic_Attack = intelegence * 10;
-            Mp_Unit = intelegence * 5;
+           
             Magic_Defence = intelegence * 5;
         }
         public void Agility_Buffs_Constitution()
         {
             Phisical_Defence += constitution * 5;
-            Hp_Unit += constitution * 10;
+           
         }  
     }
 }

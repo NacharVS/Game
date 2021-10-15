@@ -21,6 +21,10 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        double Strenghtt = 0;
+        double Dexterityy = 0;
+        double Intelegense = 0;
+        double Constribution = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -88,6 +92,47 @@ namespace GameCharacterEditor
         {
             
             labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) + 1).ToString();
+        }
+
+        private void bnt_clickm2_Click(object sender, RoutedEventArgs e)
+        {
+            labeldexterity.Text = (Convert.ToDouble(labeldexterity.Text) - 1).ToString();
+        }
+
+        private void bnt_clickp2_Click(object sender, RoutedEventArgs e)
+        {
+            labeldexterity.Text = (Convert.ToDouble(labeldexterity.Text) + 1).ToString();
+        }
+
+        private void bnt_clickm3_Click(object sender, RoutedEventArgs e)
+        {
+            labelintelegence.Text = (Convert.ToDouble(labelintelegence.Text) - 1).ToString();
+        }
+
+        private void bnt_clickp3_Click(object sender, RoutedEventArgs e)
+        {
+            labelintelegence.Text = (Convert.ToDouble(labelintelegence.Text) + 1).ToString();
+        }
+
+        private void bnt_clickm4_Click(object sender, RoutedEventArgs e)
+        {
+            constitutionlabel.Text = (Convert.ToDouble(constitutionlabel.Text) - 1).ToString();
+        }
+
+        private void bnt_clickp4_Click(object sender, RoutedEventArgs e)
+        {
+            constitutionlabel.Text = (Convert.ToDouble(constitutionlabel.Text) + 1).ToString();
+        }
+
+        private void labelstrenght_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textpoint_TextChanged(object sender, TextChangedEventArgs e)
+        {  
+            Convert.ToDouble(textpoint.Text).ToString();
+             a -= 1;
         }
     }
 }
