@@ -21,6 +21,11 @@ namespace GameCharacterEditor
     public partial class MainWindow : Window
     {
         private List<Unit> unitLst = new List<Unit>();
+        private int str = 0;
+        private int dex = 0;
+        private int con = 0;
+        private int intel = 0;
+        private double extra = 0;
         int x = 0;
 
         public MainWindow()
@@ -31,21 +36,25 @@ namespace GameCharacterEditor
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             unitLst[x].PhysAttack();
+            GetUnitInfo(x);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             unitLst[x].PhysDefence();
+            GetUnitInfo(x);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             unitLst[x].MagicAttack();
+            GetUnitInfo(x);
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
             unitLst[x].MagicDefence();
+            GetUnitInfo(x);
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -55,14 +64,17 @@ namespace GameCharacterEditor
                 case 0:
                     Warrior warior = new Warrior();
                     GetUnitInfo(warior);
+                    extra = warior.Extra;
                     break;
                 case 1:
                     Rogue rogue = new Rogue();
                     GetUnitInfo(rogue);
+                    extra = rogue.Extra;
                     break;
                 case 2:
                     Sorcerer sorcerer = new Sorcerer();
                     GetUnitInfo(sorcerer);
+                    extra = sorcerer.Extra;
                     break;
             }
         }
@@ -101,21 +113,21 @@ namespace GameCharacterEditor
                     MessageBox.Show($"Unit is created {warrior.Name}");
                     unitLst.Add(warrior);
                     GetUnitInfo(unitLst.Count - 1);
-                    x = unitLst.Count;
+                    x = unitLst.Count - 1;
                     break;
                 case 1:
                     Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text);
                     MessageBox.Show($"Unit is created {rogue.Name}");
                     unitLst.Add(rogue);
                     GetUnitInfo(unitLst.Count - 1);
-                    x = unitLst.Count;
+                    x = unitLst.Count - 1;
                     break;
                 case 2:
                     Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text);
                     MessageBox.Show($"Unit is created {sorcerer.Name}");
                     unitLst.Add(sorcerer);
                     GetUnitInfo(unitLst.Count - 1);
-                    x = unitLst.Count;
+                    x = unitLst.Count - 1;
                     break;
             }
         }
@@ -228,53 +240,83 @@ namespace GameCharacterEditor
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            txtStrength.Text = (int.Parse(txtStrength.Text) + 1).ToString();
+            if (str < extra)
+            {
+                txtStrength.Text = (int.Parse(txtStrength.Text) + 1).ToString();
+                str++;
+            }
+
             Refresh();
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
-            txtDexterity.Text = (int.Parse(txtDexterity.Text) + 1).ToString();
+            if (dex < extra)
+            {
+                txtDexterity.Text = (int.Parse(txtDexterity.Text) + 1).ToString();
+                dex++;
+            }
             Refresh();
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
-            txtIntelegence.Text = (int.Parse(txtIntelegence.Text) + 1).ToString();
+            if (intel < extra)
+            {
+                txtIntelegence.Text = (int.Parse(txtIntelegence.Text) + 1).ToString();
+                intel++;
+            }
             Refresh();
         }
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
-            txtConstitution.Text = (int.Parse(txtConstitution.Text) + 1).ToString();
+            if (con < extra)
+            {
+                txtConstitution.Text = (int.Parse(txtConstitution.Text) + 1).ToString();
+                con++;
+            }
             Refresh();
         }
 
         private void Button_Click_12(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtDexterity.Text) - 1 >= 20)
+            if (int.Parse(txtDexterity.Text) - 1 >= 20 && dex > -extra)
+            {
                 txtDexterity.Text = (int.Parse(txtDexterity.Text) - 1).ToString();
+                dex--;
+            }
+
             Refresh();
         }
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtIntelegence.Text) - 1 >= 20)
+            if (int.Parse(txtIntelegence.Text) - 1 >= 20 && intel > -extra)
+            {
                 txtIntelegence.Text = (int.Parse(txtIntelegence.Text) - 1).ToString();
+                intel--;
+            }
             Refresh();
         }
 
         private void Button_Click_14(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtConstitution.Text) - 1 >= 20)
+            if (int.Parse(txtConstitution.Text) - 1 >= 20 && con > -extra)
+            {
                 txtConstitution.Text = (int.Parse(txtConstitution.Text) - 1).ToString();
+                con--;
+            }
             Refresh();
         }
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtStrength.Text) - 1 >= 20)
+            if (int.Parse(txtStrength.Text) - 1 >= 20 && str > -extra)
+            {
                 txtStrength.Text = (int.Parse(txtStrength.Text) - 1).ToString();
+                str--;
+            }
             Refresh();
         }
 

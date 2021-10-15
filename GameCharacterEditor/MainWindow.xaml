@@ -22,16 +22,16 @@
             <ComboBoxItem Content="Rogue"/>
             <ComboBoxItem Content="Sorcerer"/>
         </ComboBox>
-        <TextBox x:Name="txtStrength" HorizontalAlignment="Left" Margin="26,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
-        <TextBox x:Name="txtIntelegence" HorizontalAlignment="Left" Margin="25,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
-        <TextBox x:Name="txtConstitution" HorizontalAlignment="Left" Margin="226,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <TextBox x:Name="txtStrength" IsReadOnly="True" HorizontalAlignment="Left" Margin="26,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <TextBox x:Name="txtIntelegence" IsReadOnly="True" HorizontalAlignment="Left" Margin="25,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
+        <TextBox x:Name="txtConstitution" IsReadOnly="True" HorizontalAlignment="Left" Margin="226,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
         <TextBox x:Name="txtExtra" IsReadOnly="True" HorizontalAlignment="Left" Margin="27,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33" IsReadOnlyCaretVisible="True"/>
         <TextBox x:Name="txtWalkingSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="28,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
         <TextBox x:Name="txtAttackSpeed" IsReadOnly="True"  HorizontalAlignment="Left" Margin="228,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
         <Button Content="P.Attack" HorizontalAlignment="Left" Margin="30,450,0,0" VerticalAlignment="Top" Height="36" Width="107" Click="Button_Click"/>
         <Button Content="M.Attack" HorizontalAlignment="Left" Margin="250,450,0,0" VerticalAlignment="Top" Height="36" Width="107" Click="Button_Click_2"/>
         <Button Content="P.Defence" HorizontalAlignment="Left" Margin="30,519,0,0" VerticalAlignment="Top" Height="37" Width="112" Click="Button_Click_1"/>
-        <Button Content="M.Defence" HorizontalAlignment="Left" Margin="250,519,0,0" VerticalAlignment="Top" Height="37" Width="107" Click="Button_Click_8"/>
+        <Button Content="M.Defence" HorizontalAlignment="Left" Margin="250,519,0,0" VerticalAlignment="Top" Height="37" Width="107" Click="Button_Click_8" Cursor="Hand"/>
         <Label Content="Strength&#xD;&#xA;" HorizontalAlignment="Left" Margin="27,137,0,0" VerticalAlignment="Top" Width="117" Height="31" Foreground="White" FontSize="16"/>
         <Label Content="Dexterity&#xD;&#xA;" HorizontalAlignment="Left" Margin="223,135,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
         <Label Content="Intelegence&#xA;" HorizontalAlignment="Left" Margin="24,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.763,0.695" Width="118" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
@@ -39,7 +39,7 @@
         <Label Content="Extra" HorizontalAlignment="Left" Margin="24,295,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
         <Label Content="AttackSpeed" HorizontalAlignment="Left" Margin="222,298,0,0" VerticalAlignment="Top" Width="136" Height="31"  Foreground="#DDFFFFFF" FontSize="16"/>
         <Label Content="WalkingSpeed" HorizontalAlignment="Left" Margin="26,363,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF" FontSize="16"/>
-        <TextBox x:Name="txtDexterity" HorizontalAlignment="Left" Width="136" Height="33" Margin="228,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Cursor="IBeam" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" Padding="0,0,0,0"/>
+        <TextBox x:Name="txtDexterity" IsReadOnly="True" HorizontalAlignment="Left" Width="136" Height="33" Margin="228,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Cursor="IBeam" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" Padding="0,0,0,0"/>
         <Button HorizontalAlignment="Left" Margin="480,379,0,0" VerticalAlignment="Top" Height="168" Width="170" Click="Button_Click_3"
             Style="{StaticResource MaterialDesignFloatingActionButton}"
             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
@@ -53,11 +53,11 @@
         <Label Content="HP" FontSize="16" HorizontalAlignment="Left" Margin="233,367,0,0" VerticalAlignment="Top" Width="136" Height="31"  Foreground="#DDFFFFFF"/>
         <Button Content="Inventar" HorizontalAlignment="Left" Margin="805,499,0,0" VerticalAlignment="Top" Height="42" Width="180" Click="Button_Click_4"/>
 
-        <ComboBox FocusVisualStyle="{DynamicResource ComboBoxFocusVisualStyle1}" x:Name="cmbBoxInventar" HorizontalAlignment="Left" Margin="412,22,0,0" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="All things"  materialDesign:HintAssist.Foreground="Black"  materialDesign:HintAssist.FontFamily="Global Monospace" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="BlueViolet" BorderBrush="#BC000000" FontSize="20" UseLayoutRounding="True"/>
+        <ComboBox FocusVisualStyle="{DynamicResource ComboBoxFocusVisualStyle1}" x:Name="cmbBoxInventar" HorizontalAlignment="Left" Margin="412,22,0,0" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="All things"  materialDesign:HintAssist.Foreground="White"  materialDesign:HintAssist.FontFamily="Global Monospace" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="BlueViolet" BorderBrush="#BC000000" FontSize="20" UseLayoutRounding="True"/>
         <Button HorizontalAlignment="Left" Margin="413,103,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="Button_Click_5" Cursor="Hand">
             <TextBlock Text="Добавить в свой инвентарь" TextWrapping="Wrap" TextAlignment="Center"/>
         </Button>
-        <ComboBox x:Name="cmbBoxItem" HorizontalAlignment="Left" Margin="594,22,0,0"  materialDesign:HintAssist.Hint="Your Inventar"  materialDesign:HintAssist.Foreground="Black"  materialDesign:HintAssist.FontFamily="Global Monospace" VerticalAlignment="Top" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF2C0054" BorderBrush="#BC000000" FontSize="18" UseLayoutRounding="True" FontWeight="Bold">
+        <ComboBox x:Name="cmbBoxItem" HorizontalAlignment="Left" Margin="594,22,0,0"  materialDesign:HintAssist.Hint="Your Inventar"  materialDesign:HintAssist.Foreground="White"  materialDesign:HintAssist.FontFamily="Global Monospace" VerticalAlignment="Top" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF2C0054" BorderBrush="#BC000000" FontSize="18" UseLayoutRounding="True" FontWeight="Bold">
 
         </ComboBox>
         <Button HorizontalAlignment="Left" Margin="599,103,0,0" VerticalAlignment="Top" Height="55" Width="150" Click="Button_Click_6">
