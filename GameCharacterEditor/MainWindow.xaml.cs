@@ -21,10 +21,11 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        double Strenghtt = 0;
-        double Dexterityy = 0;
-        double Intelegense = 0;
-        double Constribution = 0;
+        double strenghtt = 0;
+        double dexterityy = 0;
+        double intelegense = 0;
+        double constribution = 0;
+        double extraPoint = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,25 +36,39 @@ namespace GameCharacterEditor
 
         }
 
+        private void ZeroZero()
+        {
+            double strenghtt = 0;
+            double dexterityy = 0;
+            double intelegense = 0;
+            double constribution = 0;
+        }
+
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (Hero.SelectedIndex)
             {
                 case 0:
-                    Characters(new Warrior());
+                    Warrior war = new Warrior();
+                    Characters(war);
+                    extraPoint = war.Extra;
                     Choosehero();
+                    ZeroZero();
                     break;
                 case 1:
                     Characters(new Rogue());
                     Choosehero();
+                    ZeroZero();
                     break;
                 case 2:
                     Characters(new Magic_dude());
                     Choosehero();
+                    ZeroZero();
                     break;
                 case 3:
                     Characters(new Archer());
                     Choosehero();
+                    ZeroZero();
                     break;
 
             }
@@ -81,6 +96,7 @@ namespace GameCharacterEditor
             constitutionlabel.Text = unit.Constitution.ToString();
             Manatxt.Text = unit.MP_Unit.ToString();
             Healthtxt.Text = unit.HP_Unit.ToString();
+            textpoint.Text = unit.Extra.ToString();
         }
 
         private void bnt_clickm1_Click(object sender, RoutedEventArgs e)
@@ -90,7 +106,6 @@ namespace GameCharacterEditor
 
         private void bnt_clickp1_Click(object sender, RoutedEventArgs e)
         {
-            
             labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) + 1).ToString();
         }
 
@@ -121,18 +136,20 @@ namespace GameCharacterEditor
 
         private void bnt_clickp4_Click(object sender, RoutedEventArgs e)
         {
-            constitutionlabel.Text = (Convert.ToDouble(constitutionlabel.Text) + 1).ToString();
+            if(constribution+1 <= extraPoint)
+            {
+                constitutionlabel.Text = (Convert.ToDouble(constitutionlabel.Text) + 1).ToString();
+                constribution++;
+            }
+            else
+            {
+                MessageBox.Show("");
+            }
         }
 
         private void labelstrenght_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-        }
-
-        private void textpoint_TextChanged(object sender, TextChangedEventArgs e)
-        {  
-            Convert.ToDouble(textpoint.Text).ToString();
-             a -= 1;
         }
     }
 }

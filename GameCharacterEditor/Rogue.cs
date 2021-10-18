@@ -12,9 +12,9 @@ namespace GameCharacterEditor
             strenght = 65;
             intelegence = 100;
             constitution = 50;
-            Mp_Unit = intelegence * 5;
-            Hp_Unit += strenght * 5;
-            Hp_Unit += constitution * 10;
+            mp_Unit = intelegence * 5;
+            hp_Unit += strenght * 5;
+            hp_Unit += constitution * 10;
         }
         //public void Health_Unit()
         //{
@@ -24,28 +24,28 @@ namespace GameCharacterEditor
         {
             if ((strenght * 5) > 20)
             {
-                Phusical_Attack = strenght * 5;
+                phusical_Attack = strenght * 5;
             }
             else
             {
-                Phusical_Attack = Extra;
+                phusical_Attack = Extra;
             }
         }
         public void Agility_Buffs_Dexterity()
         {
-            AttackSpeed += dexterity * 5;
-            Running_Speed += dexterity * 2;
-            Phusical_Attack += dexterity * 3;
+            attackSpeed += dexterity * 5;
+            running_Speed += dexterity * 2;
+            phusical_Attack += dexterity * 3;
         }
         public void Agility_Buffs_Intelegence()
         {
-            Magic_Attack = intelegence * 10;
+            magic_Attack = intelegence * 10;
            
-            Magic_Defence = intelegence * 5;
+            magic_Defence = intelegence * 5;
         }
         public void Agility_Buffs_Constitution()
         {
-            Phisical_Defence += constitution * 5;
+            phisical_Defence += constitution * 5;
            
         }  
     }

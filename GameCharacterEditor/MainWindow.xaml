@@ -38,7 +38,7 @@
         <Button x:Name="bnt_clickp2" Content="+" HorizontalAlignment="Left" Margin="553,102,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737" Cursor="Hand" Click="bnt_clickp2_Click"/>
         <Button x:Name="bnt_clickp3" Content="+" HorizontalAlignment="Left" Margin="553,156,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737" Cursor="Hand" Click="bnt_clickp3_Click"/>
         <Button x:Name="bnt_clickp4" Content="+" HorizontalAlignment="Left" Margin="553,210,0,0" VerticalAlignment="Top" Width="21" Background="#FF2FD737" Cursor="Hand" Click="bnt_clickp4_Click"/>
-        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="79,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False" Text="20" TextAlignment="Center" FontSize="20" TextChanged="textpoint_TextChanged"/>
+        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="79,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False" TextAlignment="Center" FontSize="20"/>
         <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="14"/>
         <TextBox HorizontalAlignment="Left" Margin="79,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False" Text="0" TextAlignment="Center" FontSize="20"/>
         <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="36,187,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="14"/>
