@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="RPGame" Height="700" Width="1100" Background="#FF891010" Loaded="Window_Loaded">
+        Title="RPGame" Height="700" Width="1100" Background="#FF891010">
 
     <Border Padding="10">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="7.213"/>
-                <ColumnDefinition Width="11.476"/>
-                <ColumnDefinition Width="331.311"/>
+                <ColumnDefinition Width="7"/>
+                <ColumnDefinition Width="11"/>
+                <ColumnDefinition Width="32.054"/>
+                <ColumnDefinition Width="230.831"/>
+                <ColumnDefinition Width="67.115"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.ColumnSpan="3">
+            <StackPanel Grid.ColumnSpan="5">
                 <TextBlock Text="Choose your Character" HorizontalAlignment="Center" FontSize="20" Margin="0 10 0 15"/>
                 <Grid x:Name="ChooseCharacter" Margin="0 0 0 15">
                     <Grid.ColumnDefinitions>
@@ -60,7 +62,6 @@
                     <TextBox x:Name="Intelligenct_TB" IsReadOnly ="True" Grid.Column="2" Background="Silver" Grid.Row="3" Margin="5"/>
                     <TextBlock Text="Constitution" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
                     <TextBox x:Name="Constitution_TB" IsReadOnly ="True" Grid.Column="3" Background="Silver" Grid.Row="3" Margin="5"/>
-
 
                 </Grid>
 
@@ -112,13 +113,17 @@
 
                     <TextBlock Text="Movement speed" Grid.Row="5" Grid.Column="3" Margin="0 20 5 5"/>
                     <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="0 5 20  15"/>
-
-                    <Button x:Name="Inventory" Content="Inventory" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Width="60" Height="20" Margin="10 50 10 10" FontSize="10" Click="Inventory_Click"/>
                     <Button x:Name="PickButton" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
                 </Grid>
             </StackPanel>
-            <Grid  Grid.Column="3" Width="700" Margin="15,10,15,10">
-                <DataGrid x:Name="CharacterList" AutoGenerateColumns="False">
+
+
+            <Grid  Grid.Column="5" Width="700" Margin="16,10,16,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <DataGrid Grid.Row="0" x:Name="CharacterList" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="False" Header="ID"/>
                         <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="False" Header="Character"/>
@@ -136,6 +141,75 @@
                         <DataGridTextColumn Binding="{Binding Path = MSpeed}" IsReadOnly="True" Header="M Speed"/>
                     </DataGrid.Columns>
                 </DataGrid>
+
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Shop" Margin="10" FontSize="25" HorizontalAlignment="Center"/>
+                    <Grid Grid.Row="1">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="10">
+                            <TextBlock Text="Helmets" HorizontalAlignment="Center" FontSize="15"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="HelmetsGroup" x:Name="LightHelmetRB" Content="Light helmet"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="HelmetsGroup" x:Name="MediumHelmetRB" Content="Medium helmet"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="HelmetsGroup" x:Name="HeavyHelmetRB" Content="Heavy helmet"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="10">
+                            <TextBlock Text="Armour" HorizontalAlignment="Center" FontSize="15"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="ArmourGroup" x:Name="LightArmourRB" Content="Light armour"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="ArmourGroup" x:Name="MediumArmourRB" Content="Medium armour"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="ArmourGroup" x:Name="HeavyArmourRB" Content="Heavy armour"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Margin="10">
+                            <TextBlock Text="Pants" HorizontalAlignment="Center" FontSize="15"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="PantsGroup" x:Name="LightPantsRB" Content="Light pants"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="PantsGroup" x:Name="MediumPantsRB" Content="Medium pants"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="PantsGroup" x:Name="HeavyPantsRB" Content="Heavy pants"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Margin="10">
+                            <TextBlock Text="Boots" HorizontalAlignment="Center" FontSize="15"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="BootsGroup" x:Name="LightBootsRB" Content="Light boots"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="BootsGroup" x:Name="MediumBootsRB" Content="Medium boots"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="BootsGroup" x:Name="HeavyBootsRB" Content="Heavy boots"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="4" Margin="10">
+                            <TextBlock Text="Weapons" HorizontalAlignment="Center" FontSize="15"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="WeaponGroup" x:Name="AxeRB" Content="Axe"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="WeaponGroup" x:Name="SaberRB" Content="Saber"/>
+                            <RadioButton Checked="RadioButton_Checked" GroupName="WeaponGroup" x:Name="ScepterRB" Content="Scepter"/>
+                        </StackPanel>
+                    </Grid>
+                    
+                    <Grid Grid.Row="2" VerticalAlignment="Top" Background="Black">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" x:Name="AddedHelmetTB" Margin="10" Height="30"/>
+                        <Image Grid.Column="1" x:Name="AddedArmourTB" Margin="10" Height="30"/>
+                        <Image Grid.Column="2" x:Name="AddedPantsTB" Margin="10" Height="30"/>
+                        <Image Grid.Column="3" x:Name="AddedBootsTB" Margin="10" Height="30"/>
+                        <Image Grid.Column="4" x:Name="AddedWeaponTB" Margin="10" Height="30"/>
+                        
+                    </Grid>
+                    
+                </Grid>
             </Grid>
         </Grid>
     </Border>

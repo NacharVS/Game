@@ -264,15 +264,35 @@ namespace GameCharacterEditor
 
         }
 
-        private void Inventory_Click(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            InventoryWindow inv = new InventoryWindow();
-            inv.Show();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
+            //if ((bool)(LightArmourRB.IsChecked = true))
+            //{
+            //    var strnght = int.Parse(Strenght_TB.Text);
+            //    strnght += 5;
+            //    Strenght_TB.Text = strnght.ToString();
+            //    var dex = int.Parse(Dexterity_TB.Text);
+            //    dex += 10;
+            //    Dexterity_TB.Text = dex.ToString();
+            //}
+            //else if ((bool)(MediumArmourRB.IsChecked = true))
+            //{
+            //    var strnght = int.Parse(Strenght_TB.Text);
+            //    strnght += 5;
+            //    Strenght_TB.Text = strnght.ToString();
+            //    var intell = int.Parse(Intelligenct_TB.Text);
+            //    intell += 10;
+            //    Intelligenct_TB.Text = intell.ToString();
+            //}
+            //else
+            //{
+            //    var strnght = int.Parse(Strenght_TB.Text);
+            //    strnght += 5;
+            //    Strenght_TB.Text = strnght.ToString();
+            //    var constit = int.Parse(Constitution_TB.Text);
+            //    constit += 10;
+            //    Constitution_TB.Text = constit.ToString();
+            //}
         }
     }
 }
