@@ -16,12 +16,12 @@
         <TextBox x:Name="textb_hp" HorizontalAlignment="Left" Height="23" Margin="45,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textb_attack_magic" HorizontalAlignment="Left" Height="23" Margin="230,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textb_attack" HorizontalAlignment="Left" Height="23" Margin="45,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textb_protection" HorizontalAlignment="Left" Height="23" Margin="230,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_mana" HorizontalAlignment="Left" Height="23" Margin="230,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <RadioButton x:Name="radBtn_Warrior" Content="Воин" HorizontalAlignment="Left" Margin="62,84,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radBtn_Witch" Content="Волшебник" HorizontalAlignment="Left" Margin="130,84,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radBtn_Rogue" Content="Разбойник" HorizontalAlignment="Left" Margin="230,84,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textb_speed" HorizontalAlignment="Left" Height="23" Margin="230,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textb_damage" HorizontalAlignment="Left" Height="23" Margin="45,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_attack_speed" HorizontalAlignment="Left" Height="23" Margin="230,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textb_walk_speed" HorizontalAlignment="Left" Height="23" Margin="45,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="HP" Content="HP" HorizontalAlignment="Left" Margin="45,274,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Mana" Content="Мана" HorizontalAlignment="Left" Margin="230,274,0,0" VerticalAlignment="Top"/>
         <Label x:Name="attack_Speed" Content="Скорость атаки" HorizontalAlignment="Left" Margin="230,389,0,0" VerticalAlignment="Top"/>
@@ -40,6 +40,6 @@
         <Label x:Name="p__Resist" Content="физ. Сопростивление" HorizontalAlignment="Left" Margin="45,551,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Intelligently" Content="Интелект" HorizontalAlignment="Left" Margin="46,497,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Dexterity" Content="Ловкость" HorizontalAlignment="Left" Margin="230,443,0,0" VerticalAlignment="Top"/>
-
+        <ListBox Width="350" Height="200" Margin="400,357,250,179"/>
     </Grid>
 </Window>
