@@ -26,9 +26,9 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="ChooseWarrior" Content="Warrior" Grid.Column="0" Width="100" Height="30" Click="ChooseWarrior_Click"/>
-                    <Button x:Name="ChooseRogue" Content="Rogue" Grid.Column="1" Width="100" Height="30" Click="ChooseWarrior_Click"/>
-                    <Button x:Name="ChooseSorcerer" Content="Sorcerer" Grid.Column="2" Width="100" Height="30" Click="ChooseWarrior_Click"/>
+                    <RadioButton x:Name="ChooseWarriorRB" Content="Warrior" Grid.Column="0" Width="100" Height="30" Click="ChooseWarrior_Click"/>
+                    <RadioButton x:Name="ChooseRogueRB" Content="Rogue" Grid.Column="1" Width="100" Height="30" Click="ChooseWarrior_Click"/>
+                    <RadioButton x:Name="ChooseSorcererRB" Content="Sorcerer" Grid.Column="2" Width="100" Height="30" Click="ChooseWarrior_Click"/>
                 </Grid>
                 <TextBlock Text="Stats" Margin="10 15 0 10" FontSize="18" HorizontalAlignment="Center"/>
                 <Grid Margin="5">
@@ -123,7 +123,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <DataGrid Grid.Row="0" x:Name="CharacterList" AutoGenerateColumns="False">
+                <DataGrid Grid.Row="0" x:Name="CharacterList" AutoGenerateColumns="False" Background="Silver">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="False" Header="ID"/>
                         <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="False" Header="Character"/>

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GameCharacterEditor.Models;
+using MongoDB.Driver;
 
 namespace GameCharacterEditor
 {
@@ -31,66 +32,62 @@ namespace GameCharacterEditor
 
         private void ChooseWarrior_Click(object sender, RoutedEventArgs e)
         {
-            string bttn = (string)((Button)sender).Content;
 
-            switch (bttn)
+
+            if (ChooseWarriorRB.IsChecked == true)
             {
-                case "Warrior":
-                    var warrior = new Warrior();
+                var warrior = new Warrior();
 
-                    HP_TB.Text = warrior.healthPoint.ToString();
-                    MP_TB.Text = warrior.manaPoint.ToString();
-                    Strenght_TB.Text = warrior.strenght.ToString();
-                    Dexterity_TB.Text = warrior.dexterity.ToString();
-                    Intelligenct_TB.Text = warrior.intelligence.ToString();
-                    Constitution_TB.Text = warrior.constitution.ToString();
-                    Extra_TB.Text = warrior.extra.ToString();
-                    PA_TB.Text = warrior.pAttack.ToString();
-                    MA_TB.Text = warrior.mAttack.ToString();
-                    PR_TB.Text = warrior.pResist.ToString();
-                    MR_TB.Text = warrior.mResist.ToString();
-                    AS_TB.Text = warrior.attackSpeed.ToString();
-                    MS_TB.Text = warrior.walkSpeed.ToString();
-                    break;
+                HP_TB.Text = warrior.healthPoint.ToString();
+                MP_TB.Text = warrior.manaPoint.ToString();
+                Strenght_TB.Text = warrior.strenght.ToString();
+                Dexterity_TB.Text = warrior.dexterity.ToString();
+                Intelligenct_TB.Text = warrior.intelligence.ToString();
+                Constitution_TB.Text = warrior.constitution.ToString();
+                Extra_TB.Text = warrior.extra.ToString();
+                PA_TB.Text = warrior.pAttack.ToString();
+                MA_TB.Text = warrior.mAttack.ToString();
+                PR_TB.Text = warrior.pResist.ToString();
+                MR_TB.Text = warrior.mResist.ToString();
+                AS_TB.Text = warrior.attackSpeed.ToString();
+                MS_TB.Text = warrior.walkSpeed.ToString();
+            }
 
-                case "Rogue":
-                    var rogue = new Rogue();
+            else if (ChooseRogueRB.IsChecked == true)
+            {
+                var rogue = new Rogue();
 
-                    HP_TB.Text = rogue.healthPoint.ToString();
-                    MP_TB.Text = rogue.manaPoint.ToString();
-                    Strenght_TB.Text = rogue.strenght.ToString();
-                    Dexterity_TB.Text = rogue.dexterity.ToString();
-                    Intelligenct_TB.Text = rogue.intelligence.ToString();
-                    Constitution_TB.Text = rogue.constitution.ToString();
-                    Extra_TB.Text = rogue.extra.ToString();
-                    PA_TB.Text = rogue.pAttack.ToString();
-                    MA_TB.Text = rogue.mAttack.ToString();
-                    PR_TB.Text = rogue.pResist.ToString();
-                    MR_TB.Text = rogue.mResist.ToString();
-                    AS_TB.Text = rogue.attackSpeed.ToString();
-                    MS_TB.Text = rogue.walkSpeed.ToString();
-                    break;
+                HP_TB.Text = rogue.healthPoint.ToString();
+                MP_TB.Text = rogue.manaPoint.ToString();
+                Strenght_TB.Text = rogue.strenght.ToString();
+                Dexterity_TB.Text = rogue.dexterity.ToString();
+                Intelligenct_TB.Text = rogue.intelligence.ToString();
+                Constitution_TB.Text = rogue.constitution.ToString();
+                Extra_TB.Text = rogue.extra.ToString();
+                PA_TB.Text = rogue.pAttack.ToString();
+                MA_TB.Text = rogue.mAttack.ToString();
+                PR_TB.Text = rogue.pResist.ToString();
+                MR_TB.Text = rogue.mResist.ToString();
+                AS_TB.Text = rogue.attackSpeed.ToString();
+                MS_TB.Text = rogue.walkSpeed.ToString();
+            }
+            else
+            { 
+                var sorcerer = new Sorcerer();
 
-                case "Sorcerer":
-                    var sorcerer = new Sorcerer();
-
-                    HP_TB.Text = sorcerer.healthPoint.ToString();
-                    MP_TB.Text = sorcerer.manaPoint.ToString();
-                    Strenght_TB.Text = sorcerer.strenght.ToString();
-                    Dexterity_TB.Text = sorcerer.dexterity.ToString();
-                    Intelligenct_TB.Text = sorcerer.intelligence.ToString();
-                    Constitution_TB.Text = sorcerer.constitution.ToString();
-                    Extra_TB.Text = sorcerer.extra.ToString();
-                    PA_TB.Text = sorcerer.pAttack.ToString();
-                    MA_TB.Text = sorcerer.mAttack.ToString();
-                    PR_TB.Text = sorcerer.pResist.ToString();
-                    MR_TB.Text = sorcerer.mResist.ToString();
-                    AS_TB.Text = sorcerer.attackSpeed.ToString();
-                    MS_TB.Text = sorcerer.walkSpeed.ToString();
-                    break;
-                default:
-                    MessageBox.Show("error");
-                    break;
+                HP_TB.Text = sorcerer.healthPoint.ToString();
+                MP_TB.Text = sorcerer.manaPoint.ToString();
+                Strenght_TB.Text = sorcerer.strenght.ToString();
+                Dexterity_TB.Text = sorcerer.dexterity.ToString();
+                Intelligenct_TB.Text = sorcerer.intelligence.ToString();
+                Constitution_TB.Text = sorcerer.constitution.ToString();
+                Extra_TB.Text = sorcerer.extra.ToString();
+                PA_TB.Text = sorcerer.pAttack.ToString();
+                MA_TB.Text = sorcerer.mAttack.ToString();
+                PR_TB.Text = sorcerer.pResist.ToString();
+                MR_TB.Text = sorcerer.mResist.ToString();
+                AS_TB.Text = sorcerer.attackSpeed.ToString();
+                MS_TB.Text = sorcerer.walkSpeed.ToString();
             }
         }
 
@@ -249,19 +246,19 @@ namespace GameCharacterEditor
 
         private void PickButton_Click(object sender, RoutedEventArgs e)
         {
-            _todoData = new BindingList<TodoModel>()
-            {
-                new TodoModel()
-                {
-                    HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
-                    Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligenct_TB.Text),
-                    Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
-                    PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
-                }
-            };
+            //_todoData = new BindingList<TodoModel>()
+            //{
+            //    new TodoModel()
+            //    {
+            //        HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
+            //        Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligenct_TB.Text),
+            //        Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
+            //        PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
+            //    }
+            //};
 
-            CharacterList.Items.Add(_todoData);
-
+            //CharacterList.Items.Add(_todoData);
+            
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -293,6 +290,14 @@ namespace GameCharacterEditor
             //    constit += 10;
             //    Constitution_TB.Text = constit.ToString();
             //}
+        }
+
+        private static void AddToDataBase(Hero hero)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Diyar");
+            var collection = database.GetCollection<Hero>("Hero!");
+            collection.InsertOne(hero);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +8,22 @@ namespace GameCharacterEditor.Models
 {
     public class Hero
     {
-        public int strenght, dexterity, intelligence,
-           constitution, healthPoint, manaPoint,
-           pAttack, mAttack, pResist, mResist, attackSpeed,
-           walkSpeed, extra;
+        [BsonId]
+        Object _id;
+        [BsonElement("Имя")]
+        public int strenght;
+        public int dexterity;
+        public int intelligence;
+        public int constitution;
+        public int healthPoint;
+        public int manaPoint;
+        public int pAttack;
+        public int mAttack;
+        public int pResist;
+        public int mResist;
+        public int attackSpeed;
+        public int walkSpeed;
+        public int extra;
 
         public Hero()
         {
