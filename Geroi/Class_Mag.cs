@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using MongoDB.Bson;
+using MongoDB.Driver;
 namespace Geroi
 {
     public partial class Class_Mag
@@ -184,6 +188,13 @@ namespace Geroi
                 kl += 5;
                 Kol.Text = kl.ToString();
             }
+        }
+        private void ADDBTN_Click(object sender, RoutedEventArgs e)
+        {
+            string connectionString = "mongodb://localhost:27017";
+            MongoClient client = new MongoClient(connectionString);
+            IMongoDatabase database = client.GetDatabase("test");
+        }
         }
     }
 }
