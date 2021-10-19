@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
 
 namespace GameCharacterEditor
 {
@@ -22,23 +26,42 @@ namespace GameCharacterEditor
         protected double experience;
         Inventar inventar = new Inventar();
 
-
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId _id { get; set; }
+        [BsonElement]
         public int Lvl { get => lvl; set => lvl = value; }
+        [BsonElement]
         public double Hp { get => hp; set => hp = value; }
+        [BsonElement]
         public double Mp { get => mp; set => mp = value; }
+        [BsonElement]
         public string Name { get => name; set => name = value; }
+        [BsonElement]
         public double Extra { get => extra; set => extra = value; }
+        [BsonElement]
         public double Strength { get => strength; set => strength = value; }
+        [BsonElement]
         public double Dexterity { get => dexterity; set => dexterity = value; }
+        [BsonElement]
         public double Intelegence { get => intelegence; set => intelegence = value; }
+        [BsonElement]
         public double AttackSpeed { get => attackSpeed; set => attackSpeed = value; }
+        [BsonElement]
         public Inventar Inventar { get => inventar; private set => inventar = value; }
+        [BsonElement]
         public double Constitution { get => constitution; set => constitution = value; }
+        [BsonElement]
         public double WalkingSpeed { get => walkingSpeed; set => walkingSpeed = value; }
+        [BsonElement]
         public double PDefence { get => pDefence; set => pDefence = value; }
+        [BsonElement]
         public double MDefence { get => mDefence; set => mDefence = value; }
+        [BsonElement]
         public double PAttack { get => pAttack; set => pAttack = value; }
+        [BsonElement]
         public double MAttack { get => mAttack; set => mAttack = value; }
+        [BsonElement]
         public double Experience { get => experience; set => experience = value; }
 
         public Unit(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl)
@@ -79,6 +102,29 @@ namespace GameCharacterEditor
         public void MagicDefence()
         {
             hp += mDefence;
+        }
+
+        public static async void Add(Unit basa)
+        {
+            try
+            {
+                MongoClient client = new MongoClient(); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
+                var db = client.GetDatabase("Units");
+                var collection = db.GetCollection<Unit>("unit_collection");
+                await collection.InsertOneAsync(basa);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Не удалось добавить в базу \n {ex.Message}");
+            }
+        }
+
+        public static List<Unit> TakeList()
+        {
+            MongoClient client = new MongoClient(); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
+            var db = client.GetDatabase("Units");
+            var collection = db.GetCollection<Unit>("unit_collection");
+            return collection.Find(x => true).ToList();
         }
     }
 
