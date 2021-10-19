@@ -45,11 +45,11 @@ namespace GameCharacterEditor
                 Plus3.Visibility = Visibility.Hidden;
                 Plus4.Visibility = Visibility.Hidden;
                 Plus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("ERROR 'Очки прокачки - 0'");
 
             }
             else if (kl >= 0)
             {
-                Console.WriteLine("Error");
                 Minus1.Visibility = Visibility.Visible;
                 Minus2.Visibility = Visibility.Visible;
                 Minus3.Visibility = Visibility.Visible;
@@ -72,6 +72,7 @@ namespace GameCharacterEditor
                 Minus3.Visibility = Visibility.Hidden;
                 Minus4.Visibility = Visibility.Hidden;
                 Minus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("Атрибут не может быть меньше 0");
             }
             else if (st > 0)
             {
@@ -101,6 +102,7 @@ namespace GameCharacterEditor
                 Plus3.Visibility = Visibility.Hidden;
                 Plus4.Visibility = Visibility.Hidden;
                 Plus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("ERROR 'Очки прокачки - 0'");
             }
             else if (kl > 0)
             {
@@ -126,6 +128,7 @@ namespace GameCharacterEditor
                 Minus3.Visibility = Visibility.Hidden;
                 Minus4.Visibility = Visibility.Hidden;
                 Minus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("Атрибут не может быть меньше 0");
             }
             else if (st > 0)
             {
@@ -155,6 +158,7 @@ namespace GameCharacterEditor
                 Plus1.Visibility = Visibility.Hidden;
                 Plus4.Visibility = Visibility.Hidden;
                 Plus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("ERROR 'Очки прокачки - 0'");
             }
             else if (kl > 0)
             {
@@ -179,6 +183,7 @@ namespace GameCharacterEditor
                 Minus2.Visibility = Visibility.Hidden;
                 Minus4.Visibility = Visibility.Hidden;
                 Minus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("Атрибут не может быть меньше 0");
             }
             else if (st > 0)
             {
@@ -202,36 +207,40 @@ namespace GameCharacterEditor
             kl -= 1;
             if (kl == 0)
             {
-                Intelligence.Text = st.ToString();
-                Plus4.Visibility = Visibility.Hidden;
-                Plus1.Visibility = Visibility.Hidden;
+                Kol.Text = kl.ToString();
                 Plus2.Visibility = Visibility.Hidden;
+                Plus1.Visibility = Visibility.Hidden;
                 Plus3.Visibility = Visibility.Hidden;
+                Plus4.Visibility = Visibility.Hidden;
                 Plus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("ERROR 'Очки прокачки - 0'");
+
             }
-            else if (st > 0)
+            else if (kl > 0)
             {
-                Minus3.Visibility = Visibility.Visible;
-                Minus1.Visibility = Visibility.Visible;
                 Minus2.Visibility = Visibility.Visible;
+                Minus1.Visibility = Visibility.Visible;
+                Minus3.Visibility = Visibility.Visible;
                 Minus4.Visibility = Visibility.Visible;
                 Minus5.Visibility = Visibility.Visible;
-                Intelligence.Text = st.ToString();
-            }
-        }
 
-        private void Minus4_Click(object sender, RoutedEventArgs e)
+                Kol.Text = kl.ToString();
+            }
+        } 
+
+            private void Minus4_Click(object sender, RoutedEventArgs e)
         {
             int st = Convert.ToInt32(Attack_speed.Text);
             st -= 1;
             if (st == 0)
             {
-                Intelligence.Text = st.ToString();
+                Attack_speed.Text = st.ToString();
                 Minus3.Visibility = Visibility.Hidden;
                 Minus1.Visibility = Visibility.Hidden;
                 Minus2.Visibility = Visibility.Hidden;
                 Minus4.Visibility = Visibility.Hidden;
                 Minus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("Атрибут не может быть меньше 0");
             }
             else if (st > 0)
             {
@@ -240,7 +249,7 @@ namespace GameCharacterEditor
                 Plus1.Visibility = Visibility.Visible;
                 Plus4.Visibility = Visibility.Visible;
                 Plus5.Visibility = Visibility.Visible;
-                Intelligence.Text = st.ToString();
+                Attack_speed.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
             kl += 1;
@@ -257,12 +266,13 @@ namespace GameCharacterEditor
             if (kl == 0)
             {
                 Kol.Text = kl.ToString();
-                Plus4.Visibility = Visibility.Visible;
-                MessageBox.Show("Ошибка");
-                Plus2.Visibility = Visibility.Visible;
-                Plus1.Visibility = Visibility.Visible; 
-                Plus3.Visibility = Visibility.Visible;
-                Plus5.Visibility = Visibility.Visible;
+                Plus4.Visibility = Visibility.Hidden;
+                Plus2.Visibility = Visibility.Hidden;
+                Plus1.Visibility = Visibility.Hidden; 
+                Plus3.Visibility = Visibility.Hidden;
+                Plus5.Visibility = Visibility.Hidden;
+                MessageBox.Show("ERROR 'Очки прокачки - 0'");
+
             }
             else if (kl > 0)
             {
@@ -270,7 +280,7 @@ namespace GameCharacterEditor
                 Minus1.Visibility = Visibility.Visible;
                 Minus2.Visibility = Visibility.Visible;
                 Minus3.Visibility = Visibility.Visible;
-                Minus5.Visibility = Visibility.Hidden;
+                Minus5.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -283,15 +293,19 @@ namespace GameCharacterEditor
             {
                 Armor.Text = st.ToString();
                 Minus5.Visibility = Visibility.Hidden;
-                MessageBox.Show("Ошибка");
+                Minus4.Visibility = Visibility.Hidden;
+                Minus3.Visibility = Visibility.Hidden;
+                Minus2.Visibility = Visibility.Hidden;
+                Minus1.Visibility = Visibility.Hidden;
+                MessageBox.Show("Атрибут не может быть меньше 0");
             }
             else if (st > 0)
             {
-                Plus4.Visibility = Visibility.Hidden;
-                Plus1.Visibility = Visibility.Hidden;
-                Plus2.Visibility = Visibility.Hidden;
-                Plus3.Visibility = Visibility.Hidden;
                 Plus5.Visibility = Visibility.Visible;
+                Plus4.Visibility = Visibility.Visible;
+                Plus3.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
                 Armor.Text = st.ToString();
             }
             int kl = Convert.ToInt32(Kol.Text);
