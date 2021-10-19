@@ -246,19 +246,35 @@ namespace GameCharacterEditor
 
         private void PickButton_Click(object sender, RoutedEventArgs e)
         {
-            //_todoData = new BindingList<TodoModel>()
-            //{
-            //    new TodoModel()
-            //    {
-            //        HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
-            //        Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligenct_TB.Text),
-            //        Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
-            //        PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
-            //    }
-            //};
 
-            //CharacterList.Items.Add(_todoData);
-            
+            _todoData = new BindingList<TodoModel>()
+            {
+                new TodoModel()
+                {
+                    HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
+                    Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligenct_TB.Text),
+                    Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
+                    PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
+                }
+            };
+
+            CharacterList.Items.Add(_todoData);
+
+            if(ChooseWarriorRB.IsChecked == true)
+            {
+                Warrior war = new Warrior();
+                AddToDataBase(war);
+            }
+            else if(ChooseRogueRB.IsChecked == true)
+            {
+                Rogue rogue = new Rogue();
+                AddToDataBase(rogue);
+            }
+            else
+            {
+                Sorcerer sorc = new Sorcerer();
+                AddToDataBase(sorc);
+            }
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)

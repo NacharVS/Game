@@ -10,19 +10,31 @@ namespace GameCharacterEditor.Models
     {
         [BsonId]
         Object _id;
-        [BsonElement("Имя")]
+        [BsonElement("Strenght")]
         public int strenght;
+        [BsonElement("Dexterity")]
         public int dexterity;
+        [BsonElement("Intelligence")]
         public int intelligence;
+        [BsonElement("Constitution")]
         public int constitution;
+        [BsonElement("Health Point")]
         public int healthPoint;
+        [BsonElement("Mana Point")]
         public int manaPoint;
+        [BsonElement("Physical Attack")]
         public int pAttack;
+        [BsonElement("Magic Attack")]
         public int mAttack;
+        [BsonElement("Physical Resist")]
         public int pResist;
+        [BsonElement("Magic Resist")]
         public int mResist;
+        [BsonElement("Attack Speed")]
         public int attackSpeed;
+        [BsonElement("Movement Speed")]
         public int walkSpeed;
+        [BsonElement("Extra Points")]
         public int extra;
 
         public Hero()
