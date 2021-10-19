@@ -101,5 +101,93 @@ namespace GameCharacterEditor
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(points.Text) > 0)
+            {
+                stre.Text = (Convert.ToDouble(stre.Text) + 1).ToString();
+                points.Text = (Convert.ToDouble(points.Text) - 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(points.Text) > 0)
+            {
+                dext.Text = (Convert.ToDouble(dext.Text) + 1).ToString();
+                points.Text = (Convert.ToDouble(points.Text) - 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(points.Text) > 0)
+            {
+                cons.Text = (Convert.ToDouble(cons.Text) + 1).ToString();
+                points.Text = (Convert.ToDouble(points.Text) - 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(points.Text) > 0)
+            {
+                inte.Text = (Convert.ToDouble(inte.Text) + 1).ToString();
+                points.Text = (Convert.ToDouble(points.Text) - 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(stre.Text) > 0)
+            {
+                stre.Text = (Convert.ToDouble(stre.Text) - 1).ToString();
+                points.Text = (Convert.ToDouble(points.Text) + 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(cons.Text) > 0) 
+            { 
+                cons.Text = (Convert.ToDouble(cons.Text) - 1).ToString();
+            points.Text = (Convert.ToDouble(points.Text) + 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(dext.Text) > 0)
+            {
+                dext.Text = (Convert.ToDouble(dext.Text) - 1).ToString();
+                points.Text = (Convert.ToDouble(points.Text) + 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToDouble(inte.Text) > 0)
+            {
+                inte.Text = (Convert.ToDouble(inte.Text) - 1).ToString();
+                points.Text = (Convert.ToDouble(points.Text) + 1).ToString();
+            }
+            else
+                MessageBox.Show("no");
+        }
     }
 }

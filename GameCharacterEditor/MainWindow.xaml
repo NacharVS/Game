@@ -20,10 +20,10 @@
         </ListBox>
         <TextBox x:Name="cons" Grid.Column="1" Margin="249,149,490,237" Text="20"/>
         <TextBox x:Name="inte" Grid.Column="1" Margin="249,233,490,152" Text="20"/>
-        <TextBox x:Name="dext" Grid.Column="1" Margin="116,233,619,153" Text="20"/>
-        <TextBox x:Name="stre" Grid.Column="1" Margin="126,151,609,236" Text="20"/>
-        <Label Content="Strenght" HorizontalAlignment="Left" Margin="114,126,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Grid.Column="1"/>
-        <Label Content="Dexterity" HorizontalAlignment="Left" Margin="105,209,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Grid.Column="1"/>
+        <TextBox x:Name="dext" Grid.Column="1" Margin="80,234,655,152" Text="20"/>
+        <TextBox x:Name="stre" Grid.Column="1" Margin="80,150,655,237" Text="20"/>
+        <Label Content="Strenght" HorizontalAlignment="Left" Margin="77,126,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Grid.Column="1"/>
+        <Label Content="Dexterity" HorizontalAlignment="Left" Margin="74,209,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Grid.Column="1"/>
         <Label Content="Intelegense" Grid.Column="1" HorizontalAlignment="Left" Margin="243,209,0,0" VerticalAlignment="Top" Width="90" FontSize="14"/>
         <Label Content="Constitution" Grid.Column="1" HorizontalAlignment="Left" Margin="249,122,0,0" VerticalAlignment="Top" Width="100" FontSize="14"/>
         <Button x:Name="btnSave" Content="Save person" Grid.Column="1" Margin="8,345,596,22" FontSize="20" Click="btnSave_Click"/>
@@ -44,9 +44,14 @@
         <Label Content="AttackSpeed" Grid.Column="1" HorizontalAlignment="Left" Margin="388,142,0,0" VerticalAlignment="Top"/>
         <Label Content="ManaPoints" Grid.Column="1" HorizontalAlignment="Left" Margin="653,349,0,0" VerticalAlignment="Top"/>
         <Label Content="MagicalDefence" Grid.Column="1" HorizontalAlignment="Left" Margin="369,293,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="70,171,0,0" VerticalAlignment="Top" Width="35" Height="32"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="318,169,0,0" VerticalAlignment="Top" Height="34" Width="40"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="65,243,0,0" VerticalAlignment="Top" Height="35"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="318,243,0,0" VerticalAlignment="Top" Width="40" Height="35"/>
+        <Button Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="35,164,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click"/>
+        <Button Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="318,164,0,0" VerticalAlignment="Top" Height="40" Width="40" Click="Button_Click_6"/>
+        <Button Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="35,248,0,0" VerticalAlignment="Top" Height="40" Width="40" Click="Button_Click_2"/>
+        <Button Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="318,248,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_8"/>
+        <Button Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="202,163,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_3"/>
+        <Button Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="202,248,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_4"/>
+        <Button Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="148,163,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_5"/>
+        <Button Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="148,248,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_7"/>
+        <TextBox x:Name="points" Grid.Column="1" HorizontalAlignment="Left" Margin="168,99,0,0" Text="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="37"/>
     </Grid>
 </Window>
