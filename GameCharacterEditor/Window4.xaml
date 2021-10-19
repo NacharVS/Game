@@ -28,34 +28,202 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="25,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="20" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="49,49,0,0" TextWrapping="Wrap" Text="Сила" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
-        <TextBlock HorizontalAlignment="Left" Margin="25,291,0,0" TextWrapping="Wrap" Text="Скорость атаки" VerticalAlignment="Top" Height="68" Width="282" FontSize="36" Foreground="Aqua"/>
-        <TextBlock HorizontalAlignment="Left" Margin="391,291,0,0" TextWrapping="Wrap" Text="Броня" VerticalAlignment="Top" Height="68" Width="282" FontSize="36" Foreground="PaleVioletRed"/>
-        <TextBlock HorizontalAlignment="Left" Margin="266,49,0,0" TextWrapping="Wrap" Text="Ловкость" VerticalAlignment="Top" Height="68" Width="162" FontSize="36" Foreground="#FF80FF00"/>
-        <TextBlock HorizontalAlignment="Left" Margin="532,49,0,0" TextWrapping="Wrap" Text="Интеллект" VerticalAlignment="Top" Height="68" Width="180" FontSize="36" Foreground="#FF00B9FF"/>
-        <TextBox x:Name="Armor" HorizontalAlignment="Left" Height="46" Margin="387,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="12" IsEnabled="False"/>
-        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="283,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="15" IsEnabled="False"/>
-        <TextBox x:Name="Attack_speed" HorizontalAlignment="Left" Height="46" Margin="90,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="340" IsEnabled="False"/>
-        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="543,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="36" TextAlignment="Center" Text="80" IsEnabled="False"/>
-        <TextBox x:Name="Kol" HorizontalAlignment="Left" Height="46" Margin="874,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="40" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="802,49,0,0" TextWrapping="Wrap" Text="Очки прокачки" VerticalAlignment="Top" Height="99" Width="274" FontSize="36" Foreground="Purple"/>
-        <Button x:Name="Minus1" Content="-" HorizontalAlignment="Left" Margin="25,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus1_Click"/>
-        <Button x:Name="Plus1" Content="+" HorizontalAlignment="Left" Margin="106,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus1_Click"/>
-        <Button x:Name="Minus2" Content="-" HorizontalAlignment="Left" Margin="283,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus2_Click"/>
-        <Button x:Name="Plus2" Content="+" HorizontalAlignment="Left" Margin="363,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus2_Click"/>
-        <Button x:Name="Minus3" Content="-" HorizontalAlignment="Left" Margin="543,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus3_Click"/>
-        <Button x:Name="Plus3" Content="+" HorizontalAlignment="Left" Margin="622,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus3_Click"/>
-        <Button x:Name="Minus4" Content="-" HorizontalAlignment="Left" Margin="90,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus4_Click"/>
-        <Button x:Name="Plus4" Content="+" HorizontalAlignment="Left" Margin="170,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus4_Click"/>
-        <Button x:Name="Minus5" Content="-" HorizontalAlignment="Left" Margin="387,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus5_Click"/>
-        <Button x:Name="Plus5" Content="+" HorizontalAlignment="Left" Margin="467,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus5_Click"/>
-        <Button x:Name="Lvl1" HorizontalAlignment="Left" Margin="700,414,0,0" VerticalAlignment="Top" Width="159" Height="58" Content="100" FontSize="36" Click="LvlOne" RenderTransformOrigin="0.841,-0.327"/>
-        <Button x:Name="Lvl2" HorizontalAlignment="Left" Margin="894,414,0,0" VerticalAlignment="Top" Width="161" Height="58" Content="500" FontSize="36" Click="LvlTwo"/>
-        <Button x:Name="Lvl3" HorizontalAlignment="Left" Margin="798,484,0,0" VerticalAlignment="Top" Width="159" Height="58" Content="1000" FontSize="36" Click="LvlThree" RenderTransformOrigin="0.841,-0.327"/>
-        <TextBox x:Name="Xp" HorizontalAlignment="Left" Height="46" Margin="451,538,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Text="3950" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="170,492,0,0" TextWrapping="Wrap" Text="Осталось до следующего уровня" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="White" Width="513"/>
-        <TextBox x:Name="Number_Lvl" HorizontalAlignment="Left" Height="46" Margin="251,538,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Text="0" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="25,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="30" FontSize="36" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF1247E8" FontFamily="Comic Sans MS">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFF70707" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="46,54,0,0" TextWrapping="Wrap" Text="Сила" VerticalAlignment="Top" Height="68" Width="88" FontSize="36" FontFamily="Comic Sans MS">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFDB10FB" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="25,291,0,0" TextWrapping="Wrap" Text="Скорость атаки" VerticalAlignment="Top" Height="68" Width="262" FontSize="36" FontFamily="Comic Sans MS">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Yellow" Offset="0.723"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="389,291,0,0" TextWrapping="Wrap" Text="Броня" VerticalAlignment="Top" Height="68" Width="124" FontSize="36" FontFamily="Comic Sans MS">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF1801FF" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="266,54,0,0" TextWrapping="Wrap" Text="Ловкость" VerticalAlignment="Top" Height="68" Width="162" FontSize="36" FontFamily="Comic Sans MS">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF08FF35" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="507,54,0,0" TextWrapping="Wrap" Text="Интеллект" VerticalAlignment="Top" Height="68" Width="202" FontSize="36" FontFamily="Comic Sans MS">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0AFDFD" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBox x:Name="Armor" HorizontalAlignment="Left" Height="46" Margin="387,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="20" IsEnabled="False" FontFamily="Comic Sans MS" Background="#FFD517FF"/>
+        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="283,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="100" IsEnabled="False" FontFamily="Comic Sans MS">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF31FF03" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="Attack_speed" HorizontalAlignment="Left" Height="46" Margin="90,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" FontSize="36" Text="360" IsEnabled="False" FontFamily="Comic Sans MS" Background="#FF06FF11"/>
+        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="543,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="36" TextAlignment="Center" Text="50" IsEnabled="False" FontFamily="Comic Sans MS">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF03F9E3" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="Kol" HorizontalAlignment="Left" Height="46" Margin="874,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="40" FontSize="36" TextAlignment="Center" IsEnabled="False" FontFamily="Comic Sans MS">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFF2020" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="808,48,0,0" TextWrapping="Wrap" Text="Очки прокачки" VerticalAlignment="Top" Height="73" Width="262" FontSize="36" FontFamily="Comic Sans MS">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0707F7" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Button x:Name="Minus1" Content="-" HorizontalAlignment="Left" Margin="25,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus1_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0BFFDE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Plus1" Content="+" HorizontalAlignment="Left" Margin="106,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus1_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9A07FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Minus2" Content="-" HorizontalAlignment="Left" Margin="283,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus2_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0BFFDE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Plus2" Content="+" HorizontalAlignment="Left" Margin="363,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus2_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9A07FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Minus3" Content="-" HorizontalAlignment="Left" Margin="543,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus3_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0BFFDE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Plus3" Content="+" HorizontalAlignment="Left" Margin="622,195,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus3_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9A07FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Minus4" Content="-" HorizontalAlignment="Left" Margin="90,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus4_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0BFFDE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Plus4" Content="+" HorizontalAlignment="Left" Margin="170,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus4_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9A07FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Minus5" Content="-" HorizontalAlignment="Left" Margin="387,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus5_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0BFFDE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Plus5" Content="+" HorizontalAlignment="Left" Margin="467,435,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus5_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9A07FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Lvl1" HorizontalAlignment="Left" Margin="700,414,0,0" VerticalAlignment="Top" Width="159" Height="58" Content="100" FontSize="36" Click="LvlOne" RenderTransformOrigin="0.841,-0.327" FontFamily="Comic Sans MS">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00FFE8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Lvl2" HorizontalAlignment="Left" Margin="894,414,0,0" VerticalAlignment="Top" Width="161" Height="58" Content="500" FontSize="36" Click="LvlTwo" FontFamily="Comic Sans MS">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00FFE8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Lvl3" HorizontalAlignment="Left" Margin="798,484,0,0" VerticalAlignment="Top" Width="159" Height="58" Content="1000" FontSize="36" Click="LvlThree" RenderTransformOrigin="0.841,-0.327" FontFamily="Comic Sans MS">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00FFE8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="Xp" HorizontalAlignment="Left" Height="46" Margin="423,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Text="5500" FontSize="36" TextAlignment="Center" IsEnabled="False" FontFamily="Comic Sans MS" Background="#FFC428FF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="156,489,0,0" TextWrapping="Wrap" Text="Осталось до следующего уровня" VerticalAlignment="Top" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" Width="590"/>
+        <TextBox x:Name="Number_Lvl" HorizontalAlignment="Left" Height="46" Margin="239,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Text="0" FontSize="36" TextAlignment="Center" IsEnabled="False" FontFamily="Comic Sans MS">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF4AFFC6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
     </Grid>
 </Window>
 
