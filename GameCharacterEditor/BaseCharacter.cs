@@ -17,7 +17,6 @@ namespace GameCharacterEditor
         public int PhysicalDefence { get; set; }
         public int MagicalAttack { get; set; }
         public int MagicalDefence { get; set; }
-
         public int WalkingSpeed { get; set; }
         public int AttackSpeed { get; set; }
 

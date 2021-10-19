@@ -18,16 +18,35 @@
             <ListBoxItem Selected="ListBoxItem_Selected_1">Sorcerer</ListBoxItem>
             <ListBoxItem Selected="ListBoxItem_Selected_2">Archer</ListBoxItem>
         </ListBox>
-        <TextBox x:Name="cons" Grid.Column="1" Margin="177,111,562,275" Text="20"/>
-        <TextBox x:Name="inte" Grid.Column="1" Margin="177,176,562,210" Text="20"/>
-        <TextBox x:Name="dext" Grid.Column="1" Margin="95,176,640,210" Text="20"/>
-        <TextBox x:Name="stre" Grid.Column="1" Margin="95,112,640,275" Text="20"/>
-        <Label Content="Strenght" HorizontalAlignment="Left" Margin="15,115,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Grid.Column="1"/>
-        <Label Content="Dexterity" Grid.Column="1" HorizontalAlignment="Left" Margin="21,172,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
-        <Label Content="Intelegense" Grid.Column="1" HorizontalAlignment="Left" Margin="258,176,0,0" VerticalAlignment="Top" Width="100" FontSize="14"/>
-        <Label Content="Constitution" Grid.Column="1" HorizontalAlignment="Left" Margin="258,112,0,0" VerticalAlignment="Top" Width="100" FontSize="14"/>
+        <TextBox x:Name="cons" Grid.Column="1" Margin="249,149,490,237" Text="20"/>
+        <TextBox x:Name="inte" Grid.Column="1" Margin="249,233,490,152" Text="20"/>
+        <TextBox x:Name="dext" Grid.Column="1" Margin="116,233,619,153" Text="20"/>
+        <TextBox x:Name="stre" Grid.Column="1" Margin="126,151,609,236" Text="20"/>
+        <Label Content="Strenght" HorizontalAlignment="Left" Margin="114,126,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Grid.Column="1"/>
+        <Label Content="Dexterity" HorizontalAlignment="Left" Margin="105,209,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Grid.Column="1"/>
+        <Label Content="Intelegense" Grid.Column="1" HorizontalAlignment="Left" Margin="243,209,0,0" VerticalAlignment="Top" Width="90" FontSize="14"/>
+        <Label Content="Constitution" Grid.Column="1" HorizontalAlignment="Left" Margin="249,122,0,0" VerticalAlignment="Top" Width="100" FontSize="14"/>
         <Button x:Name="btnSave" Content="Save person" Grid.Column="1" Margin="8,345,596,22" FontSize="20" Click="btnSave_Click"/>
         <Button Content="Choose objects" Grid.Column="1" HorizontalAlignment="Left" Margin="8,297,0,0" VerticalAlignment="Top" Height="43" Width="194" Click="Button_Click_1"/>
-        <TextBox x:Name="dext_Copy" Grid.Column="1" Margin="640,126,95,260" Text="20"/>
+        <TextBox x:Name="HealtPoints" Grid.Column="1" Margin="477,328,258,58" Text="100"/>
+        <Label Content="HealtPoints" Grid.Column="1" HorizontalAlignment="Left" Margin="381,349,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="PhysicalAttack" Grid.Column="1" Margin="570,119,165,267" Text="20"/>
+        <TextBox x:Name="PhysicalDefence" Grid.Column="1" Margin="477,193,258,193" Text="20"/>
+        <TextBox x:Name="MagicalAttack" Grid.Column="1" Margin="570,193,165,193" Text="20"/>
+        <TextBox x:Name="MagicalDefence" Grid.Column="1" Margin="477,264,258,121" Text="20"/>
+        <TextBox x:Name="WalkingSpeed" Grid.Column="1" Margin="570,265,165,121" Text="20"/>
+        <TextBox x:Name="AttackSpeed" Grid.Column="1" Margin="477,119,258,266" Text="20"/>
+        <TextBox x:Name="ManaPoints" Grid.Column="1" Margin="570,328,165,58" Text="100"/>
+        <Label Content="PhysicalAttack" Grid.Column="1" HorizontalAlignment="Left" Margin="650,142,0,0" VerticalAlignment="Top"/>
+        <Label Content="PhysicalDefence" Grid.Column="1" HorizontalAlignment="Left" Margin="369,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="MagicalAttack" Grid.Column="1" HorizontalAlignment="Left" Margin="650,221,0,0" VerticalAlignment="Top"/>
+        <Label Content="WalkingSpeed" Grid.Column="1" HorizontalAlignment="Left" Margin="646,288,0,0" VerticalAlignment="Top"/>
+        <Label Content="AttackSpeed" Grid.Column="1" HorizontalAlignment="Left" Margin="388,142,0,0" VerticalAlignment="Top"/>
+        <Label Content="ManaPoints" Grid.Column="1" HorizontalAlignment="Left" Margin="653,349,0,0" VerticalAlignment="Top"/>
+        <Label Content="MagicalDefence" Grid.Column="1" HorizontalAlignment="Left" Margin="369,293,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="70,171,0,0" VerticalAlignment="Top" Width="35" Height="32"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="318,169,0,0" VerticalAlignment="Top" Height="34" Width="40"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="65,243,0,0" VerticalAlignment="Top" Height="35"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="318,243,0,0" VerticalAlignment="Top" Width="40" Height="35"/>
     </Grid>
 </Window>

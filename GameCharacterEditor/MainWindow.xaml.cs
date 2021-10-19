@@ -43,6 +43,14 @@ namespace GameCharacterEditor
             dext.Text = new Warrior().DexterityParameter.ToString();
             stre.Text = new Warrior().StrengthParameter.ToString();
             cons.Text = new Warrior().ConstitutionParameter.ToString();
+            HealtPoints.Text = new Warrior().HealtPoints.ToString();
+            PhysicalAttack.Text = new Warrior().PhysicalAttack.ToString();
+            PhysicalDefence.Text = new Warrior().PhysicalDefence.ToString();
+            MagicalAttack.Text = new Warrior().MagicalAttack.ToString();
+            MagicalDefence.Text = new Warrior().MagicalDefence.ToString();
+            WalkingSpeed.Text = new Warrior().WalkingSpeed.ToString();
+            AttackSpeed.Text = new Warrior().AttackSpeed.ToString();
+            ManaPoints.Text = new Warrior().ManaPoints.ToString();
         }
 
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
@@ -51,6 +59,14 @@ namespace GameCharacterEditor
             dext.Text = new Sorcerer().DexterityParameter.ToString();
             stre.Text = new Sorcerer().StrengthParameter.ToString();
             cons.Text = new Sorcerer().ConstitutionParameter.ToString();
+            HealtPoints.Text = new Sorcerer().HealtPoints.ToString();
+            PhysicalAttack.Text = new Sorcerer().PhysicalAttack.ToString();
+            PhysicalDefence.Text = new Sorcerer().PhysicalDefence.ToString();
+            MagicalAttack.Text = new Sorcerer().MagicalAttack.ToString();
+            MagicalDefence.Text = new Sorcerer().MagicalDefence.ToString();
+            WalkingSpeed.Text = new Sorcerer().WalkingSpeed.ToString();
+            AttackSpeed.Text = new Sorcerer().AttackSpeed.ToString();
+            ManaPoints.Text = new Sorcerer().ManaPoints.ToString();
         }
 
         private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
@@ -59,6 +75,14 @@ namespace GameCharacterEditor
             dext.Text = new Archer().DexterityParameter.ToString();
             stre.Text = new Archer().StrengthParameter.ToString();
             cons.Text = new Archer().ConstitutionParameter.ToString();
+            HealtPoints.Text = new Archer().HealtPoints.ToString();
+            PhysicalAttack.Text = new Archer().PhysicalAttack.ToString();
+            PhysicalDefence.Text = new Archer().PhysicalDefence.ToString();
+            MagicalAttack.Text = new Archer().MagicalAttack.ToString();
+            MagicalDefence.Text = new Archer().MagicalDefence.ToString();
+            WalkingSpeed.Text = new Archer().WalkingSpeed.ToString();
+            AttackSpeed.Text = new Archer().AttackSpeed.ToString();
+            ManaPoints.Text = new Archer().ManaPoints.ToString();
         }
 
         //private void Button_Click(object sender, RoutedEventArgs e)
