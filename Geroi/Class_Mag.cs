@@ -47,8 +47,6 @@ namespace Geroi
             else if (kl > 0)
             {
                 Minus1.Visibility = Visibility.Visible;
-                Minus2.Visibility = Visibility.Visible;
-                Minus3.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -90,8 +88,6 @@ namespace Geroi
             else if (kl > 0)
             {
                 Minus2.Visibility = Visibility.Visible;
-                Minus1.Visibility = Visibility.Visible;
-                Minus3.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -133,8 +129,6 @@ namespace Geroi
             else if (kl > 0)
             {
                 Minus3.Visibility = Visibility.Visible;
-                Minus1.Visibility = Visibility.Visible;
-                Minus2.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }

@@ -46,8 +46,6 @@ namespace Geroi
             else if (kl > 0)
             {
                 Minus1.Visibility = Visibility.Visible;
-                Minus2.Visibility = Visibility.Visible;
-                Minus3.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -60,8 +58,6 @@ namespace Geroi
             {
                 Strenght.Text = st.ToString();
                 Minus1.Visibility = Visibility.Hidden;
-                Minus3.Visibility = Visibility.Hidden;
-                Minus2.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
@@ -91,8 +87,6 @@ namespace Geroi
             else if (kl > 0)
             {
                 Minus2.Visibility = Visibility.Visible;
-                Minus1.Visibility = Visibility.Visible;
-                Minus3.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -105,8 +99,6 @@ namespace Geroi
             {
                 Agility.Text = st.ToString();
                 Minus2.Visibility = Visibility.Hidden;
-                Minus1.Visibility = Visibility.Hidden;
-                Minus3.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
@@ -136,8 +128,6 @@ namespace Geroi
             else if (kl > 0)
             {
                 Minus3.Visibility = Visibility.Visible;
-                Minus1.Visibility = Visibility.Visible;
-                Minus2.Visibility = Visibility.Visible;
                 Kol.Text = kl.ToString();
             }
         }
@@ -150,8 +140,6 @@ namespace Geroi
             {
                 Intelligence.Text = st.ToString();
                 Minus3.Visibility = Visibility.Hidden;
-                Minus1.Visibility = Visibility.Hidden;
-                Minus2.Visibility = Visibility.Hidden;
             }
             else if (st > 0)
             {
