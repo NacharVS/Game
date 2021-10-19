@@ -171,6 +171,9 @@ namespace Geroi
                 int kl = Convert.ToInt32(Kol.Text);
                 kl += 5;
                 Kol.Text = kl.ToString();
+                Plus3.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
             }
         }
         private void level2_Click(object sender, RoutedEventArgs e)
@@ -187,14 +190,14 @@ namespace Geroi
                 int kl = Convert.ToInt32(Kol.Text);
                 kl += 5;
                 Kol.Text = kl.ToString();
+                Plus3.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
             }
         }
         private void ADDBTN_Click(object sender, RoutedEventArgs e)
         {
-            string connectionString = "mongodb://localhost:27017";
-            MongoClient client = new MongoClient(connectionString);
-            IMongoDatabase database = client.GetDatabase("test");
-        }
+
         }
     }
 }
