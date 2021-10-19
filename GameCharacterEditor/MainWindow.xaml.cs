@@ -39,7 +39,8 @@ namespace GameCharacterEditor
                 }
 
                 Warrior war = new Warrior();
-                GetUnitInfo(war);
+                GetUnitInfo(war, textb_name_character, textb_hp, textb_mana, textb_attack, textb_attack_magic, textb_walk_speed,
+                    textb_attack_speed, textb_pResist, textb_mResist);
             }
 
             if (radBtn_Witch.IsChecked == true)
@@ -53,7 +54,8 @@ namespace GameCharacterEditor
                 }
 
                 Witch witch = new Witch();
-                GetUnitInfo(witch);
+                GetUnitInfo(witch, textb_name_character, textb_hp, textb_mana, textb_attack, textb_attack_magic, textb_walk_speed,
+                    textb_attack_speed, textb_pResist, textb_mResist);
             }
 
             if (radBtn_Rogue.IsChecked == true)
@@ -67,7 +69,8 @@ namespace GameCharacterEditor
                 }
 
                 Rogue rogue = new Rogue();
-                GetUnitInfo(rogue);
+                GetUnitInfo(rogue, textb_name_character, textb_hp, textb_mana, textb_attack, textb_attack_magic, textb_walk_speed,
+                    textb_attack_speed, textb_pResist, textb_mResist);
             }
 
             if (radBtn_Rogue.IsChecked == false & radBtn_Warrior.IsChecked == false & radBtn_Witch.IsChecked == false)
@@ -75,21 +78,23 @@ namespace GameCharacterEditor
                 MessageBox.Show("Выберите класс персонажа");
             }
         }
-        private void GetUnitInfo(Unit unit)
+        private void GetUnitInfo(Unit unit,TextBox textb_name_character, TextBox textb_hp, TextBox textb_mana, TextBox textb_attack,
+            TextBox textb_attack_magic, TextBox textb_walk_speed,
+            TextBox textb_attack_speed, TextBox textb_pResist, TextBox textb_mResist)
         {
             textb_name_character.Text = unit.Name;
             textb_constitution.Text = unit.Constitution.ToString();
             textb_dexterity.Text = unit.Dexterity.ToString();
             textb_intelligent.Text = unit.Intelligence.ToString();
             textb_strenght.Text = unit.Strenght.ToString();
-            textb_pResist.Text = unit.PResist.ToString();
-            textb_mResist.Text = unit.MResist.ToString();
-            textb_hp.Text = unit.Health.ToString();
-            textb_attack_speed.Text = unit.AttackSpeed.ToString();
-            textb_walk_speed.Text = unit.WalkSpeed.ToString();
-            textb_mana.Text = unit.Mana.ToString();
-            textb_attack_magic.Text = unit.MAttack.ToString();
-            textb_attack.Text = unit.PAttack.ToString();
+            textb_pResist.Text = (unit.Constitution*5+unit.Dexterity*3).ToString();
+            textb_mResist.Text = (unit.Intelligence*5).ToString();
+            textb_hp.Text = (unit.Strenght * 5 + unit.Constitution * 10).ToString();
+            textb_attack_speed.Text = (unit.Dexterity*5).ToString();
+            textb_walk_speed.Text = (unit.Dexterity*2).ToString();
+            textb_mana.Text = (unit.Intelligence * 5).ToString();
+            textb_attack_magic.Text = (unit.Intelligence*10).ToString();
+            textb_attack.Text = (unit.Strenght *5).ToString();
         }
     }
 

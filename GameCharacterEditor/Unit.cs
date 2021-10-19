@@ -40,14 +40,6 @@ namespace GameCharacterEditor
             dexterity = 20;
             intelligence = 20;
             constitution = 20;
-            health = strenght * 5 + constitution * 10;
-            mana = intelligence * 5;
-            pAttack = strenght * 5;
-            mAttack = intelligence * 10;
-            pResist = constitution * 5 + dexterity*3;
-            mResist = intelligence * 5;
-            attackSpeed = dexterity * 5;
-            walkSpeed = dexterity * 2;
         }
     }
 
@@ -67,7 +59,7 @@ namespace GameCharacterEditor
     {
         public Witch()
         {
-            name = "witch";
+            name = "Witch";
             strenght = 50;
             dexterity = 50;
             intelligence = 250;
@@ -79,7 +71,7 @@ namespace GameCharacterEditor
     {
         public Rogue()
         {
-            name = "rogue";
+            name = "Rogue";
             strenght = 60;
             dexterity = 250;
             intelligence = 100;
