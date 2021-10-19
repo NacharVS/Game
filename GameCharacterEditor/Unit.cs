@@ -41,13 +41,14 @@ namespace GameCharacterEditor
         public double MAttack { get => mAttack; set => mAttack = value; }
         public double Experience { get => experience; set => experience = value; }
 
-        public Unit(double strength, double dexterity, double constitution, double intelegence, string name)
+        public Unit(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl)
         {
             this.strength = strength > extra ? strength : extra;
             this.dexterity = dexterity > extra ? dexterity : extra;
             this.intelegence = intelegence > extra ? intelegence : extra;
             this.constitution = constitution > extra ? constitution : extra;
             this.name = name;
+            this.Lvl = Lvl;
             hp += strength * 5 + constitution * 10;
             attackSpeed += dexterity * 5;
             walkingSpeed += dexterity * 2;
@@ -56,6 +57,7 @@ namespace GameCharacterEditor
             mp += intelegence * 5;
             mDefence += intelegence * 5;
             pAttack = strength * 5;
+            experience = Lvl * 1000;
             inventar.FillAllItemsList();
         }
 
@@ -82,7 +84,7 @@ namespace GameCharacterEditor
 
     class Warrior : Unit
     {
-        public Warrior() : base(250, 70, 100, 50, "Warrior 1.0")
+        public Warrior() : base(250, 70, 100, 50, "Warrior 1.0", 1)
         {
             strength = 250;
             dexterity = 70;
@@ -90,7 +92,7 @@ namespace GameCharacterEditor
             intelegence = 50;
             name = "Warrior 1.0";
         }
-        public Warrior(double strength, double dexterity, double constitution, double intelegence, string name) : base(strength, dexterity, constitution, intelegence, name)
+        public Warrior(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl) : base(strength, dexterity, constitution, intelegence, name, Lvl)
         {
 
         }
@@ -98,7 +100,7 @@ namespace GameCharacterEditor
 
     class Sorcerer : Unit
     {
-        public Sorcerer() : base(50, 50, 50, 250, "Sorcerer 1.0")
+        public Sorcerer() : base(50, 50, 50, 250, "Sorcerer 1.0", 1)
         {
             intelegence = 250;
             strength = 50;
@@ -106,7 +108,7 @@ namespace GameCharacterEditor
             dexterity = 50;
             name = "Sorcerer 1.0";
         }
-        public Sorcerer(double strength, double dexterity, double constitution, double intelegence, string name) : base(strength, dexterity, constitution, intelegence, name)
+        public Sorcerer(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl) : base(strength, dexterity, constitution, intelegence, name, Lvl)
         {
 
         }
@@ -114,7 +116,7 @@ namespace GameCharacterEditor
 
     class Rogue : Unit
     {
-        public Rogue() : base(60, 250, 60, 100, "Rogue 1.0")
+        public Rogue() : base(60, 250, 60, 100, "Rogue 1.0", 1)
         {
             dexterity = 250;
             strength = 60;
@@ -122,7 +124,7 @@ namespace GameCharacterEditor
             constitution = 60;
             name = "Rogue 1.0";
         }
-        public Rogue(double strength, double dexterity, double constitution, double intelegence, string name) : base(strength, dexterity, constitution, intelegence, name)
+        public Rogue(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl) : base(strength, dexterity, constitution, intelegence, name, Lvl)
         {
 
         }

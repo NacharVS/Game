@@ -13,7 +13,7 @@
         FontFamily="Global Monospace"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1100" Background="#FF181F43" ResizeMode="CanMinimize">
-    <Grid>
+    <Grid Margin="2,0,-2,0">
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="/1621583331_8-phonoteka_org-p-fon-varkraft-8.jpg"/>
         </Grid.Background>
@@ -44,20 +44,20 @@
             Style="{StaticResource MaterialDesignFloatingActionButton}"
             materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
             materialDesign:ButtonProgressAssist.Value="-1"
-            materialDesign:ButtonProgressAssist.IsIndeterminate="True" FontSize="24">
+            materialDesign:ButtonProgressAssist.IsIndeterminate="True" FontSize="24" Cursor="Hand">
             <TextBlock Text="Создать юнита" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" ToolTip="rfff" VerticalAlignment="Center" FlowDirection="LeftToRight" TextAlignment="Center">
             </TextBlock>
         </Button>
         <Image HorizontalAlignment="Left" Height="289" Margin="797,165,0,0" VerticalAlignment="Top" Width="196"/>
         <TextBox x:Name="txthp" IsReadOnly="True"  HorizontalAlignment="Left" Margin="234,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="33"/>
         <Label Content="HP" FontSize="16" HorizontalAlignment="Left" Margin="233,367,0,0" VerticalAlignment="Top" Width="136" Height="31"  Foreground="#DDFFFFFF"/>
-        <Button Content="Inventar" HorizontalAlignment="Left" Margin="805,499,0,0" VerticalAlignment="Top" Height="42" Width="180" Click="Button_Click_4"/>
+        <Button Content="Add Experience" HorizontalAlignment="Left" Margin="805,499,0,0" VerticalAlignment="Top" Height="42" Width="180" Click="Button_Click_4"/>
 
-        <ComboBox FocusVisualStyle="{DynamicResource ComboBoxFocusVisualStyle1}" x:Name="cmbBoxInventar" HorizontalAlignment="Left" Margin="412,22,0,0" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="All things"  materialDesign:HintAssist.Foreground="White"  materialDesign:HintAssist.FontFamily="Global Monospace" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="BlueViolet" BorderBrush="#BC000000" FontSize="20" UseLayoutRounding="True"/>
+        <ComboBox FocusVisualStyle="{DynamicResource ComboBoxFocusVisualStyle1}" x:Name="cmbBoxInventar" HorizontalAlignment="Left" Margin="412,22,0,0" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="All things"  materialDesign:HintAssist.Foreground="White"  materialDesign:HintAssist.FontFamily="Global Monospace" Width="168" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="BlueViolet" BorderBrush="#BC000000" FontSize="20" UseLayoutRounding="True"/>
         <Button HorizontalAlignment="Left" Margin="413,103,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="Button_Click_5" Cursor="Hand">
             <TextBlock Text="Добавить в свой инвентарь" TextWrapping="Wrap" TextAlignment="Center"/>
         </Button>
-        <ComboBox x:Name="cmbBoxItem" HorizontalAlignment="Left" Margin="594,22,0,0"  materialDesign:HintAssist.Hint="Your Inventar"  materialDesign:HintAssist.Foreground="White"  materialDesign:HintAssist.FontFamily="Global Monospace" VerticalAlignment="Top" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF2C0054" BorderBrush="#BC000000" FontSize="18" UseLayoutRounding="True" FontWeight="Bold">
+        <ComboBox x:Name="cmbBoxItem" HorizontalAlignment="Left" Margin="594,22,0,0"  materialDesign:HintAssist.Hint="Your Inventar"  materialDesign:HintAssist.Foreground="White"  materialDesign:HintAssist.FontFamily="Global Monospace" VerticalAlignment="Top" Width="168" Height="63" Style="{DynamicResource MaterialDesignFilledComboBox}" BorderThickness="0,0,0,2" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF2C0054" BorderBrush="#BC000000" FontSize="18" UseLayoutRounding="True" FontWeight="Bold">
 
         </ComboBox>
         <Button HorizontalAlignment="Left" Margin="599,103,0,0" VerticalAlignment="Top" Height="55" Width="150" Click="Button_Click_6">
@@ -72,10 +72,10 @@
             </TextBox.Text>
         </TextBox>
         <Button x:Name="Prev" Content="&lt;" HorizontalAlignment="Left" Margin="805,452,0,0" VerticalAlignment="Top" Height="42" Width="40" FontSize="20" FontWeight="Bold" Click="Prev_Click" Padding="0,0,0,0" UseLayoutRounding="False" BorderThickness="0,0,0,0" SnapsToDevicePixels="True"/>
-        <Button x:Name="Next" Content="&gt;" HorizontalAlignment="Left" Margin="945,452,0,0" VerticalAlignment="Top" Height="42" Width="40" FontWeight="Bold" FontSize="20" Click="Next_Click" Padding="0,0,0,0" BorderThickness="0,0,0,0"/>
-        <TextBox x:Name="txtLvl" IsReadOnly="True" HorizontalAlignment="Left" Margin="225,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Next" Content="&gt;" HorizontalAlignment="Left" Margin="945,452,0,0" VerticalAlignment="Top" Height="42" Width="40" FontWeight="Bold" FontSize="20" Click="Next_Click" Padding="0,0,0,0" BorderThickness="0,0,0,0" Cursor="Hand"/>
+        <TextBox x:Name="txtLvl" IsReadOnly="True" HorizontalAlignment="Left" Margin="225,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="0" Foreground="White" TextChanged="txtLvl_TextChanged" Cursor="IBeam"/>
         <Label Content="Level" FontSize="16" HorizontalAlignment="Left" Width="122" Height="31" Margin="225,70,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="txtExp" HorizontalAlignment="Left" Margin="224,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtExp_TextChanged"/>
+        <TextBox x:Name="txtExp" HorizontalAlignment="Left" Margin="224,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtExp_TextChanged" Cursor="IBeam" Text="0" Foreground="White"/>
         <Label Content="Experience" FontSize="16" HorizontalAlignment="Left" Margin="226,9,0,0" VerticalAlignment="Top" Width="136" Height="31" Foreground="#DDFFFFFF"/>
         <Button Content="∧" HorizontalAlignment="Left" Margin="146,161,0,0" VerticalAlignment="Top" Height="9" Width="20" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontWeight="Bold" FontStyle="Normal"  BorderThickness="1,0,1,0" Click="Button_Click_7"/>
         <Button Content="∨" HorizontalAlignment="Left" Margin="146,170,0,0" VerticalAlignment="Top" Height="9" Width="20" BorderThickness="1,0,1,0" FontWeight="Bold" FontSize="8" Padding="0,0,0,0" Click="Button_Click_15"/>

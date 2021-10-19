@@ -5,7 +5,7 @@ namespace GameCharacterEditor
 {
     class Item
     {
-        protected double mP = 0;
+        protected double mp = 0;
         protected double hp = 0;
         protected double pDamage = 0;
         protected double mDamage = 0;
@@ -17,7 +17,7 @@ namespace GameCharacterEditor
         protected double constitution = 0;
 
         public double Hp { get => hp; private set => hp = value; }
-        public double MP { get => mP; private set => mP = value; }
+        public double MP { get => mp; private set => mp = value; }
         public double Strength { get => strength; set => strength = value; }
         public double Dexterity { get => dexterity; set => dexterity = value; }
         public double PDamage { get => pDamage; private set => pDamage = value; }

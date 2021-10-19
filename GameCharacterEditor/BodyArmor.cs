@@ -8,6 +8,7 @@ namespace GameCharacterEditor
         public abstract void Render();
     }
 
+
     class Robe : BodyArmor
     {
         public Robe()
@@ -18,7 +19,7 @@ namespace GameCharacterEditor
         public override void Render()
         {
             intelegence = 50;
-            mP = 50;
+            mp = 50;
             mDamage = 50;
             pDefence = 50;
             mDefence = 150;
@@ -35,7 +36,7 @@ namespace GameCharacterEditor
         public override void Render()
         {
             dexterity = 80;
-            mP = 80;
+            mp = 80;
             pDamage = 80;
             pDefence = 80;
             mDefence = 160;
