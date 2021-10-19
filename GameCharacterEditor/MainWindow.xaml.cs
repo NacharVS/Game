@@ -103,6 +103,13 @@ namespace GameCharacterEditor
             Manatxt.Text = unit.MP_Unit.ToString();
             Healthtxt.Text = unit.HP_Unit.ToString();
             textpoint.Text = unit.Extra.ToString();
+            Ph_Attack.Text = unit.Phusical_Attack.ToString();
+            Ph_Deh.Text = unit.Phisical_Defence.ToString();
+            At_Speed.Text = unit.AttackSpeed.ToString();
+            Wol_Speed.Text = unit.Wooling_Speed.ToString();
+            Mg_Def.Text = unit.Magic_Defence.ToString();
+            Mg_Attack.Text = unit.Magic_Attack.ToString();
+
         }
 
         private void bnt_clickm1_Click(object sender, RoutedEventArgs e)
@@ -156,6 +163,11 @@ namespace GameCharacterEditor
         private void labelstrenght_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void btn_lvlup_Click(object sender, RoutedEventArgs e)
+        {
+            lvltxt.Text = (int.Parse(lvltxt.Text) + 1).ToString();
         }
     }
 }

@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
+        FontFamily="Comic Sans MS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="885">
+        Title="MainWindow" Height="570" Width="950" ResizeMode="NoResize">
     <Grid RenderTransformOrigin="0.97,0.056" Margin="0,0,0,-6">
         <Grid.Background>
             <ImageBrush ImageSource="/Задний фон.jpg"/>
         </Grid.Background>
-        <Border BorderThickness="5" CornerRadius="0" BorderBrush="white" HorizontalAlignment="Left" Height="154" Margin="303,41,0,0" VerticalAlignment="Top" Width="179" RenderTransformOrigin="0.5,0.5">
+        <Border BorderThickness="5" CornerRadius="0" BorderBrush="white" HorizontalAlignment="Left" Height="215" Margin="289,51,0,0" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,9 +20,9 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Border.RenderTransform>
-            <Image x:Name="ChooseHero" HorizontalAlignment="Center" Height="146" VerticalAlignment="Center" Width="170" Source="/Вопросик.jpg" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="ChooseHero_MouseLeftButtonDown"/>
+            <Image x:Name="ChooseHero" HorizontalAlignment="Center" Height="201" VerticalAlignment="Center" Width="238" Source="/Вопросик.jpg" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="ChooseHero_MouseLeftButtonDown"/>
         </Border>
-        <Label Content="Выберите своего героя!" HorizontalAlignment="Left" Margin="294,10,0,0" VerticalAlignment="Top" Width="196" Cursor="Arrow" FontFamily="Comic Sans MS" FontSize="16" FontWeight="Bold" FontStyle="Normal" Background="{x:Null}"/>
+        <Label Content="Выберите своего героя!" HorizontalAlignment="Left" Margin="303,12,0,0" VerticalAlignment="Top" Width="227" Cursor="Arrow" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" FontStyle="Normal" Background="{x:Null}"/>
         <TextBox x:Name="labelintelegence" HorizontalAlignment="Left" Margin="78,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="28" IsEnabled="False" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="16"/>
         <Label Content="Сила" HorizontalAlignment="Left" Margin="116,33,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" FontWeight="Bold"/>
         <Label Content="Ловкость" HorizontalAlignment="Left" Margin="100,93,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.533" FontFamily="Comic Sans MS"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
@@ -70,12 +71,12 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="600,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="26" IsEnabled="False" TextAlignment="Center" FontSize="20"/>
-        <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="538,65,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="14" Height="28" Width="256"/>
-        <TextBox HorizontalAlignment="Left" Margin="608,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" IsEnabled="False" Text="0" TextAlignment="Center" FontSize="20"/>
-        <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="564,159,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="14" Height="28" Width="194"/>
-        <Button x:Name="bnt_clickp4_Copy" Content="Повышение уровня" HorizontalAlignment="Left" Margin="577,249,0,0" VerticalAlignment="Top" Width="168" Background="#FF8DEB92" Cursor="Hand" Height="24"/>
-        <ComboBox x:Name="Hero" HorizontalAlignment="Left" Margin="305,211,0,0" VerticalAlignment="Top" Width="176" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Comic Sans MS" FontSize="16" Background="{x:Null}">
+        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="669,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="78" IsEnabled="False" TextAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="572,33,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="294" FontWeight="Bold"/>
+        <TextBox x:Name="lvltxt" HorizontalAlignment="Left" Margin="670,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Text="0" TextAlignment="Center" FontSize="20" IsEnabled="False"/>
+        <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="612,159,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="236" FontWeight="Bold"/>
+        <Button x:Name="btn_lvlup" Content="Повышение уровня" HorizontalAlignment="Left" Margin="646,0,0,0" VerticalAlignment="Center" Width="168" Background="#FF49C7F1" Cursor="Hand" Height="35" FontSize="16" FontFamily="Comic Sans MS" Click="btn_lvlup_Click"/>
+        <ComboBox x:Name="Hero" HorizontalAlignment="Left" Margin="292,274,0,0" VerticalAlignment="Top" Width="250" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Comic Sans MS" FontSize="16" Background="{x:Null}">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
@@ -84,22 +85,28 @@
             <ComboBoxItem Content="Магический_чувак"/>
             <ComboBoxItem Content="Лучник"/>
         </ComboBox>
-        <TextBox x:Name="Manatxt" HorizontalAlignment="Left" Margin="10,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" TextAlignment="Center" FontSize="16" FontFamily="Comic Sans MS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Healthtxt" HorizontalAlignment="Left" Margin="203,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="42" IsEnabled="False" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="16"/>
-        <Label x:Name="labelmp" Content="Мана персонажа" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" FontSize="16" Width="144"/>
-        <Label x:Name="labelhp" Content="Здоровье персонажа" HorizontalAlignment="Left" Margin="187,291,0,0" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" Margin="564,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Margin="564,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Margin="722,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Margin="398,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Margin="398,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Margin="722,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False"/>
+        <TextBox x:Name="Manatxt" HorizontalAlignment="Left" Margin="21,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="113" IsEnabled="False" TextAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextDecorations="{x:Null}"/>
+        <TextBox x:Name="Healthtxt" HorizontalAlignment="Left" Margin="199,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="113" IsEnabled="False" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="24"/>
+        <Label x:Name="labelmp" Content="Мана персонажа" HorizontalAlignment="Left" Margin="21,307,0,0" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" FontSize="16" Width="144"/>
+        <Label x:Name="labelhp" Content="Здоровье персонажа" HorizontalAlignment="Left" Margin="187,307,0,0" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" FontSize="16"/>
+        <TextBox x:Name="Wol_Speed" HorizontalAlignment="Left" Margin="564,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="At_Speed" HorizontalAlignment="Left" Margin="564,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Mg_Def" HorizontalAlignment="Left" Margin="722,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Ph_Attack" HorizontalAlignment="Left" Margin="398,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Ph_Deh" HorizontalAlignment="Left" Margin="398,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Mg_Attack" HorizontalAlignment="Left" Margin="722,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Физическая атака" HorizontalAlignment="Left" Margin="400,307,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16"/>
         <Label Content="Физическая защита" HorizontalAlignment="Left" Margin="392,401,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
         <Label Content="Скорость Атаки" HorizontalAlignment="Left" Margin="572,307,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
         <Label Content="Скорость бега" HorizontalAlignment="Left" Margin="578,401,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16"/>
         <Label Content="Магическая атака" HorizontalAlignment="Left" Margin="722,307,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="794,416,0,0" VerticalAlignment="Top"/>
+        <Label Content="Магическая защита" HorizontalAlignment="Left" Margin="722,396,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="502,342,0,0" VerticalAlignment="Top" Width="36" Stretch="Uniform" Source="/Меч_Алмаз.png"/>
+        <Image HorizontalAlignment="Left" Height="34" Margin="504,437,0,0" VerticalAlignment="Top" Width="34" Source="/Щит_Физика.png"/>
+        <Image HorizontalAlignment="Left" Height="35" Margin="669,342,0,0" VerticalAlignment="Top" Width="36" Source="/Атак_Спид.jfif"/>
+        <Image HorizontalAlignment="Left" Height="28" Margin="655,440,0,0" VerticalAlignment="Top" Width="50" Source="/Скорость_бега.jfif"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="824,343,0,0" VerticalAlignment="Top" Width="39" Source="/Магическая_Атака.jfif"/>
+        <Image HorizontalAlignment="Left" Height="35" Margin="829,437,0,0" VerticalAlignment="Top" Width="34" Source="/Магичекая_защита.jpg"/>
 
 
     </Grid>

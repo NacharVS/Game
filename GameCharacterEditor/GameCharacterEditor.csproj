@@ -7,15 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Атак_Спид.jfif" />
     <None Remove="Вопросик.jpg" />
     <None Remove="Задний фон.jpg" />
+    <None Remove="Магичекая_защита.jpg" />
+    <None Remove="Магическая_Атака.jfif" />
+    <None Remove="Меч_Алмаз.png" />
     <None Remove="Русский_воин.jpeg" />
+    <None Remove="Скорость_бега.jfif" />
+    <None Remove="Щит_Физика.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Атак_Спид.jfif" />
     <Resource Include="Вопросик.jpg" />
     <Resource Include="Задний фон.jpg" />
+    <Resource Include="Магичекая_защита.jpg" />
+    <Resource Include="Магическая_Атака.jfif" />
+    <Resource Include="Меч_Алмаз.png" />
     <Resource Include="Русский_воин.jpeg" />
+    <Resource Include="Скорость_бега.jfif" />
+    <Resource Include="Щит_Физика.png" />
   </ItemGroup>
 
 </Project>
