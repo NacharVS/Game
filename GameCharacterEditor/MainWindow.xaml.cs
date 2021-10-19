@@ -96,6 +96,115 @@ namespace GameCharacterEditor
             textb_attack_magic.Text = (unit.Intelligence*10).ToString();
             textb_attack.Text = (unit.Strenght *5).ToString();
         }
+
+        private void CountExtraPlus()
+        {
+            int point = Convert.ToInt32(extra.Text);
+            point -= 1;
+            if (point == 0)
+            {
+                extra.Text = point.ToString();
+                plus_str.Visibility = Visibility.Hidden;
+                plus_const.Visibility = Visibility.Hidden;
+                plus_dex.Visibility = Visibility.Hidden;
+                plus_int.Visibility = Visibility.Hidden;
+            }
+            else if (point > 0)
+            {
+                minus_str.Visibility = Visibility.Visible;
+                minus_const.Visibility = Visibility.Visible;
+                minus_dex.Visibility = Visibility.Visible;
+                minus_int.Visibility = Visibility.Visible;
+                extra.Text = point.ToString();
+            }
+        }
+        private void plus_str_Click(object sender, RoutedEventArgs e)
+        {
+            int point_str = Convert.ToInt32(textb_strenght.Text);
+            point_str += 1;
+            textb_strenght.Text = point_str.ToString();
+            CountExtraPlus();
+        }
+        private void plus_int_Click(object sender, RoutedEventArgs e)
+        {
+            int point_int = Convert.ToInt32(textb_intelligent.Text);
+            point_int += 1;
+            textb_intelligent.Text = point_int.ToString();
+            CountExtraPlus();
+        }
+
+        private void plus_dex_Click(object sender, RoutedEventArgs e)
+        {
+            int point_dex = Convert.ToInt32(textb_dexterity.Text);
+            point_dex += 1;
+            textb_dexterity.Text = point_dex.ToString();
+            CountExtraPlus();
+        }
+
+        private void plus_const_Click(object sender, RoutedEventArgs e)
+        {
+            int point_const = Convert.ToInt32(textb_constitution.Text);
+            point_const += 1;
+            textb_constitution.Text = point_const.ToString();
+            CountExtraPlus();
+        }
+
+        private void CountExtraMinus()
+        {
+            int point = Convert.ToInt32(extra.Text);
+            if (point == Unit.extra-1)
+            {
+                
+                extra.Text = point.ToString();
+                minus_str.Visibility = Visibility.Hidden;
+                minus_const.Visibility = Visibility.Hidden;
+                minus_dex.Visibility = Visibility.Hidden;
+                minus_int.Visibility = Visibility.Hidden;
+            }
+            else if (point > 0)
+            {
+                plus_str.Visibility = Visibility.Visible;
+                plus_const.Visibility = Visibility.Visible;
+                plus_dex.Visibility = Visibility.Visible;
+                plus_int.Visibility = Visibility.Visible;
+                extra.Text = point.ToString();
+            }
+            point = Convert.ToInt32(extra.Text);
+            point += 1;
+            extra.Text = point.ToString();
+        }
+
+        private void minus_str_Click(object sender, RoutedEventArgs e)
+        {
+            int point_str = Convert.ToInt32(textb_strenght.Text);
+            point_str -= 1;
+            textb_strenght.Text = point_str.ToString();
+            CountExtraMinus();
+        }
+
+        private void minus_int_Click(object sender, RoutedEventArgs e)
+        {
+            int point_int = Convert.ToInt32(textb_intelligent.Text);
+            point_int -= 1;
+            textb_intelligent.Text = point_int.ToString();
+            CountExtraMinus();
+        }
+
+        private void minus_dex_Click(object sender, RoutedEventArgs e)
+        {
+            int point_dex = Convert.ToInt32(textb_dexterity.Text);
+            point_dex -= 1;
+            textb_dexterity.Text = point_dex.ToString();
+            CountExtraMinus();
+        }
+
+        private void minus_const_Click(object sender, RoutedEventArgs e)
+        {
+            int point_const = Convert.ToInt32(textb_constitution.Text);
+            point_const -= 1;
+            textb_constitution.Text = point_const.ToString();
+            CountExtraMinus();
+        }
     }
 
     public static class Extensions

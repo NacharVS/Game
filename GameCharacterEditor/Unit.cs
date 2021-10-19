@@ -19,7 +19,7 @@ namespace GameCharacterEditor
         protected int mAttack = 0;
         protected int walkSpeed = 0;
         protected int attackSpeed = 0;
-
+        public static int extra = 20;
         public string Name { get => name; set => name = value; }
         public int Strenght { get => strenght; set => strenght = value; }
         public int Constitution { get => constitution; set => constitution = value; }
