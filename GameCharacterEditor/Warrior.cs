@@ -15,6 +15,9 @@ namespace GameCharacterEditor
             hp_Unit += strenght * 5;
             hp_Unit += constitution * 10;
             mp_Unit = intelegence * 5;
+            Agility_Buffs_Intelegence();
+            Agility_Buffs_Constitution();
+            Agility_Buffs_Dexterity();
 
         }
         //public void Health_Unit()

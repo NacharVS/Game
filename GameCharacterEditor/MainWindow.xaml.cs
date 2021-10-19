@@ -56,17 +56,23 @@ namespace GameCharacterEditor
                     ZeroZero();
                     break;
                 case 1:
-                    Characters(new Rogue());
+                    Rogue rog = new Rogue();
+                    Characters(rog);
                     Choosehero();
+                    extraPoint = rog.Extra;
                     ZeroZero();
                     break;
                 case 2:
-                    Characters(new Magic_dude());
+                    Magic_dude mag = new Magic_dude();
+                    Characters(mag);
+                    extraPoint = mag.Extra;
                     Choosehero();
                     ZeroZero();
                     break;
                 case 3:
-                    Characters(new Archer());
+                    Archer arch = new Archer();
+                    Characters(arch);
+                    extraPoint = arch.Extra;
                     Choosehero();
                     ZeroZero();
                     break;
@@ -143,7 +149,7 @@ namespace GameCharacterEditor
             }
             else
             {
-                MessageBox.Show("");
+                MessageBox.Show("Дополнительные очки закончились!!!");
             }
         }
 

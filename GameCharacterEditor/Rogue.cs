@@ -8,7 +8,7 @@ namespace GameCharacterEditor
     {
         public Rogue()
         {
-            dexterity = 250;
+            dexterity = 270;
             strenght = 65;
             intelegence = 100;
             constitution = 50;
