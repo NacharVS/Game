@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace GameCharacterEditor.Models
     public class Hero
     {
         [BsonId]
-        Object _id;
+        ObjectId _id;
         [BsonElement("Strenght")]
         public int strenght;
         [BsonElement("Dexterity")]
