@@ -160,10 +160,9 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Margin="10">
-                            <TextBlock Text="Helmets" HorizontalAlignment="Center" FontSize="15"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="HelmetsGroup" x:Name="LightHelmetRB" Content="Light helmet"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="HelmetsGroup" x:Name="MediumHelmetRB" Content="Medium helmet"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="HelmetsGroup" x:Name="HeavyHelmetRB" Content="Heavy helmet"/>
+                            <ComboBox x:Name="HelnetComboBox" >
+                                
+                            </ComboBox>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Margin="10">
                             <TextBlock Text="Armour" HorizontalAlignment="Center" FontSize="15"/>

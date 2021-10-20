@@ -38,56 +38,56 @@ namespace GameCharacterEditor
             {
                 var warrior = new Warrior();
 
-                HP_TB.Text = warrior.healthPoint.ToString();
-                MP_TB.Text = warrior.manaPoint.ToString();
-                Strenght_TB.Text = warrior.strenght.ToString();
-                Dexterity_TB.Text = warrior.dexterity.ToString();
-                Intelligenct_TB.Text = warrior.intelligence.ToString();
-                Constitution_TB.Text = warrior.constitution.ToString();
-                Extra_TB.Text = warrior.extra.ToString();
-                PA_TB.Text = warrior.pAttack.ToString();
-                MA_TB.Text = warrior.mAttack.ToString();
-                PR_TB.Text = warrior.pResist.ToString();
-                MR_TB.Text = warrior.mResist.ToString();
-                AS_TB.Text = warrior.attackSpeed.ToString();
-                MS_TB.Text = warrior.walkSpeed.ToString();
+                HP_TB.Text = warrior.HealthPoint.ToString();
+                MP_TB.Text = warrior.ManaPoint.ToString();
+                Strenght_TB.Text = warrior.Strenght.ToString();
+                Dexterity_TB.Text = warrior.Dexterity.ToString();
+                Intelligenct_TB.Text = warrior.Intelligence.ToString();
+                Constitution_TB.Text = warrior.Constitution.ToString();
+                Extra_TB.Text = warrior.Extra.ToString();
+                PA_TB.Text = warrior.PAttack.ToString();
+                MA_TB.Text = warrior.MAttack.ToString();
+                PR_TB.Text = warrior.PResist.ToString();
+                MR_TB.Text = warrior.MResist.ToString();
+                AS_TB.Text = warrior.AttackSpeed.ToString();
+                MS_TB.Text = warrior.WalkSpeed.ToString();
             }
 
             else if (ChooseRogueRB.IsChecked == true)
             {
                 var rogue = new Rogue();
 
-                HP_TB.Text = rogue.healthPoint.ToString();
-                MP_TB.Text = rogue.manaPoint.ToString();
-                Strenght_TB.Text = rogue.strenght.ToString();
-                Dexterity_TB.Text = rogue.dexterity.ToString();
-                Intelligenct_TB.Text = rogue.intelligence.ToString();
-                Constitution_TB.Text = rogue.constitution.ToString();
-                Extra_TB.Text = rogue.extra.ToString();
-                PA_TB.Text = rogue.pAttack.ToString();
-                MA_TB.Text = rogue.mAttack.ToString();
-                PR_TB.Text = rogue.pResist.ToString();
-                MR_TB.Text = rogue.mResist.ToString();
-                AS_TB.Text = rogue.attackSpeed.ToString();
-                MS_TB.Text = rogue.walkSpeed.ToString();
+                HP_TB.Text = rogue.HealthPoint.ToString();
+                MP_TB.Text = rogue.ManaPoint.ToString();
+                Strenght_TB.Text = rogue.Strenght.ToString();
+                Dexterity_TB.Text = rogue.Dexterity.ToString();
+                Intelligenct_TB.Text = rogue.Intelligence.ToString();
+                Constitution_TB.Text = rogue.Constitution.ToString();
+                Extra_TB.Text = rogue.Extra.ToString();
+                PA_TB.Text = rogue.PAttack.ToString();
+                MA_TB.Text = rogue.MAttack.ToString();
+                PR_TB.Text = rogue.PResist.ToString();
+                MR_TB.Text = rogue.MResist.ToString();
+                AS_TB.Text = rogue.AttackSpeed.ToString();
+                MS_TB.Text = rogue.WalkSpeed.ToString();
             }
             else
             { 
                 var sorcerer = new Sorcerer();
 
-                HP_TB.Text = sorcerer.healthPoint.ToString();
-                MP_TB.Text = sorcerer.manaPoint.ToString();
-                Strenght_TB.Text = sorcerer.strenght.ToString();
-                Dexterity_TB.Text = sorcerer.dexterity.ToString();
-                Intelligenct_TB.Text = sorcerer.intelligence.ToString();
-                Constitution_TB.Text = sorcerer.constitution.ToString();
-                Extra_TB.Text = sorcerer.extra.ToString();
-                PA_TB.Text = sorcerer.pAttack.ToString();
-                MA_TB.Text = sorcerer.mAttack.ToString();
-                PR_TB.Text = sorcerer.pResist.ToString();
-                MR_TB.Text = sorcerer.mResist.ToString();
-                AS_TB.Text = sorcerer.attackSpeed.ToString();
-                MS_TB.Text = sorcerer.walkSpeed.ToString();
+                HP_TB.Text = sorcerer.HealthPoint.ToString();
+                MP_TB.Text = sorcerer.ManaPoint.ToString();
+                Strenght_TB.Text = sorcerer.Strenght.ToString();
+                Dexterity_TB.Text = sorcerer.Dexterity.ToString();
+                Intelligenct_TB.Text = sorcerer.Intelligence.ToString();
+                Constitution_TB.Text = sorcerer.Constitution.ToString();
+                Extra_TB.Text = sorcerer.Extra.ToString();
+                PA_TB.Text = sorcerer.PAttack.ToString();
+                MA_TB.Text = sorcerer.MAttack.ToString();
+                PR_TB.Text = sorcerer.PResist.ToString();
+                MR_TB.Text = sorcerer.MResist.ToString();
+                AS_TB.Text = sorcerer.AttackSpeed.ToString();
+                MS_TB.Text = sorcerer.WalkSpeed.ToString();
             }
         }
 
