@@ -4,10 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiabloByKarpov"
+        xmlns:vm="clr-namespace:DiabloByKarpov.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000" MaxHeight="600" MaxWidth="1000"
         MinHeight="600" MinWidth="1000" Background="#FF110203"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <!--<Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>-->
     <Window.Resources>
         <ControlTemplate x:Key="TopMenuButtons" TargetType="Button">
             <Grid Name="Btn" Height="40" Margin="20,0,0,0">
@@ -87,9 +91,9 @@
                     <StackPanel Orientation="Horizontal">
                         <Image Source="{DynamicResource ResourceKey=Img}"
                                VerticalAlignment="Center" HorizontalAlignment="Left"
-                               Height="30" Width="30" Stretch="Fill" Margin="20,0,0,0"/>
+                               Height="35" Width="35" Stretch="Fill" Margin="15,0,0,0"/>
                         <Label Content="{TemplateBinding Content}" Margin="10,0,0,0"
-                               Background="Transparent" FontSize="14" 
+                               Background="Transparent" FontSize="18" 
                                VerticalAlignment="Center">
                             <Label.Style>
                                 <Style TargetType="Label">
@@ -168,5 +172,80 @@
             <RowDefinition Height="80"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Frame Grid.ColumnSpan="10" Grid.RowSpan="10" NavigationUIVisibility="Hidden" Content="{Binding CurPage}"/>
+        <Grid Name="TopMenu" Grid.Row="0" Grid.ColumnSpan="2">
+            <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent" MouseDown="Border_MouseDown">
+                <StackPanel Orientation="Horizontal">
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ПОДЗЕМЕЛЬЕ"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="МАГАЗИН"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="НОВОСТИ"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid Name="SlideMenu" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Width" Value="225"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsChecked, ElementName=OpenCloseSlideMenuBtn}" 
+                                                     Value="true">
+                            <Setter Property="Width" Value="60"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Border BorderThickness="1,0,1,1" BorderBrush="#FF303031"/>
+            <Border BorderThickness="0" Background="Black" Opacity="0.6"/>
+            <StackPanel Orientation="Vertical">
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenWOWPage}"
+                        Content="Warrior">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">MyResources/Icons/Class_Warrior_Alt.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenHSPage}"
+                        Content="Mage">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">MyResources/Icons/Class_Mage_Alt.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenOWPage}"
+                        Content="Rogue">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">MyResources/Icons/Class_Rogue_Alt.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenW3Page}"
+                        Content="Sedmovskiy">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">MyResources/Icons/Class_77_Alt.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+            <ToggleButton Focusable="False" x:Name="OpenCloseSlideMenuBtn" Height="20" Width="20"
+                          VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                          Margin="20,0,0,20">
+                <ToggleButton.Template>
+                    <ControlTemplate>
+                        <Image>
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Source" Value="MyResources/Icons/Close.png"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                            Mode=FindAncestor,
+                                            AncestorType={x:Type ToggleButton}},
+                                            Path = IsChecked}" Value="true">
+                                            <Setter Property="Source" Value="MyResources/Icons/Open.png"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
+        </Grid>
     </Grid>
 </Window>

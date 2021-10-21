@@ -35,8 +35,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +70,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\MagePage.xaml.cs">
+      <DependentUpon>MagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RoguePage.xaml.cs">
+      <DependentUpon>RoguePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\s77Page.xaml.cs">
+      <DependentUpon>s77Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WarriorPage.xaml.cs">
+      <DependentUpon>WarriorPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\MagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +100,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\RoguePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\s77Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WarriorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,6 +131,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,16 +140,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\MyResources\Background\Blure\" />
-    <Folder Include="View\MyResources\Icons\" />
+    <Resource Include="View\MyResources\Icons\Close.png" />
+    <Resource Include="View\MyResources\Icons\Open.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\MyResources\Background\MainBg77.jpg" />
-    <Resource Include="View\MyResources\Background\MainBgMage.jpg" />
-    <Resource Include="View\MyResources\Background\MainBgRogue.jpg" />
-    <Resource Include="View\MyResources\Background\MainBgWarrior.png" />
+    <Resource Include="View\MyResources\Icons\Class_77_Alt.png" />
+    <Resource Include="View\MyResources\Icons\Class_Mage_Alt.png" />
+    <Resource Include="View\MyResources\Icons\Class_Rogue_Alt.png" />
+    <Resource Include="View\MyResources\Icons\Class_Warrior_Alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\MainBgMageCut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\Blur\MainBgMageBlur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\Blur\MainBg77Blur.png" />
+    <Resource Include="View\MyResources\Background\Blur\MainBgRogueBlur.png" />
+    <Resource Include="View\MyResources\Background\Blur\MainBgWarriorBlur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\MainBg77Cut.png" />
+    <Resource Include="View\MyResources\Background\MainBgRogueCut.png" />
+    <Resource Include="View\MyResources\Background\MainBgWarriorCut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
