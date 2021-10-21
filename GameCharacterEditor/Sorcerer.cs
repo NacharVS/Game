@@ -8,9 +8,9 @@ namespace GameCharacterEditor
     {
         public Sorcerer()
         {
-            StrengthParameter = 30;
-            DexterityParameter = 20;
-            InteligenceParameter = 15;
+            StrengthParameter = 15;
+            DexterityParameter = 25;
+            InteligenceParameter = 30;
             ConstitutionParameter = 20;
 
             HealtPoints = 100 + StrengthParameter * 5 + ConstitutionParameter * 10;

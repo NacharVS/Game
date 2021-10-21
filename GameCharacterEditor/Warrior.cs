@@ -8,9 +8,9 @@ namespace GameCharacterEditor
     {
         public Warrior()
         {
-            StrengthParameter = 35;
+            StrengthParameter = 30;
             DexterityParameter = 20;
-            InteligenceParameter = 10;
+            InteligenceParameter = 15;
             ConstitutionParameter = 25;
 
             HealtPoints = 100 + StrengthParameter * 5 + ConstitutionParameter * 10;

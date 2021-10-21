@@ -8,9 +8,9 @@ namespace GameCharacterEditor
     {
         public Archer()
         {
-            StrengthParameter = 25;
-            DexterityParameter = 35;
-            InteligenceParameter = 25;
+            StrengthParameter = 20;
+            DexterityParameter = 30;
+            InteligenceParameter = 20;
             ConstitutionParameter = 20;
 
             HealtPoints = 100 + StrengthParameter * 5 + ConstitutionParameter * 10;
