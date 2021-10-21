@@ -38,19 +38,20 @@ namespace GameCharacterEditor.Models
 
         protected int pAttack = 20;
         [BsonElement("Physical Attack")]
-        public virtual int PAttack { get => pAttack; set { pAttack = value; } }
+        public virtual int PAttack { get => pAttack; }
 
         protected int mAttack = 20;
         [BsonElement("Magic Attack")]
-        public virtual int MAttack { get => mAttack; set { pAttack = value; } }
+        public virtual int MAttack { get => mAttack;
+            }
 
         protected int pResist = 20;
         [BsonElement("Physical Resist")]
-        public virtual int PResist { get => pResist; set { pAttack = value; } }
+        public virtual int PResist { get => pResist; }
 
         protected int mResist = 20;
         [BsonElement("Magic Resist")]
-        public virtual int MResist { get => mResist; set { mResist = value; } }
+        public virtual int MResist { get => mResist; }
 
         protected int attackSpeed = 100;
         [BsonElement("Attack Speed")]
