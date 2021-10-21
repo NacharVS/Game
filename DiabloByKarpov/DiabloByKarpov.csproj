@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,7 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -96,7 +96,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
+    <Folder Include="View\MyResources\Background\Blure\" />
+    <Folder Include="View\MyResources\Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\MainBg77.jpg" />
+    <Resource Include="View\MyResources\Background\MainBgMage.jpg" />
+    <Resource Include="View\MyResources\Background\MainBgRogue.jpg" />
+    <Resource Include="View\MyResources\Background\MainBgWarrior.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
