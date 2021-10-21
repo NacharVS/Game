@@ -32,7 +32,8 @@ namespace GameCharacterEditor
 
         private void ChooseWarrior_Click(object sender, RoutedEventArgs e)
         {
-
+            PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
+            PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = true;
 
             if (ChooseWarriorRB.IsChecked == true)
             {
@@ -279,39 +280,6 @@ namespace GameCharacterEditor
             };
 
             CharacterList.Items.Add(_todoData);
-
-            
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            //if ((bool)(LightArmourRB.IsChecked = true))
-            //{
-            //    var strnght = int.Parse(Strenght_TB.Text);
-            //    strnght += 5;
-            //    Strenght_TB.Text = strnght.ToString();
-            //    var dex = int.Parse(Dexterity_TB.Text);
-            //    dex += 10;
-            //    Dexterity_TB.Text = dex.ToString();
-            //}
-            //else if ((bool)(MediumArmourRB.IsChecked = true))
-            //{
-            //    var strnght = int.Parse(Strenght_TB.Text);
-            //    strnght += 5;
-            //    Strenght_TB.Text = strnght.ToString();
-            //    var intell = int.Parse(Intelligenct_TB.Text);
-            //    intell += 10;
-            //    Intelligenct_TB.Text = intell.ToString();
-            //}
-            //else
-            //{
-            //    var strnght = int.Parse(Strenght_TB.Text);
-            //    strnght += 5;
-            //    Strenght_TB.Text = strnght.ToString();
-            //    var constit = int.Parse(Constitution_TB.Text);
-            //    constit += 10;
-            //    Constitution_TB.Text = constit.ToString();
-            //}
         }
 
         private static void AddToDataBase(Hero hero)
@@ -320,6 +288,12 @@ namespace GameCharacterEditor
             var database = client.GetDatabase("Diyar");
             var collection = database.GetCollection<Hero>("Hero!");
             collection.InsertOne(hero);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+             PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
+             PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = false;
         }
     }
 }

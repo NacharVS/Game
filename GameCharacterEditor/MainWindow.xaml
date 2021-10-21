@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="RPGame" Height="700" Width="1100" Background="#FF891010">
+        Title="RPGame" Height="700" Width="1100" Background="#FF891010" Loaded="Window_Loaded">
 
     <Border Padding="10">
         <Grid>
@@ -163,31 +163,6 @@
                             <ComboBox x:Name="HelnetComboBox" >
                                 
                             </ComboBox>
-                        </StackPanel>
-                        <StackPanel Grid.Column="1" Margin="10">
-                            <TextBlock Text="Armour" HorizontalAlignment="Center" FontSize="15"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="ArmourGroup" x:Name="LightArmourRB" Content="Light armour"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="ArmourGroup" x:Name="MediumArmourRB" Content="Medium armour"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="ArmourGroup" x:Name="HeavyArmourRB" Content="Heavy armour"/>
-                        </StackPanel>
-                        <StackPanel Grid.Column="2" Margin="10">
-                            <TextBlock Text="Pants" HorizontalAlignment="Center" FontSize="15"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="PantsGroup" x:Name="LightPantsRB" Content="Light pants"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="PantsGroup" x:Name="MediumPantsRB" Content="Medium pants"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="PantsGroup" x:Name="HeavyPantsRB" Content="Heavy pants"/>
-                        </StackPanel>
-                        <StackPanel Grid.Column="3" Margin="10">
-                            <TextBlock Text="Boots" HorizontalAlignment="Center" FontSize="15"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="BootsGroup" x:Name="LightBootsRB" Content="Light boots"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="BootsGroup" x:Name="MediumBootsRB" Content="Medium boots"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="BootsGroup" x:Name="HeavyBootsRB" Content="Heavy boots"/>
-                        </StackPanel>
-
-                        <StackPanel Grid.Column="4" Margin="10">
-                            <TextBlock Text="Weapons" HorizontalAlignment="Center" FontSize="15"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="WeaponGroup" x:Name="AxeRB" Content="Axe"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="WeaponGroup" x:Name="SaberRB" Content="Saber"/>
-                            <RadioButton Checked="RadioButton_Checked" GroupName="WeaponGroup" x:Name="ScepterRB" Content="Scepter"/>
                         </StackPanel>
                     </Grid>
                     

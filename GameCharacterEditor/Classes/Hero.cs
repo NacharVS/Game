@@ -12,103 +12,105 @@ namespace GameCharacterEditor.Models
         [BsonId]
         ObjectId _id;
 
-        [BsonElement("Strenght")]
         protected int strenght = 20;
-        public int Strenght { get => strenght; }
+        [BsonElement("Strenght")]
+        public virtual int Strenght { get => strenght; }
 
-        [BsonElement("Dexterity")]
         protected int dexterity = 20;
-        public int Dexterity { get => dexterity; }
+        [BsonElement("Dexterity")]
+        public virtual int Dexterity { get => dexterity; }
 
-        [BsonElement("Intelligence")]
         protected int intelligence = 20;
-        public int Intelligence { get => intelligence; }
+        [BsonElement("Intelligence")]
+        public virtual int Intelligence { get => intelligence; }
 
-        [BsonElement("Constitution")]
         protected int constitution = 20;
-        public int Constitution { get => constitution; }
+        [BsonElement("Constitution")]
+        public virtual int Constitution { get => constitution; }
 
-        [BsonElement("Health Point")]
         protected int healthPoint = 100;
-        public int HealthPoint { get => healthPoint; }
+        [BsonElement("Health Point")]
+        public virtual int HealthPoint { get => healthPoint; }
 
         [BsonElement("Mana Point")]
         protected int manaPoint = 100;
-        public int ManaPoint { get => manaPoint; }
+        public virtual int ManaPoint { get => manaPoint; }
 
-        [BsonElement("Physical Attack")]
         protected int pAttack = 20;
-        public int PAttack { get => pAttack; }
+        [BsonElement("Physical Attack")]
+        public virtual int PAttack { get => pAttack; }
 
-        [BsonElement("Magic Attack")]
         protected int mAttack = 20;
-        public int MAttack { get => mAttack; }
+        [BsonElement("Magic Attack")]
+        public virtual int MAttack { get => mAttack;
+            }
 
-        [BsonElement("Physical Resist")]
         protected int pResist = 20;
-        public int PResist { get => pResist; }
+        [BsonElement("Physical Resist")]
+        public virtual int PResist { get => pResist; }
 
-        [BsonElement("Magic Resist")]
         protected int mResist = 20;
-        public int MResist { get => mResist; }
+        [BsonElement("Magic Resist")]
+        public virtual int MResist { get => mResist; }
 
-        [BsonElement("Attack Speed")]
         protected int attackSpeed = 100;
-        public int AttackSpeed { get => attackSpeed; }
+        [BsonElement("Attack Speed")]
+        public virtual int AttackSpeed { get => attackSpeed; }
 
-        [BsonElement("Movement Speed")]
         protected int walkSpeed = 100;
-        public int WalkSpeed { get => walkSpeed; }
-
+        [BsonElement("Movement Speed")]
+        public virtual int WalkSpeed { get => walkSpeed; }
+      
+        protected int extra = 20;
         [BsonElement("Extra Points")]
-        protected int extra = 100;
-        public int Extra { get => extra; }
+        public virtual int Extra { get => extra; }
     }
 
     public class Warrior : Hero
     {
-        public int Strenght => strenght + 10;
+        public override int Strenght => strenght + 10;
 
-        public int Constitution => constitution + 10;
+        public override int Constitution => constitution + 10;
 
-        public int Intelligence => intelligence - 5;
+        public override int Intelligence => intelligence - 5;
 
-        public int Dexterity => dexterity - 5;
+        public override int Dexterity => dexterity - 5;
 
-        public int HealthPoint => healthPoint + 100;
+        public override int HealthPoint => healthPoint + 100;
 
-        public int ManaPoint => manaPoint - 25;
+        public override int ManaPoint => manaPoint - 25;
+
+
     }
 
     public class Sorcerer : Hero
     {
-        public int Intelligence => intelligence + 10;
+        public override int Intelligence => intelligence + 10;
 
-        public int Constitution => constitution + 5;
+        public override int Constitution => constitution + 5;
 
-        public int Dexterity => dexterity - 10;
+        public override int Dexterity => dexterity - 10;
 
-        public int Strenght => strenght + 5;
+        public override int Strenght => strenght + 5;
 
-        public int HealthPoint => healthPoint - 25;
+        public override int HealthPoint => healthPoint - 25;
 
-        public int ManaPoint => manaPoint + 100;
+        public override int ManaPoint => manaPoint + 100;
     }
 
     public class Rogue : Hero
     {
-        public int Dexterity => dexterity + 10;
+        public override int Dexterity => dexterity + 10;
 
-        public int Strenght => strenght - 5;
+        public override int Strenght => strenght - 5;
 
-        public int Intelligence => intelligence + 5;
+        public override int Intelligence => intelligence + 5;
 
-        public int Constitution => constitution + 5;
+        public override int Constitution => constitution + 5;
 
-        public int HealthPoint => healthPoint + 50;
+        public override int HealthPoint => healthPoint + 50;
 
-        public int ManaPoint => manaPoint + 25;
-
+        public override int ManaPoint => manaPoint + 25;
     }
 }
 
