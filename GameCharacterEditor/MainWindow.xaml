@@ -10,9 +10,9 @@
         <Grid.Background>
             <ImageBrush ImageSource="Diablo-Immortal-Update-Diablo-III-Blizzard-News.jpg"/>
         </Grid.Background>
-        <Button Content="Rogue" HorizontalAlignment="Left" Margin="20,9,0,0" VerticalAlignment="Top" Height="20" Width="90" Click="Button_Click"/>
-        <Button Content="Warrior" HorizontalAlignment="Left" Margin="125,9,0,0" VerticalAlignment="Top" Height="20" Width="90" Click="Button_Click_1"/>
-        <Button Content="Sorcecer" HorizontalAlignment="Left" Margin="230,9,0,0" VerticalAlignment="Top" Width="90" Height="20" Click="Button_Click_2"/>
+        <RadioButton x:Name="Rogue" Content="Rogue" HorizontalAlignment="Left" Margin="20,9,0,0" VerticalAlignment="Top" Height="20" Width="90" Foreground="Red" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="16" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="Warrior" Content="Warrior" HorizontalAlignment="Left" Margin="125,9,0,0" VerticalAlignment="Top" Height="20" Width="90" Foreground="Red" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="16" Checked="RadioButton_Checked_1"/>
+        <RadioButton x:Name="Sorcecer" Content="Sorcecer" HorizontalAlignment="Left" Margin="230,9,0,0" VerticalAlignment="Top" Width="90" Height="20" Foreground="Red" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="16" Checked="RadioButton_Checked_2"/>
         <Label Content="HP:" HorizontalAlignment="Left" Margin="20,109,0,0" VerticalAlignment="Top" FontSize="14" Background="White"/>
         <Label Content="Mana:" HorizontalAlignment="Left" Margin="20,154,0,0" VerticalAlignment="Top" Background="White"/>
         <Label Content="Strength" HorizontalAlignment="Left" Margin="20,233,0,0" VerticalAlignment="Top" Width="60" Background="White"/>
@@ -42,6 +42,7 @@
         <Button x:Name="PhysA_Up" Content="+" HorizontalAlignment="Left" Margin="485,276,0,0" VerticalAlignment="Top" Width="20" Click="AbilityUp_Click"/>
         <Button x:Name="MagA_Up" Content="+" HorizontalAlignment="Left" Margin="485,355,0,0" VerticalAlignment="Top" Width="20" Click="AbilityUp_Click"/>
         <Button x:Name="MagA_Down" Content="-" HorizontalAlignment="Center" Margin="0,356,0,0" VerticalAlignment="Top" Width="20" Click="AbilityDown_Click"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="660,296,0,0" VerticalAlignment="Top" Width="55" Click="Button_Click"/>
 
     </Grid>
 </Window>

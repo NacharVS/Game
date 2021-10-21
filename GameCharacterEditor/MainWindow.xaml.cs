@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,54 +24,6 @@ namespace GameCharacterEditor
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Rogue rog = new Rogue();
-            TbArmor.Text = rog.armor.ToString();
-            TbAttackSpeed.Text = rog.attackSpeed.ToString();
-            TbDexterity.Text = rog.dexterity.ToString();
-            TbHP.Text = rog.healthPoint.ToString();
-            TbIntellect.Text = rog.intellect.ToString();
-            TbMana.Text = rog.manaPoint.ToString();
-            TbMgAttack.Text = rog.mAttack.ToString();
-            TbMoveSpeed.Text = rog.moveSpeed.ToString();
-            TbPhAttack.Text = rog.pAttack.ToString();
-            TbPhysique.Text = rog.physique.ToString();
-            TbStrength.Text = rog.strength.ToString();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Warrior war = new Warrior();
-            TbArmor.Text = war.armor.ToString();
-            TbAttackSpeed.Text = war.attackSpeed.ToString();
-            TbDexterity.Text = war.dexterity.ToString();
-            TbHP.Text = war.healthPoint.ToString();
-            TbIntellect.Text = war.intellect.ToString();
-            TbMana.Text = war.manaPoint.ToString();
-            TbMgAttack.Text = war.mAttack.ToString();
-            TbMoveSpeed.Text = war.moveSpeed.ToString();
-            TbPhAttack.Text = war.pAttack.ToString();
-            TbPhysique.Text = war.physique.ToString();
-            TbStrength.Text = war.strength.ToString();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Sorcecer sorc = new Sorcecer();
-            TbArmor.Text = sorc.armor.ToString();
-            TbAttackSpeed.Text = sorc.attackSpeed.ToString();
-            TbDexterity.Text = sorc.dexterity.ToString();
-            TbHP.Text = sorc.healthPoint.ToString();
-            TbIntellect.Text = sorc.intellect.ToString();
-            TbMana.Text = sorc.manaPoint.ToString();
-            TbMgAttack.Text = sorc.mAttack.ToString();
-            TbMoveSpeed.Text = sorc.moveSpeed.ToString();
-            TbPhAttack.Text = sorc.pAttack.ToString();
-            TbPhysique.Text = sorc.physique.ToString();
-            TbStrength.Text = sorc.strength.ToString();
         }
 
         private void AbilityDown_Click(object sender, RoutedEventArgs e)
@@ -156,6 +109,80 @@ namespace GameCharacterEditor
         private void Exception(int ability)
         {
             --ability;
+        }
+        private static void AddToDataBase(Hero hero)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Barinov");
+            var collection = database.GetCollection<Hero>("Hero");
+            collection.InsertOne(hero);
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            Rogue rog = new Rogue();
+            TbArmor.Text = rog.armor.ToString();
+            TbAttackSpeed.Text = rog.attackSpeed.ToString();
+            TbDexterity.Text = rog.dexterity.ToString();
+            TbHP.Text = rog.healthPoint.ToString();
+            TbIntellect.Text = rog.intellect.ToString();
+            TbMana.Text = rog.manaPoint.ToString();
+            TbMgAttack.Text = rog.mAttack.ToString();
+            TbMoveSpeed.Text = rog.moveSpeed.ToString();
+            TbPhAttack.Text = rog.pAttack.ToString();
+            TbPhysique.Text = rog.physique.ToString();
+            TbStrength.Text = rog.strength.ToString();
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            Warrior war = new Warrior();
+            TbArmor.Text = war.armor.ToString();
+            TbAttackSpeed.Text = war.attackSpeed.ToString();
+            TbDexterity.Text = war.dexterity.ToString();
+            TbHP.Text = war.healthPoint.ToString();
+            TbIntellect.Text = war.intellect.ToString();
+            TbMana.Text = war.manaPoint.ToString();
+            TbMgAttack.Text = war.mAttack.ToString();
+            TbMoveSpeed.Text = war.moveSpeed.ToString();
+            TbPhAttack.Text = war.pAttack.ToString();
+            TbPhysique.Text = war.physique.ToString();
+            TbStrength.Text = war.strength.ToString();
+        }
+
+        private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
+        {
+            Sorcecer sorc = new Sorcecer();
+            TbArmor.Text = sorc.armor.ToString();
+            TbAttackSpeed.Text = sorc.attackSpeed.ToString();
+            TbDexterity.Text = sorc.dexterity.ToString();
+            TbHP.Text = sorc.healthPoint.ToString();
+            TbIntellect.Text = sorc.intellect.ToString();
+            TbMana.Text = sorc.manaPoint.ToString();
+            TbMgAttack.Text = sorc.mAttack.ToString();
+            TbMoveSpeed.Text = sorc.moveSpeed.ToString();
+            TbPhAttack.Text = sorc.pAttack.ToString();
+            TbPhysique.Text = sorc.physique.ToString();
+            TbStrength.Text = sorc.strength.ToString();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(Rogue.IsChecked == true)
+            {
+                Rogue rogue = new Rogue();
+                AddToDataBase(rogue);
+            }
+            else if(Warrior.IsChecked == true)
+            {
+                Warrior war = new Warrior();
+                AddToDataBase(war);
+            }
+            else if(Sorcecer.IsChecked == true)
+            {
+                Sorcecer sorc = new Sorcecer();
+                AddToDataBase(sorc);
+            }
         }
     }
 }
