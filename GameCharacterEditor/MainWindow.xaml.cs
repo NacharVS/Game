@@ -21,7 +21,8 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        int point_str, point_dex, point_int, point_const, point;
+        int point_str, point_dex, point_int, point_const, point, lvl;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -31,14 +32,13 @@ namespace GameCharacterEditor
         {
             if (radBtn_Warrior.IsChecked == true)
             {
-                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/knight.jpg";
+                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/knight.png";
 
                 using (Stream fs = new FileStream(link, FileMode.Open))
                 {
                     Bitmap bmp = new Bitmap(fs);
                     image_character.Source = bmp.BitmapToImageSource();
                 }
-
                 Warrior war = new Warrior();
                 GetUnitInfo(war, textb_name_character, textb_hp, textb_mana, textb_attack, textb_attack_magic, textb_walk_speed,
                     textb_attack_speed, textb_pResist, textb_mResist);
@@ -61,7 +61,7 @@ namespace GameCharacterEditor
 
             if (radBtn_Rogue.IsChecked == true)
             {
-                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/rogue.jpg";
+                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/rogue.png";
 
                 using (Stream fs = new FileStream(link, FileMode.Open))
                 {
@@ -100,6 +100,7 @@ namespace GameCharacterEditor
 
         private void CountExtraPlus()
         {
+            extra.Text = point.ToString();
             point = Convert.ToInt32(extra.Text);
             point -= 1;
             if (point == 0)
@@ -178,50 +179,99 @@ namespace GameCharacterEditor
         private void minus_str_Click(object sender, RoutedEventArgs e)
         {
             point_str = Convert.ToInt32(textb_strenght.Text);
-            point_str -= 1;
-            if (point_str == 0)
-                minus_str.Visibility = Visibility.Hidden;
             MinChar();
-            textb_strenght.Text = point_str.ToString();
-            CountExtraMinus();
+            if (point < 20)
+            {
+                point_str -= 1;
+                if (point_str == 0)
+                    minus_str.Visibility = Visibility.Hidden;
+                textb_strenght.Text = point_str.ToString();
+                CountExtraMinus();
+            }
+        }
+
+        private void add_point_Click(object sender, RoutedEventArgs e)
+        {
+            point = Convert.ToInt32(extra.Text);
+            if (point == 0)
+            {
+                point = +20;
+                extra.Text = point.ToString();
+                plus_str.Visibility = Visibility.Visible;
+                plus_const.Visibility = Visibility.Visible;
+                plus_dex.Visibility = Visibility.Visible;
+                plus_int.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("Не все очки были использованы");
+            }
+        }
+
+        private void up_lvl_Click(object sender, RoutedEventArgs e)
+        {
+            int point_s = Convert.ToInt32(textb_strenght.Text);
+            int point_i = Convert.ToInt32(textb_intelligent.Text);
+            int point_d = Convert.ToInt32(textb_dexterity.Text);
+            int point_c = Convert.ToInt32(textb_constitution.Text);
+            lvl = Convert.ToInt32(textb_lvl.Text);
+            if (point_str >= point_str + 20 && point_int >= point_int + 20 && point_dex >= point_dex + 20 && point_const >= point_const + 20)
+            {
+                lvl += 1;
+                textb_lvl.Text = lvl.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Повысьте характеристики");
+            }
+            MessageBox.Show("Уровень повышен");
         }
 
         private void minus_int_Click(object sender, RoutedEventArgs e)
         {
             point_int = Convert.ToInt32(textb_intelligent.Text);
-            point_int -= 1;
-            if (point_int == 0)
-                minus_int.Visibility = Visibility.Hidden;
             MinChar();
-            textb_intelligent.Text = point_int.ToString();
-            CountExtraMinus();
+            if (point < 20)
+            {
+                point_int -= 1;
+                if (point_int == 0)
+                    minus_int.Visibility = Visibility.Hidden;
+                textb_intelligent.Text = point_int.ToString();
+                CountExtraMinus();
+            }
         }
 
         private void minus_dex_Click(object sender, RoutedEventArgs e)
         {
             point_dex = Convert.ToInt32(textb_dexterity.Text);
-            point_dex -= 1;
-            if (point_dex == 0)
-                minus_dex.Visibility = Visibility.Hidden;
             MinChar();
-            textb_dexterity.Text = point_dex.ToString();
-            CountExtraMinus();
+            if (point < 20)
+            {
+                point_dex -= 1;
+                if (point_dex == 0)
+                    minus_dex.Visibility = Visibility.Hidden;
+                textb_dexterity.Text = point_dex.ToString();
+                CountExtraMinus();
+            }
         }
 
         private void minus_const_Click(object sender, RoutedEventArgs e)
         {
             point_const = Convert.ToInt32(textb_constitution.Text);
-            point_const -= 1;
-            if(point_const == 0)
-                minus_const.Visibility = Visibility.Hidden;
             MinChar();
-            textb_constitution.Text = point_const.ToString();
-            CountExtraMinus();
+            if (point < 20)
+            {
+                point_const -= 1;
+                if (point_const == 0)
+                    minus_const.Visibility = Visibility.Hidden;
+                textb_constitution.Text = point_const.ToString();
+                CountExtraMinus();
+            }
         }
         private void MinChar()
         {
             point = Convert.ToInt32(extra.Text);
-            if (point >= 20)
+            if (point == 20)
             {
                 minus_const.Visibility = Visibility.Hidden;
                 minus_dex.Visibility = Visibility.Hidden;
