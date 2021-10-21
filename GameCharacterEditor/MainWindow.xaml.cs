@@ -169,5 +169,34 @@ namespace GameCharacterEditor
         {
             lvltxt.Text = (int.Parse(lvltxt.Text) + 1).ToString();
         }
+
+        private void btn_click1000_Click(object sender, RoutedEventArgs e)
+        {
+            int lvlup1000 = Convert.ToInt32(_0lvl.Text);
+            int lvlmax = Convert.ToInt32(makslvl.Text);
+            lvlup1000 += 1000;
+            _0lvl.Text = lvlup1000.ToString();
+            if(lvlup1000 >= lvlmax)
+            {
+                lvlmax += 6000;
+                makslvl.Text = lvlmax.ToString();
+                MessageBox.Show("Уровень повышен!");
+            }
+        }
+
+        private void btn_click2000_Click(object sender, RoutedEventArgs e)
+        {
+            int lvlup1000 = Convert.ToInt32(_0lvl.Text);
+            int lvlmax = Convert.ToInt32(makslvl.Text);
+            lvlup1000 += 2000;
+            _0lvl.Text = lvlup1000.ToString();
+            if (lvlup1000 > lvlmax || lvlup1000 == lvlmax)
+            {
+                lvlmax += 6000;
+                makslvl.Text = lvlmax.ToString();
+                MessageBox.Show("Уровень повышен!");
+
+            }
+        }
     }
 }

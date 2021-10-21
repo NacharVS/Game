@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GameCharacterEditor"
         FontFamily="Comic Sans MS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="570" Width="950" ResizeMode="NoResize">
+        Title="MainWindow" Height="570" Width="1089" ResizeMode="NoResize">
     <Grid RenderTransformOrigin="0.97,0.056" Margin="0,0,0,-6">
         <Grid.Background>
             <ImageBrush ImageSource="/Задний фон.jpg"/>
@@ -107,6 +107,12 @@
         <Image HorizontalAlignment="Left" Height="28" Margin="655,440,0,0" VerticalAlignment="Top" Width="50" Source="/Скорость_бега.jfif"/>
         <Image HorizontalAlignment="Left" Height="33" Margin="824,343,0,0" VerticalAlignment="Top" Width="39" Source="/Магическая_Атака.jfif"/>
         <Image HorizontalAlignment="Left" Height="35" Margin="829,437,0,0" VerticalAlignment="Top" Width="34" Source="/Магичекая_защита.jpg"/>
+        <TextBox x:Name="makslvl" HorizontalAlignment="Left" Margin="969,178,0,0" TextWrapping="Wrap" Text="2000" VerticalAlignment="Top" Width="61" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="_0lvl" HorizontalAlignment="Left" Margin="879,178,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn_click1000" Content="+1000" HorizontalAlignment="Left" Margin="891,133,0,0" VerticalAlignment="Top" Background="#FF44D411" Click="btn_click1000_Click"/>
+        <Button x:Name="btn_click2000" Content="+2000" HorizontalAlignment="Left" Margin="969,133,0,0" VerticalAlignment="Top" Background="#FF52D623" Click="btn_click2000_Click"/>
+        <Label Content="Повышение уровня" HorizontalAlignment="Left" Margin="873,95,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="ИЗ" HorizontalAlignment="Left" Margin="941,174,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
 
     </Grid>
