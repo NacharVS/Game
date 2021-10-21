@@ -140,7 +140,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\MainBgWarriorCut.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="View\MyResources\Icons\Close.png" />
     <Resource Include="View\MyResources\Icons\Open.png" />
@@ -165,7 +167,6 @@
   <ItemGroup>
     <Resource Include="View\MyResources\Background\MainBg77Cut.png" />
     <Resource Include="View\MyResources\Background\MainBgRogueCut.png" />
-    <Resource Include="View\MyResources\Background\MainBgWarriorCut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

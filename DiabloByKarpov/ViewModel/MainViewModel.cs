@@ -45,7 +45,7 @@ namespace DiabloByKarpov.ViewModel
                 return new RelayCommand(() => CurPage = Rg);
             }
         }
-        public ICommand Open77Page
+        public ICommand Opens77Page
         {
             get
             {

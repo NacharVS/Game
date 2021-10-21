@@ -9,9 +9,9 @@
         Title="MainWindow" Height="600" Width="1000" MaxHeight="600" MaxWidth="1000"
         MinHeight="600" MinWidth="1000" Background="#FF110203"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
-    <!--<Window.DataContext>
+    <Window.DataContext>
         <vm:MainViewModel/>
-    </Window.DataContext>-->
+    </Window.DataContext>
     <Window.Resources>
         <ControlTemplate x:Key="TopMenuButtons" TargetType="Button">
             <Grid Name="Btn" Height="40" Margin="20,0,0,0">
@@ -198,25 +198,25 @@
             <Border BorderThickness="1,0,1,1" BorderBrush="#FF303031"/>
             <Border BorderThickness="0" Background="Black" Opacity="0.6"/>
             <StackPanel Orientation="Vertical">
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenWOWPage}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenWarriorPage}"
                         Content="Warrior">
                     <Button.Resources>
                         <ImageSource x:Key="Img">MyResources/Icons/Class_Warrior_Alt.png</ImageSource>
                     </Button.Resources>
                 </Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenHSPage}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenMagePage}"
                         Content="Mage">
                     <Button.Resources>
                         <ImageSource x:Key="Img">MyResources/Icons/Class_Mage_Alt.png</ImageSource>
                     </Button.Resources>
                 </Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenOWPage}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenRoguePage}"
                         Content="Rogue">
                     <Button.Resources>
                         <ImageSource x:Key="Img">MyResources/Icons/Class_Rogue_Alt.png</ImageSource>
                     </Button.Resources>
                 </Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenW3Page}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding Opens77Page}"
                         Content="Sedmovskiy">
                     <Button.Resources>
                         <ImageSource x:Key="Img">MyResources/Icons/Class_77_Alt.png</ImageSource>
