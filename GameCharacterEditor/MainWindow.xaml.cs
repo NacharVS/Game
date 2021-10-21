@@ -21,7 +21,7 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        int point_str, point_dex, point_int, point_const, point;
+        int point_str, point_dex, point_int, point_const, point, lvl;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace GameCharacterEditor
         {
             if (radBtn_Warrior.IsChecked == true)
             {
-                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/knight.jpg";
+                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/knight.png";
 
                 using (Stream fs = new FileStream(link, FileMode.Open))
                 {
@@ -61,7 +61,7 @@ namespace GameCharacterEditor
 
             if (radBtn_Rogue.IsChecked == true)
             {
-                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/rogue.jpg";
+                string link = "C:/Users/User/Source/Repos/Game/ver2/GameCharacterEditor/Resourse/rogue.png";
 
                 using (Stream fs = new FileStream(link, FileMode.Open))
                 {
@@ -184,6 +184,42 @@ namespace GameCharacterEditor
             MinChar();
             textb_strenght.Text = point_str.ToString();
             CountExtraMinus();
+        }
+
+        private void add_point_Click(object sender, RoutedEventArgs e)
+        {
+            point = Convert.ToInt32(extra.Text);
+            if (point == 0)
+            {
+                point = +20;
+                extra.Text = point.ToString();
+                plus_str.Visibility = Visibility.Visible;
+                plus_const.Visibility = Visibility.Visible;
+                plus_dex.Visibility = Visibility.Visible;
+                plus_int.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("Не все очки были использованы");
+            }
+        }
+
+        private void up_lvl_Click(object sender, RoutedEventArgs e)
+        {
+            point_str = Convert.ToInt32(textb_strenght.Text);
+            point_int = Convert.ToInt32(textb_intelligent.Text);
+            point_dex = Convert.ToInt32(textb_dexterity.Text);
+            point_const = Convert.ToInt32(textb_constitution.Text);
+            lvl = Convert.ToInt32(textb_lvl.Text);
+            if (point_str >= point_str + 20 && point_int >= point_int + 20 && point_dex >= point_dex + 20 && point_const >= point_const + 20)
+            {
+                lvl += 1;
+                textb_lvl.Text = lvl.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Повысьте характеристики");
+            }
         }
 
         private void minus_int_Click(object sender, RoutedEventArgs e)

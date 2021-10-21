@@ -49,7 +49,8 @@
         <Button x:Name="minus_dex" Content="-" HorizontalAlignment="Left" Margin="223,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_dex_Click"/>
         <Button x:Name="minus_int" Content="-" HorizontalAlignment="Left" Margin="20,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_int_Click"/>
         <TextBox x:Name="extra" HorizontalAlignment="Left" Margin="110,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="20" IsEnabled="False"/>
-        <Button x:Name="up_lvl" Content="Повысить уровень" HorizontalAlignment="Left" Margin="551,400,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="up_lvl" Content="Повысить уровень" HorizontalAlignment="Left" Margin="551,400,0,0" VerticalAlignment="Top" Click="up_lvl_Click"/>
         <TextBox x:Name="textb_lvl" HorizontalAlignment="Left" Margin="544,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1" IsEnabled="False"/>
+        <Button x:Name="add_point" Content="+" HorizontalAlignment="Left" Margin="240,250,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="add_point_Click"/>
     </Grid>
 </Window>
