@@ -10,6 +10,7 @@ namespace GameCharacterEditor
         protected double doxterity = 20;
         protected double intelegence = 20;
         protected double constitution = 20;
+        protected double lvl = 1;
         protected string name = string.Empty;
         protected double hp = 100;
         protected double mp = 100;
@@ -19,9 +20,12 @@ namespace GameCharacterEditor
         protected double pDefence = 0;
         protected double mAttack = 0;
         protected double mDefence = 0;
+        private double extra = 20;
 
+        public double Level { get => lvl; set => lvl = value; }
         public double Strength { get => strength; set => strength = value; }
         public double Doxterity { get => doxterity; set => doxterity = value; }
+        public double Extra { get => extra; set => extra = value; }
         public double Intelegence { get => intelegence; set => intelegence = value; }
         public double Constitution { get => constitution; set => constitution = value; }
         public double HP { get => hp; set => hp = value; }
@@ -36,13 +40,14 @@ namespace GameCharacterEditor
         public string Name { get => name; set => name = value; }
 
 
-        public Hero(double strength, double doxterity, double intelegence, double constitution, string name)
+        public Hero(double strength, double doxterity, double intelegence, double constitution, string name, double lvl)
         {
             this.strength = strength;
             this.doxterity = doxterity;
             this.intelegence = intelegence;
             this.constitution = constitution;
             this.name = name;
+            this.lvl = lvl;
             hp = strength * 5 + constitution * 10;
             mp = intelegence * 5;
             attackSpeed = doxterity * 5;
@@ -52,7 +57,6 @@ namespace GameCharacterEditor
             mDefence = intelegence * 5;
             pDefence += constitution * 5 + doxterity * 3;
         }
-
 
     }
 }

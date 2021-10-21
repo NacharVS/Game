@@ -6,18 +6,18 @@ namespace GameCharacterEditor
 {
     class Warrior : Hero
     {
-        public static double str;
-        public static double dox;
-        public static double intel;
-        public static double consti;
-        public static string nam;
-        public Warrior() : base(250, 70, 50, 100, "Warrior")
+        public Warrior() : base(250, 70, 50, 100, "Warrior", 1)
         {
             strength = 250;
             doxterity = 70;
             intelegence = 50;
             constitution = 100;
             name = "Warrior";
+        }
+
+        public Warrior(double strength, double doxterity, double intelegence, double constitution, string name, double lvl) : base(strength, doxterity, intelegence, constitution, name, lvl)
+        {
+
         }
     }
 }

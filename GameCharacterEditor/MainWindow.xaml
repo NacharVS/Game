@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="950" ResizeMode="CanMinimize">
+        Title="MainWindow" Height="717" Width="1078" ResizeMode="CanMinimize">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -119,6 +119,10 @@
         </Style>
     </Window.Resources>
     <Grid Opacity="9" Margin="3,-2,-3,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="647*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="264"/>
@@ -153,13 +157,13 @@
             <ComboBoxItem Content="Sorcerer" Selected="Sor_Selected"/>
             <ComboBoxItem Content="Rogue" Selected="Rog_Selected"/>
         </ComboBox>
-        <Border Background="#FF7CD4D2" Margin="30,123,292,135" CornerRadius="10">
+        <Border Background="#FF7CD4D2" Margin="30,123,351,302" CornerRadius="10">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20" />
             </Border.Effect>
             <Canvas>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="18">
-                    <Label x:Name="strlab" Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <Label x:Name="strlab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
                 </Border>
                 <Button x:Name="minstr" Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="155" Canvas.Top="13.5" Click="Button_Click_1">
                     <Button.Effect>
@@ -178,13 +182,13 @@
                     </StackPanel>
                 </Button>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="62">
-                    <Label x:Name="doxlab" Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <Label x:Name="doxlab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="106">
-                    <Label x:Name="intelab" Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <Label x:Name="intelab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="136" Background="White" Canvas.Left="180" Canvas.Top="150">
-                    <Label x:Name="conslab" Content="20" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <Label x:Name="conslab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="53,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
                 </Border>
                 <Button x:Name="plusdox" Style="{DynamicResource ButtonStyle2}" Height="34" Width="40" Background="#FFDDDDDD" FontFamily="Comic Sans MS" FontSize="28" Canvas.Left="305" Canvas.Top="58" Click="plusdox_Click">
                     <Button.Effect>
@@ -238,6 +242,14 @@
                 <Label x:Name="dox" Content="Doxterity" Width="80" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" FontStyle="Italic" Height="31" Canvas.Left="28" Canvas.Top="56"/>
                 <Label x:Name="intel" Content="Intelegence" Width="95" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="28" Canvas.Top="101"/>
                 <Label x:Name="const" Content="Constitution" Width="93" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="28" Canvas.Top="150"/>
+                <Label x:Name="extra" Content="Extra point" Width="93" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="28" Canvas.Top="199" FontWeight="Bold"/>
+                <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="62" Background="White" Canvas.Left="128" Canvas.Top="203">
+                    <Label x:Name="extralab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="30,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="48" Background="White" Canvas.Left="289" Canvas.Top="203">
+                    <Label x:Name="levelb" Content="" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="38" Margin="13,0,0,0" Cursor="" FontFamily="Comic Sans MS" FontSize="14"/>
+                </Border>
+                <Label x:Name="extra_Copy" Content="Level" Width="49" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="214" Canvas.Top="201" FontWeight="Bold"/>
             </Canvas>
         </Border>
         <Canvas HorizontalAlignment="Left" Height="99" Margin="180,12,0,0" VerticalAlignment="Top" Width="218">
@@ -250,27 +262,27 @@
             <Image Source = "mp.png" Height="38" Width="48" RenderTransformOrigin="0.688,0.638" Canvas.Left="91" Canvas.Top="47"/>
             <Image Source = "hp.png" Height="44" Width="58" Canvas.Left="87" Canvas.Top="2" RenderTransformOrigin="0.734,0.464"/>
         </Canvas>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="createpers"  Content="Create hero" HorizontalAlignment="Left" Height="38" Margin="30,400,0,0" VerticalAlignment="Top" Width="174" Click="createpers_Click" FontFamily="Comic Sans MS" FontSize="14">
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="createpers"  Content="Create hero" HorizontalAlignment="Left" Height="38" Margin="30,630,0,0" VerticalAlignment="Top" Width="174" Click="createpers_Click" FontFamily="Comic Sans MS" FontSize="14">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
             </Button.Effect>
         </Button>
-        <Border Background="#FF7CD4D2" Margin="415,21,13,133" CornerRadius="10">
+        <Border Background="#FF7CD4D2" Margin="481,22,22,302" CornerRadius="10">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20" />
             </Border.Effect>
             <Canvas>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="68" Background="White" Canvas.Left="155" Canvas.Top="18">
-                    <Label x:Name="atslab" Content="-" Height="28" VerticalAlignment="Top" Margin="0,-3,1,0" FontFamily="Comic Sans MS" FontSize="14" HorizontalAlignment="Left" Width="68" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5,5,5,5"/>
+                    <Label x:Name="atslab" Content="" Height="28" VerticalAlignment="Top" Margin="0,-3,1,0" FontFamily="Comic Sans MS" FontSize="14" HorizontalAlignment="Left" Width="68" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5,5,5,5"/>
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="68" Background="White" Canvas.Left="155" Canvas.Top="62">
-                    <Label x:Name="wslab" Content="-" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="wslab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="68" Background="White" Canvas.Left="155" Canvas.Top="106">
-                    <Label x:Name="palab" Content="-" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="palab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="68" Background="White" Canvas.Left="155" Canvas.Top="150">
-                    <Label x:Name="pdlab" Content="-" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="pdlab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 </Border>
                 <Label x:Name="asp" Content="Attack Speed" Width="102" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" FontStyle="Italic" Height="31" Canvas.Left="20" Canvas.Top="15"/>
                 <Label x:Name="wsp" Content="Walking Speed" Width="110" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" FontStyle="Italic" Height="31" Canvas.Left="20" Canvas.Top="58"/>
@@ -278,12 +290,22 @@
                 <Label x:Name="pdef" Content="Phisic Defence" Width="116" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="20" Canvas.Top="147"/>
                 <Label x:Name="mat" Content="Magic Attack" Width="107" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="20" Canvas.Top="191"/>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="68" Background="White" Canvas.Left="155" Canvas.Top="194">
-                    <Label x:Name="malab" Content="-" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="malab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 </Border>
                 <Label x:Name="mad" Content="Magic Defence" Width="113" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="20" Canvas.Top="235"/>
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="68" Background="White" Canvas.Left="155" Canvas.Top="238">
-                    <Label x:Name="mdlab" Content="-" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="mdlab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="68" Margin="0,-3,0,0" FontFamily="Comic Sans MS" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 </Border>
+            </Canvas>
+        </Border>
+        <Border Background="#FF7CD4D2" Margin="30,420,348,99" CornerRadius="10" BorderThickness="0,0,0,0">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" />
+            </Border.Effect>
+            <Canvas>
+                <ListView x:Name="inventlist" Height="126" Width="186" Background="White" FontFamily="Comic Sans MS" FontSize="14" FontStyle="Italic" Canvas.Left="29" Canvas.Top="19" BorderBrush="Black" Margin="0,0,0,0">
+
+                </ListView>
             </Canvas>
         </Border>
     </Grid>
