@@ -251,21 +251,21 @@ namespace GameCharacterEditor
 
             if(ChooseWarriorRB.IsChecked == true)
             {
-                Warrior war = new Warrior();
+                Warrior hero = new Warrior();
                 name = "Warrior";
-                AddToDataBase(war);
+                AddToDataBase(hero);
             }
             else if(ChooseRogueRB.IsChecked == true)
             {
-                Rogue rogue = new Rogue();
+                Rogue hero = new Rogue();
                 name = "Rogue";
-                AddToDataBase(rogue);
+                AddToDataBase(hero);
             }
             else
             {
-                Sorcerer sorc = new Sorcerer();
+                Sorcerer hero = new Sorcerer();
                 name = "Sorcerer";
-                AddToDataBase(sorc);
+                AddToDataBase(hero);
             }
 
             _todoData = new BindingList<TodoModel>()
@@ -292,8 +292,8 @@ namespace GameCharacterEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-             PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
-             PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = false;
+            PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
+            PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = false;
         }
     }
 }
