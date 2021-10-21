@@ -29,6 +29,7 @@ namespace GameCharacterEditor
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void ChooseHero_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -92,7 +93,7 @@ namespace GameCharacterEditor
                 image.EndInit();
                 ChooseHero.Source = image;
             }
-          
+
         }
         private void Characters(Unit unit)
         {
@@ -114,12 +115,44 @@ namespace GameCharacterEditor
 
         private void bnt_clickm1_Click(object sender, RoutedEventArgs e)
         {
-            labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) - 1).ToString();
+            if (strenghtt <= extraPoint && strenghtt > 0)
+            {
+                labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) - 1).ToString();
+                textpoint.Text = (int.Parse(textpoint.Text) + 1).ToString();
+                strenghtt--;
+            }
+            else
+            {
+                MessageBox.Show("Значение меньше дефолта быть не может!");
+            }
+            refresh();
         }
-
+        int count = 0;
         private void bnt_clickp1_Click(object sender, RoutedEventArgs e)
         {
-            labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) + 1).ToString();
+            if (strenghtt < extraPoint)
+            {
+                labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) + 1).ToString();
+                textpoint.Text = (int.Parse(textpoint.Text) - 1).ToString();
+                strenghtt++;
+            }
+            else
+            {
+                if (count == 1)
+                {
+                    MessageBox.Show("Ты че дурачёк,не понимаешь???");
+                }
+
+                else if (count >= 2)
+                {
+                    MessageBox.Show("Ну всё доигрался пока:)");
+                    Environment.Exit(1);
+                }
+                else
+                    MessageBox.Show("Дополнительные очки закончились!");
+                count++;
+            }
+            refresh();
         }
 
         private void bnt_clickm2_Click(object sender, RoutedEventArgs e)
@@ -149,7 +182,7 @@ namespace GameCharacterEditor
 
         private void bnt_clickp4_Click(object sender, RoutedEventArgs e)
         {
-            if(constribution+1 <= extraPoint)
+            if (constribution + 1 <= extraPoint)
             {
                 constitutionlabel.Text = (Convert.ToDouble(constitutionlabel.Text) + 1).ToString();
                 constribution++;
@@ -160,14 +193,13 @@ namespace GameCharacterEditor
             }
         }
 
-        private void labelstrenght_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btn_lvlup_Click(object sender, RoutedEventArgs e)
         {
+
             lvltxt.Text = (int.Parse(lvltxt.Text) + 1).ToString();
+            textpoint.Text = (int.Parse(textpoint.Text) + 5).ToString();
+            extraPoint += 5;
+            refresh();
         }
 
         private void btn_click1000_Click(object sender, RoutedEventArgs e)
@@ -176,11 +208,12 @@ namespace GameCharacterEditor
             int lvlmax = Convert.ToInt32(makslvl.Text);
             lvlup1000 += 1000;
             _0lvl.Text = lvlup1000.ToString();
-            if(lvlup1000 >= lvlmax)
+            if (lvlup1000 >= lvlmax)
             {
                 lvlmax += 6000;
                 makslvl.Text = lvlmax.ToString();
                 MessageBox.Show("Уровень повышен!");
+                lvltxt.Text = (int.Parse(lvltxt.Text) + 1).ToString();
             }
         }
 
@@ -197,6 +230,34 @@ namespace GameCharacterEditor
                 MessageBox.Show("Уровень повышен!");
 
             }
+        }
+
+        private void _0lvl_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //PB_vlup.Value = int.Parse(_0lvl.Text);
+        }
+
+        private void makslvl_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                //PB_vlup.Maximum = int.Parse(makslvl.Text);
+            }
+            catch { }
+        }
+
+        private void lvltxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (int.Parse(textpoint.Text) != 0)
+            {
+                textpoint.Text = (int.Parse(textpoint.Text) + 5).ToString();
+                extraPoint += 5;
+            }
+        }
+        private void refresh()
+        {
+            Healthtxt.Text = ((double.Parse(labelstrenght.Text) * 5) + (double.Parse(constitutionlabel.Text) * 10)).ToString();
+            refresh();
         }
     }
 }

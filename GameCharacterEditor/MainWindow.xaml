@@ -71,9 +71,9 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="669,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="78" IsEnabled="False" TextAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="669,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="78" IsEnabled="False" TextAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"/>
         <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="572,33,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="294" FontWeight="Bold"/>
-        <TextBox x:Name="lvltxt" HorizontalAlignment="Left" Margin="670,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Text="0" TextAlignment="Center" FontSize="20" IsEnabled="False"/>
+        <TextBox x:Name="lvltxt" HorizontalAlignment="Left" Margin="670,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Text="0" TextAlignment="Center" FontSize="20" IsEnabled="False" TextChanged="lvltxt_TextChanged"/>
         <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="612,159,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="236" FontWeight="Bold"/>
         <Button x:Name="btn_lvlup" Content="Повышение уровня" HorizontalAlignment="Left" Margin="646,0,0,0" VerticalAlignment="Center" Width="168" Background="#FF49C7F1" Cursor="Hand" Height="35" FontSize="16" FontFamily="Comic Sans MS" Click="btn_lvlup_Click"/>
         <ComboBox x:Name="Hero" HorizontalAlignment="Left" Margin="292,274,0,0" VerticalAlignment="Top" Width="250" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Comic Sans MS" FontSize="16" Background="{x:Null}">
@@ -107,8 +107,8 @@
         <Image HorizontalAlignment="Left" Height="28" Margin="655,440,0,0" VerticalAlignment="Top" Width="50" Source="/Скорость_бега.jfif"/>
         <Image HorizontalAlignment="Left" Height="33" Margin="824,343,0,0" VerticalAlignment="Top" Width="39" Source="/Магическая_Атака.jfif"/>
         <Image HorizontalAlignment="Left" Height="35" Margin="829,437,0,0" VerticalAlignment="Top" Width="34" Source="/Магичекая_защита.jpg"/>
-        <TextBox x:Name="makslvl" HorizontalAlignment="Left" Margin="969,178,0,0" TextWrapping="Wrap" Text="2000" VerticalAlignment="Top" Width="61" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="_0lvl" HorizontalAlignment="Left" Margin="879,178,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="makslvl" HorizontalAlignment="Left" Margin="969,178,0,0" TextWrapping="Wrap" Text="2000" VerticalAlignment="Top" Width="61" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="makslvl_TextChanged"/>
+        <TextBox x:Name="_0lvl" HorizontalAlignment="Left" Margin="879,178,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="61" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="_0lvl_TextChanged"/>
         <Button x:Name="btn_click1000" Content="+1000" HorizontalAlignment="Left" Margin="891,133,0,0" VerticalAlignment="Top" Background="#FF44D411" Click="btn_click1000_Click"/>
         <Button x:Name="btn_click2000" Content="+2000" HorizontalAlignment="Left" Margin="969,133,0,0" VerticalAlignment="Top" Background="#FF52D623" Click="btn_click2000_Click"/>
         <Label Content="Повышение уровня" HorizontalAlignment="Left" Margin="873,95,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
