@@ -21,6 +21,10 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        Sorcerer sorc = new Sorcerer();
+        Archer arc = new Archer();
+        Warrior war = new Warrior();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,51 +42,63 @@ namespace GameCharacterEditor
 
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
-            
-            inte.Text = new Warrior().InteligenceParameter.ToString(); 
-            dext.Text = new Warrior().DexterityParameter.ToString();
-            stre.Text = new Warrior().StrengthParameter.ToString();
-            cons.Text = new Warrior().ConstitutionParameter.ToString();
-            HealtPoints.Text = new Warrior().HealtPoints.ToString();
-            PhysicalAttack.Text = new Warrior().PhysicalAttack.ToString();
-            PhysicalDefence.Text = new Warrior().PhysicalDefence.ToString();
-            MagicalAttack.Text = new Warrior().MagicalAttack.ToString();
-            MagicalDefence.Text = new Warrior().MagicalDefence.ToString();
-            WalkingSpeed.Text = new Warrior().WalkingSpeed.ToString();
-            AttackSpeed.Text = new Warrior().AttackSpeed.ToString();
-            ManaPoints.Text = new Warrior().ManaPoints.ToString();
+
+            inte.Clear();
+            inte.Text = war.InteligenceParameter.ToString();
+            dext.Clear();
+            dext.Text = war.DexterityParameter.ToString();
+            stre.Clear();
+            stre.Text = war.StrengthParameter.ToString();
+            cons.Clear();
+            cons.Text = war.ConstitutionParameter.ToString();
+            HealtPoints.Text = war.HealtPoints.ToString();
+            PhysicalAttack.Text = war.PhysicalAttack.ToString();
+            PhysicalDefence.Text = war.PhysicalDefence.ToString();
+            MagicalAttack.Text = war.MagicalAttack.ToString();
+            MagicalDefence.Text = war.MagicalDefence.ToString();
+            WalkingSpeed.Text = war.WalkingSpeed.ToString();
+            AttackSpeed.Text = war.AttackSpeed.ToString();
+            ManaPoints.Text = war.ManaPoints.ToString();
         }
 
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
-            inte.Text = new Sorcerer().InteligenceParameter.ToString();
-            dext.Text = new Sorcerer().DexterityParameter.ToString();
-            stre.Text = new Sorcerer().StrengthParameter.ToString();
-            cons.Text = new Sorcerer().ConstitutionParameter.ToString();
-            HealtPoints.Text = new Sorcerer().HealtPoints.ToString();
-            PhysicalAttack.Text = new Sorcerer().PhysicalAttack.ToString();
-            PhysicalDefence.Text = new Sorcerer().PhysicalDefence.ToString();
-            MagicalAttack.Text = new Sorcerer().MagicalAttack.ToString();
-            MagicalDefence.Text = new Sorcerer().MagicalDefence.ToString();
-            WalkingSpeed.Text = new Sorcerer().WalkingSpeed.ToString();
-            AttackSpeed.Text = new Sorcerer().AttackSpeed.ToString();
-            ManaPoints.Text = new Sorcerer().ManaPoints.ToString();
+            inte.Clear();
+            inte.Text = sorc.InteligenceParameter.ToString();
+            dext.Clear();
+            dext.Text = sorc.DexterityParameter.ToString();
+            stre.Clear();
+            stre.Text = sorc.StrengthParameter.ToString();
+            cons.Clear();
+            cons.Text = sorc.ConstitutionParameter.ToString();
+            HealtPoints.Text = sorc.HealtPoints.ToString();
+            PhysicalAttack.Text = sorc.PhysicalAttack.ToString();
+            PhysicalDefence.Text = sorc.PhysicalDefence.ToString();
+            MagicalAttack.Text = sorc.MagicalAttack.ToString();
+            MagicalDefence.Text = sorc.MagicalDefence.ToString();
+            WalkingSpeed.Text = sorc.WalkingSpeed.ToString();
+            AttackSpeed.Text = sorc.AttackSpeed.ToString();
+            ManaPoints.Text = sorc.ManaPoints.ToString();
         }
 
         private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
         {
-            inte.Text = new Archer().InteligenceParameter.ToString();
-            dext.Text = new Archer().DexterityParameter.ToString();
-            stre.Text = new Archer().StrengthParameter.ToString();
-            cons.Text = new Archer().ConstitutionParameter.ToString();
-            HealtPoints.Text = new Archer().HealtPoints.ToString();
-            PhysicalAttack.Text = new Archer().PhysicalAttack.ToString();
-            PhysicalDefence.Text = new Archer().PhysicalDefence.ToString();
-            MagicalAttack.Text = new Archer().MagicalAttack.ToString();
-            MagicalDefence.Text = new Archer().MagicalDefence.ToString();
-            WalkingSpeed.Text = new Archer().WalkingSpeed.ToString();
-            AttackSpeed.Text = new Archer().AttackSpeed.ToString();
-            ManaPoints.Text = new Archer().ManaPoints.ToString();
+            inte.Clear();
+            inte.Text = arc.InteligenceParameter.ToString();
+            dext.Clear();
+            dext.Text = arc.DexterityParameter.ToString();
+            stre.Clear();
+            stre.Text = arc.StrengthParameter.ToString();
+            cons.Clear();
+            cons.Text = arc.ConstitutionParameter.ToString();
+            HealtPoints.Text = arc.HealtPoints.ToString();
+            PhysicalAttack.Text = arc.PhysicalAttack.ToString();
+            PhysicalDefence.Text = arc.PhysicalDefence.ToString();
+            MagicalAttack.Text = arc.MagicalAttack.ToString();
+            MagicalDefence.Text = arc.MagicalDefence.ToString();
+            WalkingSpeed.Text = arc.WalkingSpeed.ToString();
+            AttackSpeed.Text = arc.AttackSpeed.ToString();
+            ManaPoints.Text = arc.ManaPoints.ToString();
         }
 
         //private void Button_Click(object sender, RoutedEventArgs e)
@@ -106,7 +122,11 @@ namespace GameCharacterEditor
         {
             if (Convert.ToDouble(points.Text) > 0)
             {
-                stre.Text = (Convert.ToDouble(stre.Text) + 1).ToString();
+                arc.StrengthParameter += 1;
+                war.StrengthParameter += 1;
+                sorc.StrengthParameter += 1;
+                stre.Text = sorc.StrengthParameter.ToString();
+                stre.Text = war.StrengthParameter.ToString();
                 points.Text = (Convert.ToDouble(points.Text) - 1).ToString();
             }
             else
@@ -122,6 +142,8 @@ namespace GameCharacterEditor
             }
             else
                 MessageBox.Show("no");
+
+          
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
