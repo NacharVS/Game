@@ -87,14 +87,6 @@ namespace GameCharacterEditor
             }
         }
 
-        private void ExtraFill(Unit unit)
-        {
-            unit.Cons = cons;
-            unit.Dex = dex;
-            unit.Str = str;
-            unit.Intel = intel;
-        }
-
         private void GetUnitInfo(int index)
         {
             txthp.Text = unitLst[index].Hp.ToString();
@@ -230,8 +222,8 @@ namespace GameCharacterEditor
         {
             try
             {
-                //unitLst = Unit.TakeList();
                 unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex, unitLst[x].Strength, unitLst[x].Dexterity, unitLst[x].Constitution, unitLst[x].Intelegence, unitLst[x].Lvl);
+                //unitLst = Unit.TakeList();
                 Render(x);
                 unitLst[x].Hp += unitLst[x].Inventar.AllItems[x].Hp;
                 unitLst[x].PAttack += unitLst[x].Inventar.AllItems[x].PDamage;
@@ -264,7 +256,7 @@ namespace GameCharacterEditor
             }
             catch (Exception ex)
             {
-                throw new Exception("Не удалось обновить данные персонажа в базе\n" + ex.Message);
+                MessageBox.Show("Не удалось обновить данные персонажа в базе\n" + ex.Message);
             }
         }
 

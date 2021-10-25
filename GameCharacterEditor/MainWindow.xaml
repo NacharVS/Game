@@ -17,6 +17,11 @@
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="/1621583331_8-phonoteka_org-p-fon-varkraft-8.jpg"/>
         </Grid.Background>
+        <Rectangle>
+            <Rectangle.Fill>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <ComboBox x:Name="cmbbox" HorizontalAlignment="Left" Margin="12,36,0,0" materialDesign:HintAssist.Hint="Выбор юнита"  materialDesign:HintAssist.Foreground="Black"  materialDesign:HintAssist.FontFamily="Global Monospace" VerticalAlignment="Top" Width="168" SelectionChanged="ComboBox_SelectionChanged" Height="63" Style="{DynamicResource MaterialDesignOutlinedComboBox}" BorderThickness="3,3,3,3" Padding="2,0,2,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="BlueViolet" BorderBrush="#BC000C94" FontSize="20" UseLayoutRounding="True">
             <ComboBoxItem Content="Warrior"/>
             <ComboBoxItem Content="Rogue"/>
