@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1400">
+        Title="MainWindow" Height="800" Width="1400" ResizeMode="NoResize">
     <Grid>
         <Image Source="Pictures\Background.jpg"/>
 
         <Image Source="Pictures\Bandit.png" Margin="834,273,360,261"/>
         <Image Source="Pictures\Healer.png" Margin="360,269,799,246"/>
         <Image Source="Pictures\Mag.png" Margin="1029,223,125,251"/>
-        <Image Source="Pictures\Warrior.png" Margin="602,258,580,258"/>
+        <Image Source="Pictures\Warrior.png" Margin="600,267,582,249" MouseLeftButtonDown="Per_w" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="Pictures\Robber.png" Margin="89,249,1043,232"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="365,79,0,0" Text="Choose a character" TextWrapping="Wrap" VerticalAlignment="Top" Height="90" Width="660" FontSize="64" TextAlignment="Center" Foreground="White"/>

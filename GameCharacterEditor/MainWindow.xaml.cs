@@ -24,5 +24,22 @@ namespace GameCharacterEditor
         {
             InitializeComponent();
         }
+
+        private void Per_w(object sender, MouseButtonEventArgs e)
+        {
+            Class_Warrior CW = new Class_Warrior();
+            CW.Show();
+            this.Close();
+        }
+
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void Image_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
     }
 }
