@@ -177,8 +177,8 @@
             <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent" MouseDown="Border_MouseDown">
                 <StackPanel Orientation="Horizontal">
                     <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
-                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ПОДЗЕМЕЛЬЕ"/>
-                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="МАГАЗИН"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ПОДЗЕМЕЛЬЕ" Command="{Binding OpenDungeonPage}"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="МАГАЗИН" Command="{Binding OpenShopPage}"/>
                     <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="НОВОСТИ"/>
                 </StackPanel>
             </Border>

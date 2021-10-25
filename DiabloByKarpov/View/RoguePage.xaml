@@ -17,5 +17,22 @@
                Stretch="Fill" Source="MyResources/Background/Blur/MainBgRogueBlur.png"/>
         <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
                Stretch="Fill" Source="MyResources/Background/MainBgRogueCut.png"/>
+
+        <DataGrid x:Name="gridHero" AutoGenerateColumns="False" Grid.Row="1" Height="65" Width="555"
+                  VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=LVL}" IsReadOnly="True" Header="Level"/>
+                <DataGridTextColumn Binding="{Binding Path=Name}" IsReadOnly="False" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Path=HP}" IsReadOnly="True" Header="HP"/>
+                <DataGridTextColumn Binding="{Binding Path=Mana}" IsReadOnly="True" Header="Mana"/>
+                <DataGridTextColumn Binding="{Binding Path=Strength}" IsReadOnly="True" Header="Strength"/>
+                <DataGridTextColumn Binding="{Binding Path=Dexterity}" IsReadOnly="True" Header="Dexterity"/>
+                <DataGridTextColumn Binding="{Binding Path=Intellect}" IsReadOnly="True" Header="Intellect"/>
+                <DataGridTextColumn Binding="{Binding Path=Constitution}" IsReadOnly="True" Header="Constitution"/>
+                <DataGridTextColumn Binding="{Binding Path=ExtraPoints}" IsReadOnly="True" Header="EXTRA POINTS"/>
+                <DataGridTextColumn Binding="{Binding Path=Coins}" IsReadOnly="True" Header="Coins"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Page>

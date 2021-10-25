@@ -72,6 +72,9 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\DungeonPage.xaml.cs">
+      <DependentUpon>DungeonPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MagePage.xaml.cs">
       <DependentUpon>MagePage.xaml</DependentUpon>
     </Compile>
@@ -81,9 +84,16 @@
     <Compile Include="View\s77Page.xaml.cs">
       <DependentUpon>s77Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ShopPage.xaml.cs">
+      <DependentUpon>ShopPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WarriorPage.xaml.cs">
       <DependentUpon>WarriorPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\DungeonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\s77Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ShopPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,6 +181,34 @@
   <ItemGroup>
     <Resource Include="View\MyResources\Background\MainBg77Cut.png" />
     <Resource Include="View\MyResources\Background\MainBgRogueCut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\Blur\MainBgDungeonBlur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\MainBgDungeonCut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\MainBgShopCut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\Blur\MainBgShopBlur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Icons\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Icons\renew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameCore\GameCore.csproj">
+      <Project>{74b60c58-c20d-4a20-afc4-1ecf03371d66}</Project>
+      <Name>GameCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HeroFabric\HeroFabric.csproj">
+      <Project>{b40285e5-1763-47fc-b364-133e027d6326}</Project>
+      <Name>HeroFabric</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

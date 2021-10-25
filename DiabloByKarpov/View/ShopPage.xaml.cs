@@ -12,24 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HeroFabric;
-using GameCore.Class;
 
 namespace DiabloByKarpov.View
 {
     /// <summary>
-    /// Логика взаимодействия для MagePage.xaml
+    /// Логика взаимодействия для ShopPage.xaml
     /// </summary>
-    public partial class MagePage : Page
+    public partial class ShopPage : Page
     {
-        HeroMakerDefult hmd;
-
-        public MagePage()
+        public ShopPage()
         {
             InitializeComponent();
-
-            hmd = new HeroMakerDefult();
-            gridHero.ItemsSource = hmd.GetMageLst();
         }
     }
 }

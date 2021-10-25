@@ -17,6 +17,9 @@ namespace DiabloByKarpov.ViewModel
         private Page Rg = new RoguePage();
         private Page s77 = new s77Page();
 
+        private Page dung = new DungeonPage();
+        private Page shop = new ShopPage();
+
         private Page _CurPage = new WarriorPage();
 
         public Page CurPage
@@ -50,6 +53,20 @@ namespace DiabloByKarpov.ViewModel
             get
             {
                 return new RelayCommand(() => CurPage = s77);
+            }
+        }
+        public ICommand OpenDungeonPage
+        {
+            get
+            {
+                return new RelayCommand(() => CurPage = dung);
+            }
+        }
+        public ICommand OpenShopPage
+        {
+            get
+            {
+                return new RelayCommand(() => CurPage = shop);
             }
         }
     }

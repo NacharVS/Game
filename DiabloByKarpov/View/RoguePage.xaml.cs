@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HeroFabric;
+using GameCore.Class;
 
 namespace DiabloByKarpov.View
 {
@@ -20,9 +22,14 @@ namespace DiabloByKarpov.View
     /// </summary>
     public partial class RoguePage : Page
     {
+        HeroMakerDefult hmd;
+
         public RoguePage()
         {
             InitializeComponent();
+
+            hmd = new HeroMakerDefult();
+            gridHero.ItemsSource = hmd.GetRogueLst();
         }
     }
 }
