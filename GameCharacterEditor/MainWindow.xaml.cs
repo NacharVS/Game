@@ -13,12 +13,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Threading;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace GameCharacterEditor
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    // дефолтное значение message box
     public partial class MainWindow : Window
     {
         private List<Unit> unitLst = new List<Unit>();
@@ -59,11 +62,6 @@ namespace GameCharacterEditor
             GetUnitInfo(x);
         }
 
-        private void Zeroing()
-        {
-
-        }
-
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (cmbbox.SelectedIndex)
@@ -71,17 +69,14 @@ namespace GameCharacterEditor
                 case 0:
                     Warrior warior = new Warrior();
                     GetUnitInfo(warior);
-                    Zeroing();
                     break;
                 case 1:
                     Rogue rogue = new Rogue(); //
                     GetUnitInfo(rogue);
-                    Zeroing();
                     break;
                 case 2:
                     Sorcerer sorcerer = new Sorcerer();
                     GetUnitInfo(sorcerer);
-                    Zeroing();
                     break;
             }
         }
@@ -99,8 +94,7 @@ namespace GameCharacterEditor
             txtWalkingSpeed.Text = unitLst[index].WalkingSpeed.ToString();
             txtLvl.Text = unitLst[index].Lvl.ToString();
             txtExp.Text = unitLst[index].Experience.ToString();
-            extra = Double.Parse(txtExtra.Text);
-
+            extra = double.Parse(txtExtra.Text);
         }
 
         private void GetUnitInfo(Unit unit)
@@ -115,7 +109,7 @@ namespace GameCharacterEditor
             txtConstitution.Text = unit.Constitution.ToString();
             txtWalkingSpeed.Text = unit.WalkingSpeed.ToString();
             txtLvl.Text = unit.Lvl.ToString();
-            extra = Double.Parse(txtExtra.Text);
+            extra = double.Parse(txtExtra.Text);
             txtExp.Text = unit.Experience.ToString();
         }
 
@@ -152,10 +146,10 @@ namespace GameCharacterEditor
             List<string> itemLst = new List<string>();
             try
             {
-                unitLst[index].Inventar.ExistItem.ForEach(item =>
+                foreach (var item in unitLst[index].Inventar.ExistItem)
                 {
                     itemLst.Add(item.ToString().Substring(20) + "\n");
-                });
+                }
 
                 cmbBoxItem.ItemsSource = itemLst;
                 GetUnitInfo(x);
@@ -213,6 +207,7 @@ namespace GameCharacterEditor
             try
             {
                 unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex, unitLst[x].Strength, unitLst[x].Dexterity, unitLst[x].Constitution, unitLst[x].Intelegence, unitLst[x].Lvl);
+                Render(x);
                 unitLst[x].Hp += unitLst[x].Inventar.AllItems[x].Hp;
                 unitLst[x].PAttack += unitLst[x].Inventar.AllItems[x].PDamage;
                 unitLst[x].MAttack += unitLst[x].Inventar.AllItems[x].MDamage;
@@ -223,12 +218,22 @@ namespace GameCharacterEditor
                 unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
                 unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
                 unitLst[x].Constitution += unitLst[x].Inventar.AllItems[x].Constitution;
-                Render(x);
+                Thread.Sleep(2000);
+                Update();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Update()
+        {
+            MongoClient client = new MongoClient(); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
+            IMongoDatabase db = client.GetDatabase("Units");
+            IMongoCollection<Unit> data = db.GetCollection<Unit>("unit_collection");
+            var UpdateDef = Builders<Unit>.Update.Set("Lvl", int.Parse(txtLvl.Text)).Set("Hp", double.Parse(txthp.Text)).Set("Mp", unitLst[x].Mp).Set("Name", txtName.Text).Set("Extra", double.Parse(txtExtra.Text)).Set("Strength", double.Parse(txtStrength.Text)).Set("Dexterity", double.Parse(txtDexterity.Text)).Set("Intelegence", double.Parse(txtIntelegence.Text)).Set("AttackSpeed", unitLst[x].AttackSpeed).Set("Inventar", unitLst[x].Inventar).Set("Constitution", double.Parse(txtConstitution.Text)).Set("WalkingSpeed", unitLst[x].WalkingSpeed).Set("PDefence", unitLst[x].PDefence).Set("MDefence", unitLst[x].MDefence).Set("PAttack", unitLst[x].PAttack).Set("MAttack", unitLst[x].MAttack).Set("Experience", double.Parse(txtExp.Text));
+            data.UpdateOne(basa => basa._id == unitLst[x]._id, UpdateDef);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)

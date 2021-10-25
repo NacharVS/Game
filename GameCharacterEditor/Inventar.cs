@@ -7,56 +7,56 @@ namespace GameCharacterEditor
     {
         private List<Item> allItems = new List<Item>();
         private List<Item> existItem = new List<Item>();
-        public List<Item> AllItems { get => allItems; private set => allItems = value; }
-        public List<Item> ExistItem { get => existItem; private set => existItem = value; }
+        public List<Item> AllItems { get => allItems; }
+        public List<Item> ExistItem { get => existItem; }
 
         public void Add(int index, double strength, double dexterity, double constitution, double intelegence, int lvl)
         {
-            string a = allItems[index].ToString().Substring(20);
-            if (a == "Robe")
+            //string a = allItems[index].ToString().Substring(20);
+            if (index == 0)
             {
                 if (intelegence > 70 && lvl > 2)
-                    existItem.Add(allItems[index]);
+                    existItem.Add(new Robe());
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (a == "Leather")
+            else if (index == 1)
             {
                 if (strength > 110 && dexterity > 150 && lvl > 4)
-                    existItem.Add(allItems[index]);
+                    existItem.Add(new Leather());
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (a == "Hecoy")
+            else if (index == 2)
             {
                 if (strength > 250 && constitution > 300 && lvl > 7)
-                    existItem.Add(allItems[index]);
+                    existItem.Add(new Hecoy());
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (a == "RobeHelmet")
+            else if (index == 3)
             {
                 if (strength > 250 && constitution > 300 && lvl > 7)
-                    existItem.Add(allItems[index]);
+                    existItem.Add(new RobeHelmet());
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (a == "LeatherHelmet")
+            else if (index == 4)
             {
                 if (strength > 250 && constitution > 300 && lvl > 7)
-                    existItem.Add(allItems[index]);
+                    existItem.Add(new LeatherHelmet());
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (a == "HoceyHelmet")
+            else if (index == 5)
             {
                 if (strength > 250 && constitution > 300 && lvl > 7)
-                    existItem.Add(allItems[index]);
+                    existItem.Add(new HoceyHelmet());
                 else
                     throw new Exception("Не хватает статов");
             }

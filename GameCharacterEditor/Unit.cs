@@ -81,7 +81,6 @@ namespace GameCharacterEditor
             mDefence += intelegence * 5;
             pAttack = strength * 5;
             experience = Lvl * 1000;
-            inventar.FillAllItemsList();
         }
 
         public void PhysAttack()
@@ -124,7 +123,8 @@ namespace GameCharacterEditor
             MongoClient client = new MongoClient(); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
             var db = client.GetDatabase("Units");
             var collection = db.GetCollection<Unit>("unit_collection");
-            return collection.Find(x => true).ToList();
+            List<Unit> lst = collection.AsQueryable().ToList();
+            return lst;
         }
     }
 
