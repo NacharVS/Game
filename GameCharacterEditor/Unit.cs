@@ -63,6 +63,14 @@ namespace GameCharacterEditor
         public double MAttack { get => mAttack; set => mAttack = value; }
         [BsonElement]
         public double Experience { get => experience; set => experience = value; }
+        [BsonElement]
+        public double Str { get; set; }
+        [BsonElement]
+        public double Intel { get; set; }
+        [BsonElement]
+        public double Dex { get; set; }
+        [BsonElement]
+        public double Cons { get; set; }
 
         public Unit(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl)
         {
@@ -120,11 +128,18 @@ namespace GameCharacterEditor
 
         public static List<Unit> TakeList()
         {
-            MongoClient client = new MongoClient(); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
-            var db = client.GetDatabase("Units");
-            var collection = db.GetCollection<Unit>("unit_collection");
-            List<Unit> lst = collection.AsQueryable().ToList();
-            return lst;
+            try
+            {
+                MongoClient client = new MongoClient();
+                var db = client.GetDatabase("Units");
+                var collection = db.GetCollection<Unit>("unit_collection");
+                List<Unit> lst = collection.AsQueryable().ToList();
+                return lst;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Не удалось подключиться к БД и получить коллекцию" + ex.Message);
+            }
         }
     }
 
