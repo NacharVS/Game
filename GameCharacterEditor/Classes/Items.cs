@@ -6,19 +6,11 @@ namespace GameCharacterEditor.Classes
 {
     public class Item
     {
-        protected string name;
-        public virtual string Name { get => name; }
-
-        //protected int 
-
-        protected string description;
-        public virtual string Description { get => description; }
+        
     }
 
-    public class Helmet : Item
+    public class Helmet
     {
-        public override string Name { get => name; }
 
-        public override string Description { get => description; }
     }
 }

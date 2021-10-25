@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GameCharacterEditor.Classes;
 using GameCharacterEditor.Models;
 using MongoDB.Driver;
 
@@ -24,6 +25,7 @@ namespace GameCharacterEditor
     public partial class MainWindow : Window
     {
         private BindingList<TodoModel> _todoData;
+        private List<Helmet> _helmets;
 
         public MainWindow()
         {
@@ -294,6 +296,11 @@ namespace GameCharacterEditor
         {
              PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
              PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = false;
+        }
+
+        private void HelnetComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

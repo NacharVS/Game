@@ -160,7 +160,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Margin="10">
-                            <ComboBox x:Name="HelnetComboBox" >
+                            <ComboBox x:Name="HelnetComboBox" SelectionChanged="HelnetComboBox_SelectionChanged" >
                                 
                             </ComboBox>
                         </StackPanel>
