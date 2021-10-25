@@ -86,7 +86,14 @@ namespace GameCharacterEditor
 
         public void Delete(int index)
         {
-            existItem.Remove(existItem[index]);
+            try
+            {
+                existItem.Remove(existItem[index]);
+            }
+            catch
+            {
+                throw new Exception("Невозможно удалить");
+            }
         }
 
         //public void FillAllItemsList()

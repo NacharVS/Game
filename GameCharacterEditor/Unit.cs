@@ -93,22 +93,34 @@ namespace GameCharacterEditor
 
         public void PhysAttack()
         {
-            hp -= pAttack;
+            if (hp - pAttack <= 0)
+                throw new Exception("Юнит умер");
+            else
+                hp -= pAttack;
         }
 
         public void MagicAttack()
         {
-            hp -= mAttack;
+            if (hp - pAttack <= 0)
+                throw new Exception("Юнит умер");
+            else
+                hp -= mAttack;
         }
 
         public void PhysDefence()
         {
-            hp += pDefence;
+            if (hp <= 0)
+                throw new Exception("Юнит мертвый");
+            else
+                hp += pDefence;
         }
 
         public void MagicDefence()
         {
-            hp += mDefence;
+            if (hp <= 0)
+                throw new Exception("Юнит мертвый");
+            else
+                hp += mDefence;
         }
 
         public static async void Add(Unit basa)
