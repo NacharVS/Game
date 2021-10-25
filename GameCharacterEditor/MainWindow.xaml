@@ -112,6 +112,7 @@
         <Button x:Name="btn_click2000" Content="+2000" HorizontalAlignment="Left" Margin="971,149,0,0" VerticalAlignment="Top" Background="#FF52D623" Click="btn_click2000_Click" Height="32" Width="48"/>
         <Label Content="Повышение уровня" HorizontalAlignment="Left" Margin="860,108,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="50" Width="200"/>
         <Label Content="ИЗ" HorizontalAlignment="Left" Margin="940,223,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="41" Width="33" RenderTransformOrigin="0.661,0.707"/>
+        <Button x:Name="btn_bd" Content="Добавление в базу данных" HorizontalAlignment="Left" Margin="636,264,0,0" VerticalAlignment="Top" Click="btn_bd_Click"/>
 
 
     </Grid>

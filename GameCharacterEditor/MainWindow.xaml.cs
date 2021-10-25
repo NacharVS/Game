@@ -26,6 +26,8 @@ namespace GameCharacterEditor
         double intelegense = 0;
         double constribution = 0;
         double extraPoint = 0;
+        Unit unit1;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -50,30 +52,30 @@ namespace GameCharacterEditor
             switch (Hero.SelectedIndex)
             {
                 case 0:
-                    Warrior war = new Warrior();
-                    Characters(war);
-                    extraPoint = war.Extra;
+                    unit1 = new Warrior();
+                    Characters(unit1);
+                    extraPoint = unit1.Extra;
                     Choosehero();
                     ZeroZero();
                     break;
                 case 1:
-                    Rogue rog = new Rogue();
-                    Characters(rog);
+                    unit1 = new Rogue();
+                    Characters(unit1);
                     Choosehero();
-                    extraPoint = rog.Extra;
+                    extraPoint = unit1.Extra;
                     ZeroZero();
                     break;
                 case 2:
-                    Magic_dude mag = new Magic_dude();
-                    Characters(mag);
-                    extraPoint = mag.Extra;
+                    unit1 = new Magic_dude();
+                    Characters(unit1);
+                    extraPoint = unit1.Extra;
                     Choosehero();
                     ZeroZero();
                     break;
                 case 3:
-                    Archer arch = new Archer();
-                    Characters(arch);
-                    extraPoint = arch.Extra;
+                    unit1 = new Archer();
+                    Characters(unit1);
+                    extraPoint = unit1.Extra;
                     Choosehero();
                     ZeroZero();
                     break;
@@ -317,6 +319,12 @@ namespace GameCharacterEditor
             Mg_Def.Text = (double.Parse(labelintelegence.Text) * 5).ToString();
             Ph_Deh.Text = (double.Parse(constitutionlabel.Text) * 5).ToString();
 
+        }
+
+        private void btn_bd_Click(object sender, RoutedEventArgs e)
+        {
+            Unit.Add(unit1);
+            MessageBox.Show("Занесено в базу!");
         }
     }
 }
