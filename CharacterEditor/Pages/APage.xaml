@@ -17,17 +17,19 @@
                Stretch="Fill" Source="Res/Top/TArcher.jpg"/>
         <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
                Stretch="Fill" Source="Res/BackGround/BArcher.jpg"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="572,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFC18B8B"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="432,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFBB8A8A"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="710,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFA47676"/>
+        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="23" Margin="572,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFC18B8B"/>
+        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="23" Margin="432,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFBB8A8A"/>
+        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="23" Margin="710,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFA47676"/>
         <TextBlock HorizontalAlignment="Left" Margin="438,25,0,0" TextWrapping="Wrap" Text="Strenght" VerticalAlignment="Top" Foreground="#FFDAC6C6"/>
         <TextBlock HorizontalAlignment="Left" Margin="581,25,0,0" TextWrapping="Wrap" Text="Agility" VerticalAlignment="Top" Foreground="#FFDAC6C6"/>
         <TextBlock HorizontalAlignment="Left" Margin="710,25,0,0" TextWrapping="Wrap" Text="Intelligence" VerticalAlignment="Top" Foreground="#FFDAC6C6"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="404,47,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="494,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="544,47,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="634,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="682,46,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="772,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
+        <Button x:Name="MS" Content="-" HorizontalAlignment="Left" Margin="404,47,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23" Click="Minus_Click_Str" />
+        <Button x:Name="PS" Content="+" HorizontalAlignment="Left" Margin="494,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23" Click="Plus_Click_Str"/>
+        <Button x:Name="MA" Content="-" HorizontalAlignment="Left" Margin="544,47,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23" Click="Minus_Click_Agl"/>
+        <Button x:Name="PA" Content="+" Margin="634,46,143,0" VerticalAlignment="Top" Background="#FF20B619" Height="23" Click="Plus_Click_Agl"/>
+        <Button x:Name="MI" Content="-" HorizontalAlignment="Left" Margin="682,46,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23" Click="Minus_Click_Int"/>
+        <Button x:Name="PI" Content="+" HorizontalAlignment="Left" Margin="772,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23" Click="Plus_Click_Int"/>
+        <TextBox x:Name="Point" HorizontalAlignment="Left" Height="23" Margin="287,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFBB8A8A"/>
+        <TextBlock HorizontalAlignment="Left" Margin="292,25,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top" Foreground="#FFDAC6C6" RenderTransformOrigin="-2.533,0.062"/>
     </Grid>
 </Page>

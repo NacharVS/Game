@@ -29,5 +29,7 @@
         <Button Content="+" HorizontalAlignment="Left" Margin="634,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
         <Button Content="-" HorizontalAlignment="Left" Margin="682,46,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23"/>
         <Button Content="+" HorizontalAlignment="Left" Margin="772,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
+        <TextBox x:Name="Point" HorizontalAlignment="Left" Height="23" Margin="287,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFBB8A8A"/>
+        <TextBlock HorizontalAlignment="Left" Margin="292,25,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top" Foreground="#FFDAC6C6" RenderTransformOrigin="-2.533,0.062"/>
     </Grid>
 </Page>
