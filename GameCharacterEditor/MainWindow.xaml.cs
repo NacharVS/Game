@@ -34,8 +34,8 @@ namespace GameCharacterEditor
 
         private void ChooseWarrior_Click(object sender, RoutedEventArgs e)
         {
-            PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
-            PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = true;
+            PickButton.IsEnabled = Strenght_down.IsEnabled = Strenght_up.IsEnabled = Constitution_down.IsEnabled = Constitution_up.IsEnabled =
+            Dexterity_down.IsEnabled = Dexterity_up.IsEnabled = Intelligence_down.IsEnabled = Intelligence_up.IsEnabled = true;
 
             if (ChooseWarriorRB.IsChecked == true)
             {
@@ -45,7 +45,7 @@ namespace GameCharacterEditor
                 MP_TB.Text = warrior.ManaPoint.ToString();
                 Strenght_TB.Text = warrior.Strenght.ToString();
                 Dexterity_TB.Text = warrior.Dexterity.ToString();
-                Intelligenct_TB.Text = warrior.Intelligence.ToString();
+                Intelligence_TB.Text = warrior.Intelligence.ToString();
                 Constitution_TB.Text = warrior.Constitution.ToString();
                 Extra_TB.Text = warrior.Extra.ToString();
                 PA_TB.Text = warrior.PAttack.ToString();
@@ -54,6 +54,7 @@ namespace GameCharacterEditor
                 MR_TB.Text = warrior.MResist.ToString();
                 AS_TB.Text = warrior.AttackSpeed.ToString();
                 MS_TB.Text = warrior.WalkSpeed.ToString();
+                LevelBlock.Text = warrior.Level.ToString() + " Level";
             }
 
             else if (ChooseRogueRB.IsChecked == true)
@@ -64,7 +65,7 @@ namespace GameCharacterEditor
                 MP_TB.Text = rogue.ManaPoint.ToString();
                 Strenght_TB.Text = rogue.Strenght.ToString();
                 Dexterity_TB.Text = rogue.Dexterity.ToString();
-                Intelligenct_TB.Text = rogue.Intelligence.ToString();
+                Intelligence_TB.Text = rogue.Intelligence.ToString();
                 Constitution_TB.Text = rogue.Constitution.ToString();
                 Extra_TB.Text = rogue.Extra.ToString();
                 PA_TB.Text = rogue.PAttack.ToString();
@@ -73,16 +74,17 @@ namespace GameCharacterEditor
                 MR_TB.Text = rogue.MResist.ToString();
                 AS_TB.Text = rogue.AttackSpeed.ToString();
                 MS_TB.Text = rogue.WalkSpeed.ToString();
+                LevelBlock.Text = rogue.Level.ToString() + " Level";
             }
-            else
-            { 
+            else if (ChooseSorcererRB.IsChecked == true)
+            {
                 var sorcerer = new Sorcerer();
 
                 HP_TB.Text = sorcerer.HealthPoint.ToString();
                 MP_TB.Text = sorcerer.ManaPoint.ToString();
                 Strenght_TB.Text = sorcerer.Strenght.ToString();
                 Dexterity_TB.Text = sorcerer.Dexterity.ToString();
-                Intelligenct_TB.Text = sorcerer.Intelligence.ToString();
+                Intelligence_TB.Text = sorcerer.Intelligence.ToString();
                 Constitution_TB.Text = sorcerer.Constitution.ToString();
                 Extra_TB.Text = sorcerer.Extra.ToString();
                 PA_TB.Text = sorcerer.PAttack.ToString();
@@ -91,6 +93,11 @@ namespace GameCharacterEditor
                 MR_TB.Text = sorcerer.MResist.ToString();
                 AS_TB.Text = sorcerer.AttackSpeed.ToString();
                 MS_TB.Text = sorcerer.WalkSpeed.ToString();
+                LevelBlock.Text = sorcerer.Level.ToString() + " Level";
+            }
+            else
+            {
+                MessageBox.Show("Something goes wrong...");
             }
         }
 
@@ -111,177 +118,136 @@ namespace GameCharacterEditor
 
             string bttn = (string)((Button)sender).Name;
 
-            switch (bttn)
+            switch(bttn)
             {
-                case "PA_up":
-                    int pa = int.Parse(PA_TB.Text);
-                    if(pa < 30)
-                    {
-                        ++pa;
-                        PA_TB.Text = pa.ToString();
-                    }
-                    else
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
+                case "Strenght_up":
+                    Strenght_TB.Text = ((Convert.ToInt32(Strenght_TB.Text)) + 1).ToString();
                     break;
-                case "MA_up":
-                    int ma = int.Parse(MA_TB.Text);
-                    if (ma < 30)
-                    {
-                        ++ma;
-                        MA_TB.Text = ma.ToString();
-                    }
-                    else
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
+                case "Constitution_up":
+                    Constitution_TB.Text = ((Convert.ToInt32(Constitution_TB.Text)) + 1).ToString();
                     break;
-                case "PR_up":
-                    int pr = int.Parse(PR_TB.Text);
-                    if (pr < 30)
-                    {
-                        ++pr;
-                        PR_TB.Text = pr.ToString();
-                    }
-                    else 
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
+                case "Dexterity_up":
+                    Dexterity_TB.Text = ((Convert.ToInt32(Dexterity_TB.Text)) + 1).ToString();
                     break;
-                case "MR_up":
-                    int mr = int.Parse(MR_TB.Text);
-                    if(mr < 30)
-                    {
-                        ++mr;
-                        MR_TB.Text = mr.ToString();
-                    }
-                    else
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
+                case "Intelligence_up":
+                    Intelligence_TB.Text = ((Convert.ToInt32(Intelligence_TB.Text)) + 1).ToString();
                     break;
-                default:
-                    MessageBox.Show("error");
-                    break;
-            }           
-        }
-
-        private void ExtraDebuff_Click(object sender, RoutedEventArgs e)
-        {
-            int ex = int.Parse(Extra_TB.Text);
-
-            string bttn = (string)((Button)sender).Name;
-
-            switch (bttn)
-            {
-                case "PA_down":
-                    int pa = int.Parse(PA_TB.Text);
-                    if(pa > 20)
-                    {
-                        --pa;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        PA_TB.Text = pa.ToString();
-                    }
-                    else
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-                case "MA_down":
-                    int ma = int.Parse(MA_TB.Text);
-                    if(ma > 20)
-                    {
-                        --ma;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        MA_TB.Text = ma.ToString();
-                    }
-                    else 
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-                case "PR_down":
-                    int pr = int.Parse(PR_TB.Text);
-                    if (pr > 20)
-                    {
-                        --pr;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        PR_TB.Text = pr.ToString();
-                    }
-                    else
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-                case "MR_down":
-                    int mr = int.Parse(MR_TB.Text);
-                    if (mr > 20)
-                    {
-                        --mr;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        MR_TB.Text = mr.ToString();
-                    }
-                    else
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-            }    
-
-            int ReduceException(int ability)
-            {
-                return --ability;
             }
+            
         }
+
+        ////private void ExtraDebuff_Click(object sender, RoutedEventArgs e)
+        ////{
+        ////    int ex = int.Parse(Extra_TB.Text);
+
+        ////    string bttn = (string)((Button)sender).Name;
+
+        ////    switch (bttn)
+        ////    {
+        ////        case "PA_down":
+        ////            int pa = int.Parse(PA_TB.Text);
+        ////            if(pa > 20)
+        ////            {
+        ////                --pa;
+        ////                ++ex;
+        ////                Extra_TB.Text = ex.ToString();
+        ////                PA_TB.Text = pa.ToString();
+        ////            }
+        ////            else
+        ////            {
+        ////                ReduceException(ex);
+        ////                Extra_TB.Text = ex.ToString();
+        ////            }
+        ////            break;
+        ////        case "MA_down":
+        ////            int ma = int.Parse(MA_TB.Text);
+        ////            if(ma > 20)
+        ////            {
+        ////                --ma;
+        ////                ++ex;
+        ////                Extra_TB.Text = ex.ToString();
+        ////                MA_TB.Text = ma.ToString();
+        ////            }
+        ////            else 
+        ////            {
+        ////                ReduceException(ex);
+        ////                Extra_TB.Text = ex.ToString();
+        ////            }
+        ////            break;
+        ////        case "PR_down":
+        ////            int pr = int.Parse(PR_TB.Text);
+        ////            if (pr > 20)
+        ////            {
+        ////                --pr;
+        ////                ++ex;
+        ////                Extra_TB.Text = ex.ToString();
+        ////                PR_TB.Text = pr.ToString();
+        ////            }
+        ////            else
+        ////            {
+        ////                ReduceException(ex);
+        ////                Extra_TB.Text = ex.ToString();
+        ////            }
+        ////            break;
+        ////        case "MR_down":
+        ////            int mr = int.Parse(MR_TB.Text);
+        ////            if (mr > 20)
+        ////            {
+        ////                --mr;
+        ////                ++ex;
+        ////                Extra_TB.Text = ex.ToString();
+        ////                MR_TB.Text = mr.ToString();
+        ////            }
+        ////            else
+        ////            {
+        ////                ReduceException(ex);
+        ////                Extra_TB.Text = ex.ToString();
+        ////            }
+        ////            break;
+        ////    }    
+
+        //    int ReduceException(int ability)
+        //    {
+        //        return --ability;
+        //    }
+        //}
 
         private void PickButton_Click(object sender, RoutedEventArgs e)
         {
             string name;
 
-            if(ChooseWarriorRB.IsChecked == true)
+            if (ChooseWarriorRB.IsChecked == true)
             {
                 Warrior war = new Warrior();
                 name = "Warrior";
                 AddToDataBase(war);
-            }
-            else if(ChooseRogueRB.IsChecked == true)
-            {
-                Rogue rogue = new Rogue();
-                name = "Rogue";
-                AddToDataBase(rogue);
-            }
-            else
-            {
-                Sorcerer sorc = new Sorcerer();
-                name = "Sorcerer";
-                AddToDataBase(sorc);
-            }
 
-            _todoData = new BindingList<TodoModel>()
-            {
-                new TodoModel()
+                //else if(ChooseRogueRB.IsChecked == true)
+                //{
+                //    Rogue rogue = new Rogue();
+                //    name = "Rogue";
+                //    AddToDataBase(rogue);
+                //}
+                //else
+                //{
+                //    Sorcerer sorc = new Sorcerer();
+                //    name = "Sorcerer";
+                //    AddToDataBase(sorc);
+                //}
+
+                _todoData = new BindingList<TodoModel>()
                 {
-                    Character = name, HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
-                    Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligenct_TB.Text),
-                    Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
-                    PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
-                }
-            };
+                    new TodoModel()
+                    {
+                        Character = name, HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
+                        Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligence_TB.Text),
+                        Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
+                        PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
+                    }
+                };
 
-            CharacterList.Items.Add(_todoData);
+                CharacterList.Items.Add(_todoData);
+            }
         }
 
         private static void AddToDataBase(Hero hero)
@@ -294,8 +260,8 @@ namespace GameCharacterEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-             PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
-             PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = false;
+             PickButton.IsEnabled = Strenght_down.IsEnabled = Strenght_up.IsEnabled = Constitution_down.IsEnabled = Constitution_up.IsEnabled =
+             Dexterity_down.IsEnabled = Dexterity_up.IsEnabled = Intelligence_down.IsEnabled = Intelligence_up.IsEnabled = false;
         }
 
         private void HelnetComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

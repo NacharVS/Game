@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
         Title="RPGame" Height="700" Width="1100" Background="#FF891010" Loaded="Window_Loaded">
-
+    
     <Border Padding="10">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -54,14 +54,14 @@
                     <TextBlock Text="Mana point" Grid.Row="0" Grid.Column="2" Margin="5 0 0 0"/>
                     <TextBox x:Name="MP_TB" IsReadOnly="True" Grid.Row="1" Grid.Column="2" Background="Silver" Margin="5"/>
 
-                    <TextBlock Text="Strenght" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox x:Name="Strenght_TB" IsReadOnly ="True" Grid.Column="0" Background="Silver" Grid.Row="3" Margin="5"/>
-                    <TextBlock Text="Dexterity" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox x:Name="Dexterity_TB" IsReadOnly ="True" Grid.Column="1" Background="Silver" Grid.Row="3" Margin="5"/>
-                    <TextBlock Text="Intelligence" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox x:Name="Intelligenct_TB" IsReadOnly ="True" Grid.Column="2" Background="Silver" Grid.Row="3" Margin="5"/>
-                    <TextBlock Text="Constitution" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox x:Name="Constitution_TB" IsReadOnly ="True" Grid.Column="3" Background="Silver" Grid.Row="3" Margin="5"/>
+                    <TextBlock Text="Phys Attack" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox x:Name="PA_TB" IsReadOnly ="True" Grid.Column="0" Background="Silver" Grid.Row="3" Margin="5"/>
+                    <TextBlock Text="Magic Attack" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox x:Name="MA_TB" IsReadOnly ="True" Grid.Column="1" Background="Silver" Grid.Row="3" Margin="5"/>
+                    <TextBlock Text="Phys Resist" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox x:Name="PR_TB" IsReadOnly ="True" Grid.Column="2" Background="Silver" Grid.Row="3" Margin="5"/>
+                    <TextBlock Text="Magic Resist" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox x:Name="MR_TB" IsReadOnly ="True" Grid.Column="3" Background="Silver" Grid.Row="3" Margin="5"/>
 
                 </Grid>
 
@@ -90,23 +90,23 @@
                     <TextBlock Text="Extras" Grid.Column="2" Grid.Row="0" Margin="5 10 10 10" HorizontalAlignment="Center" FontSize="15"/>
                     <TextBox x:Name="Extra_TB" IsReadOnly="True" Grid.Column="3" Grid.Row="0" Margin="5 10 5 10" Background="Silver"/>
 
-                    <TextBlock Text="Phys Attack" Grid.Row="1" Grid.Column="1" Margin="5"/>
-                    <Button x:Name="PA_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="PA_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
-                    <Button x:Name="PA_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
-                    <TextBlock Text="Magic Attack" Grid.Row="1" Grid.Column="4" Margin="5"/>
-                    <Button x:Name="MA_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="MA_TB" Grid.Row="2" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
-                    <Button x:Name="MA_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Strenght" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                    <Button x:Name="Strenght_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
+                    <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
+                    <Button x:Name="Strenght_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Constitution" Grid.Row="1" Grid.Column="4" Margin="5"/>
+                    <Button x:Name="Constitution_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" />
+                    <TextBox x:Name="Constitution_TB" Grid.Row="2" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
+                    <Button x:Name="Constitution_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
 
-                    <TextBlock Text="Phys Resist" Grid.Row="3" Grid.Column="1" Margin="5"/>
-                    <Button x:Name="PR_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="PR_TB" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
-                    <Button x:Name="PR_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
-                    <TextBlock Text="Magic Resist" Grid.Row="3" Grid.Column="4" Margin="5"/>
-                    <Button x:Name="MR_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="MR_TB" Grid.Row="4" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
-                    <Button x:Name="MR_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Dexterity" Grid.Row="3" Grid.Column="1" Margin="5"/>
+                    <Button x:Name="Dexterity_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
+                    <TextBox x:Name="Dexterity_TB" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
+                    <Button x:Name="Dexterity_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Intelligence" Grid.Row="3" Grid.Column="4" Margin="5"/>
+                    <Button x:Name="Intelligence_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
+                    <TextBox x:Name="Intelligence_TB" Grid.Row="4" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
+                    <Button x:Name="Intelligence_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
 
                     <TextBlock Text="Attack speed" Grid.Row="5" Grid.Column="2" Margin="0 20 5 5"/>
                     <TextBox x:Name="AS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="2" Background="Silver" Margin="0 5 20  15"/>
@@ -149,7 +149,6 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Shop" Margin="10" FontSize="25" HorizontalAlignment="Center"/>
                     <Grid Grid.Row="1">
 
                         <Grid.ColumnDefinitions>
@@ -159,11 +158,9 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0" Margin="10">
-                            <ComboBox x:Name="HelnetComboBox" SelectionChanged="HelnetComboBox_SelectionChanged" >
-                                
-                            </ComboBox>
-                        </StackPanel>
+                        <TextBlock Grid.Column="0" x:Name="LevelBlock" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
+                        <TextBox Grid.Column="1" x:Name="Experience_TB" Margin="10" Width="60" Height="25" HorizontalAlignment="Right"/>
+                        <Button Grid.Column="2" Name="ExpButton" Content="+1000" Width="70" Height="30" Margin="10" HorizontalAlignment="Left"/>
                     </Grid>
                     
                     <Grid Grid.Row="2" VerticalAlignment="Top" Background="Black">
