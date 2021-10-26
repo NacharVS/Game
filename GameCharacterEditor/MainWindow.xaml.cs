@@ -22,7 +22,6 @@ namespace GameCharacterEditor
     public partial class MainWindow : Window
     {
         int point_str, point_dex, point_int, point_const, point, lvl;
-        
         public MainWindow()
         {
             InitializeComponent();
