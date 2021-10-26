@@ -166,17 +166,62 @@ namespace CharacterEditor.Pages
 
         private void KillMarauder_Click(object sender, RoutedEventArgs e)
         {
-
+            int L500 = Convert.ToInt32(XP.Text);
+            int LLL = Convert.ToInt32(Next.Text);
+            L500 += 500;
+            XP.Text = L500.ToString();
+            if (L500 >= LLL)
+            {
+                LLL += 5000;
+                Next.Text = LLL.ToString();
+                MessageBox.Show("Next Level");
+                int kl = Convert.ToInt32(Point.Text);
+                kl += 5;
+                Point.Text = kl.ToString();
+                PS.Visibility = Visibility.Visible;
+                PI.Visibility = Visibility.Visible;
+                PA.Visibility = Visibility.Visible;
+            }
         }
 
         private void KillBrute_Click(object sender, RoutedEventArgs e)
         {
-
+            int L1000 = Convert.ToInt32(XP.Text);
+            int LLL = Convert.ToInt32(Next.Text);
+            L1000 += 1000;
+            XP.Text = L1000.ToString();
+            if (L1000 >= LLL)
+            {
+                LLL += 5000;
+                Next.Text = LLL.ToString();
+                MessageBox.Show("Next Level");
+                int kl = Convert.ToInt32(Point.Text);
+                kl += 5;
+                Point.Text = kl.ToString();
+                PS.Visibility = Visibility.Visible;
+                PI.Visibility = Visibility.Visible;
+                PA.Visibility = Visibility.Visible;
+            }
         }
 
        private void KillBoss_Click(object sender, RoutedEventArgs e)
         {
-
+            int L5000 = Convert.ToInt32(XP.Text);
+            int LLL = Convert.ToInt32(Next.Text);
+            L5000 += 5000;
+            XP.Text = L5000.ToString();
+            if (L5000 >= LLL)
+            {
+                LLL += 5000;
+                Next.Text = LLL.ToString();
+                MessageBox.Show("Next Level");
+                int kl = Convert.ToInt32(Point.Text);
+                kl += 5;
+                Point.Text = kl.ToString();
+                PS.Visibility = Visibility.Visible;
+                PI.Visibility = Visibility.Visible;
+                PA.Visibility = Visibility.Visible;
+            }
         }
 
     }
