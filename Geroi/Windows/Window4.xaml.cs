@@ -195,7 +195,7 @@ namespace Geroi
         }
         private void pol_Click(object sender, RoutedEventArgs e)
         {
-            Unit unit = new Unit();
+            Unit unit = new Unit(int.Parse(Strenght.Text), int.Parse(Agility.Text), int.Parse(Intelligence.Text));
             unit.Add(unit);
             MessageBox.Show("Занесено в базу!");
         }
