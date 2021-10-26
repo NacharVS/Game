@@ -195,9 +195,6 @@ namespace Geroi
                 Plus2.Visibility = Visibility.Visible;
             }
         }
-        private void ADDBTN_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

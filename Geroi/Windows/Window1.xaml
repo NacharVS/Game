@@ -66,6 +66,5 @@
         <TextBox x:Name="LL" HorizontalAlignment="Left" Height="46" Margin="450,553,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="0" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
         <TextBox x:Name="OMA" HorizontalAlignment="Left" Height="46" Margin="0,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="134,132,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="#FFDEDDDD"/>
-        <Button x:Name="ADDBTN" Content="Создать" HorizontalAlignment="Left" Margin="925,553,0,0" VerticalAlignment="Top" Width="145" Background="#FF0D84E8" Height="56" FontSize="36" Click="ADDBTN_Click"/>
     </Grid>
 </Window>
