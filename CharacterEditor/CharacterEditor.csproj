@@ -70,6 +70,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\ACharacteristic.cs" />
+    <Compile Include="Classes\MCharacteristic.cs" />
+    <Compile Include="Classes\OCharacteristic.cs" />
+    <Compile Include="Classes\WCharacteristic.cs" />
     <Compile Include="ViewPages\MainViewPages.cs" />
     <Compile Include="ViewPages\PagesFoundation.cs" />
     <Page Include="Pages\APage.xaml">
