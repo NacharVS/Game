@@ -16,6 +16,12 @@ namespace GameCharacterEditor
         protected double attack_speed = 300;
         protected double extra = 15;
         protected double armor = 10;
+        protected double phusical_Attack = 20;
+        protected double magic_Attack = 20;
+        protected double magic_Defence = 20;
+        protected double phisical_Defence = 20;
+        protected double woolding_Speed = 20;
+        protected double experience;
 
         [BsonElement]
         public double Hp_Hero { get => hp_Hero; set => hp_Hero = value; }
@@ -29,8 +35,18 @@ namespace GameCharacterEditor
         public double Attack_speed { get => attack_speed; set => attack_speed = value; }
         [BsonElement]
         public double Armor { get => armor; set => armor = value; }
-      
-        
+        [BsonElement]
+        public double Experience { get => experience; set => experience = value; }
+        [BsonElement]
+        public double Magic_Attack { get => magic_Attack; set => magic_Attack = value; }
+        [BsonElement]
+        public double Magic_Defence { get => magic_Defence; set => magic_Defence = value; }
+        [BsonElement]
+        public double Phisical_Defence { get => phisical_Defence; set => phisical_Defence = value; }
+        [BsonElement]
+        public double Wooling_Speed { get => woolding_Speed; set => woolding_Speed = value; }
+
+
 
         public static void Add(Hero hero)
         {

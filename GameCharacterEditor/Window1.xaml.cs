@@ -9,7 +9,7 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class Window1 : Window
     {
-        private Hero hero;
+        private Hero hero = new Hero();
 
         public Window1()
         {
