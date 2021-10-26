@@ -63,7 +63,7 @@ namespace GameCharacterEditor
 
                 using (Stream fs = new FileStream(link, FileMode.Open))
                 {
-                    Bitmap bmp = new Bitmap(fs);
+                    Bitmap bmp = new Bitmap(fs); 
                     image_character.Source = bmp.BitmapToImageSource();
                 }
 
@@ -139,36 +139,64 @@ namespace GameCharacterEditor
         private void plus_str_Click(object sender, RoutedEventArgs e)
         {
             point_str = Convert.ToInt32(textb_strenght.Text);
-            point_str += 1;
-            textb_strenght.Text = point_str.ToString();
-            CountExtraPlus();
-            Update();
+            if(point_str +1 <= 250)
+            {
+                point_str += 1;
+                textb_strenght.Text = point_str.ToString();
+                CountExtraPlus();
+                Update();
+            }
+            else
+            {
+                plus_str.Visibility = Visibility.Hidden;
+            }
         }
         private void plus_int_Click(object sender, RoutedEventArgs e)
         {
             point_int = Convert.ToInt32(textb_intelligent.Text);
-            point_int += 1;
-            textb_intelligent.Text = point_int.ToString();
-            CountExtraPlus();
-            Update();
+            if(point_int+1 <= 250)
+            {
+                point_int += 1;
+                textb_intelligent.Text = point_int.ToString();
+                CountExtraPlus();
+                Update();
+            }
+            else
+            {
+                plus_int.Visibility = Visibility.Hidden;
+            }
         }
 
         private void plus_dex_Click(object sender, RoutedEventArgs e)
         {
             point_dex = Convert.ToInt32(textb_dexterity.Text);
-            point_dex += 1;
-            textb_dexterity.Text = point_dex.ToString();
-            CountExtraPlus();
-            Update();
+            if (point_dex +1 <= 250)
+            {
+                point_dex += 1;
+                textb_dexterity.Text = point_dex.ToString();
+                CountExtraPlus();
+                Update();
+            }
+            else
+            {
+                plus_dex.Visibility = Visibility.Hidden;
+            }
         }
 
         private void plus_const_Click(object sender, RoutedEventArgs e)
         {
             point_const = Convert.ToInt32(textb_constitution.Text);
-            point_const += 1;
-            textb_constitution.Text = point_const.ToString();
-            CountExtraPlus();
-            Update();
+            if (point_const +1 <= 100)
+            {
+                point_const += 1;
+                textb_constitution.Text = point_const.ToString();
+                CountExtraPlus();
+                Update();
+            }
+            else
+            {
+                plus_const.Visibility = Visibility.Hidden;
+            }
         }
 
         private void CountExtraMinus()
@@ -199,16 +227,23 @@ namespace GameCharacterEditor
         private void minus_str_Click(object sender, RoutedEventArgs e)
         {
             point_str = Convert.ToInt32(textb_strenght.Text);
-            MinChar();
-            if (point < 20)
+            if (point_str - 1 >= 50)
             {
-                point_str -= 1;
-                if (point_str == 0)
-                    minus_str.Visibility = Visibility.Hidden;
-                textb_strenght.Text = point_str.ToString();
-                CountExtraMinus();
+                MinChar();
+                if (point < 20)
+                {
+                    point_str -= 1;
+                    if (point_str == 0)
+                        minus_str.Visibility = Visibility.Hidden;
+                    textb_strenght.Text = point_str.ToString();
+                    CountExtraMinus();
+                }
+                Update();
             }
-            Update();
+            else
+            {
+                minus_str.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Update()
@@ -287,46 +322,67 @@ namespace GameCharacterEditor
         private void minus_int_Click(object sender, RoutedEventArgs e)
         {
             point_int = Convert.ToInt32(textb_intelligent.Text);
-            MinChar();
-            if (point < 20)
+            if (point_int -1 >= 50)
             {
-                point_int -= 1;
-                if (point_int == 0)
-                    minus_int.Visibility = Visibility.Hidden;
-                textb_intelligent.Text = point_int.ToString();
-                CountExtraMinus();
+                MinChar();
+                if (point < 20)
+                {
+                    point_int -= 1;
+                    if (point_int == 0)
+                        minus_int.Visibility = Visibility.Hidden;
+                    textb_intelligent.Text = point_int.ToString();
+                    CountExtraMinus();
+                }
+                Update();
             }
-            Update();
+            else
+            {
+                minus_int.Visibility = Visibility.Hidden;
+            }   
         }
 
         private void minus_dex_Click(object sender, RoutedEventArgs e)
         {
             point_dex = Convert.ToInt32(textb_dexterity.Text);
-            MinChar();
-            if (point < 20)
+            if (point_dex -1 >= 50)
             {
-                point_dex -= 1;
-                if (point_dex == 0)
-                    minus_dex.Visibility = Visibility.Hidden;
-                textb_dexterity.Text = point_dex.ToString();
-                CountExtraMinus();
+                MinChar();
+                if (point < 20)
+                {
+                    point_dex -= 1;
+                    if (point_dex == 0)
+                        minus_dex.Visibility = Visibility.Hidden;
+                    textb_dexterity.Text = point_dex.ToString();
+                    CountExtraMinus();
+                }
+                Update();
             }
-            Update();
+            else
+            {
+                minus_dex.Visibility = Visibility.Hidden;
+            }
         }
 
         private void minus_const_Click(object sender, RoutedEventArgs e)
         {
             point_const = Convert.ToInt32(textb_constitution.Text);
-            MinChar();
-            if (point < 20)
+            if (point_const >= 50)
             {
-                point_const -= 1;
-                if (point_const == 0)
-                    minus_const.Visibility = Visibility.Hidden;
-                textb_constitution.Text = point_const.ToString();
-                CountExtraMinus();
+                MinChar();
+                if (point < 20)
+                {
+                    point_const -= 1;
+                    if (point_const == 0)
+                        minus_const.Visibility = Visibility.Hidden;
+                    textb_constitution.Text = point_const.ToString();
+                    CountExtraMinus();
+                }
+                Update();
             }
-            Update();
+            else
+            {
+                minus_const.Visibility = Visibility.Hidden;
+            }
         }
         private void MinChar()
         {
