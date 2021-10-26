@@ -295,5 +295,35 @@ namespace GameCharacterEditor
              PickButton.IsEnabled = PA_down.IsEnabled = PA_up.IsEnabled = MA_down.IsEnabled = MA_up.IsEnabled =
              PR_down.IsEnabled = PR_up.IsEnabled = MR_down.IsEnabled = MR_up.IsEnabled = false;
         }
+
+        private void ExperienceButton_Click(object sender, RoutedEventArgs e)
+        {
+            int exp = Convert.ToInt32(ExperienceText.Text);
+            exp += 1000;
+            ExperienceText.Text = exp.ToString();
+        }
+
+        private void ExperienceText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int expir = Convert.ToInt32(ExperienceText.Text);
+
+
+            switch (expir)
+            {
+                case 2:
+                    LevelText.Text = "2";
+                    break;
+  
+
+            }
+            //if(expir >= 1000 && expir < 3000)
+            //{
+            //    LevelText.Text = "2";
+            //}
+            //else if(expir >= 3000 && expir < 6000)
+            //{
+            //    LevelText.Text = "3";
+            //}
+        }
     }
 }

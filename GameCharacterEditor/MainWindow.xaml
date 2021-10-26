@@ -85,6 +85,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="Extras" Grid.Column="2" Grid.Row="0" Margin="5 10 10 10" HorizontalAlignment="Center" FontSize="15"/>
@@ -113,7 +114,8 @@
 
                     <TextBlock Text="Movement speed" Grid.Row="5" Grid.Column="3" Margin="0 20 5 5"/>
                     <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="0 5 20  15"/>
-                    <Button x:Name="PickButton" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
+
+                    <Button x:Name="PickButton" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
                 </Grid>
             </StackPanel>
 
@@ -149,23 +151,20 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Shop" Margin="10" FontSize="25" HorizontalAlignment="Center"/>
-                    <Grid Grid.Row="1">
-
+                    <Grid Grid.Row="1" >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
+                            <ColumnDefinition />
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0" Margin="10">
-                            <ComboBox x:Name="HelnetComboBox" >
-                                
-                            </ComboBox>
-                        </StackPanel>
+
+                        <TextBlock x:Name="LevelText" Text="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="30" Margin="10"/>
+                        <TextBox x:Name="ExperienceText" Grid.Column="1" Margin="10" Width="100" Height="20" IsReadOnly="True" HorizontalAlignment="Right" Text="0" TextChanged="ExperienceText_TextChanged"/>
+                        <Button x:Name="ExperienceButton" Grid.Column="2" Content="+1000" Width="60" Height="30" Margin="10" HorizontalAlignment="Left" Click="ExperienceButton_Click"/>
                     </Grid>
-                    
+
                     <Grid Grid.Row="2" VerticalAlignment="Top" Background="Black">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -174,15 +173,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-
-                        <Image Grid.Column="0" x:Name="AddedHelmetTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="1" x:Name="AddedArmourTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="2" x:Name="AddedPantsTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="3" x:Name="AddedBootsTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="4" x:Name="AddedWeaponTB" Margin="10" Height="30"/>
-                        
                     </Grid>
-                    
                 </Grid>
             </Grid>
         </Grid>
