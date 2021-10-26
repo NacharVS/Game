@@ -40,8 +40,8 @@ namespace GameCharacterEditor
                     image_character.Source = bmp.BitmapToImageSource();
                 }
                 Warrior war = new Warrior();
-                GetUnitInfo(war, textb_name_character, textb_hp, textb_mana, textb_attack, textb_attack_magic, textb_walk_speed,
-                    textb_attack_speed, textb_pResist, textb_mResist);
+                GetUnitInfo(war, textb_name_character, textb_pResist, textb_mResist, textb_hp, textb_attack_speed, textb_walk_speed,
+                    textb_mana, textb_attack_magic, textb_attack);
             }
 
             if (radBtn_Witch.IsChecked == true)
@@ -55,8 +55,8 @@ namespace GameCharacterEditor
                 }
 
                 Witch witch = new Witch();
-                GetUnitInfo(witch, textb_name_character, textb_hp, textb_mana, textb_attack, textb_attack_magic, textb_walk_speed,
-                    textb_attack_speed, textb_pResist, textb_mResist);
+                GetUnitInfo(witch, textb_name_character, textb_pResist, textb_mResist, textb_hp, textb_attack_speed, textb_walk_speed,
+                    textb_mana, textb_attack_magic, textb_attack);
             }
 
             if (radBtn_Rogue.IsChecked == true)
@@ -70,8 +70,8 @@ namespace GameCharacterEditor
                 }
 
                 Rogue rogue = new Rogue();
-                GetUnitInfo(rogue, textb_name_character, textb_hp, textb_mana, textb_attack, textb_attack_magic, textb_walk_speed,
-                    textb_attack_speed, textb_pResist, textb_mResist);
+                GetUnitInfo(rogue, textb_name_character, textb_pResist, textb_mResist, textb_hp, textb_attack_speed, textb_walk_speed,
+                    textb_mana, textb_attack_magic, textb_attack);
             }
 
             if (radBtn_Rogue.IsChecked == false & radBtn_Warrior.IsChecked == false & radBtn_Witch.IsChecked == false)
@@ -79,7 +79,8 @@ namespace GameCharacterEditor
                 MessageBox.Show("Выберите класс персонажа");
             }
         }
-        private void GetUnitInfo(Unit unit,TextBox textb_name_character, TextBox textb_hp, TextBox textb_mana, TextBox textb_attack,
+        private void GetUnitInfo(Unit unit,
+            TextBox textb_name_character, TextBox textb_hp, TextBox textb_mana, TextBox textb_attack,
             TextBox textb_attack_magic, TextBox textb_walk_speed,
             TextBox textb_attack_speed, TextBox textb_pResist, TextBox textb_mResist)
         {
@@ -88,19 +89,17 @@ namespace GameCharacterEditor
             textb_dexterity.Text = unit.Dexterity.ToString();
             textb_intelligent.Text = unit.Intelligence.ToString();
             textb_strenght.Text = unit.Strenght.ToString();
-            textb_pResist.Text = (unit.Constitution*5+unit.Dexterity*3).ToString();
-            textb_mResist.Text = (unit.Intelligence*5).ToString();
+            textb_pResist.Text = (unit.Constitution * 5 + unit.Dexterity * 3).ToString();
+            textb_mResist.Text = (unit.Intelligence * 5).ToString();
             textb_hp.Text = (unit.Strenght * 5 + unit.Constitution * 10).ToString();
-            textb_attack_speed.Text = (unit.Dexterity*5).ToString();
-            textb_walk_speed.Text = (unit.Dexterity*2).ToString();
+            textb_attack_speed.Text = (unit.Dexterity * 5).ToString();
+            textb_walk_speed.Text = (unit.Dexterity * 2).ToString();
             textb_mana.Text = (unit.Intelligence * 5).ToString();
-            textb_attack_magic.Text = (unit.Intelligence*10).ToString();
-            textb_attack.Text = (unit.Strenght *5).ToString();
+            textb_attack_magic.Text = (unit.Intelligence * 10).ToString();
+            textb_attack.Text = (unit.Strenght * 5).ToString();
         }
-
         private void CountExtraPlus()
         {
-            extra.Text = point.ToString();
             point = Convert.ToInt32(extra.Text);
             point -= 1;
             if (point == 0)
@@ -193,38 +192,62 @@ namespace GameCharacterEditor
         private void add_point_Click(object sender, RoutedEventArgs e)
         {
             point = Convert.ToInt32(extra.Text);
+            if (point != 0)
+            {
+                MessageBox.Show("Не все очки были использованы");
+            }
+        }
+
+        private void Update()
+        {
+            int point_str = Convert.ToInt32(textb_strenght.Text);
+            int point_int = Convert.ToInt32(textb_intelligent.Text);
+            int point_dex = Convert.ToInt32(textb_dexterity.Text);
+            int point_const = Convert.ToInt32(textb_constitution.Text);
+
+            textb_pResist.Text = (point_const * 5 + point_dex * 3).ToString();
+            textb_mResist.Text = (point_int * 5).ToString();
+            textb_hp.Text = (point_str * 5 + point_const * 10).ToString();
+            textb_attack_speed.Text = (point_dex * 5).ToString();
+            textb_walk_speed.Text = (point_dex * 2).ToString();
+            textb_mana.Text = (point_int * 5).ToString();
+            textb_attack_magic.Text = (point_int * 10).ToString();
+            textb_attack.Text = (point_str * 5).ToString();
+        }
+        private void up_lvl_Click(object sender, RoutedEventArgs e)
+        {
+            int point_str = Convert.ToInt32(textb_strenght.Text);
+            int point_int = Convert.ToInt32(textb_intelligent.Text);
+            int point_dex = Convert.ToInt32(textb_dexterity.Text);
+            int point_const = Convert.ToInt32(textb_constitution.Text);
+            int point = Convert.ToInt32(extra.Text);
+            lvl = Convert.ToInt32(textb_lvl.Text);
             if (point == 0)
             {
+                lvl += 1;
+                textb_lvl.Text = lvl.ToString();
+                point_str += 100;
+                point_int += 100;
+                point_dex += 100;
+                point_const += 100;
+                textb_strenght.Text = point_str.ToString();
+                textb_intelligent.Text = point_int.ToString();
+                textb_dexterity.Text = point_dex.ToString();
+                textb_constitution.Text = point_const.ToString();
+
                 point = +20;
                 extra.Text = point.ToString();
                 plus_str.Visibility = Visibility.Visible;
                 plus_const.Visibility = Visibility.Visible;
                 plus_dex.Visibility = Visibility.Visible;
                 plus_int.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MessageBox.Show("Не все очки были использованы");
-            }
-        }
-
-        private void up_lvl_Click(object sender, RoutedEventArgs e)
-        {
-            int point_s = Convert.ToInt32(textb_strenght.Text);
-            int point_i = Convert.ToInt32(textb_intelligent.Text);
-            int point_d = Convert.ToInt32(textb_dexterity.Text);
-            int point_c = Convert.ToInt32(textb_constitution.Text);
-            lvl = Convert.ToInt32(textb_lvl.Text);
-            if (point_str >= point_str + 20 && point_int >= point_int + 20 && point_dex >= point_dex + 20 && point_const >= point_const + 20)
-            {
-                lvl += 1;
-                textb_lvl.Text = lvl.ToString();
+                Update();
+                MessageBox.Show("Уровень повышен");
             }
             else
             {
                 MessageBox.Show("Повысьте характеристики");
             }
-            MessageBox.Show("Уровень повышен");
         }
 
         private void minus_int_Click(object sender, RoutedEventArgs e)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 
 namespace GameCharacterEditor
 {
@@ -41,6 +42,9 @@ namespace GameCharacterEditor
             intelligence = 20;
             constitution = 20;
         }
+
+        
+
     }
 
     class Warrior : Unit
