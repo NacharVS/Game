@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 namespace Geroi
 {
@@ -16,7 +17,6 @@ namespace Geroi
         public Class_Mag()
         {
             InitializeComponent();
-
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -195,6 +195,12 @@ namespace Geroi
                 Plus2.Visibility = Visibility.Visible;
             }
         }
-
+        
+        private void pol_Click(object sender, RoutedEventArgs e)
+        {
+            int Class_Mag =1;
+            Unit.Add(Class_Mag);
+            MessageBox.Show("Занесено в базу!");
+        }
     }
 }
