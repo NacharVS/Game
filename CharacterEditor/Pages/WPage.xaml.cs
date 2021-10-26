@@ -28,11 +28,12 @@ namespace CharacterEditor.Pages
         private void Plus_Click_Str(object sender, RoutedEventArgs e)
         {
             int str = Convert.ToInt32(Strenght.Text);
+            Strenght.Text = str.ToString();
             int p = Convert.ToInt32(Point.Text);
 
             str += 1;
             Strenght.Text = str.ToString();
-            p -= 1;
+            p -= 1; 
 
             if (p == 0)
             {
@@ -161,6 +162,21 @@ namespace CharacterEditor.Pages
             int kl = Convert.ToInt32(Point.Text);
             kl += 1;
             Point.Text = kl.ToString();
+        }
+
+        private void KillMarauder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void KillBrute_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+       private void KillBoss_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
     }
