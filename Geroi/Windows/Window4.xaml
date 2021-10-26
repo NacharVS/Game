@@ -29,12 +29,12 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="556,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="6" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="46" Margin="556,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="5" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="565,155,0,0" TextWrapping="Wrap" Text="Сила" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="543,284,0,0" TextWrapping="Wrap" Text="Ловкость" VerticalAlignment="Top" Height="68" Width="162" FontSize="36" Foreground="#FF80FF00"/>
         <TextBlock HorizontalAlignment="Left" Margin="534,408,0,0" TextWrapping="Wrap" Text="Интеллект" VerticalAlignment="Top" Height="68" Width="180" FontSize="36" Foreground="#FF00B9FF"/>
-        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="556,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" TextAlignment="Center" FontSize="36" Text="3" IsEnabled="False"/>
-        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="556,476,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" Text="4" IsEnabled="False"/>
+        <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="46" Margin="556,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" TextAlignment="Center" FontSize="36" Text="6" IsEnabled="False"/>
+        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="46" Margin="556,476,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" Text="6" IsEnabled="False"/>
         <TextBox x:Name="Kol" HorizontalAlignment="Left" Height="46" Margin="830,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Text="20" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="830,248,0,0" TextWrapping="Wrap" Text="Кол-во Очков" VerticalAlignment="Top" Height="99" Width="162" FontSize="36" Foreground="#FF80FF00"/>
         <Button x:Name="Minus1" Content="-" HorizontalAlignment="Left" Margin="486,228,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Minus1_Click"/>
