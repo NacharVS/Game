@@ -13,16 +13,16 @@ namespace Geroi
     {
         [BsonId]
         [BsonIgnoreIfDefault]
-        public ObjectId id { get; set; }
-        protected double strenght = 20;
-        protected double agility = 35;
-        protected double intelligence = 30;
+        public ObjectId Id { get; set; }
+        protected double Strenght = 20;
+        protected double Agility = 35;
+        protected double Intelligence = 25;
         [BsonElement]
-        public double Strenght { get => strenght; set => strenght = value; }
+        public double strenght { get => Strenght; set => Strenght = value; }
         [BsonElement]
-        public double Agility { get => agility; set => agility = value; }
+        public double agility { get => Agility; set => Agility = value; }
         [BsonElement]
-        public double Intelligence { get => intelligence; set => intelligence = value; }
+        public double intelligence { get => Intelligence; set => Intelligence = value; }
         public static void Add(Object unit)
         {
             MongoClient client = new MongoClient();

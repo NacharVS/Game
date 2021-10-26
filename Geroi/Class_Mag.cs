@@ -59,12 +59,12 @@ namespace Geroi
         {
             int st = Convert.ToInt32(Strenght.Text);
             st -= 1;
-            if (st == 0)
+            if (st == 1)
             {
                 Strenght.Text = st.ToString();
                 Minus1.Visibility = Visibility.Hidden;
             }
-            else if (st > 0)
+            else if (st > 1)
             {
                 Plus3.Visibility = Visibility.Visible;
                 Plus2.Visibility = Visibility.Visible;
@@ -100,12 +100,12 @@ namespace Geroi
         {
             int st = Convert.ToInt32(Agility.Text);
             st -= 1;
-            if (st == 0)
+            if (st == 1)
             {
                 Agility.Text = st.ToString();
                 Minus2.Visibility = Visibility.Hidden;
             }
-            else if (st > 0)
+            else if (st > 1)
             {
                 Plus2.Visibility = Visibility.Visible;
                 Plus3.Visibility = Visibility.Visible;
@@ -141,12 +141,12 @@ namespace Geroi
         {
             int st = Convert.ToInt32(Intelligence.Text);
             st -= 1;
-            if (st == 0)
+            if (st == 1)
             {
                 Intelligence.Text = st.ToString();
                 Minus3.Visibility = Visibility.Hidden;
             }
-            else if (st > 0)
+            else if (st > 1)
             {
                 Plus3.Visibility = Visibility.Visible;
                 Plus1.Visibility = Visibility.Visible;
@@ -198,8 +198,10 @@ namespace Geroi
         
         private void pol_Click(object sender, RoutedEventArgs e)
         {
-            int Class_Mag =1;
-            Unit.Add(Class_Mag);
+            string name = Convert.ToString(OMA.Text);
+            int st = Convert.ToInt32(Strenght.Text);
+            Unit.Add(st);
+            Unit.Add(name);
             MessageBox.Show("Занесено в базу!");
         }
     }
