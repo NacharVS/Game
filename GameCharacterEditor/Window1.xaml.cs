@@ -9,6 +9,8 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class Window1 : Window
     {
+        private Hero hero;
+
         public Window1()
         {
             InitializeComponent();
@@ -363,6 +365,15 @@ namespace GameCharacterEditor
                 kl += 5;
                 Kol.Text = kl.ToString();
             }
+            
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Hero.Add(hero);
+            MessageBox.Show("Занесено в бд");
+        }
+
+
     }
 }

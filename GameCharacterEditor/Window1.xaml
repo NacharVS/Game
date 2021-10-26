@@ -224,6 +224,7 @@
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="746,567,0,0" VerticalAlignment="Top" Width="93" Height="33" Click="Button_Click"/>
     </Grid>
 </Window>
 

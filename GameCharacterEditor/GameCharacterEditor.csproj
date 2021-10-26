@@ -20,6 +20,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver.GridFS" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Libmongocrypt" Version="1.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Font.jpg" />
     <Resource Include="Hunter.jpg" />
     <Resource Include="kristal.jpg" />
