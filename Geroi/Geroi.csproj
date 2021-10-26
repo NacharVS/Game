@@ -132,8 +132,6 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Class_Luchnik.cs" />
     <Compile Include="Class_Mag.cs" />
-    <Compile Include="Class_Mag.unit.cs" />
-    <Compile Include="Class_Mag.Unit1.cs" />
     <Compile Include="Class_Mechnik.cs" />
     <Compile Include="Class_Razboinik.cs" />
     <Compile Include="unit.cs" />

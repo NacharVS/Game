@@ -184,5 +184,11 @@ namespace Geroi
                 Kol.Text = kl.ToString();
             }
         }
+        private void pol_Click(object sender, RoutedEventArgs e)
+        {
+            int Class_mechnik = 1;
+            Unit.Add(Class_mechnik);
+            MessageBox.Show("Занесено в базу!");
+        }
     }
 }
