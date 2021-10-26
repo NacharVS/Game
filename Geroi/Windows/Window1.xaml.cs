@@ -175,6 +175,9 @@ namespace Geroi
                 int kl = Convert.ToInt32(Kol.Text);
                 kl += 5;
                 Kol.Text = kl.ToString();
+                Plus2.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
+                Plus3.Visibility = Visibility.Visible;
             }
         }
         private void level2_Click(object sender, RoutedEventArgs e)
@@ -191,6 +194,9 @@ namespace Geroi
                 int kl = Convert.ToInt32(Kol.Text);
                 kl += 5;
                 Kol.Text = kl.ToString();
+                Plus3.Visibility = Visibility.Visible;
+                Plus2.Visibility = Visibility.Visible;
+                Plus1.Visibility = Visibility.Visible;
             }
         }
         private void pol_Click(object sender, RoutedEventArgs e)
