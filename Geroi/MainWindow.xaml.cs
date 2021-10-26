@@ -27,28 +27,28 @@ namespace Geroi
 
         private void perehod_mag(object sender, MouseButtonEventArgs e)
         {
-            Class_Mag wd = new Class_Mag();
+            Window1 wd = new Window1();
             wd.Show();
             this.Close();
         }
 
         private void perehod_mechnik(object sender, MouseButtonEventArgs e)
         {
-            Class_Mechnik wd = new Class_Mechnik();
+            Window2 wd = new Window2();
             wd.Show();
             this.Close();
         }
 
         private void Perehod_Luchnik(object sender, MouseButtonEventArgs e)
         {
-            Class_Luchnik wd = new Class_Luchnik();
+            Window3 wd = new Window3();
             wd.Show();
             this.Close();
         }
 
         private void Perehod_Razboinik(object sender, MouseButtonEventArgs e)
         {
-            Class_Razboinik wd = new Class_Razboinik();
+            Window4 wd = new Window4();
             wd.Show();
             this.Close();
         }

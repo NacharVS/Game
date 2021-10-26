@@ -130,10 +130,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Class1.cs" />
-    <Compile Include="Class_Luchnik.cs" />
-    <Compile Include="Class_Mag.cs" />
-    <Compile Include="Class_Mechnik.cs" />
-    <Compile Include="Class_Razboinik.cs" />
     <Compile Include="unit.cs" />
     <Compile Include="Unit1.cs" />
     <Compile Include="Windows\Window1.xaml.cs">
