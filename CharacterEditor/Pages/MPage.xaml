@@ -17,5 +17,17 @@
                Stretch="Fill" Source="Res/Top/TMage.jpg"/>
         <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
                Stretch="Fill" Source="Res/BackGround/BMage.jpg"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="572,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFC18B8B"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="432,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFBB8A8A"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="710,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Background="#FFA47676"/>
+        <TextBlock HorizontalAlignment="Left" Margin="438,25,0,0" TextWrapping="Wrap" Text="Strenght" VerticalAlignment="Top" Foreground="#FFDAC6C6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="581,25,0,0" TextWrapping="Wrap" Text="Agility" VerticalAlignment="Top" Foreground="#FFDAC6C6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="710,25,0,0" TextWrapping="Wrap" Text="Intelligence" VerticalAlignment="Top" Foreground="#FFDAC6C6"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="404,47,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="494,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="544,47,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="634,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="682,46,0,0" VerticalAlignment="Top" Width="23" Background="#FFB61919" Height="23"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="772,46,0,0" VerticalAlignment="Top" Width="23" Background="#FF20B619" Height="23"/>
     </Grid>
 </Page>
