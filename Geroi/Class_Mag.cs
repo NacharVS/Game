@@ -14,6 +14,7 @@ namespace Geroi
 {
     public partial class Class_Mag
     {
+        
         public Class_Mag()
         {
             InitializeComponent();
@@ -198,10 +199,8 @@ namespace Geroi
         
         private void pol_Click(object sender, RoutedEventArgs e)
         {
-            string name = Convert.ToString(OMA.Text);
-            int st = Convert.ToInt32(Strenght.Text);
-            Unit.Add(st);
-            Unit.Add(name);
+            Unit unit = new Unit();
+            unit.Add(unit);
             MessageBox.Show("Занесено в базу!");
         }
     }

@@ -17,17 +17,17 @@ namespace Geroi
         protected double Strenght = 20;
         protected double Agility = 35;
         protected double Intelligence = 25;
-        [BsonElement]
+        
         public double strenght { get => Strenght; set => Strenght = value; }
         [BsonElement]
         public double agility { get => Agility; set => Agility = value; }
         [BsonElement]
         public double intelligence { get => Intelligence; set => Intelligence = value; }
-        public static void Add(Object unit)
+        public void Add(Unit unit)
         {
             MongoClient client = new MongoClient();
             var abase = client.GetDatabase("111");
-            var b = abase.GetCollection<Object>("Shakirov_DB");
+            var b = abase.GetCollection<Unit>("Shakirov_DB");
             b.InsertOne(unit);
         }
     }

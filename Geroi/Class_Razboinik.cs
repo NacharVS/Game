@@ -186,8 +186,8 @@ namespace Geroi
         }
         private void pol_Click(object sender, RoutedEventArgs e)
         {
-            int Class_razboinik = 1;
-            Unit.Add(Class_razboinik);
+            Unit unit = new Unit();
+            unit.Add(unit);
             MessageBox.Show("Занесено в базу!");
         }
     }
