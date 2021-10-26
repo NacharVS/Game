@@ -115,148 +115,114 @@ namespace GameCharacterEditor
             switch (bttn)
             {
                 case "Strenght_up":
-                    int pa = int.Parse(PA_TB.Text);
-                    if(pa < 30)
-                    {
-                        ++pa;
-                        Strenght_TB.Text = pa.ToString();
-                    }
-                    else
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
+                    int str = Convert.ToInt32(Strenght_TB.Text);
+                    str++;
+                    Strenght_TB.Text = str.ToString();
                     break;
                 case "Constitution_up":
-                    int ma = int.Parse(MA_TB.Text);
-                    if (ma < 30)
-                    {
-                        ++ma;
-                        Constitution_TB.Text = ma.ToString();
-                    }
-                    else
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
+                    int constit = Convert.ToInt32(Constitution_TB.Text);
+                    constit++;
+                    Constitution_TB.Text = constit.ToString();
                     break;
                 case "Dexterity_up":
-                    int pr = int.Parse(PR_TB.Text);
-                    if (pr < 30)
-                    {
-                        ++pr;
-                        Dexterity_TB.Text = pr.ToString();
-                    }
-                    else 
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
+                    int dex = Convert.ToInt32(Dexterity_TB.Text);
+                    dex++;
+                    Dexterity_TB.Text = dex.ToString();
                     break;
                 case "Intelligence_up":
-                    int mr = int.Parse(MR_TB.Text);
-                    if(mr < 30)
-                    {
-                        ++mr;
-                        Intelligence_TB.Text = mr.ToString();
-                    }
-                    else
-                    {
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-                default:
-                    MessageBox.Show("error");
+                    int intel = Convert.ToInt32(Intelligence_TB.Text);
+                    intel++;
+                    Intelligence_TB.Text = intel.ToString();
                     break;
             }           
         }
 
-        private void ExtraDebuff_Click(object sender, RoutedEventArgs e)
-        {
-            int ex = int.Parse(Extra_TB.Text);
+        //private void ExtraDebuff_Click(object sender, RoutedEventArgs e)
+        //{
+        //    int ex = int.Parse(Extra_TB.Text);
 
-            string bttn = (string)((Button)sender).Name;
+        //    string bttn = (string)((Button)sender).Name;
 
-            switch (bttn)
-            {
-                case "Strenght_down":
-                    int pa = int.Parse(PA_TB.Text);
-                    if(pa > 20)
-                    {
-                        --pa;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        Strenght_TB.Text = pa.ToString();
-                    }
-                    else
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-                case "Constitution_down":
-                    int ma = int.Parse(MA_TB.Text);
-                    if(ma > 20)
-                    {
-                        --ma;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        Constitution_TB.Text = ma.ToString();
-                    }
-                    else 
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-                case "Dexterity_down":
-                    int pr = int.Parse(PR_TB.Text);
-                    if (pr > 20)
-                    {
-                        --pr;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        Dexterity_TB.Text = pr.ToString();
-                    }
-                    else
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-                case "Intelligence_down":
-                    int mr = int.Parse(MR_TB.Text);
-                    if (mr > 20)
-                    {
-                        --mr;
-                        ++ex;
-                        Extra_TB.Text = ex.ToString();
-                        Intelligence_TB.Text = mr.ToString();
-                    }
-                    else
-                    {
-                        ReduceException(ex);
-                        Extra_TB.Text = ex.ToString();
-                    }
-                    break;
-            }    
+        //    switch (bttn)
+        //    {
+        //        case "Strenght_down":
+        //            int pa = int.Parse(PA_TB.Text);
+        //            if(pa > 20)
+        //            {
+        //                --pa;
+        //                ++ex;
+        //                Extra_TB.Text = ex.ToString();
+        //                Strenght_TB.Text = pa.ToString();
+        //            }
+        //            else
+        //            {
+        //                ReduceException(ex);
+        //                Extra_TB.Text = ex.ToString();
+        //            }
+        //            break;
+        //        case "Constitution_down":
+        //            int ma = int.Parse(MA_TB.Text);
+        //            if(ma > 20)
+        //            {
+        //                --ma;
+        //                ++ex;
+        //                Extra_TB.Text = ex.ToString();
+        //                Constitution_TB.Text = ma.ToString();
+        //            }
+        //            else 
+        //            {
+        //                ReduceException(ex);
+        //                Extra_TB.Text = ex.ToString();
+        //            }
+        //            break;
+        //        case "Dexterity_down":
+        //            int pr = int.Parse(PR_TB.Text);
+        //            if (pr > 20)
+        //            {
+        //                --pr;
+        //                ++ex;
+        //                Extra_TB.Text = ex.ToString();
+        //                Dexterity_TB.Text = pr.ToString();
+        //            }
+        //            else
+        //            {
+        //                ReduceException(ex);
+        //                Extra_TB.Text = ex.ToString();
+        //            }
+        //            break;
+        //        case "Intelligence_down":
+        //            int mr = int.Parse(MR_TB.Text);
+        //            if (mr > 20)
+        //            {
+        //                --mr;
+        //                ++ex;
+        //                Extra_TB.Text = ex.ToString();
+        //                Intelligence_TB.Text = mr.ToString();
+        //            }
+        //            else
+        //            {
+        //                ReduceException(ex);
+        //                Extra_TB.Text = ex.ToString();
+        //            }
+        //            break;
+        //    }    
 
-            int ReduceException(int ability)
-            {
-                return --ability;
-            }
-        }
+        //    int ReduceException(int ability)
+        //    {
+        //        return --ability;
+        //    }
+        //}
 
         private void PickButton_Click(object sender, RoutedEventArgs e)
         {
             string name;
-
+    
 
 
             if (ChooseWarriorRB.IsChecked == true)
             {
                 Warrior war = new Warrior();
+                war.PAttack = Convert.ToInt32(PA_TB.Text);
                 name = "Warrior";
                 AddToDataBase(war);
             }

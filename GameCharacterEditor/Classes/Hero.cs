@@ -14,106 +14,271 @@ namespace GameCharacterEditor.Models
 
         protected int strenght = 20;
         [BsonElement("Strenght")]
-        public virtual int Strenght { get => strenght; }
+        public virtual int Strenght 
+        { 
+            get => strenght;
+            set
+            {
+                strenght = value;
+            }
+        }
 
         protected int dexterity = 20;
         [BsonElement("Dexterity")]
-        public virtual int Dexterity { get => dexterity; }
+        public virtual int Dexterity 
+        { 
+            get => dexterity; 
+            set
+            {
+                dexterity = value;
+            }
+        }
 
         protected int level = 1;
         [BsonElement("Level")]
-        public virtual int Level { get => level; }
+        public virtual int Level 
+        {
+            get => level;
+            set
+            {
+                level = value;
+            }
+        }
 
         protected int intelligence = 20;
         [BsonElement("Intelligence")]
-        public virtual int Intelligence { get => intelligence; }
+        public virtual int Intelligence 
+        { 
+            get => intelligence;
+            set
+            {
+                intelligence = value;
+            }
+        }
 
         protected int constitution = 20;
         [BsonElement("Constitution")]
-        public virtual int Constitution { get => constitution; }
+        public virtual int Constitution 
+        { 
+            get => constitution;
+            set
+            {
+                constitution = value;
+            }
+        }
 
-        protected int healthPoint = 100;
         [BsonElement("Health Point")]
-        public virtual int HealthPoint { get => healthPoint; }
+        public virtual int HealthPoint 
+        { 
+            get => constitution * 5; 
+            set
+            {
+                constitution = value;
+            }
+        }
 
         [BsonElement("Mana Point")]
-        protected int manaPoint = 100;
-        public virtual int ManaPoint { get => manaPoint; }
+        public virtual int ManaPoint 
+        {
+            get => intelligence*5;
+        }
 
-        protected int pAttack = 20;
+        protected int pAttack;
         [BsonElement("Physical Attack")]
-        public virtual int PAttack { get => pAttack; }
+        public virtual int PAttack
+        {
+            get => pAttack;
+            set
+            {
+                pAttack = value;
+            }
+        }
 
-        protected int mAttack = 20;
         [BsonElement("Magic Attack")]
-        public virtual int MAttack { get => mAttack; }
+        public virtual int MAttack { get => intelligence * 5; }
 
-        protected int pResist = 20;
         [BsonElement("Physical Resist")]
-        public virtual int PResist { get => pResist; }
+        public virtual int PResist { get => constitution * 5; }
 
-        protected int mResist = 20;
         [BsonElement("Magic Resist")]
-        public virtual int MResist { get => mResist; }
+        public virtual int MResist { get => intelligence * 5; }
 
-        protected int attackSpeed = 100;
         [BsonElement("Attack Speed")]
-        public virtual int AttackSpeed { get => attackSpeed; }
+        public virtual int AttackSpeed { get => dexterity * 5; }
 
-        protected int walkSpeed = 100;
         [BsonElement("Movement Speed")]
-        public virtual int WalkSpeed { get => walkSpeed; }
+        public virtual int WalkSpeed 
+        { 
+            get => dexterity * 5 + 100; 
+            set
+            {
+                dexterity = value;
+            }
+        }
       
         protected int extra = 20;
         [BsonElement("Extra Points")]
-        public virtual int Extra { get => extra; }
+        public virtual int Extra 
+        { 
+            get => extra; 
+            set
+            {
+                extra = value;
+            }          
+        }
     }
 
     public class Warrior : Hero
     {
-        public override int Strenght => strenght + 10;
+        public override int Strenght
+        {
+            get => strenght;
+            set
+            {
+                if (value > 250)
+                    strenght = 250;
+                else
+                    strenght = value;
+            }
+        }
 
-        public override int Constitution => constitution + 10;
+        public override int Constitution
+        {
+            get => constitution;
+            set
+            {
+                if (value > 250)
+                    constitution = 250;
+                else
+                    constitution = value;
+            }
+        }
 
-        public override int Intelligence => intelligence - 5;
+        public override int Intelligence
+        {
+            get => intelligence;
+            set
+            {
+                if (value > 100)
+                    intelligence = 100;
+                else
+                    intelligence = value;
+            }
+        }
 
-        public override int Dexterity => dexterity - 5;
-
-        public override int HealthPoint => healthPoint + 100;
-
-        public override int ManaPoint => manaPoint - 25;
-
-
+        public override int Dexterity
+        {
+            get => dexterity;
+            set
+            {
+                if (value > 100)
+                    dexterity = 100;
+                else
+                    dexterity = value;
+            }
+        }
     }
 
     public class Sorcerer : Hero
     {
-        public override int Intelligence => intelligence + 10;
+        public override int Intelligence
+        {
+            get => intelligence;
+            set
+            {
+                if (value > 250)
+                    intelligence = 250;
+                else
+                    intelligence = value;
+            }
+        }
 
-        public override int Constitution => constitution + 5;
+        public override int Constitution
+        {
+            get => constitution;
+            set
+            {
+                if (value > 150)
+                    constitution = 150;
+                else
+                    constitution = value;
+            }
+        }
 
-        public override int Dexterity => dexterity - 10;
+        public override int Dexterity
+        {
+            get => dexterity;
+            set
+            {
+                if (value > 100)
+                    dexterity = 100;
+                else
+                    dexterity = value;
+            }
+        }
 
-        public override int Strenght => strenght + 5;
-
-        public override int HealthPoint => healthPoint - 25;
-
-        public override int ManaPoint => manaPoint + 100;
+         public override int Strenght
+        {
+            get => strenght;
+            set
+            {
+                if (value > 100)
+                    strenght = 100;
+                else
+                    strenght = value;
+            }
+        }
     }
 
     public class Rogue : Hero
     {
-        public override int Dexterity => dexterity + 10;
+        public override int Dexterity
+        {
+            get => dexterity;
+            set
+            {
+                if (value > 250)
+                    dexterity = 250;
+                else
+                    dexterity = value;
+            }
+        }
 
-        public override int Strenght => strenght - 5;
+        public override int Strenght
+        {
+            get => strenght;
+            set
+            {
+                if (value > 150)
+                    strenght = 150;
+                else
+                    strenght = value;
+            }
+        }
 
-        public override int Intelligence => intelligence + 5;
+        public override int Intelligence
+        {
+            get => intelligence;
+            set
+            {
+                if (value > 100)
+                    intelligence = 100;
+                else
+                    intelligence = value;
+            }
+        }
 
-        public override int Constitution => constitution + 5;
-
-        public override int HealthPoint => healthPoint + 50;
-
-        public override int ManaPoint => manaPoint + 25;
+        public override int Constitution
+        {
+            get => constitution;
+            set
+            {
+                if (value > 150)
+                    constitution = 150;
+                else
+                    constitution = value;
+            }
+        }
     }
 }
 
