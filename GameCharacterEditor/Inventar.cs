@@ -15,7 +15,7 @@ namespace GameCharacterEditor
             //string a = allItems[index].ToString().Substring(20);
             if (index == 0)
             {
-                if (intelegence > 70 && lvl > 2 && CheckExistItems("Robe"))
+                if (intelegence > 20 && lvl > 1 && CheckExistItems("Robe"))
                     existItem.Add(new Robe());
                 else if (CheckExistItems("Robe") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
@@ -25,7 +25,7 @@ namespace GameCharacterEditor
 
             else if (index == 1)
             {
-                if (strength > 110 && dexterity > 150 && lvl > 4 && CheckExistItems("Leather"))
+                if (strength > 50 && dexterity > 50 && lvl > 4 && CheckExistItems("Leather"))
                     existItem.Add(new Leather());
                 else if (CheckExistItems("Leather") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
@@ -35,7 +35,7 @@ namespace GameCharacterEditor
 
             else if (index == 2)
             {
-                if (strength > 250 && constitution > 300 && lvl > 7 && CheckExistItems("Hecoy"))
+                if (strength > 250 && constitution > 100 && lvl > 7 && CheckExistItems("Hecoy"))
                     existItem.Add(new Hecoy());
                 else if (CheckExistItems("Hecoy") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
@@ -45,7 +45,7 @@ namespace GameCharacterEditor
 
             else if (index == 3)
             {
-                if (strength > 250 && constitution > 300 && lvl > 7 && CheckExistItems("RobeHelmet"))
+                if (intelegence > 20 && lvl > 1 && CheckExistItems("RobeHelmet"))
                     existItem.Add(new RobeHelmet());
                 else if (CheckExistItems("RobeHelmet") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
@@ -55,7 +55,7 @@ namespace GameCharacterEditor
 
             else if (index == 4)
             {
-                if (strength > 250 && constitution > 300 && lvl > 7 && CheckExistItems("LeatherHelmet"))
+                if (strength > 50 && constitution > 30 && lvl > 4 && CheckExistItems("LeatherHelmet"))
                     existItem.Add(new LeatherHelmet());
                 else if (CheckExistItems("LeatherHelmet") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
@@ -65,7 +65,7 @@ namespace GameCharacterEditor
 
             else if (index == 5)
             {
-                if (strength > 250 && constitution > 300 && lvl > 7 && CheckExistItems("HoceyHelmet"))
+                if (strength > 250 && constitution > 100 && lvl > 7 && CheckExistItems("HoceyHelmet"))
                     existItem.Add(new HoceyHelmet());
                 else if (CheckExistItems("HoceyHelmet") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");

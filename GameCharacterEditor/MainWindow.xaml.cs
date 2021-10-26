@@ -2,19 +2,8 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Threading;
 using MongoDB.Driver;
-using MongoDB.Bson;
 
 namespace GameCharacterEditor
 {
@@ -30,8 +19,8 @@ namespace GameCharacterEditor
         private double dex = 0;
         private double cons = 0;
         private double extra;
-        private int maxExp = 1500;
-        private int currentExp = 1000;
+        private int maxExp = 1000;
+        private int currentExp = 0;
         private int x = 0;
 
         public MainWindow()
@@ -44,31 +33,66 @@ namespace GameCharacterEditor
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            unitLst[x].PhysAttack();
+            try
+            {
+                unitLst[x].PhysAttack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{unitLst[x].Name} {ex.Message}");
+            }
             GetUnitInfo(x);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            unitLst[x].PhysDefence();
+            try
+            {
+                unitLst[x].PhysDefence();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{unitLst[x].Name} {ex.Message}");
+            }
             GetUnitInfo(x);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            unitLst[x].MagicAttack();
+            try
+            {
+                unitLst[x].MagicAttack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{unitLst[x].Name} {ex.Message}");
+            }
             GetUnitInfo(x);
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-            unitLst[x].MagicDefence();
+            try
+            {
+                unitLst[x].MagicDefence();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{unitLst[x].Name} {ex.Message}");
+            }
             GetUnitInfo(x);
+        }
+
+        private void CheckStats()
+        {
+
         }
 
         private void btnVisibility()
         {
-            btnAddExp.Visibility = Visibility.Visible;
+            btnAddExp500.Visibility = Visibility.Visible;
+            btnAddExp1000.Visibility = Visibility.Visible;
+            btnAddExp250.Visibility = Visibility.Visible;
             btnPAttack.Visibility = Visibility.Visible;
             btnMAttack.Visibility = Visibility.Visible;
             btnPDefence.Visibility = Visibility.Visible;
@@ -85,7 +109,9 @@ namespace GameCharacterEditor
 
         private void btnHiiden()
         {
-            btnAddExp.Visibility = Visibility.Hidden;
+            btnAddExp500.Visibility = Visibility.Hidden;
+            btnAddExp1000.Visibility = Visibility.Hidden;
+            btnAddExp250.Visibility = Visibility.Hidden;
             btnPAttack.Visibility = Visibility.Hidden;
             btnMAttack.Visibility = Visibility.Hidden;
             btnPDefence.Visibility = Visibility.Hidden;
@@ -107,14 +133,20 @@ namespace GameCharacterEditor
                 case 0:
                     Warrior warior = new Warrior();
                     GetUnitInfo(warior);
+                    maxExp = 1000;
+                    currentExp = 0;
                     break;
                 case 1:
                     Rogue rogue = new Rogue(); //
                     GetUnitInfo(rogue);
+                    maxExp = 1000;
+                    currentExp = 0;
                     break;
                 case 2:
                     Sorcerer sorcerer = new Sorcerer();
                     GetUnitInfo(sorcerer);
+                    maxExp = 1000;
+                    currentExp = 0;
                     break;
             }
         }
@@ -130,8 +162,8 @@ namespace GameCharacterEditor
             txtAttackSpeed.Text = unitLst[index].AttackSpeed.ToString();
             txtConstitution.Text = unitLst[index].Constitution.ToString();
             txtWalkingSpeed.Text = unitLst[index].WalkingSpeed.ToString();
-            txtLvl.Text = unitLst[index].Lvl.ToString();
             txtExp.Text = unitLst[index].Experience.ToString();
+            txtLvl.Text = unitLst[index].Lvl.ToString();
             extra = double.Parse(txtExtra.Text);
             cons = unitLst[x].Cons;
             intel = unitLst[x].Intel;
@@ -152,9 +184,9 @@ namespace GameCharacterEditor
             txtAttackSpeed.Text = unit.AttackSpeed.ToString();
             txtConstitution.Text = unit.Constitution.ToString();
             txtWalkingSpeed.Text = unit.WalkingSpeed.ToString();
-            txtLvl.Text = unit.Lvl.ToString();
             extra = double.Parse(txtExtra.Text);
             txtExp.Text = unit.Experience.ToString();
+            txtLvl.Text = unit.Lvl.ToString();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -170,6 +202,7 @@ namespace GameCharacterEditor
                     x = unitLst.Count - 1;
                     GetUnitInfo(unitLst.Count - 1);
                     btnVisibility();
+                    Render(x);
                     break;
                 case 1:
                     Rogue rogue = new Rogue(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
@@ -180,6 +213,7 @@ namespace GameCharacterEditor
                     x = unitLst.Count - 1;
                     GetUnitInfo(unitLst.Count - 1);
                     btnVisibility();
+                    Render(x);
                     break;
                 case 2:
                     Sorcerer sorcerer = new Sorcerer(Double.Parse(txtStrength.Text), Double.Parse(txtDexterity.Text), Double.Parse(txtConstitution.Text), Double.Parse(txtIntelegence.Text), txtName.Text, int.Parse(txtLvl.Text));
@@ -190,6 +224,7 @@ namespace GameCharacterEditor
                     x = unitLst.Count - 1;
                     GetUnitInfo(unitLst.Count - 1);
                     btnVisibility();
+                    Render(x);
                     break;
             }
         }
@@ -271,7 +306,7 @@ namespace GameCharacterEditor
                 unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
                 unitLst[x].Intelegence += unitLst[x].Inventar.AllItems[x].Intelegence;
                 unitLst[x].Constitution += unitLst[x].Inventar.AllItems[x].Constitution;
-                Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 //Update();
             }
             catch (Exception ex)
@@ -279,8 +314,6 @@ namespace GameCharacterEditor
                 MessageBox.Show(ex.Message);
             }
         }
-
-
 
         private void Update()
         {
@@ -322,18 +355,24 @@ namespace GameCharacterEditor
             }
         }
 
-        private void txtExp_TextChanged(object sender, TextChangedEventArgs e)
+        private void GetExp(int k)
         {
+            txtExp.Text = (int.Parse(txtExp.Text) + k).ToString();
+            currentExp += k;
             if (currentExp >= maxExp && int.Parse(txtLvl.Text) < 9)
             {
+                currentExp = maxExp;
                 txtLvl.Text = (int.Parse(txtLvl.Text) + 1).ToString();
-                maxExp += 500 * int.Parse(txtLvl.Text);
+                maxExp = currentExp + 1000 * int.Parse(txtLvl.Text);
+                LvlUpdate();
             }
+
+            //FillInfo();
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            if (extra > 0)
+            if (extra > 0 && (int.Parse(txtStrength.Text) < unitLst[x].MaxStr))
             {
                 txtStrength.Text = (int.Parse(txtStrength.Text) + 1).ToString();
                 extra--;
@@ -345,7 +384,7 @@ namespace GameCharacterEditor
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
-            if (extra > 0)
+            if (extra > 0 && (int.Parse(txtDexterity.Text) < unitLst[x].MaxDex))
             {
                 txtDexterity.Text = (int.Parse(txtDexterity.Text) + 1).ToString();
                 extra--;
@@ -356,7 +395,7 @@ namespace GameCharacterEditor
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
-            if (extra > 0)
+            if (extra > 0 && (int.Parse(txtIntelegence.Text) < unitLst[x].MaxIntel))
             {
                 txtIntelegence.Text = (int.Parse(txtIntelegence.Text) + 1).ToString();
                 extra--;
@@ -367,7 +406,7 @@ namespace GameCharacterEditor
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
-            if (extra > 0)
+            if (extra > 0 && (int.Parse(txtConstitution.Text) < unitLst[x].MaxCons))
             {
                 txtConstitution.Text = (int.Parse(txtConstitution.Text) + 1).ToString();
                 extra--;
@@ -378,7 +417,7 @@ namespace GameCharacterEditor
 
         private void Button_Click_12(object sender, RoutedEventArgs e) //
         {
-            if (int.Parse(txtDexterity.Text) - 1 >= 20 && dex > 0)
+            if (int.Parse(txtDexterity.Text) - 1 >= extra && dex > 0)
             {
                 txtDexterity.Text = (int.Parse(txtDexterity.Text) - 1).ToString();
                 extra++;
@@ -389,7 +428,7 @@ namespace GameCharacterEditor
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtIntelegence.Text) - 1 >= 20 && intel > 0)
+            if (int.Parse(txtIntelegence.Text) - 1 >= extra && intel > 0)
             {
                 txtIntelegence.Text = (int.Parse(txtIntelegence.Text) - 1).ToString();
                 extra++;
@@ -400,7 +439,7 @@ namespace GameCharacterEditor
 
         private void Button_Click_14(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtConstitution.Text) - 1 >= 20 && cons > 0)
+            if (int.Parse(txtConstitution.Text) - 1 >= extra && cons > 0)
             {
                 txtConstitution.Text = (int.Parse(txtConstitution.Text) - 1).ToString();
                 extra++;
@@ -411,7 +450,7 @@ namespace GameCharacterEditor
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtStrength.Text) - 1 >= 20 && str > 0)
+            if (int.Parse(txtStrength.Text) - 1 >= extra && str > 0)
             {
                 txtStrength.Text = (int.Parse(txtStrength.Text) - 1).ToString();
                 extra++;
@@ -460,16 +499,16 @@ namespace GameCharacterEditor
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            if (int.Parse(txtLvl.Text) < 9)
+            if (int.Parse(txtLvl.Text) < 9 || !Check())
             {
                 txtExp.Text = (int.Parse(txtExp.Text) + 500).ToString();
                 currentExp += 500;
             }
         }
 
-        private void txtLvl_TextChanged(object sender, TextChangedEventArgs e)
+        private void LvlUpdate()
         {
-            if (int.Parse(txtLvl.Text) > 1 && int.Parse(txtLvl.Text) < 9)
+            if (int.Parse(txtLvl.Text) > 1 && int.Parse(txtLvl.Text) < 9 && !Check())
             {
                 txtConstitution.Text = (int.Parse(txtConstitution.Text) + 10).ToString();
                 txtStrength.Text = (int.Parse(txtStrength.Text) + 10).ToString();
@@ -477,13 +516,71 @@ namespace GameCharacterEditor
                 txtIntelegence.Text = (int.Parse(txtIntelegence.Text) + 10).ToString();
                 txtExtra.Text = (int.Parse(txtExtra.Text) + 5).ToString();
                 extra += 5;
+                unitLst[x].Extra = extra;
                 Refresh();
             }
-            else if (int.Parse(txtLvl.Text) > 1)
+            else if (int.Parse(txtLvl.Text) > 1 || Check())
             {
                 MessageBox.Show("Достигнут максимальный уровень");
-                btnAddExp.Visibility = Visibility.Hidden;
+                btnAddExp500.Visibility = Visibility.Hidden;
+                btnAddExp1000.Visibility = Visibility.Hidden;
+                btnAddExp250.Visibility = Visibility.Hidden;
             }
+            try
+            {
+                if (int.Parse(txtConstitution.Text) >= unitLst[x].MaxCons)
+                {
+                    txtConstitution.Text = unitLst[x].MaxCons.ToString();
+                }
+                if (int.Parse(txtDexterity.Text) >= unitLst[x].MaxDex)
+                {
+                    txtDexterity.Text = unitLst[x].MaxDex.ToString();
+                }
+                if (int.Parse(txtIntelegence.Text) >= unitLst[x].MaxIntel)
+                {
+                    txtIntelegence.Text = unitLst[x].MaxIntel.ToString();
+                }
+                if (int.Parse(txtStrength.Text) >= unitLst[x].MaxStr)
+                {
+                    txtStrength.Text = unitLst[x].MaxStr.ToString();
+                }
+            }
+            catch { }
+        }
+
+        private bool Check()
+        {
+            try
+            {
+                if (int.Parse(txtConstitution.Text) >= unitLst[x].MaxCons && int.Parse(txtDexterity.Text) >= unitLst[x].MaxDex && int.Parse(txtIntelegence.Text) >= unitLst[x].MaxIntel && int.Parse(txtStrength.Text) >= unitLst[x].MaxStr)
+                    return true;
+            }
+            catch
+            {
+
+            }
+
+            return false;
+        }
+
+        private void btnAddExp1000_Click(object sender, RoutedEventArgs e)
+        {
+            GetExp(1000);
+        }
+
+        private void btnAddExp250_Click(object sender, RoutedEventArgs e)
+        {
+            GetExp(250);
+        }
+
+        private void btnAddExp500_Click(object sender, RoutedEventArgs e)
+        {
+            GetExp(500);
+        }
+
+        private void txtExp_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

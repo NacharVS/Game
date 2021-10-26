@@ -16,14 +16,14 @@ namespace GameCharacterEditor
         protected double dexterity; // ловкость
         protected double intelegence;
         protected double constitution; //телосложение
-        private double extra = 20;
+        private double extra = 0;
         private double attackSpeed;
         protected double walkingSpeed;
         protected double pDefence;
         protected double mDefence;
         protected double pAttack;
         protected double mAttack;
-        protected double experience;
+        protected double experience = 0;
         Inventar inventar = new Inventar();
 
         [BsonId]
@@ -72,6 +72,11 @@ namespace GameCharacterEditor
         [BsonElement]
         public double Cons { get; set; }
 
+        public double MaxStr { get; set; }
+        public double MaxDex { get; set; }
+        public double MaxIntel { get; set; }
+        public double MaxCons { get; set; }
+
         public Unit(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl)
         {
             this.strength = strength > extra ? strength : extra;
@@ -88,21 +93,26 @@ namespace GameCharacterEditor
             mp += intelegence * 5;
             mDefence += intelegence * 5;
             pAttack = strength * 5;
-            experience = Lvl * 1000;
         }
 
         public void PhysAttack()
         {
             if (hp - pAttack <= 0)
+            {
+                hp = 0;
                 throw new Exception("Юнит умер");
+            }
             else
                 hp -= pAttack;
         }
 
         public void MagicAttack()
         {
-            if (hp - pAttack <= 0)
+            if (hp - mAttack <= 0)
+            {
+                hp = 0;
                 throw new Exception("Юнит умер");
+            }
             else
                 hp -= mAttack;
         }
@@ -134,7 +144,6 @@ namespace GameCharacterEditor
             }
             catch (Exception ex)
             {
-                throw new Exception($"Не удалось добавить в базу \n {ex.Message}");
             }
         }
 
@@ -157,49 +166,58 @@ namespace GameCharacterEditor
 
     class Warrior : Unit
     {
-        public Warrior() : base(250, 70, 100, 50, "Warrior 1.0", 1)
+        public Warrior() : base(30, 20, 25, 10, "Warrior 1.0", 1)
         {
-            strength = 250;
-            dexterity = 70;
-            constitution = 100;
-            intelegence = 50;
+            MaxStr = 250;
+            MaxDex = 70;
+            MaxCons = 100;
+            MaxIntel = 70;
             name = "Warrior 1.0";
         }
         public Warrior(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl) : base(strength, dexterity, constitution, intelegence, name, Lvl)
         {
-
+            MaxStr = 250;
+            MaxDex = 70;
+            MaxCons = 100;
+            MaxIntel = 70;
         }
     }
 
     class Sorcerer : Unit
     {
-        public Sorcerer() : base(50, 50, 50, 250, "Sorcerer 1.0", 1)
+        public Sorcerer() : base(20, 30, 20, 15, "Sorcerer 1.0", 1)
         {
-            intelegence = 250;
-            strength = 50;
-            constitution = 50;
-            dexterity = 50;
+            MaxIntel = 250;
+            MaxStr = 100;
+            MaxCons = 100;
+            MaxDex = 100;
             name = "Sorcerer 1.0";
         }
         public Sorcerer(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl) : base(strength, dexterity, constitution, intelegence, name, Lvl)
         {
-
+            MaxIntel = 250;
+            MaxStr = 100;
+            MaxCons = 100;
+            MaxDex = 100;
         }
     }
 
     class Rogue : Unit
     {
-        public Rogue() : base(60, 250, 60, 100, "Rogue 1.0", 1)
+        public Rogue() : base(15, 20, 20, 30, "Rogue 1.0", 1)
         {
-            dexterity = 250;
-            strength = 60;
-            intelegence = 100;
-            constitution = 60;
+            MaxDex = 250;
+            MaxStr = 60;
+            MaxIntel = 100;
+            MaxCons = 60;
             name = "Rogue 1.0";
         }
         public Rogue(double strength, double dexterity, double constitution, double intelegence, string name, int Lvl) : base(strength, dexterity, constitution, intelegence, name, Lvl)
         {
-
+            MaxDex = 250;
+            MaxStr = 60;
+            MaxIntel = 100;
+            MaxCons = 60;
         }
     }
 }
