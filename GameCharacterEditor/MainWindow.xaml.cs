@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace GameCharacterEditor
 {
@@ -21,14 +24,24 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Hero> herolist = new List<Hero>();
         double ex = 0;
         double level = 0;
+        double lvlex = 0;
         double exstr = 0;
         double exdox = 0;
         double exint = 0;
         double exconst = 0;
         bool create = false;
+        bool arm = false;
+        bool hel = false;
+        bool weap = false;
+        int aind;
+        int hind;
+        int wind;
+        double maxstr = 0;
+        double maxdox = 0;
+        double maxint = 0;
+        double maxconst = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -49,20 +62,7 @@ namespace GameCharacterEditor
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ex > 0 && exstr < 20 && create == true && level !=14 )
-            {
-                int str = Convert.ToInt32(strlab.Content) + 1;
-                strlab.Content = str;
-                ex--;
-                exstr++;
-                Change_val();
-                if (level == 14)
-                {
-                    ex = 0;
-                    extralab.Content = 0;
-                }
-            }
-            else if (level == 14 && create == true && ex > 0)
+            if (ex > 0 && create == true && int.Parse(strlab.Content.ToString()) != maxstr)
             {
                 int str = Convert.ToInt32(strlab.Content) + 1;
                 strlab.Content = str;
@@ -86,20 +86,7 @@ namespace GameCharacterEditor
 
         private void plusdox_Click(object sender, RoutedEventArgs e)
         {
-            if (ex > 0 && exdox < 20 && create == true && level != 14)
-            {
-                int dox = Convert.ToInt32(doxlab.Content) + 1;
-                doxlab.Content = dox;
-                ex--;
-                exdox++;
-                Change_val();
-                if (level == 14)
-                {
-                    ex = 0;
-                    extralab.Content = 0;
-                }
-            }
-            else if (level == 14 && create == true && ex > 0)
+            if (ex > 0 && create == true && int.Parse(doxlab.Content.ToString()) != maxdox)
             {
                 int dox = Convert.ToInt32(doxlab.Content) + 1;
                 doxlab.Content = dox;
@@ -135,20 +122,7 @@ namespace GameCharacterEditor
 
         private void plusint_Click(object sender, RoutedEventArgs e)
         {
-            if (ex > 0 && exint < 20 && create == true && level != 14)
-            {
-                int intel = Convert.ToInt32(intelab.Content) + 1;
-                intelab.Content = intel;
-                ex--;
-                exint++;
-                Change_val();
-                if (level == 14)
-                {
-                    ex = 0;
-                    extralab.Content = 0;
-                }
-            }
-            else if (level == 14 && create == true && ex > 0)
+            if (ex > 0  && create == true && int.Parse(intelab.Content.ToString()) != maxint)
             {
                 int intel = Convert.ToInt32(intelab.Content) + 1;
                 intelab.Content = intel;
@@ -160,20 +134,7 @@ namespace GameCharacterEditor
 
         private void plusconst_Click(object sender, RoutedEventArgs e)
         {
-            if (ex > 0 && exconst < 20 && create == true && level != 14)
-            {
-                int con = Convert.ToInt32(conslab.Content) + 1;
-                conslab.Content = con;
-                ex--;
-                exconst++;
-                Change_val();
-                if (level == 14)
-                {
-                    ex = 0;
-                    extralab.Content = 0;
-                }
-            }
-            else if (level == 14 && create == true && ex > 0)
+            if (ex > 0  && create == true && int.Parse(conslab.Content.ToString()) != maxconst)
             {
                 int con = Convert.ToInt32(conslab.Content) + 1;
                 conslab.Content = con;
@@ -199,20 +160,23 @@ namespace GameCharacterEditor
         {
             if (typepers.SelectedIndex == 0)
             {
-                Warrior warior = new Warrior(int.Parse(strlab.Content.ToString()), int.Parse(doxlab.Content.ToString()), int.Parse(intelab.Content.ToString()), int.Parse(conslab.Content.ToString()), namepers.Text, int.Parse(levelb.Content.ToString()));
-                herolist.Add(warior);
+                Warrior warior = new Warrior(int.Parse(strlab.Content.ToString()), int.Parse(doxlab.Content.ToString()), int.Parse(intelab.Content.ToString()), int.Parse(conslab.Content.ToString()), namepers.Text, int.Parse(levelb.Content.ToString()), int.Parse(extralab.Content.ToString()));
+                warior.Add(warior);
+                //var lst = Hero.TakeList();
                 MessageBox.Show("Hero is created");
             }
             else if (typepers.SelectedIndex == 1)
             {
-                Sorcerer sork = new Sorcerer(int.Parse(strlab.Content.ToString()), int.Parse(doxlab.Content.ToString()), int.Parse(intelab.Content.ToString()), int.Parse(conslab.Content.ToString()), namepers.Text, int.Parse(levelb.Content.ToString()));
-                herolist.Add(sork);
+                Sorcerer sork = new Sorcerer(int.Parse(strlab.Content.ToString()), int.Parse(doxlab.Content.ToString()), int.Parse(intelab.Content.ToString()), int.Parse(conslab.Content.ToString()), namepers.Text, int.Parse(levelb.Content.ToString()), int.Parse(extralab.Content.ToString()));
+                sork.Add(sork);
+                //var lst = Hero.TakeList();
                 MessageBox.Show("Hero is created");
             }
             else if (typepers.SelectedIndex == 2)
             {
-                Rogue rogue = new Rogue(int.Parse(strlab.Content.ToString()), int.Parse(doxlab.Content.ToString()), int.Parse(intelab.Content.ToString()), int.Parse(conslab.Content.ToString()), namepers.Text, int.Parse(levelb.Content.ToString()));
-                herolist.Add(rogue);
+                Rogue rogue = new Rogue(int.Parse(strlab.Content.ToString()), int.Parse(doxlab.Content.ToString()), int.Parse(intelab.Content.ToString()), int.Parse(conslab.Content.ToString()), namepers.Text, int.Parse(levelb.Content.ToString()), int.Parse(extralab.Content.ToString()));
+                rogue.Add(rogue);
+                //var lst = Hero.TakeList();
                 MessageBox.Show("Hero is created");
             }
             else
@@ -237,7 +201,12 @@ namespace GameCharacterEditor
             malab.Content = war.MAttack;
             mdlab.Content = war.MDefence;
             levelb.Content = war.Level;
+            maxstr = war.MaxStr;
+            maxdox = war.MaxDox;
+            maxint = war.MaxInt;
+            maxconst = war.MaxConst;
             level = war.Level;
+            lvlex = 0;
             ex = war.Extra;
             create = true;
             extralab.Content = ex;
@@ -256,6 +225,10 @@ namespace GameCharacterEditor
             conslab.Content = sor.Constitution;
             hp.Content = sor.HP;
             mp.Content = sor.MP;
+            maxstr = sor.MaxStr;
+            maxdox = sor.MaxDox;
+            maxint = sor.MaxInt;
+            maxconst = sor.MaxConst;
             atslab.Content = sor.AttackSpeed;
             wslab.Content = sor.WalkingSpeed;
             palab.Content = sor.PAttack;
@@ -264,6 +237,7 @@ namespace GameCharacterEditor
             mdlab.Content = sor.MDefence;
             levelb.Content = sor.Level;
             level = sor.Level;
+            lvlex = 0;
             ex = sor.Extra;
             create = true;
             extralab.Content = ex;
@@ -282,6 +256,10 @@ namespace GameCharacterEditor
             conslab.Content = rog.Constitution;
             hp.Content = rog.HP;
             mp.Content = rog.MP;
+            maxstr = rog.MaxStr;
+            maxdox = rog.MaxDox;
+            maxint = rog.MaxInt;
+            maxconst = rog.MaxConst;
             atslab.Content = rog.AttackSpeed;
             wslab.Content = rog.WalkingSpeed;
             palab.Content = rog.PAttack;
@@ -290,6 +268,7 @@ namespace GameCharacterEditor
             mdlab.Content = rog.MDefence;
             levelb.Content = rog.Level;
             level = rog.Level;
+            lvlex = 0;
             ex = rog.Extra;
             create = true;
             extralab.Content = ex;
@@ -309,14 +288,167 @@ namespace GameCharacterEditor
             pdlab.Content = int.Parse(doxlab.Content.ToString()) * 3 + int.Parse(conslab.Content.ToString()) * 5;
             malab.Content = int.Parse(intelab.Content.ToString()) * 10;
             mdlab.Content = int.Parse(intelab.Content.ToString()) * 5;
-            if (ex == 0 && level != 14)
-            {
-                level++;
-                levelb.Content = level;
-                ex = ex + 5;
-            }
+            levelb.Content = level;
             extralab.Content = ex;
             return 0;
+        }
+
+        private void add_ba_Click(object sender, RoutedEventArgs e)
+        {
+            if (arm == false && create == true)
+            {
+                if (bodyarmorbox.SelectedIndex == 0)
+                {
+                    inventlist.Items.Add("Robe armor");
+                    aind = inventlist.Items.IndexOf("Robe armor");
+                    RobeArmor rarm = new RobeArmor();
+                    intelab.Content = int.Parse(intelab.Content.ToString()) + rarm.Intelegence;
+                    mp.Content = int.Parse(mp.Content.ToString()) + rarm.MP;
+                    malab.Content = int.Parse(malab.Content.ToString()) + rarm.MAttack;
+                    pdlab.Content = int.Parse(pdlab.Content.ToString()) + rarm.PDefence;
+                    mdlab.Content = int.Parse(pdlab.Content.ToString()) + rarm.MDefence;
+                    Change_val();
+                    arm = true;
+                }
+                else if (bodyarmorbox.SelectedIndex == 1)
+                {
+                    inventlist.Items.Add("Leather armor");
+                    aind = inventlist.Items.IndexOf("Leather armor");
+                    LeatherArmor larm = new LeatherArmor();
+                    doxlab.Content = int.Parse(doxlab.Content.ToString()) + larm.Doxterity;
+                    arm = true;
+                }
+                else if (bodyarmorbox.SelectedIndex == 2)
+                {
+                    inventlist.Items.Add("Iron armor");
+                    aind = inventlist.Items.IndexOf("Iron armor");
+                    arm = true;
+                }
+            }
+            else if (arm == true && create == true)
+            {
+                if (bodyarmorbox.SelectedIndex == 0)
+                {
+                    inventlist.Items[aind] = "Robe armor";
+                }
+                else if (bodyarmorbox.SelectedIndex == 1)
+                {
+                    inventlist.Items[aind] = "Leather armor";
+                }
+                else if (bodyarmorbox.SelectedIndex == 2)
+                {
+                    inventlist.Items[aind] = "Iron armor";
+                }
+            }
+
+        }
+
+        private void add_hel_Click(object sender, RoutedEventArgs e)
+        {
+            if (hel == false && create == true)
+            {
+                if (helmetbox.SelectedIndex == 0)
+                {
+                    inventlist.Items.Add("Robe helmet");
+                    hind = inventlist.Items.IndexOf("Robe helmet");
+                    hel = true;
+                }
+                else if (helmetbox.SelectedIndex == 1)
+                {
+                    inventlist.Items.Add("Leather helmet");
+                    hind = inventlist.Items.IndexOf("Leather helmet");
+                    hel = true;
+                }
+                else if (helmetbox.SelectedIndex == 2)
+                {
+                    inventlist.Items.Add("Iron helmet");
+                    hind = inventlist.Items.IndexOf("Iron helmet");
+                    hel = true;
+                }
+            }
+            else if (hel == true && create == true)
+            {
+                if (helmetbox.SelectedIndex == 0)
+                {
+                    inventlist.Items[hind] = "Robe helmet";
+                }
+                else if (helmetbox.SelectedIndex == 1)
+                {
+                    inventlist.Items[hind] = "Leather helmet";
+                }
+                else if (helmetbox.SelectedIndex == 2)
+                {
+                    inventlist.Items[hind] = "Iron helmet";
+                }
+            }
+        }
+
+        private void add_weap_Click(object sender, RoutedEventArgs e)
+        {
+            if (weap == false && create == true)
+            {
+                if (weaponbox.SelectedIndex == 0)
+                {
+                    inventlist.Items.Add("Truncheon");
+                    wind = inventlist.Items.IndexOf("Truncheon");
+                    weap = true;
+                }
+                else if (weaponbox.SelectedIndex == 1)
+                {
+                    inventlist.Items.Add("Dagger");
+                    wind = inventlist.Items.IndexOf("Dagger");
+                    weap = true;
+                }
+                else if (weaponbox.SelectedIndex == 2)
+                {
+                    inventlist.Items.Add("Sword");
+                    wind = inventlist.Items.IndexOf("Sword");
+                    weap = true;
+                }
+            }
+            else if (weap == true && create == true)
+            {
+                if (weaponbox.SelectedIndex == 0)
+                {
+                    inventlist.Items[wind] = "Truncheon";
+                }
+                else if (weaponbox.SelectedIndex == 1)
+                {
+                    inventlist.Items[wind] = "Dagger";
+                }
+                else if (weaponbox.SelectedIndex == 2)
+                {
+                    inventlist.Items[wind] = "Sword";
+                }
+            }
+        }
+
+        private void levelplus_Click(object sender, RoutedEventArgs e)
+        {
+            if (create == true)
+            {
+                lvlex += 1000;
+                if (lvlex == 1000) { level = 2; ex += 5; }
+                else if (lvlex == 3000) { level = 3; ex += 5; }
+                else if (lvlex == 6000) { level = 4; ex += 5; }
+                else if (lvlex == 10000) { level = 5; ex += 5; }
+                else if (lvlex == 15000) { level = 6; ex += 5; }
+                else if (lvlex == 21000) { level = 7; ex += 5; }
+                else if (lvlex == 28000) { level = 8; ex += 5; }
+                else if (lvlex == 36000) { level = 9; ex += 5; }
+                else if (lvlex == 45000) { level = 10; ex += 5; }
+                else if (lvlex == 55000) { level = 11; ex += 5; }
+                else if (lvlex == 66000) { level = 12; ex += 5; }
+                else if (lvlex == 78000) { level = 13; ex += 5; }
+                else if (lvlex == 91000) { level = 14; ex += 5; }
+                else if (lvlex == 105000) { level = 15; ex += 5; }
+                else if (lvlex == 120000) { level = 16; ex += 5; }
+                else if (lvlex == 136000) { level = 17; ex += 5; }
+                else if (lvlex == 153000) { level = 18; ex += 5; }
+                else if (lvlex == 171000) { level = 19; ex += 5; }
+                else if (lvlex == 190000) { level = 20; ex += 5; }
+                Change_val();
+            }
         }
     }
 }

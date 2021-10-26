@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace GameCharacterEditor
 {
@@ -20,8 +23,11 @@ namespace GameCharacterEditor
         protected double pDefence = 0;
         protected double mAttack = 0;
         protected double mDefence = 0;
-        private double extra = 20;
+        protected double extra = 0;
 
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId _id { get; set; }
         public double Level { get => lvl; set => lvl = value; }
         public double Strength { get => strength; set => strength = value; }
         public double Doxterity { get => doxterity; set => doxterity = value; }
@@ -40,7 +46,8 @@ namespace GameCharacterEditor
         public string Name { get => name; set => name = value; }
 
 
-        public Hero(double strength, double doxterity, double intelegence, double constitution, string name, double lvl)
+
+        public Hero(double strength, double doxterity, double intelegence, double constitution, string name, double lvl, double extra)
         {
             this.strength = strength;
             this.doxterity = doxterity;
@@ -48,6 +55,7 @@ namespace GameCharacterEditor
             this.constitution = constitution;
             this.name = name;
             this.lvl = lvl;
+            this.extra = extra;
             hp = strength * 5 + constitution * 10;
             mp = intelegence * 5;
             attackSpeed = doxterity * 5;
@@ -58,5 +66,13 @@ namespace GameCharacterEditor
             pDefence += constitution * 5 + doxterity * 3;
         }
 
+        public static List<Hero> TakeList()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("Persons");
+            var collection = db.GetCollection<Hero>("person");
+            List<Hero> lst = collection.AsQueryable().ToList();
+            return lst;
+        }
     }
 }

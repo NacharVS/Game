@@ -153,9 +153,9 @@
         </Button>
         <TextBox x:Name="namepers" HorizontalAlignment="Left" Height="23" Margin="30,67,0,0" TextWrapping="Wrap" Text="Name of hero" VerticalAlignment="Top" Width="113" FontFamily="Comic Sans MS" FontSize="14"/>
         <ComboBox x:Name="typepers" Text="Type of hero" IsEditable="True" IsReadOnly="True" HorizontalAlignment="Left" Height="25" Margin="30,25,0,0" VerticalAlignment="Top" Width="111" FontFamily="Comic Sans MS" FontSize="14">
-            <ComboBoxItem Content="Warrior" Selected="War_Selected"/>
-            <ComboBoxItem Content="Sorcerer" Selected="Sor_Selected"/>
-            <ComboBoxItem Content="Rogue" Selected="Rog_Selected"/>
+            <ComboBoxItem Content="Warrior" Selected="War_Selected" FontFamily="Comic Sans MS" FontSize="14"/>
+            <ComboBoxItem Content="Sorcerer" Selected="Sor_Selected" FontFamily="Comic Sans MS" FontSize="14"/>
+            <ComboBoxItem Content="Rogue" Selected="Rog_Selected" FontFamily="Comic Sans MS" FontSize="14"/>
         </ComboBox>
         <Border Background="#FF7CD4D2" Margin="30,123,351,302" CornerRadius="10">
             <Border.Effect>
@@ -246,10 +246,15 @@
                 <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="62" Background="White" Canvas.Left="128" Canvas.Top="203">
                     <Label x:Name="extralab" Content="" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="30,-3,0,0" FontFamily="Comic Sans MS" FontSize="14"/>
                 </Border>
-                <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="48" Background="White" Canvas.Left="289" Canvas.Top="203">
-                    <Label x:Name="levelb" Content="" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="38" Margin="13,0,0,0" Cursor="" FontFamily="Comic Sans MS" FontSize="14"/>
+                <Border BorderThickness="1" BorderBrush="Black" Height="26" Width="48" Background="White" Canvas.Left="270" Canvas.Top="203">
+                    <Label x:Name="levelb" Content="" Height="26" VerticalAlignment="Center" Margin="13,0,-5,0" Cursor="" FontFamily="Comic Sans MS" FontSize="14"/>
                 </Border>
                 <Label x:Name="extra_Copy" Content="Level" Width="49" FontFamily="Comic Sans MS" FontStyle="Italic" FontSize="14" Height="31" Canvas.Left="214" Canvas.Top="201" FontWeight="Bold"/>
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="levelplus"  Content="+1000 EX" FontFamily="Comic Sans MS" FontSize="14" Height="26" Canvas.Left="330" Canvas.Top="203" Width="74" Click="levelplus_Click">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                    </Button.Effect>
+                </Button>
             </Canvas>
         </Border>
         <Canvas HorizontalAlignment="Left" Height="99" Margin="180,12,0,0" VerticalAlignment="Top" Width="218">
@@ -306,6 +311,36 @@
                 <ListView x:Name="inventlist" Height="126" Width="186" Background="White" FontFamily="Comic Sans MS" FontSize="14" FontStyle="Italic" Canvas.Left="29" Canvas.Top="19" BorderBrush="Black" Margin="0,0,0,0">
 
                 </ListView>
+                <ComboBox x:Name="bodyarmorbox" Text="Body armor" IsEditable="True" IsReadOnly="True" Height="25" Width="125" FontFamily="Comic Sans MS" FontSize="14" Canvas.Left="221" Canvas.Top="19">
+                    <ComboBoxItem Content="Robe armor" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <ComboBoxItem Content="Leather armor" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <ComboBoxItem Content="Iron armor" FontFamily="Comic Sans MS" FontSize="14"/>
+                </ComboBox>
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="add_ba"  Content="Add" Height="25" Width="54" FontFamily="Comic Sans MS" FontSize="14" Canvas.Left="356" Canvas.Top="19" Click="add_ba_Click">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                    </Button.Effect>
+                </Button>
+                <ComboBox x:Name="helmetbox" Text="Helmet" IsEditable="True" IsReadOnly="True" Height="25" Width="125" FontFamily="Comic Sans MS" FontSize="14" Canvas.Left="221" Canvas.Top="58" RenderTransformOrigin="0.484,1.414">
+                    <ComboBoxItem Content="Robe helmet" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <ComboBoxItem Content="Leather helmet" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <ComboBoxItem Content="Iron helmet" FontFamily="Comic Sans MS" FontSize="14"/>
+                </ComboBox>
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="add_hel"  Content="Add" Height="25" Width="54" FontFamily="Comic Sans MS" FontSize="14" Canvas.Left="356" Canvas.Top="58" Click="add_hel_Click">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                    </Button.Effect>
+                </Button>
+                <ComboBox x:Name="weaponbox" Text="Weapon" IsEditable="True" IsReadOnly="True" Height="25" Width="125" FontFamily="Comic Sans MS" FontSize="14" Canvas.Left="221" Canvas.Top="97" RenderTransformOrigin="0.484,1.414">
+                    <ComboBoxItem Content="Truncheon" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <ComboBoxItem Content="Dagger" FontFamily="Comic Sans MS" FontSize="14"/>
+                    <ComboBoxItem Content="Sword" FontFamily="Comic Sans MS" FontSize="14"/>
+                </ComboBox>
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="add_weap"  Content="Add" Height="25" Width="54" FontFamily="Comic Sans MS" FontSize="14" Canvas.Left="356" Canvas.Top="97" Click="add_weap_Click">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                    </Button.Effect>
+                </Button>
             </Canvas>
         </Border>
     </Grid>
