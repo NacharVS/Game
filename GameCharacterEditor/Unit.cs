@@ -29,6 +29,7 @@ namespace GameCharacterEditor
         protected double woolding_Speed = 20;
         protected double lvl;
         protected double experience;
+        
 
         [BsonElement]
         public double Strenght { get => strenght; set => strenght = value; }
@@ -58,6 +59,10 @@ namespace GameCharacterEditor
         public double Wooling_Speed { get => woolding_Speed; set => woolding_Speed = value; }
         [BsonElement]
         public double Experience { get => experience; set => experience = value; }
+        public static double MaxStrenght { get; set; }
+        public static double MaxdDexterity { get; set; }
+        public  static double MaxIntelegence { get; set; }
+        public static double MaxConstitution { get; set; }
 
         public static void Add(Unit unit)
         {

@@ -73,7 +73,7 @@
         </Button>
         <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="669,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="78" IsEnabled="False" TextAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"/>
         <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="572,33,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="294" FontWeight="Bold"/>
-        <TextBox x:Name="lvltxt" HorizontalAlignment="Left" Margin="670,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Text="0" TextAlignment="Center" FontSize="20" IsEnabled="False" TextChanged="lvltxt_TextChanged"/>
+        <TextBox x:Name="lvltxt" HorizontalAlignment="Left" Margin="670,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Text="0" TextAlignment="Center" FontSize="20" IsEnabled="False" />
         <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="612,159,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="236" FontWeight="Bold"/>
         <ComboBox x:Name="Hero" HorizontalAlignment="Left" Margin="291,280,0,0" VerticalAlignment="Top" Width="239" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Comic Sans MS" FontSize="16" Background="{x:Null}" Height="45" BorderBrush="{x:Null}">
             <ComboBox.Effect>

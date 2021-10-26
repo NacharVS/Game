@@ -20,8 +20,10 @@ namespace GameCharacterEditor
             Agility_Buffs_Constitution();
             Agility_Buffs_Dexterity();
             Attack_Unit();
-            
-
+            MaxStrenght = 300;
+            MaxdDexterity = 95;
+            MaxIntelegence = 80;
+            MaxConstitution = 150;
         }
         public void Attack_Unit()
         {

@@ -39,13 +39,6 @@ namespace GameCharacterEditor
 
         }
 
-        private void ZeroZero()
-        {
-            double strenghtt = 0;
-            double dexterityy = 0;
-            double intelegense = 0;
-            double constribution = 0;
-        }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -56,28 +49,27 @@ namespace GameCharacterEditor
                     Characters(unit1);
                     extraPoint = unit1.Extra;
                     Choosehero();
-                    ZeroZero();
                     break;
                 case 1:
                     unit1 = new Rogue();
                     Characters(unit1);
                     Choosehero();
                     extraPoint = unit1.Extra;
-                    ZeroZero();
+                    
                     break;
                 case 2:
                     unit1 = new Magic_dude();
                     Characters(unit1);
                     extraPoint = unit1.Extra;
                     Choosehero();
-                    ZeroZero();
+                    
                     break;
                 case 3:
                     unit1 = new Archer();
                     Characters(unit1);
                     extraPoint = unit1.Extra;
                     Choosehero();
-                    ZeroZero();
+                  
                     break;
 
             }
@@ -117,10 +109,11 @@ namespace GameCharacterEditor
 
         private void bnt_clickm1_Click(object sender, RoutedEventArgs e)
         {
-            if (strenghtt <= extraPoint && strenghtt > 0)
+            if (int.Parse(labelstrenght.Text) - 1 >= extraPoint && strenghtt > 0)
             {
                 labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) - 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) + 1).ToString();
+                extraPoint++;
                 strenghtt--;
             }
             else
@@ -132,10 +125,11 @@ namespace GameCharacterEditor
         int count = 0;
         private void bnt_clickp1_Click(object sender, RoutedEventArgs e)
         {
-            if (strenghtt < extraPoint)
+            if (extraPoint>0 && int.Parse(labelstrenght.Text) < Unit.MaxStrenght)
             {
                 labelstrenght.Text = (Convert.ToDouble(labelstrenght.Text) + 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) - 1).ToString();
+                extraPoint--;
                 strenghtt++;
             }
             else
@@ -159,10 +153,11 @@ namespace GameCharacterEditor
 
         private void bnt_clickm2_Click(object sender, RoutedEventArgs e)
         {
-            if ( dexterityy <= extraPoint && dexterityy > 0)
+            if ( int.Parse(labeldexterity.Text) - 1 >= extraPoint && dexterityy > 0)
             {
                 labeldexterity.Text = (Convert.ToDouble(labeldexterity.Text) - 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) + 1).ToString();
+                extraPoint++;
                 dexterityy--;
             }
             else
@@ -174,10 +169,11 @@ namespace GameCharacterEditor
 
         private void bnt_clickp2_Click(object sender, RoutedEventArgs e)
         {
-            if (dexterityy < extraPoint)
+            if (extraPoint > 0 && int.Parse(labeldexterity.Text) < Unit.MaxdDexterity)
             {
                 labeldexterity.Text = (Convert.ToDouble(labeldexterity.Text) + 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) - 1).ToString();
+                extraPoint--;
                 dexterityy++;
             }
             else
@@ -189,10 +185,11 @@ namespace GameCharacterEditor
 
         private void bnt_clickm3_Click(object sender, RoutedEventArgs e)
         {
-            if (intelegense <= extraPoint && intelegense > 0)
+            if (int.Parse(labelintelegence.Text) - 1 >= extraPoint && intelegense > 0)
             {
                 labelintelegence.Text = (Convert.ToDouble(labelintelegence.Text) - 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) + 1).ToString();
+                extraPoint++;
                 intelegense--;
             }
             else
@@ -204,10 +201,11 @@ namespace GameCharacterEditor
 
         private void bnt_clickp3_Click(object sender, RoutedEventArgs e)
         {
-            if (intelegense < extraPoint)
+            if (extraPoint > 0 && int.Parse(labelintelegence.Text) < Unit.MaxIntelegence)
             {
                 labelintelegence.Text = (Convert.ToDouble(labelintelegence.Text) + 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) - 1).ToString();
+                extraPoint--;
                 intelegense++;
             }
             else
@@ -219,10 +217,11 @@ namespace GameCharacterEditor
 
         private void bnt_clickm4_Click(object sender, RoutedEventArgs e)
         {
-            if (constribution <= extraPoint && constribution > 0)
+            if (int.Parse(constitutionlabel.Text)- 1 >= extraPoint && constribution > 0)
             {
                 constitutionlabel.Text = (Convert.ToDouble(constitutionlabel.Text) - 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) + 1).ToString();
+                extraPoint++;
                 constribution--;
             }
             else
@@ -234,10 +233,11 @@ namespace GameCharacterEditor
 
         private void bnt_clickp4_Click(object sender, RoutedEventArgs e)
         {
-            if (constribution < extraPoint)
+            if (extraPoint > 0 && int.Parse(constitutionlabel.Text) < Unit.MaxConstitution)
             {
                 constitutionlabel.Text = (Convert.ToDouble(constitutionlabel.Text) + 1).ToString();
                 textpoint.Text = (int.Parse(textpoint.Text) - 1).ToString();
+                extraPoint--;
                 constribution++;
             }
             else
@@ -268,6 +268,7 @@ namespace GameCharacterEditor
                 makslvl.Text = lvlmax.ToString();
                 MessageBox.Show("Уровень повышен!");
                 lvltxt.Text = (int.Parse(lvltxt.Text) + 1).ToString();
+                LvlUp();
             }
         }
 
@@ -283,6 +284,7 @@ namespace GameCharacterEditor
                 makslvl.Text = lvlmax.ToString();
                 MessageBox.Show("Уровень повышен!");
                 lvltxt.Text = (int.Parse(lvltxt.Text) + 1).ToString();
+                LvlUp();
             }
         }
 
@@ -300,13 +302,10 @@ namespace GameCharacterEditor
             catch { }
         }
 
-        private void lvltxt_TextChanged(object sender, TextChangedEventArgs e)
+        private void LvlUp()
         {
-            if (int.Parse(textpoint.Text) != 0)
-            {
-                textpoint.Text = (int.Parse(textpoint.Text) + 5).ToString();
-                extraPoint += 5;
-            }
+            textpoint.Text = (int.Parse(textpoint.Text) + 5).ToString();
+            extraPoint += 5;
         }
         private void refresh()
         {
