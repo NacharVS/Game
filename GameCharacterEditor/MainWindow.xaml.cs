@@ -142,7 +142,7 @@ namespace GameCharacterEditor
             {
                 if (count == 1)
                 {
-                    MessageBox.Show("Ты че дурачёк,не понимаешь???");
+                    MessageBox.Show("Ты не понимаешь???");
                 }
 
                 else if (count >= 2)
