@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace GameCharacterEditor
 {
@@ -43,7 +46,13 @@ namespace GameCharacterEditor
             constitution = 20;
         }
 
-        
+        public void Add(Unit unit)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("Person");
+            var collection = db.GetCollection<Unit>("person");
+            collection.InsertOne(unit);
+        }
 
     }
 
@@ -56,6 +65,14 @@ namespace GameCharacterEditor
             dexterity = 70;
             intelligence = 50;
             constitution = 100;
+            pAttack = strenght * 5;
+            pResist = constitution * 5 + dexterity * 3;
+            mana = intelligence * 5;
+            mAttack = intelligence * 10;
+            mResist = intelligence * 5;
+            health = strenght * 5 + constitution * 10;
+            attackSpeed = dexterity * 5;
+            walkSpeed = dexterity * 2;
         }
     }
 
@@ -68,6 +85,22 @@ namespace GameCharacterEditor
             dexterity = 50;
             intelligence = 250;
             constitution = 50;
+            pAttack = strenght * 5;
+            pResist = constitution * 5 + dexterity * 3;
+            mana = intelligence * 5;
+            mAttack = intelligence * 10;
+            mResist = intelligence * 5;
+            health = strenght * 5 + constitution * 10;
+            attackSpeed = dexterity * 5;
+            walkSpeed = dexterity * 2;
+        }
+
+        public void Add(Witch witch)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("Person");
+            var collection = db.GetCollection<Witch>("person");
+            collection.InsertOne(witch);
         }
     }
 
@@ -80,6 +113,22 @@ namespace GameCharacterEditor
             dexterity = 250;
             intelligence = 100;
             constitution = 60;
+            pAttack = strenght * 5;
+            pResist = constitution * 5 + dexterity * 3;
+            mana = intelligence * 5;
+            mAttack = intelligence * 10;
+            mResist = intelligence * 5;
+            health = strenght * 5 + constitution * 10;
+            attackSpeed = dexterity * 5;
+            walkSpeed = dexterity * 2;
+        }
+
+        public void Add(Rogue rogue)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("Person");
+            var collection = db.GetCollection<Rogue>("person");
+            collection.InsertOne(rogue);
         }
     }
 }

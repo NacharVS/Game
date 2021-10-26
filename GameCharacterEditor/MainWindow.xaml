@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800">
     <Grid x:Name="Fon" Margin="0,0,0,-6" Background="AliceBlue">
-        <Button x:Name="Create_character" Content="Создать персонажа" HorizontalAlignment="Left" Margin="538,310,0,0" VerticalAlignment="Top" Width="132" Height="22" Click="Create_character_Click"/>
+        <Button x:Name="Create_character" Content="Создать персонажа" HorizontalAlignment="Left" Margin="538,310,0,0" VerticalAlignment="Top" Width="132" Height="22" Click="Create_character_Click" Background="#FFC7E6F6"/>
         <Label x:Name="Choose_class" Content="Выберите класс персонажа" HorizontalAlignment="Left" Margin="90,35,0,0" VerticalAlignment="Top"/>
         <Image x:Name="image_character" HorizontalAlignment="Left" Height="250" Margin="470,35,0,0" VerticalAlignment="Top" Width="260"/>
         <Label x:Name="name_character" Content="Введите имя персонажа" HorizontalAlignment="Left" Margin="100,122,0,0" VerticalAlignment="Top"/>
@@ -40,17 +40,17 @@
         <Label x:Name="p__Resist" Content="физ. Сопростивление" HorizontalAlignment="Left" Margin="45,555,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Intelligently" Content="Интелект" HorizontalAlignment="Left" Margin="45,336,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Dexterity" Content="Ловкость" HorizontalAlignment="Left" Margin="250,274,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="plus_str" Content="+" HorizontalAlignment="Left" Margin="170,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_str_Click"/>
-        <Button x:Name="plus_const" Content="+" HorizontalAlignment="Left" Margin="375,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_const_Click"/>
-        <Button x:Name="plus_dex" Content="+" HorizontalAlignment="Left" Margin="375,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_dex_Click"/>
-        <Button x:Name="plus_int" Content="+" HorizontalAlignment="Left" Margin="170,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_int_Click"/>
-        <Button x:Name="minus_str" Content="-" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_str_Click"/>
-        <Button x:Name="minus_const" Content="-" HorizontalAlignment="Left" Margin="223,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_const_Click"/>
-        <Button x:Name="minus_dex" Content="-" HorizontalAlignment="Left" Margin="223,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_dex_Click"/>
-        <Button x:Name="minus_int" Content="-" HorizontalAlignment="Left" Margin="20,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_int_Click"/>
+        <Button x:Name="plus_str" Content="+" HorizontalAlignment="Left" Margin="170,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_str_Click" Background="#FFC7E6F6"/>
+        <Button x:Name="plus_const" Content="+" HorizontalAlignment="Left" Margin="375,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_const_Click" Background="#FFC7E6F6"/>
+        <Button x:Name="plus_dex" Content="+" HorizontalAlignment="Left" Margin="375,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_dex_Click" Background="#FFC7E6F6"/>
+        <Button x:Name="plus_int" Content="+" HorizontalAlignment="Left" Margin="170,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_int_Click" Background="#FFC7E6F6"/>
+        <Button x:Name="minus_str" Content="-" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_str_Click" Background="#FFC7E6F6"/>
+        <Button x:Name="minus_const" Content="-" HorizontalAlignment="Left" Margin="223,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_const_Click" Background="#FFC7E6F6"/>
+        <Button x:Name="minus_dex" Content="-" HorizontalAlignment="Left" Margin="223,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_dex_Click" Background="#FFC7E6F6"/>
+        <Button x:Name="minus_int" Content="-" HorizontalAlignment="Left" Margin="20,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_int_Click" Background="#FFC7E6F6"/>
         <TextBox x:Name="extra" HorizontalAlignment="Left" Margin="110,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="20" IsEnabled="False"/>
-        <Button x:Name="up_lvl" Content="Повысить уровень" HorizontalAlignment="Left" Margin="551,400,0,0" VerticalAlignment="Top" Click="up_lvl_Click"/>
+        <Button x:Name="up_lvl" Content="Повысить уровень" HorizontalAlignment="Left" Margin="551,400,0,0" VerticalAlignment="Top" Click="up_lvl_Click" Background="#FFC7E6F6"/>
         <TextBox x:Name="textb_lvl" HorizontalAlignment="Left" Margin="544,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1" IsEnabled="False"/>
-        <Button x:Name="add_point" Content="+" HorizontalAlignment="Left" Margin="240,250,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="add_point_Click"/>
+        <Button x:Name="Save_character" Content="Сохранить" HorizontalAlignment="Left" Margin="562,475,0,0" VerticalAlignment="Top" Height="85" Width="85" Click="Save_character_Click" Background="#FFC7E6F6"/>
     </Grid>
 </Window>

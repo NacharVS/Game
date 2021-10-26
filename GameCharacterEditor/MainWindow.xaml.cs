@@ -13,6 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace GameCharacterEditor
 {
@@ -39,8 +42,19 @@ namespace GameCharacterEditor
                     image_character.Source = bmp.BitmapToImageSource();
                 }
                 Warrior war = new Warrior();
-                GetUnitInfo(war, textb_name_character, textb_pResist, textb_mResist, textb_hp, textb_attack_speed, textb_walk_speed,
-                    textb_mana, textb_attack_magic, textb_attack);
+                textb_name_character.Text = war.Name;
+                textb_constitution.Text = war.Constitution.ToString();
+                textb_dexterity.Text = war.Dexterity.ToString();
+                textb_intelligent.Text = war.Intelligence.ToString();
+                textb_strenght.Text = war.Strenght.ToString();
+                textb_hp.Text = (war.Strenght * 5 + war.Constitution * 10).ToString();
+                textb_mana.Text = (war.Intelligence * 5).ToString();
+                textb_attack.Text = (war.Strenght * 5).ToString();
+                textb_attack_magic.Text = (war.Intelligence * 10).ToString();
+                textb_pResist.Text = (war.Constitution * 5 + war.Dexterity * 3).ToString();
+                textb_mResist.Text = (war.Intelligence * 5).ToString();
+                textb_attack_speed.Text = (war.Dexterity * 5).ToString();
+                textb_walk_speed.Text = (war.Dexterity * 2).ToString();
             }
 
             if (radBtn_Witch.IsChecked == true)
@@ -54,8 +68,19 @@ namespace GameCharacterEditor
                 }
 
                 Witch witch = new Witch();
-                GetUnitInfo(witch, textb_name_character, textb_pResist, textb_mResist, textb_hp, textb_attack_speed, textb_walk_speed,
-                    textb_mana, textb_attack_magic, textb_attack);
+                textb_name_character.Text = witch.Name;
+                textb_constitution.Text = witch.Constitution.ToString();
+                textb_dexterity.Text = witch.Dexterity.ToString();
+                textb_intelligent.Text = witch.Intelligence.ToString();
+                textb_strenght.Text = witch.Strenght.ToString();
+                textb_hp.Text = (witch.Strenght * 5 + witch.Constitution * 10).ToString();
+                textb_mana.Text = (witch.Intelligence * 5).ToString();
+                textb_attack.Text = (witch.Strenght * 5).ToString();
+                textb_attack_magic.Text = (witch.Intelligence * 10).ToString();
+                textb_pResist.Text = (witch.Constitution * 5 + witch.Dexterity * 3).ToString();
+                textb_mResist.Text = (witch.Intelligence * 5).ToString();
+                textb_attack_speed.Text = (witch.Dexterity * 5).ToString();
+                textb_walk_speed.Text = (witch.Dexterity * 2).ToString();
             }
 
             if (radBtn_Rogue.IsChecked == true)
@@ -69,34 +94,27 @@ namespace GameCharacterEditor
                 }
 
                 Rogue rogue = new Rogue();
-                GetUnitInfo(rogue, textb_name_character, textb_pResist, textb_mResist, textb_hp, textb_attack_speed, textb_walk_speed,
-                    textb_mana, textb_attack_magic, textb_attack);
+                textb_name_character.Text = rogue.Name;
+                textb_constitution.Text = rogue.Constitution.ToString();
+                textb_dexterity.Text = rogue.Dexterity.ToString();
+                textb_intelligent.Text = rogue.Intelligence.ToString();
+                textb_strenght.Text = rogue.Strenght.ToString();
+                textb_hp.Text = (rogue.Strenght * 5 + rogue.Constitution * 10).ToString();
+                textb_mana.Text = (rogue.Intelligence * 5).ToString();
+                textb_attack.Text = (rogue.Strenght * 5).ToString();
+                textb_attack_magic.Text = (rogue.Intelligence * 10).ToString();
+                textb_pResist.Text = (rogue.Constitution * 5 + rogue.Dexterity * 3).ToString();
+                textb_mResist.Text = (rogue.Intelligence * 5).ToString();
+                textb_attack_speed.Text = (rogue.Dexterity * 5).ToString();
+                textb_walk_speed.Text = (rogue.Dexterity * 2).ToString();
             }
 
-            if (radBtn_Rogue.IsChecked == false & radBtn_Warrior.IsChecked == false & radBtn_Witch.IsChecked == false)
+            if (radBtn_Rogue.IsChecked == false && radBtn_Warrior.IsChecked == false && radBtn_Witch.IsChecked == false)
             {
                 MessageBox.Show("Выберите класс персонажа");
             }
         }
-        private void GetUnitInfo(Unit unit,
-            TextBox textb_name_character, TextBox textb_hp, TextBox textb_mana, TextBox textb_attack,
-            TextBox textb_attack_magic, TextBox textb_walk_speed,
-            TextBox textb_attack_speed, TextBox textb_pResist, TextBox textb_mResist)
-        {
-            textb_name_character.Text = unit.Name;
-            textb_constitution.Text = unit.Constitution.ToString();
-            textb_dexterity.Text = unit.Dexterity.ToString();
-            textb_intelligent.Text = unit.Intelligence.ToString();
-            textb_strenght.Text = unit.Strenght.ToString();
-            textb_pResist.Text = (unit.Constitution * 5 + unit.Dexterity * 3).ToString();
-            textb_mResist.Text = (unit.Intelligence * 5).ToString();
-            textb_hp.Text = (unit.Strenght * 5 + unit.Constitution * 10).ToString();
-            textb_attack_speed.Text = (unit.Dexterity * 5).ToString();
-            textb_walk_speed.Text = (unit.Dexterity * 2).ToString();
-            textb_mana.Text = (unit.Intelligence * 5).ToString();
-            textb_attack_magic.Text = (unit.Intelligence * 10).ToString();
-            textb_attack.Text = (unit.Strenght * 5).ToString();
-        }
+        
         private void CountExtraPlus()
         {
             point = Convert.ToInt32(extra.Text);
@@ -124,6 +142,7 @@ namespace GameCharacterEditor
             point_str += 1;
             textb_strenght.Text = point_str.ToString();
             CountExtraPlus();
+            Update();
         }
         private void plus_int_Click(object sender, RoutedEventArgs e)
         {
@@ -131,6 +150,7 @@ namespace GameCharacterEditor
             point_int += 1;
             textb_intelligent.Text = point_int.ToString();
             CountExtraPlus();
+            Update();
         }
 
         private void plus_dex_Click(object sender, RoutedEventArgs e)
@@ -139,6 +159,7 @@ namespace GameCharacterEditor
             point_dex += 1;
             textb_dexterity.Text = point_dex.ToString();
             CountExtraPlus();
+            Update();
         }
 
         private void plus_const_Click(object sender, RoutedEventArgs e)
@@ -147,6 +168,7 @@ namespace GameCharacterEditor
             point_const += 1;
             textb_constitution.Text = point_const.ToString();
             CountExtraPlus();
+            Update();
         }
 
         private void CountExtraMinus()
@@ -186,15 +208,7 @@ namespace GameCharacterEditor
                 textb_strenght.Text = point_str.ToString();
                 CountExtraMinus();
             }
-        }
-
-        private void add_point_Click(object sender, RoutedEventArgs e)
-        {
-            point = Convert.ToInt32(extra.Text);
-            if (point != 0)
-            {
-                MessageBox.Show("Не все очки были использованы");
-            }
+            Update();
         }
 
         private void Update()
@@ -213,6 +227,27 @@ namespace GameCharacterEditor
             textb_attack_magic.Text = (point_int * 10).ToString();
             textb_attack.Text = (point_str * 5).ToString();
         }
+
+        private void Save_character_Click(object sender, RoutedEventArgs e)
+        {
+            if (radBtn_Warrior.IsChecked == true)
+            {
+                Warrior war = new Warrior();
+                war.Add(war);
+            }
+            if (radBtn_Witch.IsChecked == true)
+            {
+                Witch witch = new Witch();
+                witch.Add(witch);
+            }
+            if (radBtn_Rogue.IsChecked == true)
+            {
+                Rogue rogue = new Rogue();
+                rogue.Add(rogue);
+            }
+            MessageBox.Show("Персонаж сохранен");
+        }
+
         private void up_lvl_Click(object sender, RoutedEventArgs e)
         {
             int point_str = Convert.ToInt32(textb_strenght.Text);
@@ -249,42 +284,6 @@ namespace GameCharacterEditor
             }
         }
 
-        private void add_point_Click(object sender, RoutedEventArgs e)
-        {
-            point = Convert.ToInt32(extra.Text);
-            if (point == 0)
-            {
-                point = +20;
-                extra.Text = point.ToString();
-                plus_str.Visibility = Visibility.Visible;
-                plus_const.Visibility = Visibility.Visible;
-                plus_dex.Visibility = Visibility.Visible;
-                plus_int.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MessageBox.Show("Не все очки были использованы");
-            }
-        }
-
-        private void up_lvl_Click(object sender, RoutedEventArgs e)
-        {
-            point_str = Convert.ToInt32(textb_strenght.Text);
-            point_int = Convert.ToInt32(textb_intelligent.Text);
-            point_dex = Convert.ToInt32(textb_dexterity.Text);
-            point_const = Convert.ToInt32(textb_constitution.Text);
-            lvl = Convert.ToInt32(textb_lvl.Text);
-            if (point_str >= point_str + 20 && point_int >= point_int + 20 && point_dex >= point_dex + 20 && point_const >= point_const + 20)
-            {
-                lvl += 1;
-                textb_lvl.Text = lvl.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Повысьте характеристики");
-            }
-        }
-
         private void minus_int_Click(object sender, RoutedEventArgs e)
         {
             point_int = Convert.ToInt32(textb_intelligent.Text);
@@ -297,6 +296,7 @@ namespace GameCharacterEditor
                 textb_intelligent.Text = point_int.ToString();
                 CountExtraMinus();
             }
+            Update();
         }
 
         private void minus_dex_Click(object sender, RoutedEventArgs e)
@@ -311,6 +311,7 @@ namespace GameCharacterEditor
                 textb_dexterity.Text = point_dex.ToString();
                 CountExtraMinus();
             }
+            Update();
         }
 
         private void minus_const_Click(object sender, RoutedEventArgs e)
@@ -325,6 +326,7 @@ namespace GameCharacterEditor
                 textb_constitution.Text = point_const.ToString();
                 CountExtraMinus();
             }
+            Update();
         }
         private void MinChar()
         {
