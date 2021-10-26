@@ -20,6 +20,10 @@ namespace GameCharacterEditor.Models
         [BsonElement("Dexterity")]
         public virtual int Dexterity { get => dexterity; }
 
+        protected int level = 1;
+        [BsonElement("Level")]
+        public virtual int Level { get => level; }
+
         protected int intelligence = 20;
         [BsonElement("Intelligence")]
         public virtual int Intelligence { get => intelligence; }
@@ -42,8 +46,7 @@ namespace GameCharacterEditor.Models
 
         protected int mAttack = 20;
         [BsonElement("Magic Attack")]
-        public virtual int MAttack { get => mAttack;
-            }
+        public virtual int MAttack { get => mAttack; }
 
         protected int pResist = 20;
         [BsonElement("Physical Resist")]

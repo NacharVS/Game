@@ -29,6 +29,16 @@ namespace GameCharacterEditor.Models
             }
         }
 
+        private int _level;
+        public int Level
+        {
+            get => _level;
+            set
+            {
+                _level = value;
+            }
+        }
+
         private int _HP;
         public int HP
         {

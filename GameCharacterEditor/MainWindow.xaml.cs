@@ -39,6 +39,7 @@ namespace GameCharacterEditor
             {
                 var warrior = new Warrior();
 
+                LevelText.Text = warrior.Level.ToString();
                 HP_TB.Text = warrior.HealthPoint.ToString();
                 MP_TB.Text = warrior.ManaPoint.ToString();
                 Strenght_TB.Text = warrior.Strenght.ToString();
@@ -58,6 +59,7 @@ namespace GameCharacterEditor
             {
                 var rogue = new Rogue();
 
+                LevelText.Text = rogue.Level.ToString();
                 HP_TB.Text = rogue.HealthPoint.ToString();
                 MP_TB.Text = rogue.ManaPoint.ToString();
                 Strenght_TB.Text = rogue.Strenght.ToString();
@@ -76,6 +78,7 @@ namespace GameCharacterEditor
             { 
                 var sorcerer = new Sorcerer();
 
+                LevelText.Text = sorcerer.Level.ToString();
                 HP_TB.Text = sorcerer.HealthPoint.ToString();
                 MP_TB.Text = sorcerer.ManaPoint.ToString();
                 Strenght_TB.Text = sorcerer.Strenght.ToString();
@@ -249,30 +252,32 @@ namespace GameCharacterEditor
         {
             string name;
 
-            if(ChooseWarriorRB.IsChecked == true)
-            {
-                Warrior war = new Warrior();
-                name = "Warrior";
-                AddToDataBase(war);
-            }
-            else if(ChooseRogueRB.IsChecked == true)
-            {
-                Rogue rogue = new Rogue();
-                name = "Rogue";
-                AddToDataBase(rogue);
-            }
-            else
-            {
-                Sorcerer sorc = new Sorcerer();
-                name = "Sorcerer";
-                AddToDataBase(sorc);
-            }
+            
+
+            //if(ChooseWarriorRB.IsChecked == true)
+            //{
+            //    Warrior war = new Warrior();
+            //    name = "Warrior";
+            //    AddToDataBase(war);
+            //}
+            //else if(ChooseRogueRB.IsChecked == true)
+            //{
+            //    Rogue rogue = new Rogue();
+            //    name = "Rogue";
+            //    AddToDataBase(rogue);
+            //}
+            //else
+            //{
+            //    Sorcerer sorc = new Sorcerer();
+            //    name = "Sorcerer";
+            //    AddToDataBase(sorc);
+            //}
 
             _todoData = new BindingList<TodoModel>()
             {
                 new TodoModel()
                 {
-                    Character = name, HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
+                    Character = name, Level = Convert.ToInt32(LevelText.Text), HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
                     Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligenct_TB.Text),
                     Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
                     PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
@@ -301,29 +306,56 @@ namespace GameCharacterEditor
             int exp = Convert.ToInt32(ExperienceText.Text);
             exp += 1000;
             ExperienceText.Text = exp.ToString();
+            if(exp >= 45000)
+            {
+                ExperienceButton.IsEnabled = false;
+            }
         }
 
         private void ExperienceText_TextChanged(object sender, TextChangedEventArgs e)
         {
             int expir = Convert.ToInt32(ExperienceText.Text);
 
-
-            switch (expir)
+            if ( expir < 1000)
             {
-                case 2:
-                    LevelText.Text = "2";
-                    break;
-  
-
+                LevelText.Text = "1";
             }
-            //if(expir >= 1000 && expir < 3000)
-            //{
-            //    LevelText.Text = "2";
-            //}
-            //else if(expir >= 3000 && expir < 6000)
-            //{
-            //    LevelText.Text = "3";
-            //}
+            else if (expir >= 1000 && expir < 3000)
+            {
+                LevelText.Text = "2";
+            }
+            else if (expir >= 3000 && expir < 6000)
+            {
+                LevelText.Text = "3";
+            }
+            else if (expir >= 6000 && expir < 10000)
+            {
+                LevelText.Text = "4";
+            }
+            else if (expir >= 10000 && expir < 15000)
+            {
+                LevelText.Text = "5";
+            }
+            else if (expir >= 15000 && expir < 21000)
+            {
+                LevelText.Text = "6";
+            }
+            else if (expir >= 21000 && expir < 28000)
+            {
+                LevelText.Text = "7";
+            }
+            else if (expir >= 28000 && expir < 36000)
+            {
+                LevelText.Text = "8";
+            }
+            else if (expir >= 36000 && expir < 45000)
+            {
+                LevelText.Text = "9";
+            }
+            else
+            {
+                LevelText.Text = "10";
+            }
         }
     }
 }

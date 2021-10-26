@@ -128,7 +128,8 @@
                 <DataGrid Grid.Row="0" x:Name="CharacterList" AutoGenerateColumns="False" Background="Silver">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="False" Header="ID"/>
-                        <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="False" Header="Character"/>
+                        <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="True" Header="Character"/>
+                        <DataGridTextColumn Binding="{Binding Path = Level}" IsReadOnly=" True" Header="Level"/>
                         <DataGridTextColumn Binding="{Binding Path = HP}" IsReadOnly="True" Header="Health"/>
                         <DataGridTextColumn Binding="{Binding Path = MP}" IsReadOnly="True" Header="Mana"/>
                         <DataGridTextColumn Binding="{Binding Path = Strenght}" IsReadOnly="True" Header="Strenght"/>
@@ -143,7 +144,6 @@
                         <DataGridTextColumn Binding="{Binding Path = MSpeed}" IsReadOnly="True" Header="M Speed"/>
                     </DataGrid.Columns>
                 </DataGrid>
-
 
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -160,7 +160,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="LevelText" Text="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="30" Margin="10"/>
+                        <TextBlock x:Name="LevelText"  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="30" Margin="10"/>
                         <TextBox x:Name="ExperienceText" Grid.Column="1" Margin="10" Width="100" Height="20" IsReadOnly="True" HorizontalAlignment="Right" Text="0" TextChanged="ExperienceText_TextChanged"/>
                         <Button x:Name="ExperienceButton" Grid.Column="2" Content="+1000" Width="60" Height="30" Margin="10" HorizontalAlignment="Left" Click="ExperienceButton_Click"/>
                     </Grid>
