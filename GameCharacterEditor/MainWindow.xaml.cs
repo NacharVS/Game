@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GameCharacterEditor.Classes;
 using GameCharacterEditor.Models;
+using GameCharacterEditor.Logic;
 using MongoDB.Driver;
 
 namespace GameCharacterEditor
@@ -35,7 +36,7 @@ namespace GameCharacterEditor
         private void ChooseWarrior_Click(object sender, RoutedEventArgs e)
         {
             PickButton.IsEnabled = Strenght_down.IsEnabled = Strenght_up.IsEnabled = Constitution_down.IsEnabled = Constitution_up.IsEnabled =
-            Dexterity_down.IsEnabled = Dexterity_up.IsEnabled = Intelligence_down.IsEnabled = Intelligence_up.IsEnabled = true;
+            Dexterity_down.IsEnabled = Dexterity_up.IsEnabled = Intelligence_down.IsEnabled = Intelligence_up.IsEnabled = ExpButton.IsEnabled = true;
 
             if (ChooseWarriorRB.IsChecked == true)
             {
@@ -54,7 +55,7 @@ namespace GameCharacterEditor
                 MR_TB.Text = warrior.MResist.ToString();
                 AS_TB.Text = warrior.AttackSpeed.ToString();
                 MS_TB.Text = warrior.WalkSpeed.ToString();
-                LevelBlock.Text = warrior.Level.ToString() + " Level";
+                LevelBlock.Text = warrior.Level.ToString();
             }
 
             else if (ChooseRogueRB.IsChecked == true)
@@ -74,7 +75,7 @@ namespace GameCharacterEditor
                 MR_TB.Text = rogue.MResist.ToString();
                 AS_TB.Text = rogue.AttackSpeed.ToString();
                 MS_TB.Text = rogue.WalkSpeed.ToString();
-                LevelBlock.Text = rogue.Level.ToString() + " Level";
+                LevelBlock.Text = rogue.Level.ToString();
             }
             else if (ChooseSorcererRB.IsChecked == true)
             {
@@ -93,7 +94,7 @@ namespace GameCharacterEditor
                 MR_TB.Text = sorcerer.MResist.ToString();
                 AS_TB.Text = sorcerer.AttackSpeed.ToString();
                 MS_TB.Text = sorcerer.WalkSpeed.ToString();
-                LevelBlock.Text = sorcerer.Level.ToString() + " Level";
+                LevelBlock.Text = sorcerer.Level.ToString();
             }
             else
             {
@@ -260,13 +261,38 @@ namespace GameCharacterEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-             PickButton.IsEnabled = Strenght_down.IsEnabled = Strenght_up.IsEnabled = Constitution_down.IsEnabled = Constitution_up.IsEnabled =
-             Dexterity_down.IsEnabled = Dexterity_up.IsEnabled = Intelligence_down.IsEnabled = Intelligence_up.IsEnabled = false;
+            PickButton.IsEnabled = Strenght_down.IsEnabled = Strenght_up.IsEnabled = Constitution_down.IsEnabled = Constitution_up.IsEnabled =
+            Dexterity_down.IsEnabled = Dexterity_up.IsEnabled = Intelligence_down.IsEnabled = Intelligence_up.IsEnabled = ExpButton.IsEnabled = false;
+            Experience_TB.Text = "0";
         }
 
-        private void HelnetComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ExpButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (Convert.ToInt32(Experience_TB.Text) >= 45000)
+                MessageBox.Show("You got highest level");
+            else
+                Experience_TB.Text = ((Convert.ToInt32(Experience_TB.Text)) + 1000).ToString();    
+        }
+
+        private void Experience_TB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int exp = Convert.ToInt32(Experience_TB.Text);
+            int level = Convert.ToInt32(LevelBlock.Text);
+
+            level = Mechanics.LevelUpLogic(exp, level);
+
+            LevelBlock.Text = level.ToString();
+        }
+
+        private void LevelBlock_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(ChooseWarriorRB.IsChecked == true || ChooseRogueRB.IsChecked == true || ChooseSorcererRB.IsChecked == true)
+                Extra_TB.Text = (Convert.ToInt32(Extra_TB.Text) + 5).ToString();
+        }
+
+        private void StatsValueChanging()
+        {
+
         }
     }
 }

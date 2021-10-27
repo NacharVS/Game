@@ -92,7 +92,7 @@
 
                     <TextBlock Text="Strenght" Grid.Row="1" Grid.Column="1" Margin="5"/>
                     <Button x:Name="Strenght_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
-                    <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
+                    <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5,5,5,0" Height="18" VerticalAlignment="Top"/>
                     <Button x:Name="Strenght_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
                     <TextBlock Text="Constitution" Grid.Row="1" Grid.Column="4" Margin="5"/>
                     <Button x:Name="Constitution_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" />
@@ -158,9 +158,9 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" x:Name="LevelBlock" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
-                        <TextBox Grid.Column="1" x:Name="Experience_TB" Margin="10" Width="60" Height="25" HorizontalAlignment="Right"/>
-                        <Button Grid.Column="2" Name="ExpButton" Content="+1000" Width="70" Height="30" Margin="10" HorizontalAlignment="Left"/>
+                        <TextBox Grid.Column="0" x:Name="LevelBlock" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Text="0" TextChanged="LevelBlock_TextChanged" />
+                        <TextBox Grid.Column="1" x:Name="Experience_TB" Margin="10" Width="60" Height="25" HorizontalAlignment="Right" TextChanged="Experience_TB_TextChanged"/>
+                        <Button Grid.Column="2" x:Name="ExpButton" Content="+1000" Width="70" Height="30" Margin="10" HorizontalAlignment="Left" Click="ExpButton_Click"/>
                     </Grid>
                     
                     <Grid Grid.Row="2" VerticalAlignment="Top" Background="Black">
