@@ -180,19 +180,28 @@ namespace GameCharacterEditor.Models
             pResist = constitution * 0.8;
             mResist = intelligence * 0.5;
             attackSpeed = dexterity * 5;
-            walkSpeed = dexterity * 2;
+            walkSpeed = dexterity * 2 + 50;
             this.level = level;
             this.extra = extra;
         }
 
+        public void AddToDataBase(Hero hero)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Diyar");
+            var collection = database.GetCollection<Hero>("Hero!");
+            collection.InsertOne(hero);
+        }
     }
 
     public class Warrior : Hero
     {
 
-        public Warrior() : base(35, 30, 10, 10, 10, 1)
+        public Warrior() : base(35, 30, 10, 10, 0, 1)
         { }
 
+        public Warrior(int strenght, int constitution, int dexterity, int intelligence, int extra, int level) : base (strenght, constitution, dexterity, intelligence, extra, level)
+        { }
 
         public override int Strenght
         {
@@ -249,6 +258,9 @@ namespace GameCharacterEditor.Models
         public Sorcerer() : base (15, 25, 10, 35, 0, 1)
         { }
 
+        public Sorcerer(int strenght, int constitution, int dexterity, int intelligence, int extra, int level) : base(strenght, constitution, dexterity, intelligence, extra, level)
+        { }
+
         public override int Intelligence
         {
             get => intelligence;
@@ -300,6 +312,9 @@ namespace GameCharacterEditor.Models
     public class Rogue : Hero
     {
         public Rogue() : base (20, 15, 35, 15, 0, 1)
+        { }
+
+        public Rogue(int strenght, int constitution, int dexterity, int intelligence, int extra, int level) : base(strenght, constitution, dexterity, intelligence, extra, level)
         { }
 
         public override int Dexterity

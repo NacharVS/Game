@@ -91,20 +91,20 @@
                     <TextBox x:Name="Extra_TB" IsReadOnly="True" Grid.Column="3" Grid.Row="0" Margin="5 10 5 10" Background="Silver"/>
 
                     <TextBlock Text="Strenght" Grid.Row="1" Grid.Column="1" Margin="5"/>
-                    <Button x:Name="Strenght_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
+                    <Button x:Name="Strenght_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
                     <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5,5,5,0" Height="18" VerticalAlignment="Top"/>
                     <Button x:Name="Strenght_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
                     <TextBlock Text="Constitution" Grid.Row="1" Grid.Column="4" Margin="5"/>
-                    <Button x:Name="Constitution_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" />
+                    <Button x:Name="Constitution_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
                     <TextBox x:Name="Constitution_TB" Grid.Row="2" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
                     <Button x:Name="Constitution_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
 
                     <TextBlock Text="Dexterity" Grid.Row="3" Grid.Column="1" Margin="5"/>
-                    <Button x:Name="Dexterity_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
+                    <Button x:Name="Dexterity_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
                     <TextBox x:Name="Dexterity_TB" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
                     <Button x:Name="Dexterity_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
                     <TextBlock Text="Intelligence" Grid.Row="3" Grid.Column="4" Margin="5"/>
-                    <Button x:Name="Intelligence_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5"/>
+                    <Button x:Name="Intelligence_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
                     <TextBox x:Name="Intelligence_TB" Grid.Row="4" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
                     <Button x:Name="Intelligence_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
 
@@ -162,24 +162,6 @@
                         <TextBox Grid.Column="1" x:Name="Experience_TB" Margin="10" Width="60" Height="25" HorizontalAlignment="Right" TextChanged="Experience_TB_TextChanged"/>
                         <Button Grid.Column="2" x:Name="ExpButton" Content="+1000" Width="70" Height="30" Margin="10" HorizontalAlignment="Left" Click="ExpButton_Click"/>
                     </Grid>
-                    
-                    <Grid Grid.Row="2" VerticalAlignment="Top" Background="Black">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Grid.Column="0" x:Name="AddedHelmetTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="1" x:Name="AddedArmourTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="2" x:Name="AddedPantsTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="3" x:Name="AddedBootsTB" Margin="10" Height="30"/>
-                        <Image Grid.Column="4" x:Name="AddedWeaponTB" Margin="10" Height="30"/>
-                        
-                    </Grid>
-                    
                 </Grid>
             </Grid>
         </Grid>
