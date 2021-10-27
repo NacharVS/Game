@@ -139,7 +139,7 @@ namespace GameCharacterEditor
         private void plus_str_Click(object sender, RoutedEventArgs e)
         {
             point_str = Convert.ToInt32(textb_strenght.Text);
-            if(point_str +1 <= 250)
+            if ((radBtn_Warrior.IsChecked == true && point_str + 1 <= 850) || (radBtn_Witch.IsChecked == true && point_str + 1 <= 650) || (radBtn_Rogue.IsChecked == true && point_str + 1 <= 660))
             {
                 point_str += 1;
                 textb_strenght.Text = point_str.ToString();
@@ -154,7 +154,7 @@ namespace GameCharacterEditor
         private void plus_int_Click(object sender, RoutedEventArgs e)
         {
             point_int = Convert.ToInt32(textb_intelligent.Text);
-            if(point_int+1 <= 250)
+            if ((radBtn_Warrior.IsChecked == true && point_int + 1 <= 650) || (radBtn_Witch.IsChecked == true && point_int + 1 <= 850) || (radBtn_Rogue.IsChecked == true && point_int + 1 <= 700))
             {
                 point_int += 1;
                 textb_intelligent.Text = point_int.ToString();
@@ -170,7 +170,7 @@ namespace GameCharacterEditor
         private void plus_dex_Click(object sender, RoutedEventArgs e)
         {
             point_dex = Convert.ToInt32(textb_dexterity.Text);
-            if (point_dex +1 <= 250)
+            if ((radBtn_Warrior.IsChecked == true && point_dex + 1 <= 670) || (radBtn_Witch.IsChecked == true && point_dex + 1 <= 650) || (radBtn_Rogue.IsChecked == true && point_dex + 1 <= 850))
             {
                 point_dex += 1;
                 textb_dexterity.Text = point_dex.ToString();
@@ -186,7 +186,7 @@ namespace GameCharacterEditor
         private void plus_const_Click(object sender, RoutedEventArgs e)
         {
             point_const = Convert.ToInt32(textb_constitution.Text);
-            if (point_const +1 <= 100)
+            if ((radBtn_Warrior.IsChecked == true && point_const + 1 <= 850) || (radBtn_Witch.IsChecked == true && point_const + 1 <= 650) || (radBtn_Rogue.IsChecked == true && point_const + 1 <= 660))
             {
                 point_const += 1;
                 textb_constitution.Text = point_const.ToString();
@@ -227,7 +227,7 @@ namespace GameCharacterEditor
         private void minus_str_Click(object sender, RoutedEventArgs e)
         {
             point_str = Convert.ToInt32(textb_strenght.Text);
-            if (point_str - 1 >= 50)
+            if ((radBtn_Warrior.IsChecked == true && point_str - 1 >= 250) || (radBtn_Witch.IsChecked == true && point_str - 1 >= 50) || (radBtn_Rogue.IsChecked == true && point_str - 1 >= 60))
             {
                 MinChar();
                 if (point < 20)
@@ -322,7 +322,7 @@ namespace GameCharacterEditor
         private void minus_int_Click(object sender, RoutedEventArgs e)
         {
             point_int = Convert.ToInt32(textb_intelligent.Text);
-            if (point_int -1 >= 50)
+            if ((radBtn_Warrior.IsChecked == true && point_int - 1 >= 100) || (radBtn_Witch.IsChecked == true && point_int - 1 >= 250) || (radBtn_Rogue.IsChecked == true && point_int - 1 >= 100))
             {
                 MinChar();
                 if (point < 20)
@@ -344,7 +344,7 @@ namespace GameCharacterEditor
         private void minus_dex_Click(object sender, RoutedEventArgs e)
         {
             point_dex = Convert.ToInt32(textb_dexterity.Text);
-            if (point_dex -1 >= 50)
+            if ((radBtn_Warrior.IsChecked == true && point_dex - 1 >= 70) || (radBtn_Witch.IsChecked == true && point_dex - 1 >= 50) || (radBtn_Rogue.IsChecked == true && point_dex - 1 >= 250))
             {
                 MinChar();
                 if (point < 20)
@@ -366,7 +366,7 @@ namespace GameCharacterEditor
         private void minus_const_Click(object sender, RoutedEventArgs e)
         {
             point_const = Convert.ToInt32(textb_constitution.Text);
-            if (point_const >= 50)
+            if ((radBtn_Warrior.IsChecked == true && point_const-1 >= 100) || (radBtn_Witch.IsChecked == true && point_const-1 >= 50) || (radBtn_Rogue.IsChecked == true && point_const-1 >= 60))
             {
                 MinChar();
                 if (point < 20)
