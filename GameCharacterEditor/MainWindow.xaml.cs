@@ -185,7 +185,7 @@ namespace GameCharacterEditor
             }
             else
             {
-                Sorcerer sorc = new Sorcerer(Convert.ToInt32(Strenght_TB.Text), Convert.ToInt32(Constitution_TB.Text), Convert.ToInt32(Dexterity_TB.Text), Convert.ToInt32(Intelligence_TB.Text), int.Parse(Extra_TB.Text), int.Parse(LevelBlock.Text));
+                Sorcerer sorc = new Sorcerer(Convert.ToInt32(Strenght_TB.Text), Convert.ToInt32(Constitution_TB.Text), Convert.ToInt32(Dexterity_TB.Text), Convert.ToInt32(Intelligence_TB.Text), int.Parse(Extra_TB.Text), int.Parse(LevelBlock.Text) );
                 name = "Sorcerer";
                 sorc.AddToDataBase(sorc);
             }
