@@ -20,6 +20,7 @@ namespace CharacterEditor.Pages
     /// </summary>
     public partial class MainWindow : Window
     {
+        DB db1;
         public MainWindow()
         {
             InitializeComponent();
