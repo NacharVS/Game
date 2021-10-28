@@ -26,7 +26,6 @@ namespace GameCharacterEditor
     public partial class MainWindow : Window
     {
         private BindingList<TodoModel> _todoData;
-        private List<Helmet> _helmets;
 
         public MainWindow()
         {
