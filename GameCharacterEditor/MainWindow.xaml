@@ -11,7 +11,7 @@
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="1"/>
             <GradientStop Color="Indigo" Offset="0.996"/>
-            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="Indigo" Offset="0"/>
         </LinearGradientBrush>
     </Window.Background>
 
@@ -72,8 +72,7 @@
                     <TextBox x:Name="MR_TB" IsReadOnly ="True" Grid.Column="3" Background="Silver" Grid.Row="3" Margin="5"/>
 
                 </Grid>
-
-                <Grid Margin="0 15 0 0">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -100,9 +99,9 @@
 
                     <TextBlock Text="Strenght" Grid.Row="1" Grid.Column="1" Margin="5"/>
                     <Button x:Name="Strenght_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5,5,5,0" Height="18" VerticalAlignment="Top"/>
+                    <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5" VerticalAlignment="Top"/>
                     <Button x:Name="Strenght_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
-                    <TextBlock Text="Constitution" Grid.Row="1" Grid.Column="4" Margin="5"/>
+                    <TextBlock Text="Constitution" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Margin="5"/>
                     <Button x:Name="Constitution_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
                     <TextBox x:Name="Constitution_TB" Grid.Row="2" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
                     <Button x:Name="Constitution_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
@@ -111,16 +110,16 @@
                     <Button x:Name="Dexterity_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
                     <TextBox x:Name="Dexterity_TB" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
                     <Button x:Name="Dexterity_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
-                    <TextBlock Text="Intelligence" Grid.Row="3" Grid.Column="4" Margin="5"/>
+                    <TextBlock Text="Intelligence" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="5"/>
                     <Button x:Name="Intelligence_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
                     <TextBox x:Name="Intelligence_TB" Grid.Row="4" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
                     <Button x:Name="Intelligence_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
 
-                    <TextBlock Text="Attack speed" Grid.Row="5" Grid.Column="2" Margin="0 20 5 5"/>
-                    <TextBox x:Name="AS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="2" Background="Silver" Margin="0 5 20  15"/>
+                    <TextBlock Text="Attack speed" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0 20 5 5"/>
+                    <TextBox x:Name="AS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="2" Background="Silver" Margin="5" HorizontalAlignment="Center" Width="50" Height="20"/>
 
-                    <TextBlock Text="Movement speed" Grid.Row="5" Grid.Column="3" Margin="0 20 5 5"/>
-                    <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="0 5 20  15"/>
+                    <TextBlock Text="Movement speed" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Margin="0 20 5 5"/>
+                    <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="5" HorizontalAlignment="Center" Width="50" Height="20"/>
                     <Button x:Name="PickButton" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
                 </Grid>
             </StackPanel>

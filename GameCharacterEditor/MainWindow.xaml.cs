@@ -163,6 +163,7 @@ namespace GameCharacterEditor
                         Intelligence_TB.Text = (Convert.ToInt32(Intelligence_TB.Text) - 1).ToString();
                         break;
                 }
+
             }
         }
 
@@ -172,36 +173,54 @@ namespace GameCharacterEditor
 
             if (ChooseWarriorRB.IsChecked == true)
             {
-                Warrior war = new Warrior(Convert.ToInt32(Strenght_TB.Text), Convert.ToInt32(Constitution_TB.Text), Convert.ToInt32(Dexterity_TB.Text), Convert.ToInt32(Intelligence_TB.Text), int.Parse(Extra_TB.Text), int.Parse(LevelBlock.Text));
+                Warrior war = new Warrior();
+                war.Strenght = Convert.ToInt32(Strenght_TB.Text);
+                war.Constitution = Convert.ToInt32(Constitution_TB.Text);
+                war.Dexterity = Convert.ToInt32(Dexterity_TB.Text);
+                war.Intelligence = Convert.ToInt32(Intelligence_TB.Text);
+                war.Extra = Convert.ToInt32(Extra_TB.Text);
+                war.Level = Convert.ToInt32(LevelBlock.Text);
                 name = "Warrior";
                 war.AddToDataBase(war);
             }
 
             else if (ChooseRogueRB.IsChecked == true)
             {
-                Rogue rogue = new Rogue(Convert.ToInt32(Strenght_TB.Text), Convert.ToInt32(Constitution_TB.Text), Convert.ToInt32(Dexterity_TB.Text), Convert.ToInt32(Intelligence_TB.Text), int.Parse(Extra_TB.Text), int.Parse(LevelBlock.Text));
+                Rogue rogue = new Rogue();
+                rogue.Strenght = Convert.ToInt32(Strenght_TB.Text);
+                rogue.Constitution = Convert.ToInt32(Constitution_TB.Text);
+                rogue.Dexterity = Convert.ToInt32(Dexterity_TB.Text);
+                rogue.Intelligence = Convert.ToInt32(Intelligence_TB.Text);
+                rogue.Extra = Convert.ToInt32(Extra_TB.Text);
+                rogue.Level = Convert.ToInt32(LevelBlock.Text);
                 name = "Rogue";
                 rogue.AddToDataBase(rogue);
             }
             else
             {
-                Sorcerer sorc = new Sorcerer(Convert.ToInt32(Strenght_TB.Text), Convert.ToInt32(Constitution_TB.Text), Convert.ToInt32(Dexterity_TB.Text), Convert.ToInt32(Intelligence_TB.Text), int.Parse(Extra_TB.Text), int.Parse(LevelBlock.Text) );
+                Sorcerer sorc = new Sorcerer();
+                sorc.Strenght = Convert.ToInt32(Strenght_TB.Text);
+                sorc.Constitution = Convert.ToInt32(Constitution_TB.Text);
+                sorc.Dexterity = Convert.ToInt32(Dexterity_TB.Text);
+                sorc.Intelligence = Convert.ToInt32(Intelligence_TB.Text);
+                sorc.Extra = Convert.ToInt32(Extra_TB.Text);
+                sorc.Level = Convert.ToInt32(LevelBlock.Text);
                 name = "Sorcerer";
                 sorc.AddToDataBase(sorc);
             }
 
-            _todoData = new BindingList<TodoModel>()
-            {
-                new TodoModel()
-                {
-                    Character = name, HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
-                    Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligence_TB.Text),
-                    Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
-                    PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
-                }
-            };
+            //_todoData = new BindingList<TodoModel>()
+            //{
+            //    new TodoModel()
+            //    {
+            //        Character = name, HP = int.Parse(HP_TB.Text), MP = int.Parse(MP_TB.Text),
+            //        Strenght = int.Parse(Strenght_TB.Text), Dexterity = int.Parse(Dexterity_TB.Text), Intelligence = int.Parse(Intelligence_TB.Text),
+            //        Constitution = int.Parse(Constitution_TB.Text), PAttack = int.Parse(PA_TB.Text), MAttack = int.Parse(MA_TB.Text),
+            //        PResist = int.Parse(PR_TB.Text), MResist = int.Parse(MR_TB.Text), ASpeed = int.Parse(AS_TB.Text), MSpeed = int.Parse(MS_TB.Text)
+            //    }
+            //};
 
-            CharacterList.Items.Add(_todoData);
+            //CharacterList.Items.Add(_todoData);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

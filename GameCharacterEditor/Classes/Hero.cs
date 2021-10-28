@@ -184,14 +184,6 @@ namespace GameCharacterEditor.Models
             this.level = level;
             this.extra = extra;
         }
-
-        public void AddToDataBase(Hero hero)
-        {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("Diyar");
-            var collection = database.GetCollection<Hero>("Hero!");
-            collection.InsertOne(hero);
-        }
     }
 
     public class Warrior : Hero
@@ -214,7 +206,6 @@ namespace GameCharacterEditor.Models
                     strenght = value;
             }
         }
-
 
         public override int Intelligence
         {
@@ -250,6 +241,14 @@ namespace GameCharacterEditor.Models
                 else
                     constitution = value;
             }
+        }
+
+        public void AddToDataBase(Warrior war)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Diyar");
+            var collection = database.GetCollection<Hero>("Hero!");
+            collection.InsertOne(war);
         }
     }
 
@@ -307,6 +306,14 @@ namespace GameCharacterEditor.Models
                     strenght = value;
             }
         }
+
+        public void AddToDataBase(Sorcerer sorcerer)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Diyar");
+            var collection = database.GetCollection<Hero>("Hero!");
+            collection.InsertOne(sorcerer);
+        }
     }
 
     public class Rogue : Hero
@@ -363,6 +370,14 @@ namespace GameCharacterEditor.Models
                 else
                     constitution = value;
             }
+        }
+
+        public void AddToDataBase(Rogue rogue)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Diyar");
+            var collection = database.GetCollection<Hero>("Hero!");
+            collection.InsertOne(rogue);
         }
     }
 }
