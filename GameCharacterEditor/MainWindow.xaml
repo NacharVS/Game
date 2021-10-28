@@ -3,36 +3,54 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GameCharacterEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="395*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Create person" Margin="243,10,272,353" FontSize="36" Grid.Column="1"/>
-        <TextBox Name="tb" Grid.Column="1" Margin="545,97,78,299"/>
-        <ListBox Name="lb" SelectionChanged="PrintText" SelectionMode="Single" Margin="243,71,272,264" FontSize="14" Grid.Column="1">
-            <ListBoxItem Selected="ListBoxItem_Selected">Soldier</ListBoxItem>
-            <ListBoxItem Selected="ListBoxItem_Selected_1">Wizard</ListBoxItem>
-            <ListBoxItem Selected="ListBoxItem_Selected_2">Robber</ListBoxItem>
-        </ListBox>
-        <TextBox x:Name="name" Margin="28,194,576,200" Grid.Column="1"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Height="39" Margin="28,150,0,0" VerticalAlignment="Top" Width="65" FontSize="18" RenderTransformOrigin="0.519,1.488" Grid.Column="1"/>
-        <TextBox x:Name="def" Grid.Column="1" Margin="545,194,135,200"/>
-        <TextBox x:Name="spe" Grid.Column="1" Margin="545,257,135,137"/>
-        <TextBox x:Name="mag" Grid.Column="1" Margin="545,320,135,74"/>
-        <TextBox x:Name="dam" Grid.Column="1" Margin="399,320,272,74"/>
-        <TextBox x:Name="att" Grid.Column="1" Margin="399,257,272,137"/>
-        <TextBox x:Name="hp" Grid.Column="1" Margin="399,194,272,200"/>
-        <Label Content="HP" Grid.Column="1" HorizontalAlignment="Left" Margin="310,0,0,0" VerticalAlignment="Center" Width="75" FontSize="14"/>
-        <Label Content="Attack" Grid.Column="1" HorizontalAlignment="Left" Margin="310,266,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
-        <Label Content="Damage" Grid.Column="1" HorizontalAlignment="Left" Margin="310,329,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
-        <Label Content="Defense" Grid.Column="1" HorizontalAlignment="Left" Margin="681,200,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
-        <Label Content="MagAttack" Grid.Column="1" HorizontalAlignment="Left" Margin="681,329,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
-        <Label Content="Speed" Grid.Column="1" HorizontalAlignment="Left" Margin="681,266,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
-        <Button x:Name="btnSave" Content="Save person" Grid.Column="1" Margin="28,320,576,47" FontSize="20" Click="btnSave_Click"/>
-        <Button Content="Choose objects" Grid.Column="1" HorizontalAlignment="Left" Margin="28,267,0,0" VerticalAlignment="Top" Height="46" Width="194" Click="Button_Click"/>
+        Title="MainWindow" Height="700" Width="800">
+    <Grid x:Name="Fon" Margin="0,0,0,-6" Background="AliceBlue">
+        <Button x:Name="Create_character" Content="Создать персонажа" HorizontalAlignment="Left" Margin="538,310,0,0" VerticalAlignment="Top" Width="155" Height="39" Click="Create_character_Click" Background="#e6f800"/>
+        <Label x:Name="Choose_class" Content="Class" HorizontalAlignment="Left" Margin="13,17,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="image_character" HorizontalAlignment="Left" Height="250" Margin="470,35,0,0" VerticalAlignment="Top" Width="260"/>
+        <Label x:Name="name_character" Content="Name" HorizontalAlignment="Left" Margin="209,17,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_name_character" HorizontalAlignment="Left" Height="23" Margin="203,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+        <Label x:Name="character_characteristics" Content="Характеристики" HorizontalAlignment="Left" Margin="121,199,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_hp" HorizontalAlignment="Left" Height="23" Margin="45,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_attack_magic" HorizontalAlignment="Left" Height="23" Margin="250,531,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_attack" HorizontalAlignment="Left" Height="23" Margin="45,531,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_mana" HorizontalAlignment="Left" Height="23" Margin="250,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <RadioButton x:Name="radBtn_Warrior" Content="Warrior " HorizontalAlignment="Left" Margin="55,48,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radBtn_Witch" Content="Wizard" HorizontalAlignment="Left" Margin="56,72,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radBtn_Rogue" Content="Robber" HorizontalAlignment="Left" Margin="56,102,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_attack_speed" HorizontalAlignment="Left" Height="23" Margin="250,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_walk_speed" HorizontalAlignment="Left" Height="23" Margin="45,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Label x:Name="HP" Content="HP" HorizontalAlignment="Left" Margin="45,443,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Mana" Content="Мана" HorizontalAlignment="Left" Margin="250,443,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="attack_Speed" Content="Attack Speed" HorizontalAlignment="Left" Margin="250,389,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Attack_magic" Content="Magic attack" HorizontalAlignment="Left" Margin="250,505,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="walk_Speed" Content="Walk speed" HorizontalAlignment="Left" Margin="45,389,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="p__Attack" Content="P Atttack" HorizontalAlignment="Left" Margin="45,505,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textb_mResist" HorizontalAlignment="Left" Margin="250,585,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_pResist" HorizontalAlignment="Left" Margin="45,585,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_constitution" HorizontalAlignment="Left" Margin="250,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_dexterity" HorizontalAlignment="Left" Margin="250,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_intelligent" HorizontalAlignment="Left" Margin="45,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="textb_strenght" HorizontalAlignment="Left" Margin="45,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Label x:Name="Strenght" Content="Strenght" HorizontalAlignment="Left" Margin="45,274,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Constitution" Content="Constitution" HorizontalAlignment="Left" Margin="250,336,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="m_Resist" Content="m_Resist" HorizontalAlignment="Left" Margin="250,555,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="p__Resist" Content= "P Resist" HorizontalAlignment="Left" Margin="45,555,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Intelligently" Content="Intelligently" HorizontalAlignment="Left" Margin="45,336,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Dexterity" Content="Dexterity" HorizontalAlignment="Left" Margin="250,274,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="plus_str" Content="+" HorizontalAlignment="Left" Margin="170,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_str_Click" Background="#e6f800"/>
+        <Button x:Name="plus_const" Content="+" HorizontalAlignment="Left" Margin="375,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_const_Click" Background="#e6f800"/>
+        <Button x:Name="plus_dex" Content="+" HorizontalAlignment="Left" Margin="375,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_dex_Click" Background="#e6f800"/>
+        <Button x:Name="plus_int" Content="+" HorizontalAlignment="Left" Margin="170,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="plus_int_Click" Background="#e6f800"/>
+        <Button x:Name="minus_str" Content="-" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_str_Click" Background="#e6f800"/>
+        <Button x:Name="minus_const" Content="-" HorizontalAlignment="Left" Margin="223,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_const_Click" Background="#e6f800"/>
+        <Button x:Name="minus_dex" Content="-" HorizontalAlignment="Left" Margin="223,300,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_dex_Click" Background="#e6f800"/>
+        <Button x:Name="minus_int" Content="-" HorizontalAlignment="Left" Margin="20,362,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="minus_int_Click" Background="#e6f800"/>
+        <TextBox x:Name="extra" HorizontalAlignment="Left" Margin="110,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="20" IsEnabled="False"/>
+        <Button x:Name="up_lvl" Content="Повысить уровень" HorizontalAlignment="Left" Margin="551,400,0,0" VerticalAlignment="Top" Click="up_lvl_Click" Background="#e6f800" Height="37"/>
+        <TextBox x:Name="textb_lvl" HorizontalAlignment="Left" Margin="544,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1" IsEnabled="False"/>
+        <Button x:Name="Save_character" Content="Сохранить" HorizontalAlignment="Left" Margin="506,475,0,0" VerticalAlignment="Top" Height="85" Width="224" Click="Save_character_Click" Background="#e6f800"/>
     </Grid>
 </Window>
+
