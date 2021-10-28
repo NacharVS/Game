@@ -163,6 +163,9 @@
     <Compile Include="Classes\OCharacteristic.cs" />
     <Compile Include="Classes\WCharacteristic.cs" />
     <Compile Include="DB.cs" />
+    <Compile Include="Pages\WInvPage.xaml.cs">
+      <DependentUpon>WInvPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewPages\MainViewPages.cs" />
     <Compile Include="ViewPages\PagesFoundation.cs" />
     <Page Include="Pages\APage.xaml">
@@ -189,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\OPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WInvPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
