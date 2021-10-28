@@ -40,11 +40,22 @@ namespace Geroi
         }
         private void Plus1_Click(object sender, RoutedEventArgs e)
         {
+            double we = 1;
+            if(IMG2 == iii)
+            {
+                we = 1.5;
+            }
             int st = Convert.ToInt32(Strenght.Text);
             st += 1;
             Strenght.Text = st.ToString();
             int kl = Convert.ToInt32(Kol.Text);
-            kl -= 1;
+            kl -= 1; 
+            double dm = Convert.ToDouble(Damage.Text);
+            dm = st * 10 * we;
+            Damage.Text = dm.ToString();
+            double cr = Convert.ToDouble(Crit.Text);
+            cr = dm * 10/3;
+            Crit.Text = cr.ToString();
             if (kl == 0)
             {
                 Kol.Text = kl.ToString();

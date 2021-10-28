@@ -45,7 +45,7 @@
         <Button x:Name="Plus3" Content="+" HorizontalAlignment="Left" Margin="705,476,0,0" VerticalAlignment="Top" Width="48" Height="46" FontSize="24" Click="Plus3_Click"/>
         <Border Padding="10" Margin="868,0,0,397" BorderThickness="1" BorderBrush="Gray"
         Height="210" Width="210">
-            <Image Source="{Binding SelectedItem.Source, ElementName=ImageChooser}"/>
+            <Image x:Name="IMG2" Source="{Binding SelectedItem.Source, ElementName=ImageChooser}"/>
         </Border>
         <Button x:Name="level1" HorizontalAlignment="Left" Margin="925,418,0,0" VerticalAlignment="Top" Width="145" Height="58" Content="1000" FontSize="36" Click="level1_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="813,443,0,0" TextWrapping="Wrap" Text="Опыт" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF99128"/>
@@ -57,9 +57,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="134,132,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="#FFDEDDDD"/>
         <Button x:Name="pol" Content="Создать" HorizontalAlignment="Left" Margin="869,551,0,0" VerticalAlignment="Top" Width="210" Height="58" Background="#FFBD3333" FontSize="36" Click="pol_Click"/>
         <TextBlock x:Name="OM" HorizontalAlignment="Left" Margin="10,566,0,0" TextWrapping="Wrap" Text="Маг" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
-        <TextBox x:Name="Defense" HorizontalAlignment="Left" Height="46" Margin="740,-1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
-        <TextBox x:Name="Crit" HorizontalAlignment="Left" Height="46" Margin="740,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
-        <TextBox x:Name="Damage" HorizontalAlignment="Left" Height="46" Margin="740,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="Crit" HorizontalAlignment="Left" Height="46" Margin="740,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" IsEnabled="False" Text="0"/>
+        <TextBox x:Name="Damage" HorizontalAlignment="Left" Height="46" Margin="740,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" IsEnabled="False" Text="0"/>
         <ListBox HorizontalAlignment="Center" x:Name="ImageChooser" BorderThickness="0" Margin="330,-1,414,535" Visibility="Visible" Opacity="1" Background="#FF9C1D1D" Width="336">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -67,10 +66,12 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <Image Source="/Geroi;component/resource/Bow.png" Width="64" Margin="4,0" Opacity="2"/>
-            <Image Source="/Geroi;component/resource/magic.png" Width="64" Margin="4"/>
+            <Image x:Name="iii" Source="/Geroi;component/resource/magic.png" Width="64" Margin="4"/>
             <Image Source="/Geroi;component/resource/sword.png" Width="64" Margin="4"/>
             <Image Source="/Geroi;component/resource/swoord.png" Width="64" Margin="4"/>
         </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="423,74,0,0" TextWrapping="Wrap" Text="Оружие" VerticalAlignment="Top" Height="63" Width="156" FontSize="36" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="666,-1,0,0" TextWrapping="Wrap" Text="dmg" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="671,45,0,0" TextWrapping="Wrap" Text="Crit" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
     </Grid>
 </Window>
