@@ -47,17 +47,6 @@
         Height="210" Width="210">
             <Image Source="{Binding SelectedItem.Source, ElementName=ImageChooser}"/>
         </Border>
-        <ListBox HorizontalAlignment="Center" x:Name="ImageChooser" BorderThickness="0" Margin="280,0,632,457" Visibility="Visible" Opacity="1" Background="#FF9C1D1D">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <Image ToolTip="+2 к Интеллекту" Source="/Geroi;component/resource/Manta.png" Width="64" Margin="4,0" Opacity="2"/>
-            <Image ToolTip="+2 к Силе" Source="/Geroi;component/resource/belt.png" Width="64" Margin="4"/>
-            <Image ToolTip="+2 к Ловкости" Source="/Geroi;component/resource/blade.png" Width="64" Margin="4"/>
-        </ListBox>
-        <TextBlock HorizontalAlignment="Left" Margin="467,0,0,0" TextWrapping="Wrap" Text="Начальный Предмет" VerticalAlignment="Top" Height="101" Width="199" FontSize="36" Foreground="Red"/>
         <Button x:Name="level1" HorizontalAlignment="Left" Margin="925,418,0,0" VerticalAlignment="Top" Width="145" Height="58" Content="1000" FontSize="36" Click="level1_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="813,443,0,0" TextWrapping="Wrap" Text="Опыт" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF99128"/>
         <Button x:Name="level2" HorizontalAlignment="Left" Margin="925,488,0,0" VerticalAlignment="Top" Width="145" Height="58" Content="2000" FontSize="36" Click="level2_Click"/>
@@ -68,5 +57,17 @@
         <TextBlock HorizontalAlignment="Left" Margin="134,132,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="#FFDEDDDD"/>
         <Button x:Name="pol" Content="Создать" HorizontalAlignment="Left" Margin="869,551,0,0" VerticalAlignment="Top" Width="210" Height="58" Background="#FFBD3333" FontSize="36" Click="pol_Click"/>
         <TextBlock x:Name="OM" HorizontalAlignment="Left" Margin="0,566,0,0" TextWrapping="Wrap" Text="Разбойник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
+        <TextBlock HorizontalAlignment="Left" Margin="423,74,0,0" TextWrapping="Wrap" Text="Оружие" VerticalAlignment="Top" Height="63" Width="156" FontSize="36" Foreground="Red"/>
+        <ListBox HorizontalAlignment="Center" x:Name="ImageChooser" BorderThickness="0" Margin="330,-1,414,535" Visibility="Visible" Opacity="1" Background="#FF9C1D1D" Width="336">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <Image Source="/Geroi;component/resource/Bow.png" Width="64" Margin="4,0" Opacity="2"/>
+            <Image Source="/Geroi;component/resource/magic.png" Width="64" Margin="4"/>
+            <Image Source="/Geroi;component/resource/sword.png" Width="64" Margin="4"/>
+            <Image Source="/Geroi;component/resource/swoord.png" Width="64" Margin="4"/>
+        </ListBox>
     </Grid>
 </Window>
