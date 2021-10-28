@@ -19,7 +19,7 @@
                Stretch="Fill" Source="Res/BackGround/BArcher.jpg"/>
         <TextBox x:Name="Agility" HorizontalAlignment="Left" Height="24" Margin="706,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Background="#FFC18B8B" Text="20" Grid.Row="1"/>
         <TextBox x:Name="Strenght" HorizontalAlignment="Left" Height="22" Margin="706,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Background="#FFBB8A8A" Text="15" Grid.Row="1"/>
-        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="24" Margin="706,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Background="#FFA47676" Text="20" Grid.Row="1"/>
+        <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Height="24" Margin="706,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Background="#FFA47676" Text="15" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="712,67,0,0" TextWrapping="Wrap" Text="Strenght" VerticalAlignment="Top" Foreground="#FFB81E1E" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="714,116,0,0" TextWrapping="Wrap" Text="Agility" VerticalAlignment="Top"  Foreground="#FFB81E1E" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="706,166,0,0" TextWrapping="Wrap" Text="Intelligence" VerticalAlignment="Top" Foreground="#FFB81E1E" Grid.Row="1"/>
@@ -29,9 +29,9 @@
         <Button x:Name="PA" Content="+"  HorizontalAlignment="Left" Margin="768,138,10,0" VerticalAlignment="Top" Width="22" Background="#FF20B619" Height="22" Click="Plus_Click_Agl" Grid.Row="1"/>
         <Button x:Name="MI" Content="-" HorizontalAlignment="Left" Margin="678,188,0,0" VerticalAlignment="Top" Width="22" Background="#FFB61919" Height="22" Click="Minus_Click_Int" Grid.Row="1"/>
         <Button x:Name="PI" Content="+" HorizontalAlignment="Left" Margin="768,188,0,0" VerticalAlignment="Top" Width="22" Background="#FF20B619" Height="22" Click="Plus_Click_Int" Grid.Row="1"/>
-        <TextBox x:Name="Point" HorizontalAlignment="Left" Height="22" Margin="706,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="30" Grid.Row="1"/>
+        <TextBox x:Name="Point" HorizontalAlignment="Left" Height="22" Margin="706,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="20" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="706,243,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="350,10,0,0" TextWrapping="Wrap" Text="Level " VerticalAlignment="Top"  Foreground="#FFB81E1E" Grid.Row="1" Width="95" Height="34" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="327,6,0,0" TextWrapping="Wrap" Text="Level " VerticalAlignment="Top"  Foreground="#FFB81E1E" Grid.Row="1" Width="95" Height="34" FontSize="24"/>
         <TextBox x:Name="XP" HorizontalAlignment="Left" Height="22" Margin="450,14,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"  Background="#FFBB8A8A" RenderTransformOrigin="4.955,-0.568" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="417,10,0,0" TextWrapping="Wrap" Text="XP" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1" FontSize="24" Height="26" Width="28"/>
         <Button x:Name="KillMarauder" HorizontalAlignment="Left" Margin="255,295,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45" Background="#FFFFA2A2" Click="KillMarauder_Click" Height="20" Content="500"/>
@@ -41,5 +41,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="327,320,0,0" TextWrapping="Wrap" Text="Kill Brute " VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="400,320,0,0" TextWrapping="Wrap" Text="Kill Boss " VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
         <TextBox x:Name="Next" HorizontalAlignment="Left" Height="22" Margin="550,14,0,0" Grid.Row="1" TextWrapping="Wrap" Text="5000" VerticalAlignment="Top" Width="82"  Background="#FFBB8A8A" RenderTransformOrigin="4.955,-0.568" FontSize="16"/>
+        <TextBox x:Name="Mana" HorizontalAlignment="Left" Height="22" Margin="550,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="20" Grid.Row="1"/>
+        <TextBox x:Name="HP" HorizontalAlignment="Left" Height="22" Margin="550,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="25" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="550,251,0,0" TextWrapping="Wrap" Text="Mana" VerticalAlignment="Top" Foreground="#FF1E2CB8" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="550,208,0,0" TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Foreground="#FF3AB81E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
+        <TextBox x:Name="LvL" HorizontalAlignment="Left" Height="22" Margin="382,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Background="#FFBB8A8A" Text="1" Grid.Row="1" RenderTransformOrigin="-0.3,-3.227"/>
     </Grid>
 </Page>

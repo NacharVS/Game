@@ -28,10 +28,16 @@ namespace CharacterEditor.Pages
         private void Plus_Click_Str(object sender, RoutedEventArgs e)
         {
             int str = Convert.ToInt32(Strenght.Text);
+            Strenght.Text = str.ToString();
             int p = Convert.ToInt32(Point.Text);
 
             str += 1;
             Strenght.Text = str.ToString();
+            if (str > 49)
+            {
+                PS.Visibility = Visibility.Hidden;
+                Strenght.Text = str.ToString();
+            }
             p -= 1;
 
             if (p == 0)
@@ -55,6 +61,11 @@ namespace CharacterEditor.Pages
 
             agl += 1;
             Agility.Text = agl.ToString();
+            if (agl > 49)
+            {
+                PA.Visibility = Visibility.Hidden;
+                Agility.Text = agl.ToString();
+            }
             kl -= 1;
 
             if (kl == 0)
@@ -76,6 +87,11 @@ namespace CharacterEditor.Pages
             int st = Convert.ToInt32(Intelligence.Text);
             st += 1;
             Intelligence.Text = st.ToString();
+            if (st > 49)
+            {
+                PI.Visibility = Visibility.Hidden;
+                Intelligence.Text = st.ToString();
+            }
             int kl = Convert.ToInt32(Point.Text);
             kl -= 1;
             if (kl == 0)
@@ -97,7 +113,7 @@ namespace CharacterEditor.Pages
             int st = Convert.ToInt32(Strenght.Text);
             st -= 1;
 
-            if (st == 0)
+            if (st == 1)
             {
                 Strenght.Text = st.ToString();
                 MS.Visibility = Visibility.Hidden;
@@ -121,7 +137,7 @@ namespace CharacterEditor.Pages
             int st = Convert.ToInt32(Agility.Text);
             st -= 1;
 
-            if (st == 0)
+            if (st == 1)
             {
                 Agility.Text = st.ToString();
                 MA.Visibility = Visibility.Hidden;
@@ -144,7 +160,7 @@ namespace CharacterEditor.Pages
         {
             int st = Convert.ToInt32(Intelligence.Text);
             st -= 1;
-            if (st == 0)
+            if (st == 1)
             {
                 Intelligence.Text = st.ToString();
                 MI.Visibility = Visibility.Hidden;
@@ -162,6 +178,34 @@ namespace CharacterEditor.Pages
             kl += 1;
             Point.Text = kl.ToString();
         }
+        private void KillMarauder_Click(object sender, RoutedEventArgs e)
+        {
+            int L500 = Convert.ToInt32(XP.Text);
+            int LLL = Convert.ToInt32(Next.Text);
+            L500 += 500;
+            XP.Text = L500.ToString();
+            if (L500 >= LLL)
+            {
+                LLL += 5000;
+                Next.Text = LLL.ToString();
+                MessageBox.Show("Next Level");
+                int kl = Convert.ToInt32(Point.Text);
+                int hp = Convert.ToInt32(HP.Text);
+                int mana = Convert.ToInt32(Mana.Text);
+                int lvl = Convert.ToInt32(LvL.Text);
+                hp += 10;
+                mana += 10;
+                kl += 5;
+                lvl += 1;
+                Point.Text = kl.ToString();
+                HP.Text = hp.ToString();
+                Mana.Text = mana.ToString();
+                LvL.Text = lvl.ToString();
+                PS.Visibility = Visibility.Visible;
+                PI.Visibility = Visibility.Visible;
+                PA.Visibility = Visibility.Visible;
+            }
+        }
 
         private void KillBrute_Click(object sender, RoutedEventArgs e)
         {
@@ -175,28 +219,17 @@ namespace CharacterEditor.Pages
                 Next.Text = LLL.ToString();
                 MessageBox.Show("Next Level");
                 int kl = Convert.ToInt32(Point.Text);
+                int hp = Convert.ToInt32(HP.Text);
+                int mana = Convert.ToInt32(Mana.Text);
+                int lvl = Convert.ToInt32(LvL.Text);
+                hp += 10;
+                mana += 10;
                 kl += 5;
+                lvl += 1;
                 Point.Text = kl.ToString();
-                PS.Visibility = Visibility.Visible;
-                PI.Visibility = Visibility.Visible;
-                PA.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void KillMarauder_Click(object sender, RoutedEventArgs e)
-        {
-            int L500 = Convert.ToInt32(XP.Text);
-            int LLL = Convert.ToInt32(Next.Text);
-            L500 += 500;
-            XP.Text = L500.ToString();
-            if (L500 >= LLL)
-            {
-                LLL += 5000;
-                Next.Text = LLL.ToString();
-                MessageBox.Show("Next Level");
-                int kl = Convert.ToInt32(Point.Text);
-                kl += 5;
-                Point.Text = kl.ToString();
+                HP.Text = hp.ToString();
+                Mana.Text = mana.ToString();
+                LvL.Text = lvl.ToString();
                 PS.Visibility = Visibility.Visible;
                 PI.Visibility = Visibility.Visible;
                 PA.Visibility = Visibility.Visible;
@@ -215,8 +248,17 @@ namespace CharacterEditor.Pages
                 Next.Text = LLL.ToString();
                 MessageBox.Show("Next Level");
                 int kl = Convert.ToInt32(Point.Text);
+                int hp = Convert.ToInt32(HP.Text);
+                int mana = Convert.ToInt32(Mana.Text);
+                int lvl = Convert.ToInt32(LvL.Text);
+                hp += 10;
+                mana += 10;
                 kl += 5;
+                lvl += 1;
                 Point.Text = kl.ToString();
+                HP.Text = hp.ToString();
+                Mana.Text = mana.ToString();
+                LvL.Text = lvl.ToString();
                 PS.Visibility = Visibility.Visible;
                 PI.Visibility = Visibility.Visible;
                 PA.Visibility = Visibility.Visible;

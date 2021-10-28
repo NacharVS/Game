@@ -33,6 +33,11 @@ namespace CharacterEditor.Pages
 
             str += 1;
             Strenght.Text = str.ToString();
+            if (str > 49)
+            {
+                PS.Visibility = Visibility.Hidden;
+                Strenght.Text = str.ToString();
+            }
             p -= 1; 
 
             if (p == 0)
@@ -56,6 +61,11 @@ namespace CharacterEditor.Pages
 
             agl += 1;
             Agility.Text = agl.ToString();
+            if (agl > 49)
+            {
+                PA.Visibility = Visibility.Hidden;
+                Agility.Text = agl.ToString();
+            }
             kl -= 1;
 
             if (kl == 0)
@@ -77,6 +87,11 @@ namespace CharacterEditor.Pages
             int st = Convert.ToInt32(Intelligence.Text);
             st += 1;
             Intelligence.Text = st.ToString();
+            if (st > 49)
+            {
+                PI.Visibility = Visibility.Hidden;
+                Intelligence.Text = st.ToString();
+            }
             int kl = Convert.ToInt32(Point.Text);
             kl -= 1;
             if (kl == 0)
@@ -98,7 +113,7 @@ namespace CharacterEditor.Pages
             int st = Convert.ToInt32(Strenght.Text);
             st -= 1;
 
-            if (st == 0)
+            if (st == 1)
             {
                 Strenght.Text = st.ToString();
                 MS.Visibility = Visibility.Hidden;
@@ -122,7 +137,7 @@ namespace CharacterEditor.Pages
             int st = Convert.ToInt32(Agility.Text);
             st -= 1;
 
-            if (st == 0)
+            if (st == 1)
             {
                 Agility.Text = st.ToString();
                 MA.Visibility = Visibility.Hidden;
@@ -145,7 +160,7 @@ namespace CharacterEditor.Pages
         {
             int st = Convert.ToInt32(Intelligence.Text);
             st -= 1;
-            if (st == 0)
+            if (st == 1)
             {
                 Intelligence.Text = st.ToString();
                 MI.Visibility = Visibility.Hidden;
@@ -176,8 +191,17 @@ namespace CharacterEditor.Pages
                 Next.Text = LLL.ToString();
                 MessageBox.Show("Next Level");
                 int kl = Convert.ToInt32(Point.Text);
+                int hp = Convert.ToInt32(HP.Text);
+                int mana = Convert.ToInt32(Mana.Text);
+                int lvl = Convert.ToInt32(LvL.Text);
+                hp += 10;
+                mana += 10;
                 kl += 5;
+                lvl += 1;
                 Point.Text = kl.ToString();
+                HP.Text = hp.ToString();
+                Mana.Text = mana.ToString();
+                LvL.Text = lvl.ToString();
                 PS.Visibility = Visibility.Visible;
                 PI.Visibility = Visibility.Visible;
                 PA.Visibility = Visibility.Visible;
@@ -196,8 +220,17 @@ namespace CharacterEditor.Pages
                 Next.Text = LLL.ToString();
                 MessageBox.Show("Next Level");
                 int kl = Convert.ToInt32(Point.Text);
+                int hp = Convert.ToInt32(HP.Text);
+                int mana = Convert.ToInt32(Mana.Text);
+                int lvl = Convert.ToInt32(LvL.Text);
+                hp += 10;
+                mana += 10;
                 kl += 5;
+                lvl += 1;
                 Point.Text = kl.ToString();
+                HP.Text = hp.ToString();
+                Mana.Text = mana.ToString();
+                LvL.Text = lvl.ToString();
                 PS.Visibility = Visibility.Visible;
                 PI.Visibility = Visibility.Visible;
                 PA.Visibility = Visibility.Visible;
@@ -216,8 +249,17 @@ namespace CharacterEditor.Pages
                 Next.Text = LLL.ToString();
                 MessageBox.Show("Next Level");
                 int kl = Convert.ToInt32(Point.Text);
+                int hp = Convert.ToInt32(HP.Text);
+                int mana = Convert.ToInt32(Mana.Text);
+                int lvl = Convert.ToInt32(LvL.Text);
+                hp += 10;
+                mana += 10;
                 kl += 5;
+                lvl += 1;
                 Point.Text = kl.ToString();
+                HP.Text = hp.ToString();
+                Mana.Text = mana.ToString();
+                LvL.Text = lvl.ToString();
                 PS.Visibility = Visibility.Visible;
                 PI.Visibility = Visibility.Visible;
                 PA.Visibility = Visibility.Visible;
