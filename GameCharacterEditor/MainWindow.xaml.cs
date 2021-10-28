@@ -240,6 +240,7 @@ namespace GameCharacterEditor
                 extraPoint--;
                 constribution++;
             }
+            //new Sword(strenghtt);
             else
             {
                 MessageBox.Show("Дополнительные очки закончились!");
