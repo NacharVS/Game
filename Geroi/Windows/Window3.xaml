@@ -67,5 +67,6 @@
         <TextBox x:Name="OMA" HorizontalAlignment="Left" Height="46" Margin="0,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="36" TextAlignment="Center" UndoLimit="7"/>
         <TextBlock HorizontalAlignment="Left" Margin="134,132,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="#FFDEDDDD"/>
         <Button x:Name="pol" Content="Создать" HorizontalAlignment="Left" Margin="869,551,0,0" VerticalAlignment="Top" Width="210" Height="58" Background="#FFBD3333" FontSize="36" Click="pol_Click"/>
+        <TextBlock x:Name="OM" HorizontalAlignment="Left" Margin="10,566,0,0" TextWrapping="Wrap" Text="Лучник" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF54401"/>
     </Grid>
 </Window>
