@@ -8,15 +8,16 @@ namespace GameCore.Class
 {
     public class Rogue : HeroClass
     {
-        public override void LevelUp()
+        public override void GetXP(int xp)
         {
-            if (lvl < lvlMax)
+            var lvlOld = _level.Level;
+            if (_level.GetXP(xp))
             {
-                ++lvl;
-                ++ExtraPoints;
-
-                _hp += 3;
-                _mana += 2;
+                for (int i = lvlOld; i < _level.Level; i++)
+                {
+                    HP += 12;
+                    Mana += 8;
+                }
             }
         }
 

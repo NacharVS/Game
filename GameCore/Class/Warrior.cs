@@ -8,15 +8,16 @@ namespace GameCore.Class
 {
     public class Warrior : HeroClass
     {
-        public override void LevelUp()
+        public override void GetXP(int xp)
         {
-            if (lvl < lvlMax)
+            var lvlOld = _level.Level;
+            if (_level.GetXP(xp))
             {
-                ++lvl;
-                ++ExtraPoints;
-
-                _hp += 5;
-                _mana += 1;
+                for (int i = lvlOld; i < _level.Level; i++)
+                {
+                    HP += 15;
+                    Mana += 5;
+                }
             }
         }
 

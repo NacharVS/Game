@@ -8,9 +8,25 @@ namespace GameCore.Class
 {
     public class HeroClass
     {
+        protected LevelHero _level;
+        public int Level
+        {
+            get => _level.Level;
+            set
+            {
+                _level.Level = value;
+            }
+        }
+        public long XP
+        {
+            get => _level.XP;
+            set
+            {
+                _level.XP = value;
+            }
+        }
 
         protected string _name;
-
         public string Name
         {
             get => _name;
@@ -21,7 +37,6 @@ namespace GameCore.Class
         }
 
         protected int _hp;
-
         public int HP
         {
             get => _hp;
@@ -32,7 +47,6 @@ namespace GameCore.Class
         }
 
         protected int _mana;
-
         public int Mana
         {
             get => _mana;
@@ -42,31 +56,7 @@ namespace GameCore.Class
             }
         }
 
-        protected int lvl;
-
-        public int LVL
-        {
-            get => lvl;
-            set
-            {
-                lvl = value;
-            }
-        }
-
-        protected int lvlMax;
-        protected int _extraPoints;
-
-        public int ExtraPoints
-        {
-            get => _extraPoints;
-            set
-            {
-                _extraPoints = value;
-            }
-        }
-
         protected int coins;
-
         public int Coins
         {
             get => coins;
@@ -76,141 +66,196 @@ namespace GameCore.Class
             }
         }
 
-        protected int strength;
-
+        protected int _strength;
         public int Strength
         {
-            get => strength;
+            get => _strength;
             set
             {
-                strength = value;
+                _strength = value;
             }
         }
 
-        protected int dexterity;
-
+        protected int _dexterity;
         public int Dexterity
         {
-            get => dexterity;
+            get => _strength;
             set
             {
-                dexterity = value;
+                _strength = value;
             }
         }
 
-        protected int intellect;
-
+        protected int _intellect;
         public int Intellect
         {
-            get => intellect;
+            get => _intellect;
             set
             {
-                intellect = value;
+                _intellect = value;
             }
         }
 
-        protected int constitution;
-
+        protected int _constitution;
         public int Constitution
         {
-            get => constitution;
+            get => _constitution;
             set
             {
-                constitution = value;
+                _constitution = value;
             }
         }
 
-        protected int _strengthMax;
+        protected int strengthMin;
+        public int StrengthMin
+        {
+            get => strengthMin;
+            set
+            {
+                strengthMin = value;
+            }
+        }
 
+        protected int dexterityMin;
+        public int DexterityMin
+        {
+            get => dexterityMin;
+            set
+            {
+                dexterityMin = value;
+            }
+        }
+
+        protected int intellectMin;
+        public int IntellectMin
+        {
+            get => intellectMin;
+            set
+            {
+                intellectMin = value;
+            }
+        }
+
+        protected int constitutionMin;
+        public int ConstitutionMin
+        {
+            get => constitutionMin;
+            set
+            {
+                constitutionMin = value;
+            }
+        }
+
+        protected int strengthMax;
         public int StrengthMax
         {
-            get => _strengthMax;
+            get => strengthMin;
             set
             {
-                _strengthMax = value;
+                strengthMin = value;
             }
         }
 
-        protected int _dexterityMax;
-
+        protected int dexterityMax;
         public int DexterityMax
         {
-            get => _dexterityMax;
+            get => dexterityMin;
             set
             {
-                _dexterityMax = value;
+                dexterityMin = value;
             }
         }
 
-        protected int _intellectMax;
-
+        protected int intellectMax;
         public int IntellectMax
         {
-            get => _intellectMax;
+            get => intellectMin;
             set
             {
-                _intellectMax = value;
+                intellectMin = value;
             }
         }
 
-        protected int _constitutionMax;
-
+        protected int constitutionMax;
         public int ConstitutionMax
         {
-            get => _constitutionMax;
+            get => constitutionMin;
             set
             {
-                _constitutionMax = value;
+                constitutionMin = value;
             }
         }
 
-
-        public int StrengthMin { private set; get; }
-        public int DexterityMin { private set; get; }
-        public int IntellectMin { private set; get; }
-        public int ConstitutionMin { private set; get; }
-
-        protected int attack { get; }
-        protected int spAttack { get; }
-        protected int defense { get; }
-        protected int spDefense { get; }
-        protected int speed { get; }
-
-        public virtual void LevelUp()
+        protected int attack;
+        public int Attack
         {
-            if(lvl < lvlMax)
+            get => attack;
+            set
             {
-                ++lvl;
-                ++ExtraPoints;
-
-                _hp += 3;
-                _mana += 2;
+                attack = value;
             }
         }
 
-        public int TakeDamage(int damage)
+        protected int spAttack;
+        public int SpAttack
         {
-            if(HP > 0)
+            get => spAttack;
+            set
             {
-                HP -= damage;
-                if(CheckDeath() == false)
-                { }
+                spAttack = value;
             }
-            return HP;
         }
 
-        public bool CheckDeath()
+        protected int defense;
+        public int Defense
         {
-            if(HP < 0)
+            get => defense;
+            set
             {
-                HP = 0;
-                return true;
+                defense = value;
             }
-            else
+        }
+
+        protected int spDefense;
+        public int SpDefense
+        {
+            get => spDefense;
+            set
             {
-                return false;
+                spDefense = value;
             }
-            
+        }
+
+        protected int speed;
+        public int Speed
+        {
+            get => speed;
+            set
+            {
+                speed = value;
+            }
+        }
+
+        public virtual void GetStats()
+        {
+            Attack = Attack + Strength * 2;
+            SpAttack = SpAttack + Intellect * 2;
+            Defense = Defense + Constitution * 2;
+            SpDefense = SpDefense + Intellect * 2;
+            Speed = Speed + Dexterity * 2;
+        }
+
+        public virtual void GetXP(int xp)
+        {
+            var lvlOld = _level.Level;
+            if (_level.GetXP(xp))
+            {
+                for(int i = lvlOld; i < _level.Level; i++)
+                {
+                    HP += 10;
+                    Mana += 10;
+                }  
+            }
         }
 
         public HeroClass(string name)
@@ -219,14 +264,9 @@ namespace GameCore.Class
 
             _hp = _mana = 20;
 
-            lvl = 1;
-            lvlMax = 30;
-            _extraPoints = 10;
+            _level = new LevelHero();
 
-            strength = dexterity = intellect = constitution = 10;
-
-            StrengthMax = DexterityMax = IntellectMax = ConstitutionMax = 100;
-            StrengthMin = DexterityMin = IntellectMin = ConstitutionMin = 10;
+            _strength = _dexterity = _intellect = _constitution = 10;
 
             coins = 100;
         }
@@ -237,17 +277,12 @@ namespace GameCore.Class
 
             _hp = _mana = 20;
 
-            lvl = 1;
-            lvlMax = 30;
-            _extraPoints = 20;
+            _level = new LevelHero();
 
-            this.strength = strength;
-            this.dexterity = dexterity;
-            this.intellect = intellect;
-            this.constitution = constitution;
-
-            StrengthMax = DexterityMax = IntellectMax = ConstitutionMax = 100;
-            StrengthMin = DexterityMin = IntellectMin = ConstitutionMin = 10;
+            _strength = strength;
+            _dexterity = dexterity;
+            _intellect = intellect;
+            _constitution = constitution;
 
             coins = 100;
         }

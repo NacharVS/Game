@@ -39,23 +39,17 @@ namespace ConsoleGameTester
 
             Rogue rogue = new Rogue("Secret Lione");
 
-            for(int i = 1; i != 32; i++)
+            for(int i = 1; i != 10; i++)
             {
-                warrior.LevelUp();
-                Console.WriteLine();
-                Console.WriteLine($"{warrior.Name} {warrior.LVL} lvl {warrior.HP} HP {warrior.Mana} Mana {warrior.ExtraPoints} Extra");
-
-                mage.LevelUp();
-                Console.WriteLine();
-                Console.WriteLine($"{mage.Name} {mage.LVL} lvl {mage.HP} HP {mage.Mana} Mana {mage.ExtraPoints} Extra");
-
-                rogue.LevelUp();
-                Console.WriteLine();
-                Console.WriteLine($"{rogue.Name} {rogue.LVL} lvl {rogue.HP} HP {rogue.Mana} Mana {rogue.ExtraPoints} Extra");
-
-                
+                warrior.GetXP(1000);
+                Console.WriteLine($"{warrior.Name} {warrior.Level} {warrior.XP} {warrior.HP}HP {warrior.Mana}Mana");  
             }
 
+            for (int i = 1; i != 2; i++)
+            {
+                mage.GetXP(1000);
+                Console.WriteLine($"{mage.Name} {mage.Level} {mage.XP} {mage.HP}HP {mage.Mana}Mana");
+            }
             //--------------------------------------------------------------------------------------------------------
 
             HeroMakerDefult hmd = new HeroMakerDefult();
