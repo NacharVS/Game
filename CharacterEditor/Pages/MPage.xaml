@@ -46,5 +46,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="576,317,0,0" TextWrapping="Wrap" Text="Mana" VerticalAlignment="Top" Foreground="#FF1E2CB8" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="576,274,0,0" TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Foreground="#FF3AB81E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
         <TextBox x:Name="LvL" HorizontalAlignment="Left" Height="22" Margin="382,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Background="#FFBB8A8A" Text="1" Grid.Row="1" RenderTransformOrigin="-0.3,-3.227"/>
+        <Button x:Name="Create" Content="Create Hero" HorizontalAlignment="Left" Margin="714,399,0,-58" Grid.Row="1" VerticalAlignment="Top" Width="86" Height="29" Background="#FF5C991F" Click="Create_Click"/>
+        <TextBox x:Name="Class" HorizontalAlignment="Left" Margin="719,54,0,0" TextWrapping="Wrap" Text="Mage" VerticalAlignment="Top" Foreground="#FFB81E1E" Width="1"/>
     </Grid>
 </Page>
