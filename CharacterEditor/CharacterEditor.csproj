@@ -163,12 +163,16 @@
     <Compile Include="Classes\OCharacteristic.cs" />
     <Compile Include="Classes\WCharacteristic.cs" />
     <Compile Include="DB.cs" />
-    <Compile Include="Pages\WInvPage.xaml.cs">
-      <DependentUpon>WInvPage.xaml</DependentUpon>
+    <Compile Include="Pages\InvPage.xaml.cs">
+      <DependentUpon>InvPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPages\MainViewPages.cs" />
     <Compile Include="ViewPages\PagesFoundation.cs" />
     <Page Include="Pages\APage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InvPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,10 +196,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\OPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\WInvPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -264,6 +264,7 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="mongocrypt.dll" />
+    <Resource Include="Pages\Res\icons\Inv.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

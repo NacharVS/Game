@@ -88,7 +88,6 @@
                 <StackPanel Orientation="Horizontal">
                     <Button Template="{StaticResource ResourceKey=TopMenuButton}" Content="Герои"/>
                     <Button Template="{StaticResource ResourceKey=TopMenuButton}" Content="Настройки"/>
-                    <Button x:Name="Inventory"  Command="{Binding OpenWInvPage}" Content="Inventory" Margin="639,0,0,0" Background="#FF5F5D5D" BorderBrush="#FF151010" Foreground="#FFB81010" Width="107"/>
                 </StackPanel>
             </Border>
         </Grid>
@@ -114,6 +113,11 @@
                 <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenMPage}" Content="Маг">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/icons/Mage.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenInvPage}" Content="Инвентарь">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">Res/icons/Inv.png</ImageSource>
                     </Button.Resources>
                 </Button>
             </StackPanel>

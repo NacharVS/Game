@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CharacterEditor.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для WInvPage.xaml
+    /// Логика взаимодействия для InvPage.xaml
     /// </summary>
-    public partial class WInvPage : Page
+    public partial class InvPage : Page
     {
-        public WInvPage()
+        public InvPage()
         {
             InitializeComponent();
         }
