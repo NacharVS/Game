@@ -16,7 +16,7 @@
         <Image HorizontalAlignment="Center" VerticalAlignment="Top"
                Stretch="Fill" Source="Res/Top/TWarrior.jpg" Grid.RowSpan="2"/>
         <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
-               Stretch="Fill" Source="Res/BackGround/BWarrior.jpg"/>
-        
+               Stretch="Fill" Source="Res/BackGround/WInv.jpg" Margin="0,0,639,0" Width="161" Height="156"/>
+
     </Grid>
 </Page>
