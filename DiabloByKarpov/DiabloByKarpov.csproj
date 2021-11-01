@@ -75,6 +75,9 @@
     <Compile Include="View\DungeonPage.xaml.cs">
       <DependentUpon>DungeonPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\HeroMakerPage.xaml.cs">
+      <DependentUpon>HeroMakerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MagePage.xaml.cs">
       <DependentUpon>MagePage.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <DependentUpon>WarriorPage.xaml</DependentUpon>
     </Compile>
     <Page Include="View\DungeonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HeroMakerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,6 +216,12 @@
       <Project>{b40285e5-1763-47fc-b364-133e027d6326}</Project>
       <Name>HeroFabric</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\MainBgHeroMakerCut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\MyResources\Background\Blur\MainBgHeroMakerBlur.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

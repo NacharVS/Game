@@ -19,6 +19,7 @@ namespace DiabloByKarpov.ViewModel
 
         private Page dung = new DungeonPage();
         private Page shop = new ShopPage();
+        private Page heroMaker = new HeroMaker();
 
         private Page _CurPage = new WarriorPage();
 
@@ -67,6 +68,13 @@ namespace DiabloByKarpov.ViewModel
             get
             {
                 return new RelayCommand(() => CurPage = shop);
+            }
+        }
+        public ICommand OpenHeroMakerPage
+        {
+            get
+            {
+                return new RelayCommand(() => CurPage = heroMaker);
             }
         }
     }
