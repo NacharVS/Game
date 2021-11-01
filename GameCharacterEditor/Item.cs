@@ -25,6 +25,6 @@ namespace GameCharacterEditor
         public double PDefence { get => pDefence; private set => pDefence = value; }
         public double MDefence { get => mDefence; private set => mDefence = value; }
         public double Constitution { get => constitution; set => constitution = value; }
-        public double Intelegence { get => intelegence; private set => intelegence = value; }
+        public double Intelegence { get => intelegence; set => intelegence = value; }
     }
 }
