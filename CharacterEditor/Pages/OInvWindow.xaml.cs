@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace CharacterEditor.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для WInvWindow.xaml
+    /// Логика взаимодействия для OInvWindow.xaml
     /// </summary>
-    public partial class WInvWindow : Window
+    public partial class OInvWindow : Window
     {
-        public WInvWindow()
+        public OInvWindow()
         {
             InitializeComponent();
         }
-            private void ChoiceTHSword_Click(object sender, RoutedEventArgs e)
-            {
-                MessageBox.Show("Вы выбрали двуручный меч");
-
-            }
     }
 }

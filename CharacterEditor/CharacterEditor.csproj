@@ -163,11 +163,24 @@
     <Compile Include="Classes\OCharacteristic.cs" />
     <Compile Include="Classes\WCharacteristic.cs" />
     <Compile Include="DB.cs" />
+    <Compile Include="Pages\AInvWindows.xaml.cs">
+      <DependentUpon>AInvWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MInvWindow.xaml.cs">
+      <DependentUpon>MInvWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OInvWindow.xaml.cs">
+      <DependentUpon>OInvWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\WInvWindow.xaml.cs">
       <DependentUpon>WInvWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPages\MainViewPages.cs" />
     <Compile Include="ViewPages\PagesFoundation.cs" />
+    <Page Include="Pages\AInvWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\APage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,7 +200,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\MInvWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OInvWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,7 +264,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Res\Subjects\" />
     <Folder Include="Pages\Res\Top\" />
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +285,9 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="mongocrypt.dll" />
+    <Resource Include="Pages\Res\Subjects\Sword.png" />
+    <Resource Include="Pages\Res\Subjects\TwoHandedAxe.jpg" />
+    <Resource Include="Pages\Res\Subjects\TwoHandedSword.jpg" />
     <Resource Include="Pages\Res\icons\Inv.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
