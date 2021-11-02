@@ -49,7 +49,7 @@
         <TextBox x:Name="LvL" HorizontalAlignment="Left" Height="22" Margin="382,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Background="#FFBB8A8A" Text="1" Grid.Row="1" RenderTransformOrigin="-0.3,-3.227"/>
         <Button x:Name="Create" Content="Create Hero" HorizontalAlignment="Left" Margin="681,439,0,0" Grid.Row="1" VerticalAlignment="Top" Width="86" Height="29" Background="#FF5C991F" Click="Create_Click"/>
         <TextBox x:Name="Class" HorizontalAlignment="Left" Margin="719,54,0,0" TextWrapping="Wrap" Text="Archer" VerticalAlignment="Top" Foreground="#FFB81E1E" Width="1"/>
-        <Button x:Name="Ainv" Margin="954,475,0,0" Grid.Row="1" Background="#FF1D1C1C">
+        <Button x:Name="Ainv" Margin="954,475,0,0" Grid.Row="1" Background="#FF1D1C1C" Click="OpenAInv_Click">
             <Image x:Name="AInvIcon" Width="50" Source="Res/Icons/Inv.png"/>
         </Button>
     </Grid>

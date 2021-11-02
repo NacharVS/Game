@@ -63,9 +63,9 @@
             </Button.RenderTransform>
             <Image x:Name="AxeIcon"  Width="180" Source="Res/Subjects/TwoHandedAxe.jpg"/>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="119,222,0,0" TextWrapping="Wrap" Text="TwoHandedSword" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
-        <TextBlock HorizontalAlignment="Left" Margin="343,225,0,0" TextWrapping="Wrap" Text="TwoHandedAxe" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
-        <TextBlock HorizontalAlignment="Left" Margin="604,225,0,0" TextWrapping="Wrap" Text="Sword" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
+        <TextBlock HorizontalAlignment="Left" Margin="119,222,0,0" TextWrapping="Wrap" Text="TwoHandedSword" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" FontFamily="MV Boli"/>
+        <TextBlock HorizontalAlignment="Left" Margin="343,225,0,0" TextWrapping="Wrap" Text="TwoHandedAxe" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" FontFamily="MV Boli" TextDecorations="{x:Null}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="604,225,0,0" TextWrapping="Wrap" Text="Sword" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" FontFamily="MV Boli"/>
 
     </Grid>
 </Window>
