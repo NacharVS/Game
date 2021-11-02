@@ -54,5 +54,16 @@ namespace Geroi
             var b = abase.GetCollection<Unit>("Shakirov_DB");
             b.InsertOne(unit);
         }
+        public static void FindFrom(Unit unit)
+        {
+            MongoClient client = new MongoClient();
+            var abase = client.GetDatabase("111");
+            var b = abase.GetCollection<Unit>("Shakirov_DB");
+            var listPerson = b.Find(Geroi => unit._name == "ovosh").ToList();
+            foreach (Unit unit1 in listPerson)
+            {
+                Console.WriteLine($"{unit._name}");
+            }
+        }
     }
 }

@@ -216,5 +216,12 @@ namespace Geroi
             unit.Add(unit);
             MessageBox.Show("Занесено в базу!");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Unit unit = new Unit(int.Parse(Strenght.Text), int.Parse(Agility.Text), int.Parse(Intelligence.Text), Convert.ToString(OMA.Text), Convert.ToString(OM.Text));
+            Unit.FindFrom(unit);
+            MessageBox.Show("Занесено в базу!");
+        }
     }
 }
