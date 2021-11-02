@@ -8,7 +8,7 @@
         Title="OInvWindow" Height="450" Width="800">
     <Grid Background="#FF040303">
         
-        <Button x:Name="Sword" Margin="527,68,81,0" Background="#FF1D1C1C"  HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="DoubleDagger" Margin="527,68,81,0" Background="#FF1D1C1C"  HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Button.ToolTip>
                 <ToolTip>
                     <StackPanel>
@@ -26,9 +26,9 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Button.RenderTransform>
-            <Image x:Name="SwordIcon"  Width="180" Source="Res/Subjects/Sword.png"/>
+            <Image x:Name="DoubleDaggerIcon"  Width="180" Source="Res/Subjects/DoubleDagger.jpg"/>
         </Button>
-        <Button x:Name="Axe" Margin="296,77,312,0" Background="#FF1D1C1C"  HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="Dagger" Margin="62,62,546,0" Background="#FF1D1C1C"  HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Button.ToolTip>
                 <StackPanel>
                     <TextBlock>Выбрать топор</TextBlock>
@@ -44,11 +44,10 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Button.RenderTransform>
-            <Image x:Name="AxeIcon"  Width="180" Source="Res/Subjects/TwoHandedAxe.jpg"/>
+            <Image x:Name="DaggerIcon"  Width="180" Source="Res/Subjects/Dagger.jpg"/>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="119,222,0,0" TextWrapping="Wrap" Text="TwoHandedSword" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
-        <TextBlock HorizontalAlignment="Left" Margin="343,225,0,0" TextWrapping="Wrap" Text="TwoHandedAxe" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
-        <TextBlock HorizontalAlignment="Left" Margin="604,225,0,0" TextWrapping="Wrap" Text="Sword" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
+        <TextBlock HorizontalAlignment="Left" Margin="132,225,0,0" TextWrapping="Wrap" Text="Dagger" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
+        <TextBlock HorizontalAlignment="Left" Margin="582,225,0,0" TextWrapping="Wrap" Text="DoubleDagger" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062"/>
 
     </Grid>
 </Window>

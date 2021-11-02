@@ -23,7 +23,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="712,67,0,0" TextWrapping="Wrap" Text="Strenght" VerticalAlignment="Top" Foreground="#FFB81E1E" Grid.Row="1" FontFamily="MV Boli"/>
         <TextBlock HorizontalAlignment="Left" Margin="714,116,0,0" TextWrapping="Wrap" Text="Agility" VerticalAlignment="Top"  Foreground="#FFB81E1E" Grid.Row="1" FontFamily="MV Boli"/>
         <TextBlock HorizontalAlignment="Left" Margin="706,166,0,0" TextWrapping="Wrap" Text="Intelligence" VerticalAlignment="Top" Foreground="#FFB81E1E" Grid.Row="1" FontFamily="MV Boli"/>
-        <Button x:Name="MS" Content="-" HorizontalAlignment="Left" Margin="678,89,0,0" VerticalAlignment="Top" Width="22" Background="#FFB61919" Height="24" Click="Minus_Click_Str" Grid.Row="1" />
+        <Button x:Name="MS" Content="-" HorizontalAlignment="Left" Margin="678,89,0,0" VerticalAlignment="Top" Width="22" Background="#FFB61919" Height="24" Click="Minus_Click_Str" Grid.Row="1"/>
         <Button x:Name="PS" Content="+" HorizontalAlignment="Left" Margin="768,89,0,0" VerticalAlignment="Top" Width="22" Background="#FF20B619" Height="22" Click="Plus_Click_Str" Grid.Row="1"/>
         <Button x:Name="MA" Content="-" HorizontalAlignment="Left" Margin="678,138,0,0" VerticalAlignment="Top" Width="22" Background="#FFB61919" Height="24" Click="Minus_Click_Agl" Grid.Row="1"/>
         <Button x:Name="PA" Content="+"  HorizontalAlignment="Left" Margin="768,138,10,0" VerticalAlignment="Top" Width="22" Background="#FF20B619" Height="22" Click="Plus_Click_Agl" Grid.Row="1"/>

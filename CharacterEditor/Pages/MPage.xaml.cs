@@ -271,5 +271,11 @@ namespace CharacterEditor.Pages
             db.Add(db);
             MessageBox.Show("Entered to the DataBase!");
         }
+
+        private void OpenMInv_Click(object sender, RoutedEventArgs e)
+        {
+            MInvWindow window = new MInvWindow();
+            window.Show();
+        }
     }
 }

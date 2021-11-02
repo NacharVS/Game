@@ -285,6 +285,8 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="mongocrypt.dll" />
+    <Resource Include="Pages\Res\Subjects\DoubleDagger.jpg" />
+    <Resource Include="Pages\Res\Subjects\Dagger.jpg" />
     <Resource Include="Pages\Res\Subjects\Bow.png" />
     <Resource Include="Pages\Res\Subjects\Quiver1.jpg" />
     <Resource Include="Pages\Res\Subjects\Quiver2.jpg" />
