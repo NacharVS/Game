@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CharacterEditor.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для InvPage.xaml
+    /// Логика взаимодействия для WInvWindow.xaml
     /// </summary>
-    public partial class InvPage : Page
+    public partial class WInvWindow : Window
     {
-        public InvPage()
+        public WInvWindow()
         {
             InitializeComponent();
         }

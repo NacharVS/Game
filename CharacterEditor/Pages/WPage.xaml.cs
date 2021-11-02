@@ -272,6 +272,12 @@ namespace CharacterEditor.Pages
             MessageBox.Show("Entered to the DataBase!");
         }
 
+        private void OpenWInv_Click(object sender, RoutedEventArgs e)
+        {
+            WInvWindow window = new WInvWindow();
+            window.Show();
+        }
+
 
     }
 }

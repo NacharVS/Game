@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CharacterEditor.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" Height="600" Width="1000" MaxHeight="600" MaxWidth="1000"
+        MinHeight="600" MinWidth="1000"
       Title="OPage">
 
     <Grid>
@@ -34,19 +35,22 @@
         <TextBlock HorizontalAlignment="Left" Margin="327,6,0,0" TextWrapping="Wrap" Text="Level " VerticalAlignment="Top"  Foreground="#FFB81E1E" Grid.Row="1" Width="95" Height="34" FontSize="24"/>
         <TextBox x:Name="XP" HorizontalAlignment="Left" Height="22" Margin="450,14,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82"  Background="#FFBB8A8A" RenderTransformOrigin="4.955,-0.568" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="417,10,0,0" TextWrapping="Wrap" Text="XP" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1" FontSize="24" Height="26" Width="28"/>
-        <Button x:Name="KillMarauder" HorizontalAlignment="Left" Margin="255,295,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45" Background="#FFFFA2A2" Click="KillMarauder_Click" Height="20" Content="500"/>
-        <Button x:Name="KillBrute" Content="1000" HorizontalAlignment="Left" Margin="327,295,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45" Background="#FFFFA2A2" Click="KillBrute_Click"/>
-        <Button x:Name="KillBoss" Content="5000" HorizontalAlignment="Left" Margin="400,295,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45" Background="#FFFFA2A2" Click="KillBoss_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="241,320,0,0" TextWrapping="Wrap" Text="Kill Marauder" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="327,320,0,0" TextWrapping="Wrap" Text="Kill Brute " VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="400,320,0,0" TextWrapping="Wrap" Text="Kill Boss " VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
+        <Button x:Name="KillMarauder" HorizontalAlignment="Left" Margin="450,452,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45" Background="#FFFFA2A2" Click="KillMarauder_Click" Height="20" Content="500"/>
+        <Button x:Name="KillBrute" Content="1000" HorizontalAlignment="Left" Margin="522,452,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45" Background="#FFFFA2A2" Click="KillBrute_Click"/>
+        <Button x:Name="KillBoss" Content="5000" HorizontalAlignment="Left" Margin="595,452,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45" Background="#FFFFA2A2" Click="KillBoss_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="436,477,0,0" TextWrapping="Wrap" Text="Kill Marauder" VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="522,477,0,0" TextWrapping="Wrap" Text="Kill Brute " VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="595,477,0,0" TextWrapping="Wrap" Text="Kill Boss " VerticalAlignment="Top" Foreground="#FFB81E1E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
         <TextBox x:Name="Next" HorizontalAlignment="Left" Height="22" Margin="550,14,0,0" Grid.Row="1" TextWrapping="Wrap" Text="5000" VerticalAlignment="Top" Width="82"  Background="#FFBB8A8A" RenderTransformOrigin="4.955,-0.568" FontSize="16"/>
-        <TextBox x:Name="Mana" HorizontalAlignment="Left" Height="22" Margin="550,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="20" Grid.Row="1"/>
-        <TextBox x:Name="HP" HorizontalAlignment="Left" Height="22" Margin="550,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="30" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="550,251,0,0" TextWrapping="Wrap" Text="Mana" VerticalAlignment="Top" Foreground="#FF1E2CB8" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="550,208,0,0" TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Foreground="#FF3AB81E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
+        <TextBox x:Name="Mana" HorizontalAlignment="Left" Height="22" Margin="706,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="20" Grid.Row="1"/>
+        <TextBox x:Name="HP" HorizontalAlignment="Left" Height="22" Margin="706,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Background="#FFBB8A8A" Text="30" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="706,343,0,0" TextWrapping="Wrap" Text="Mana" VerticalAlignment="Top" Foreground="#FF1E2CB8" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="706,300,0,0" TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Foreground="#FF3AB81E" RenderTransformOrigin="-2.533,0.062" Grid.Row="1"/>
         <TextBox x:Name="LvL" HorizontalAlignment="Left" Height="22" Margin="382,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Background="#FFBB8A8A" Text="1" Grid.Row="1" RenderTransformOrigin="-0.3,-3.227"/>
-        <Button x:Name="Create" Content="Create Hero" HorizontalAlignment="Left" Margin="714,341,0,0" Grid.Row="1" VerticalAlignment="Top" Width="86" Height="29" Background="#FF5C991F" Click="Create_Click"/>
+        <Button x:Name="Create" Content="Create Hero" HorizontalAlignment="Left" Margin="681,448,0,0" Grid.Row="1" VerticalAlignment="Top" Width="86" Height="29" Background="#FF5C991F" Click="Create_Click"/>
         <TextBox x:Name="Class" HorizontalAlignment="Left" Margin="719,54,0,0" TextWrapping="Wrap" Text="Outlaw" VerticalAlignment="Top" Foreground="#FFB81E1E" Width="1"/>
+        <Button x:Name="OInv" Margin="954,475,0,0" Grid.Row="1" Background="#FF1D1C1C">
+            <Image x:Name="OInvIcon" Width="50" Source="Res/Icons/Inv.png"/>
+        </Button>
     </Grid>
 </Page>

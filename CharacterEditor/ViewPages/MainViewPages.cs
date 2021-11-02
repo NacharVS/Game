@@ -13,7 +13,6 @@ namespace CharacterEditor.ViewPages
     internal class MainViewPages : PagesFoundation
     {
         private Page Warrior = new WPage();
-        private Page Inventory = new InvPage();
         private Page Archer = new APage();
         private Page Outlaw = new OPage();
         private Page Mage = new MPage();
@@ -32,15 +31,7 @@ namespace CharacterEditor.ViewPages
             {
                 return new RelayCommand(() => CurPage = Warrior);
             }
-        }
-
-        public ICommand OpenInvPage
-        {
-        get
-            {
-                return new RelayCommand(() => CurPage = Inventory);
-            }
-         }           
+        }       
 
     public ICommand OpenAPage
         {

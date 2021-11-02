@@ -115,11 +115,6 @@
                         <ImageSource x:Key="Img">Res/icons/Mage.png</ImageSource>
                     </Button.Resources>
                 </Button>
-                <Button Template="{StaticResource ResourceKey=SLideMenuBtn}" Command="{Binding OpenInvPage}" Content="Инвентарь">
-                    <Button.Resources>
-                        <ImageSource x:Key="Img">Res/icons/Inv.png</ImageSource>
-                    </Button.Resources>
-                </Button>
             </StackPanel>
         </Grid>
     </Grid>
