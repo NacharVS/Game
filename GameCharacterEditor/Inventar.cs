@@ -5,70 +5,100 @@ namespace GameCharacterEditor
 {
     class Inventar
     {
-        private List<Item> allItems = new List<Item>() { new Robe(), new Leather(), new Hecoy(), new RobeHelmet(), new LeatherHelmet(), new HoceyHelmet() };
-        private List<Item> existItem = new List<Item>();
+        private List<Item> allItems = new List<Item>() { };
+        //private List<Item> existItem = new List<Item>();
         public List<Item> AllItems { get => allItems; }
-        public List<Item> ExistItem { get => existItem; }
-        private BodyArmor bodyArmor;
-        private Helmet helmet;
-        private Weapon weapon;
+        //public List<Item> ExistItem { get => existItem; }
+        public BodyArmor bodyArmor;
+        public Helmet helmet;
+        public Weapon weapon;
 
-        public void Add(int index, Unit unit)
+        public void Add(string name, Unit unit)
         {
-            if (index == 0)
+            if (name == "Robe")
             {
                 if (unit.Intelegence > 20 && unit.Lvl > 1 && CheckExistItems("Robe"))
-                    existItem.Add(new Robe());
+                    bodyArmor = new Robe(unit);
                 else if (CheckExistItems("Robe") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (index == 1)
+            else if (name == "Leather")
             {
                 if (unit.Strength > 50 && unit.Dexterity > 50 && unit.Lvl > 4 && CheckExistItems("Leather"))
-                    existItem.Add(new Leather());
+                    bodyArmor = new Leather(unit);
                 else if (CheckExistItems("Leather") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (index == 2)
+            else if (name == "Hecoy")
             {
                 if (unit.Strength > 250 && unit.Constitution > 100 && unit.Lvl > 7 && CheckExistItems("Hecoy"))
-                    existItem.Add(new Hecoy());
+                    bodyArmor = new Hecoy();
                 else if (CheckExistItems("Hecoy") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (index == 3)
+            else if (name == "RobeHelmet")
             {
                 if (unit.Intelegence > 20 && unit.Lvl > 1 && CheckExistItems("RobeHelmet"))
-                    existItem.Add(new RobeHelmet());
+                    helmet = new RobeHelmet();
                 else if (CheckExistItems("RobeHelmet") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (index == 4)
+            else if (name == "LeatherHelmet")
             {
                 if (unit.Strength > 50 && unit.Constitution > 30 && unit.Lvl > 4 && CheckExistItems("LeatherHelmet"))
-                    existItem.Add(new LeatherHelmet());
+                    helmet = new LeatherHelmet();
                 else if (CheckExistItems("LeatherHelmet") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
                 else
                     throw new Exception("Не хватает статов");
             }
 
-            else if (index == 5)
+            else if (name == "HoceyHelmet")
             {
                 if (unit.Strength > 250 && unit.Constitution > 100 && unit.Lvl > 7 && CheckExistItems("HoceyHelmet"))
-                    existItem.Add(new HoceyHelmet());
+                    helmet = new HoceyHelmet();
+                else if (CheckExistItems("HoceyHelmet") == false)
+                    throw new Exception("Такой элемент уже есть в инвентаре");
+                else
+                    throw new Exception("Не хватает статов");
+            }
+
+            else if (name == "One Handed Sword")
+            {
+                if (unit.Strength > 10 && unit.Constitution > 10 && unit.Lvl > 0 && CheckExistItems("Sword"))
+                    weapon = new Sword(0, unit);
+                else if (CheckExistItems("HoceyHelmet") == false)
+                    throw new Exception("Такой элемент уже есть в инвентаре");
+                else
+                    throw new Exception("Не хватает статов");
+            }
+
+            else if (name == "Two Handed Sword")
+            {
+                if (unit.Strength > 10 && unit.Constitution > 10 && unit.Lvl > 0 && CheckExistItems("HoceyHelmet"))
+                    weapon = new Sword(1, unit);
+                else if (CheckExistItems("HoceyHelmet") == false)
+                    throw new Exception("Такой элемент уже есть в инвентаре");
+                else
+                    throw new Exception("Не хватает статов");
+            }
+
+            else if (name == "Axe")
+            {
+                if (unit.Strength > 10 && unit.Constitution > 10 && unit.Lvl > 0 && CheckExistItems("HoceyHelmet"))
+                    weapon = new Axe(unit);
                 else if (CheckExistItems("HoceyHelmet") == false)
                     throw new Exception("Такой элемент уже есть в инвентаре");
                 else
@@ -78,24 +108,24 @@ namespace GameCharacterEditor
 
         private bool CheckExistItems(string itemName)
         {
-            foreach (var item in existItem)
-            {
-                if (item.ToString().Substring(20) == itemName)
-                    return false;
-            }
+            //foreach (var item in existItem)
+            //{
+            //    if (item.ToString().Substring(20) == itemName)
+            //        return false;
+            //}
             return true;
         }
 
         public void Delete(int index)
         {
-            try
-            {
-                existItem.Remove(existItem[index]);
-            }
-            catch
-            {
-                throw new Exception("Невозможно удалить");
-            }
+            //try
+            //{
+            //    existItem.Remove(existItem[index]);
+            //}
+            //catch
+            //{
+            //    throw new Exception("Невозможно удалить");
+            //}
         }
     }
 }

@@ -3,37 +3,45 @@ using System.Collections.Generic;
 
 namespace GameCharacterEditor
 {
-    abstract class BodyArmor : Item
+    //static class with static methods Add and Delete which will be invoked created
+    class BodyArmor : Item
     {
-        public abstract void Render();
-    }
+        public BodyArmor(Unit unit)
+        {
 
+        }
+
+        public BodyArmor()
+        {
+
+        }
+    }
 
     class Robe : BodyArmor
     {
-        public Robe()
+        public Robe(Unit unit) : base(unit)
         {
-            Render();
+            unit.Intelegence += 50;
+            unit.Mp += 50;
+            unit.MAttack += 50;
+            unit.PDefence += 50;
+            unit.MDefence += 150;
         }
 
-        public override void Render()
+        public void Render()
         {
-            intelegence = 50;
-            mp = 50;
-            mDamage = 50;
-            pDefence = 50;
-            mDefence = 150;
+
         }
     }
 
     class Leather : BodyArmor
     {
-        public Leather()
+        public Leather(Unit unit) : base(unit)
         {
             Render();
         }
 
-        public override void Render()
+        public void Render()
         {
             dexterity = 80;
             mp = 80;
@@ -50,7 +58,7 @@ namespace GameCharacterEditor
             Render();
         }
 
-        public override void Render()
+        public void Render()
         {
             strength = 130;
             constitution = 130;

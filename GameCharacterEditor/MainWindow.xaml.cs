@@ -19,6 +19,9 @@ namespace GameCharacterEditor
         private double dex = 0;
         private double cons = 0;
         private double extra;
+        private bool bodyArmor;
+        private bool helmet;
+        private bool weapon;
         private int maxExp = 1000;
         private int currentExp = 0;
         private int x = 0;
@@ -231,21 +234,21 @@ namespace GameCharacterEditor
 
         private void Render(int index)
         {
-            List<string> itemLst = new List<string>();
-            try
-            {
-                foreach (var item in unitLst[index].Inventar.ExistItem)
-                {
-                    itemLst.Add(item.ToString().Substring(20) + "\n");
-                }
+            //List<string> itemLst = new List<string>();
+            //try
+            //{
+            //    foreach (var item in unitLst[index].Inventar.ExistItem)
+            //    {
+            //        itemLst.Add(item.ToString().Substring(20) + "\n");
+            //    }
 
-                cmbBoxItem.ItemsSource = itemLst;
-                GetUnitInfo(x);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Не удается отрендерить\n{ex.Message}");
-            }
+            //    cmbBoxItem.ItemsSource = itemLst;
+            //    GetUnitInfo(x);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Не удается отрендерить\n{ex.Message}");
+            //}
         }
 
         private void GetAllItems()
@@ -258,7 +261,7 @@ namespace GameCharacterEditor
                 lst.Add(item.ToString().Substring(20) + "\n");
             });
 
-            cmbBoxInventar.ItemsSource = lst;
+            //cmbBoxInventar.ItemsSource = lst;
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
@@ -293,7 +296,14 @@ namespace GameCharacterEditor
         {
             try
             {
-                unitLst[x].Inventar.Add(cmbBoxInventar.SelectedIndex, unitLst[x].Strength, unitLst[x].Dexterity, unitLst[x].Constitution, unitLst[x].Intelegence, unitLst[x].Lvl);
+                string name = cmbBoxInventar.SelectedItem.ToString().Replace("\n", "").Substring(38);
+                unitLst[x].Inventar.Add(name, unitLst[x]);
+                if (name == "Robe" || name == "Leather")
+                    cmbBoxItem.Items.Add(unitLst[x].Inventar.bodyArmor.ToString().Substring(20));
+                else if (name == "RobeHelmet")
+                    cmbBoxItem.Items.Add(unitLst[x].Inventar.helmet.ToString().Substring(20));
+                else if (name == "Axe" || name == "One Handed Sword" || name == "Two Handed Sword")
+                    cmbBoxItem.Items.Add(unitLst[x].Inventar.weapon.ToString().Substring(20));
                 //unitLst = Unit.TakeList();
                 Render(x);
                 unitLst[x].Hp += unitLst[x].Inventar.AllItems[x].Hp;
@@ -336,7 +346,7 @@ namespace GameCharacterEditor
         {
             try
             {
-                unitLst[x].Inventar.Delete(cmbBoxItem.SelectedIndex);
+                //unitLst[x].Inventar.Delete(cmbBoxItem.SelectedIndex);
                 unitLst[x].Hp -= unitLst[x].Inventar.AllItems[x].Hp;
                 unitLst[x].PAttack -= unitLst[x].Inventar.AllItems[x].PDamage;
                 unitLst[x].MAttack -= unitLst[x].Inventar.AllItems[x].MDamage;
@@ -557,7 +567,7 @@ namespace GameCharacterEditor
             }
             catch
             {
-
+                throw new Exception("Стата достигла максимального кол-ва");
             }
 
             return false;
@@ -578,9 +588,30 @@ namespace GameCharacterEditor
             GetExp(500);
         }
 
-        private void txtExp_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click_16(object sender, RoutedEventArgs e)
         {
+            if (bodyArmor)
+            {
+                string name = cmbBoxBodyArmor.SelectedItem.ToString().Replace("\n", "").Substring(38);
+                unitLst[x].Inventar.Add(name, unitLst[x]);
+                lstView.Items.Add(name);
+                bodyArmor = false;
+            }
+        }
 
+        private void cmbBoxBodyArmor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            bodyArmor = true;
+        }
+
+        private void cmbBoxHelmet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            helmet = true;
+        }
+
+        private void cmbBoxWeapon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weapon = true;
         }
     }
 }

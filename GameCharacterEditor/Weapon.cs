@@ -4,18 +4,13 @@ using System.Text;
 
 namespace GameCharacterEditor
 {
-    enum WeaponCategory
-    {
-        OneHanded,
-        TwoHanded,
-        Bows,
-        MagicStick,
-    }
     class Weapon : Item
     {
         protected double min = 0;
         protected double max = 0;
-        protected double wD = 0;
+        protected double wD = 100;
+        protected double criticalDamage = 0;
+        protected double criticalChance = 0;
         protected WeaponCategory category = WeaponCategory.OneHanded;
 
         public Weapon(Unit unit)
@@ -58,20 +53,20 @@ namespace GameCharacterEditor
                 category = WeaponCategory.TwoHanded;
 
             GetMinMaxValue();
+            criticalDamage = 1.5 * wD;
+            criticalChance = 2;
         }
     }
 
 
     class Axe : Weapon
     {
-        public Axe(int state, Unit unit) : base(unit)
+        public Axe(Unit unit) : base(unit)
         {
-            if (state == 0)
-                category = WeaponCategory.OneHanded;
-            else if (state == 1)
-                category = WeaponCategory.TwoHanded;
-
+            category = WeaponCategory.TwoHanded;
             GetMinMaxValue();
+            criticalDamage = 4 * wD;
+            criticalChance = 1;
         }
     }
 
@@ -81,6 +76,8 @@ namespace GameCharacterEditor
         {
             category = WeaponCategory.Bows;
             GetMinMaxValue();
+            criticalDamage = 3 * wD;
+            criticalChance = 2;
         }
     }
 
@@ -90,6 +87,8 @@ namespace GameCharacterEditor
         {
             category = WeaponCategory.MagicStick;
             GetMinMaxValue();
+            criticalDamage = 3 * wD;
+            criticalChance = 1.3;
         }
     }
 
@@ -99,6 +98,8 @@ namespace GameCharacterEditor
         {
             category = WeaponCategory.OneHanded;
             GetMinMaxValue();
+            criticalDamage = 1.3 * wD;
+            criticalChance = 4;
         }
     }
 }
