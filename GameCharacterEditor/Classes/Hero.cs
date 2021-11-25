@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace GameCharacterEditor.Models
@@ -167,7 +168,12 @@ namespace GameCharacterEditor.Models
             }
         }
 
-        public Hero(int strenght, int constitution, int dexterity, int intelligence, int extra, int level)
+        protected Bitmap image;
+        public Bitmap Image => image;
+        
+
+
+        public Hero(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image)
         {
             this.strenght = strenght;
             this.constitution = constitution;
@@ -183,16 +189,17 @@ namespace GameCharacterEditor.Models
             walkSpeed = dexterity * 2 + 50;
             this.level = level;
             this.extra = extra;
+            this.image = image;
         }
     }
 
     public class Warrior : Hero
     {
 
-        public Warrior() : base(35, 30, 10, 10, 0, 1)
+        public Warrior() : base(35, 30, 10, 10, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Warrior.jpg"))
         { }
 
-        public Warrior(int strenght, int constitution, int dexterity, int intelligence, int extra, int level) : base (strenght, constitution, dexterity, intelligence, extra, level)
+        public Warrior(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image) : base (strenght, constitution, dexterity, intelligence, extra, level, image)
         { }
 
         public override int Strenght
@@ -254,10 +261,10 @@ namespace GameCharacterEditor.Models
 
     public class Sorcerer : Hero
     {
-        public Sorcerer() : base (15, 25, 10, 35, 0, 1)
+        public Sorcerer() : base (15, 25, 10, 35, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Sorcecer.jpg"))
         { }
 
-        public Sorcerer(int strenght, int constitution, int dexterity, int intelligence, int extra, int level) : base(strenght, constitution, dexterity, intelligence, extra, level)
+        public Sorcerer(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image) : base(strenght, constitution, dexterity, intelligence, extra, level, image)
         { }
 
         public override int Intelligence
@@ -318,10 +325,10 @@ namespace GameCharacterEditor.Models
 
     public class Rogue : Hero
     {
-        public Rogue() : base (20, 15, 35, 15, 0, 1)
+        public Rogue() : base (20, 15, 35, 15, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Rogue.jpg"))
         { }
 
-        public Rogue(int strenght, int constitution, int dexterity, int intelligence, int extra, int level) : base(strenght, constitution, dexterity, intelligence, extra, level)
+        public Rogue(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image) : base(strenght, constitution, dexterity, intelligence, extra, level, image)
         { }
 
         public override int Dexterity
