@@ -263,6 +263,7 @@ namespace GameCharacterEditor.Models
         }
     }
 
+    [Serializable]
     public class Sorcerer : Hero
     {
         public Sorcerer() : base (15, 25, 10, 35, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Sorcecer.jpg"))
@@ -326,7 +327,7 @@ namespace GameCharacterEditor.Models
             collection.InsertOne(sorcerer);
         }
     }
-
+    [Serializable]
     public class Rogue : Hero
     {
         public Rogue() : base (20, 15, 35, 15, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Rogue.jpg"))

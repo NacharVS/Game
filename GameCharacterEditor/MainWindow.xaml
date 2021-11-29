@@ -172,6 +172,14 @@
                         <Button Grid.Column="2" x:Name="ExpButton" Content="+1000" Width="70" Height="30" Margin="10" HorizontalAlignment="Left" Click="ExpButton_Click"/>
                     </Grid>
                 </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="OpenShopBtn" Content="Shop" Width="100" Height="30" Grid.Column="1" Click="OpenShopBtn_Click" Cursor="Hand"/>
+                </Grid>
             </Grid>
         </Grid>
     </Border>

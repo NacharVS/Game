@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GameCharacterEditor.Classes;
 using GameCharacterEditor.Models;
 using GameCharacterEditor.Logic;
 using MongoDB.Driver;
@@ -28,7 +27,7 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BindingList<TodoModel> _todoData;
+       // private BindingList<TodoModel> _todoData;
 
         private Bitmap bitmapImage;
              
@@ -125,11 +124,13 @@ namespace GameCharacterEditor
                 MS_TB.Text = rogue.WalkSpeed.ToString();
                 LevelBlock.Text = rogue.Level.ToString();
 
-                bitmapImage = rogue.Image;
+               // CharacterImg = Serializing.Deserialize();
 
-                ImageSource imageSource = Bmp2BmpImg(bitmapImage);
+            //    bitmapImage = rogue.Image;
 
-                CharacterImg.Source = imageSource;
+            //    ImageSource imageSource = Bmp2BmpImg(bitmapImage);
+
+            //    CharacterImg.Source = imageSource;
             }
             else if (ChooseSorcererRB.IsChecked == true)
             {
@@ -329,6 +330,12 @@ namespace GameCharacterEditor
             MP_TB.Text = (Convert.ToInt32(Intelligence_TB.Text) * 8).ToString();
             AS_TB.Text = (Convert.ToInt32(Dexterity_TB.Text) * 5).ToString();
             MS_TB.Text = (Convert.ToInt32(Dexterity_TB.Text) * 2 + 50).ToString();
+        }
+
+        private void OpenShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShopWindow shopWindow = new ShopWindow();
+            shopWindow.Show();
         }
         //public static void Serializer(object obj)
         //{
