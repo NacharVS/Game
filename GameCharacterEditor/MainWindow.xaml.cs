@@ -20,7 +20,6 @@ using MongoDB.Driver;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace GameCharacterEditor
 {
@@ -31,21 +30,29 @@ namespace GameCharacterEditor
     {
         private BindingList<TodoModel> _todoData;
 
-        private Bitmap image1;
+        private Bitmap bitmapImage;
              
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private static BitmapImage ToBitmapImage(Bitmap bitmap)
+        private static BitmapImage Bmp2BmpImg(Bitmap bitmap)
         {
-            using (var memory = new MemoryStream)
+            using (var memory = new MemoryStream())
             {
-                bitmap.Save(memory, ImageFormat.Png)
-                return bitmap;
-            
+                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitImg = new BitmapImage();
+                bitImg.BeginInit();
+                bitImg.StreamSource = memory;
+                bitImg.CacheOption = BitmapCacheOption.OnLoad;
+                bitImg.EndInit();
+                return bitImg;
             }
+            //ImageSourceConverter c = new ImageSourceConverter();
+            //return (ImageSource)c.ConvertFrom(bitmap);
+
         }
 
         private void ChooseWarrior_Click(object sender, RoutedEventArgs e)
@@ -71,27 +78,32 @@ namespace GameCharacterEditor
                 AS_TB.Text = warrior.AttackSpeed.ToString();
                 MS_TB.Text = warrior.WalkSpeed.ToString();
                 LevelBlock.Text = warrior.Level.ToString();
-                try
-                {
-                    image1 = warrior.Image;
-                    
-                    for(int x = 0; x < image1.Width; ++x)
-                    {
-                        for(int y = 0; y < image1.Height; ++y)
-                        {
-                            System.Drawing.Color color = image1.GetPixel(x, y);
-                            System.Drawing.Color newColor = System.Drawing.Color.FromArgb(color.R, 0, 0);
-                            image1.SetPixel(x, y, newColor);
-                        }
-                    }
+                bitmapImage = warrior.Image;
 
-      
+                ImageSource imageSource = Bmp2BmpImg(bitmapImage);
 
-                    MainGrid.Background = image1;
-                    
-                }
-                catch { }
-                
+                CharacterImg.Source = imageSource;
+
+                Serializing.Serializer(warrior);
+
+                //try
+                //{
+                //    image1 = warrior.Image;
+
+
+                //    for(int x = 0; x < image1.Width; ++x)
+                //    {
+                //        for(int y = 0; y < image1.Height; ++y)
+                //        {
+                //            System.Drawing.Color color = image1.GetPixel(x, y);
+                //            System.Drawing.Color newColor = System.Drawing.Color.FromArgb(color.R, 0, 0);
+                //            image1.SetPixel(x, y, newColor);
+                //        }
+                //    }
+                //    us
+                //}
+                //catch { }
+
             }
 
             else if (ChooseRogueRB.IsChecked == true)
@@ -112,8 +124,12 @@ namespace GameCharacterEditor
                 AS_TB.Text = rogue.AttackSpeed.ToString();
                 MS_TB.Text = rogue.WalkSpeed.ToString();
                 LevelBlock.Text = rogue.Level.ToString();
-                
-                //MainGrid.Background = imageBrush;
+
+                bitmapImage = rogue.Image;
+
+                ImageSource imageSource = Bmp2BmpImg(bitmapImage);
+
+                CharacterImg.Source = imageSource;
             }
             else if (ChooseSorcererRB.IsChecked == true)
             {
@@ -133,17 +149,19 @@ namespace GameCharacterEditor
                 AS_TB.Text = sorcerer.AttackSpeed.ToString();
                 MS_TB.Text = sorcerer.WalkSpeed.ToString();
                 LevelBlock.Text = sorcerer.Level.ToString();
-                ImageBrush imageBrush = new ImageBrush();
-                Image image = new Image();
-                image.Source = new BitmapImage(new Uri("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Sorcecer.jpg"));
-                imageBrush.ImageSource = image.Source;
-                MainGrid.Background = imageBrush;
+                
+                bitmapImage = sorcerer.Image;
+
+                ImageSource imageSource = Bmp2BmpImg(bitmapImage);
+
+                CharacterImg.Source = imageSource;
             }
             else
             {
                 MessageBox.Show("Something goes wrong...");
             }
         }
+
 
         private void ExtraBuff_Click(object sender, RoutedEventArgs e)
         {
@@ -312,12 +330,11 @@ namespace GameCharacterEditor
             AS_TB.Text = (Convert.ToInt32(Dexterity_TB.Text) * 5).ToString();
             MS_TB.Text = (Convert.ToInt32(Dexterity_TB.Text) * 2 + 50).ToString();
         }
-
         //public static void Serializer(object obj)
         //{
         //    var image = new Bitmap()
         //    Formatter formatter = new Formatter();
-            
+
         //}
     }
 }

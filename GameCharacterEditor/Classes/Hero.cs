@@ -193,10 +193,14 @@ namespace GameCharacterEditor.Models
         }
     }
 
+
+    [Serializable]
     public class Warrior : Hero
     {
+        private static string path = "C:/Users/Администратор/Desktop/Warrior.jpg";
+        public string Path => path;
 
-        public Warrior() : base(35, 30, 10, 10, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Warrior.jpg"))
+        public Warrior() : base(35, 30, 10, 10, 0, 1, new Bitmap(path))
         { }
 
         public Warrior(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image) : base (strenght, constitution, dexterity, intelligence, extra, level, image)

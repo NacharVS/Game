@@ -129,6 +129,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <!--<DataGrid Grid.Row="0" Width="700" x:Name="CharacterList" AutoGenerateColumns="False" Background="Silver" HorizontalAlignment="Left">-->
                     <!--<DataGrid.Columns>
