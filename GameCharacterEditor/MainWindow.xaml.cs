@@ -371,6 +371,11 @@ namespace GameCharacterEditor
             
         }
 
+        private void OpenConsoleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Task.Run(() => Console.Beep(500,5000));
+        }
+
         //private byte[] ImageToByte(Image image)
         //{
         //    using(MemoryStream ms = new MemoryStream())
