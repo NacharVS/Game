@@ -11,6 +11,7 @@ namespace GameCharacterEditor.Models
     public class Hero
     {
         [BsonId]
+        [BsonIgnoreIfDefault]
         ObjectId _id;
 
         protected string name;
