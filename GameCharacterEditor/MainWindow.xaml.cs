@@ -256,7 +256,11 @@ namespace GameCharacterEditor
                 rogue.Intelligence = Convert.ToInt32(Intelligence_TB.Text);
                 rogue.Extra = Convert.ToInt32(Extra_TB.Text);
                 rogue.Level = Convert.ToInt32(LevelBlock.Text);
-                name = "Rogue";
+               
+                byte[] imageBytes = File.ReadAllBytes(rogue.Path);
+                rogue.ImageBytes = imageBytes;
+                rogue.Name = NewNameTB.Text;
+                rogue.AddToDataBase(rogue);
                 rogue.AddToDataBase(rogue);
             }
             else
@@ -268,7 +272,12 @@ namespace GameCharacterEditor
                 sorc.Intelligence = Convert.ToInt32(Intelligence_TB.Text);
                 sorc.Extra = Convert.ToInt32(Extra_TB.Text);
                 sorc.Level = Convert.ToInt32(LevelBlock.Text);
-                name = "Sorcerer";
+                
+                byte[] imageBytes = File.ReadAllBytes(sorc.Path);
+                sorc.ImageBytes = imageBytes;
+                sorc.Name = NewNameTB.Text;
+                sorc.AddToDataBase(sorc);
+                sorc.AddToDataBase(sorc);
                 sorc.AddToDataBase(sorc);
             }
 
@@ -346,9 +355,9 @@ namespace GameCharacterEditor
         {
             string name = NewNameTB.Text;
             Hero hero = FindFromDB(name);
-            byte[] imageBytes = hero.ImageBytes;
-
-            using (FileStream fs = new FileStream("C:/Users/211925/Desktop/picture.jpg", FileMode.OpenOrCreate))
+            //byte[] imageBytes = hero.ImageBytes;
+            string fileName = FileNameTB.Text;
+            using (FileStream fs = new FileStream($"C:/Users/211925/Desktop/{fileName}.jpg", FileMode.OpenOrCreate))
             {
                 fs.Write(hero.ImageBytes, 0, hero.ImageBytes.Length);
             }

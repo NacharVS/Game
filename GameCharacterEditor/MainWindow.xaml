@@ -191,7 +191,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="FindBtn" Content="Find" Width="100" Height="30" Grid.Column="1" Click="OpenShopBtn_Click" Cursor="Hand"/>
-
+                    <TextBox x:Name="FileNameTB" Grid.Column="0" Width="100" Height="30"/>
                 </Grid>
             </Grid>
         </Grid>
