@@ -83,44 +83,46 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="45*"/>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="52*"/>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="52*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="35*"/>
+                        <RowDefinition Height="18*"/>
+                        <RowDefinition Height="74*"/>
+                        <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Extras" Grid.Column="2" Grid.Row="0" Margin="5 10 10 10" HorizontalAlignment="Center" FontSize="15"/>
-                    <TextBox x:Name="Extra_TB" IsReadOnly="True" Grid.Column="3" Grid.Row="0" Margin="5 10 5 10" Background="Silver"/>
+                    <TextBlock Text="Extras" Grid.Column="2" Grid.Row="0" Margin="0,10,0,10" HorizontalAlignment="Center" FontSize="15" Width="38"/>
+                    <TextBox x:Name="Extra_TB" IsReadOnly="True" Grid.Column="3" Grid.Row="0" Margin="5,10,5,10" Background="Silver"/>
 
-                    <TextBlock Text="Strenght" Grid.Row="1" Grid.Column="1" Margin="5"/>
-                    <Button x:Name="Strenght_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5" VerticalAlignment="Top"/>
-                    <Button x:Name="Strenght_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
-                    <TextBlock Text="Constitution" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Margin="5"/>
-                    <Button x:Name="Constitution_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="Constitution_TB" Grid.Row="2" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
-                    <Button x:Name="Constitution_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Strenght" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"/>
+                    <Button x:Name="Strenght_down" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Width="15" Margin="38,10,0,10" Click="ExtraDebuff_Click"/>
+                    <TextBox x:Name="Strenght_TB" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5,0,5,0" VerticalAlignment="Center" Height="25"/>
+                    <Button x:Name="Strenght_up" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="15"  Margin="5,10,0,10" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Constitution" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Margin="5,5,5,5"/>
+                    <Button x:Name="Constitution_down" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" Width="15" Margin="38,10,0,10" Click="ExtraDebuff_Click"/>
+                    <TextBox x:Name="Constitution_TB" Grid.Row="2" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5,5,5,5"/>
+                    <Button x:Name="Constitution_up" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Width="15"  Margin="5,10,0,10" Click="ExtraBuff_Click"/>
 
-                    <TextBlock Text="Dexterity" Grid.Row="3" Grid.Column="1" Margin="5"/>
-                    <Button x:Name="Dexterity_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="Dexterity_TB" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5"/>
-                    <Button x:Name="Dexterity_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
-                    <TextBlock Text="Intelligence" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="5"/>
-                    <Button x:Name="Intelligence_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Width="15" Height="15" Margin="5" Click="ExtraDebuff_Click"/>
-                    <TextBox x:Name="Intelligence_TB" Grid.Row="4" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5"/>
-                    <Button x:Name="Intelligence_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15" Height="15"  Margin="5" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Dexterity" Grid.Row="3" Grid.Column="1" Margin="5,5,5,5"/>
+                    <Button x:Name="Dexterity_down" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="15" Margin="38,10,0,10" Click="ExtraDebuff_Click"/>
+                    <TextBox x:Name="Dexterity_TB" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Silver" Margin="5,5,5,5"/>
+                    <Button x:Name="Dexterity_up" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="15"  Margin="5,10,0,10" Click="ExtraBuff_Click"/>
+                    <TextBlock Text="Intelligence" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="5,5,5,5"/>
+                    <Button x:Name="Intelligence_down" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left" Width="15" Margin="38,10,0,10" Click="ExtraDebuff_Click"/>
+                    <TextBox x:Name="Intelligence_TB" Grid.Row="4" Grid.Column="4" IsReadOnly="True" Background="Silver" Margin="5,5,5,5"/>
+                    <Button x:Name="Intelligence_up" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" Width="15"  Margin="5,10,0,10" Click="ExtraBuff_Click"/>
 
-                    <TextBlock Text="Attack speed" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0 20 5 5"/>
-                    <TextBox x:Name="AS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="2" Background="Silver" Margin="5" HorizontalAlignment="Center" Width="50" Height="20"/>
+                    <TextBlock Text="Attack speed" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0 20 5 5" Width="69"/>
+                    <TextBox x:Name="AS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="2" Background="Silver" Margin="0,5,0,5" HorizontalAlignment="Center" Width="50"/>
 
                     <TextBlock Text="Movement speed" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Margin="0 20 5 5"/>
-                    <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="5" HorizontalAlignment="Center" Width="50" Height="20"/>
-                    <Button x:Name="PickButton" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="80" Margin="10 50 10 10" Content="Pick!" Click="PickButton_Click"/>
+                    <TextBox x:Name="MS_TB" IsReadOnly="True" Grid.Row="6" Grid.Column="3" Background="Silver" Margin="0,5,0,5" HorizontalAlignment="Center" Width="50"/>
+
+                    <Button x:Name="PickButton" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Margin="18,50,18,10" Content="Pick!" Click="PickButton_Click"/>
                 </Grid>
             </StackPanel>
 
@@ -132,7 +134,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <!--<DataGrid Grid.Row="0" Width="700" x:Name="CharacterList" AutoGenerateColumns="False" Background="Silver" HorizontalAlignment="Left">-->
-                    <!--<DataGrid.Columns>
+                <!--<DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="False" Header="ID" Width="700"/>
                         <DataGridTextColumn Binding="{Binding Path = Character}" IsReadOnly="False" Header="Character" Width="700"/>
                         <DataGridTextColumn Binding="{Binding Path = HP}" IsReadOnly="True" Header="Health" Width="700"/>
@@ -150,8 +152,18 @@
                     </DataGrid.Columns>
                 </DataGrid>-->
 
-                <Image x:Name="CharacterImg" Grid.Row="0" Width="100" Height="150"/>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="CharacterImg" Grid.Column="0" Width="100" Height="150"/>
+                    <Image x:Name="FindedImg" Grid.Column ="1" Width="100" Height="150"/>
+                </Grid>
 
+                <TextBox x:Name="NewNameTB" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Width="200" Height="30" Grid.RowSpan="2" />
+                
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
@@ -178,7 +190,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="OpenShopBtn" Content="Shop" Width="100" Height="30" Grid.Column="1" Click="OpenShopBtn_Click" Cursor="Hand"/>
+                    <Button x:Name="FindBtn" Content="Find" Width="100" Height="30" Grid.Column="1" Click="OpenShopBtn_Click" Cursor="Hand"/>
+
                 </Grid>
             </Grid>
         </Grid>

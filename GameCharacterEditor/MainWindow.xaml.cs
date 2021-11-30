@@ -19,6 +19,7 @@ using MongoDB.Driver;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Drawing;
+using Image = System.Drawing.Image;
 
 namespace GameCharacterEditor
 {
@@ -49,9 +50,14 @@ namespace GameCharacterEditor
                 bitImg.EndInit();
                 return bitImg;
             }
-            //ImageSourceConverter c = new ImageSourceConverter();
-            //return (ImageSource)c.ConvertFrom(bitmap);
+        }
 
+        private static Hero FindFromDB(string name)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Diyar");
+            var collection = database.GetCollection<Hero>("Hero!");
+            return collection.Find(x => x.Name == name).FirstOrDefault();
         }
 
         private void ChooseWarrior_Click(object sender, RoutedEventArgs e)
@@ -84,24 +90,8 @@ namespace GameCharacterEditor
                 CharacterImg.Source = imageSource;
 
                 Serializing.Serializer(warrior);
-
-                //try
-                //{
-                //    image1 = warrior.Image;
-
-
-                //    for(int x = 0; x < image1.Width; ++x)
-                //    {
-                //        for(int y = 0; y < image1.Height; ++y)
-                //        {
-                //            System.Drawing.Color color = image1.GetPixel(x, y);
-                //            System.Drawing.Color newColor = System.Drawing.Color.FromArgb(color.R, 0, 0);
-                //            image1.SetPixel(x, y, newColor);
-                //        }
-                //    }
-                //    us
-                //}
-                //catch { }
+               
+                byte[] array = File.ReadAllBytes(warrior.Path);
 
             }
 
@@ -123,14 +113,21 @@ namespace GameCharacterEditor
                 AS_TB.Text = rogue.AttackSpeed.ToString();
                 MS_TB.Text = rogue.WalkSpeed.ToString();
                 LevelBlock.Text = rogue.Level.ToString();
+                bitmapImage = rogue.Image;
 
-               // CharacterImg = Serializing.Deserialize();
+                ImageSource imageSource = Bmp2BmpImg(bitmapImage);
 
-            //    bitmapImage = rogue.Image;
+                CharacterImg.Source = imageSource;
 
-            //    ImageSource imageSource = Bmp2BmpImg(bitmapImage);
+                Serializing.Serializer(rogue);
 
-            //    CharacterImg.Source = imageSource;
+                // CharacterImg = Serializing.Deserialize();
+
+                //    bitmapImage = rogue.Image;
+
+                //    ImageSource imageSource = Bmp2BmpImg(bitmapImage);
+
+                //    CharacterImg.Source = imageSource;
             }
             else if (ChooseSorcererRB.IsChecked == true)
             {
@@ -150,12 +147,13 @@ namespace GameCharacterEditor
                 AS_TB.Text = sorcerer.AttackSpeed.ToString();
                 MS_TB.Text = sorcerer.WalkSpeed.ToString();
                 LevelBlock.Text = sorcerer.Level.ToString();
-                
                 bitmapImage = sorcerer.Image;
 
                 ImageSource imageSource = Bmp2BmpImg(bitmapImage);
 
                 CharacterImg.Source = imageSource;
+
+                Serializing.Serializer(sorcerer );
             }
             else
             {
@@ -242,7 +240,10 @@ namespace GameCharacterEditor
                 war.Intelligence = Convert.ToInt32(Intelligence_TB.Text);
                 war.Extra = Convert.ToInt32(Extra_TB.Text);
                 war.Level = Convert.ToInt32(LevelBlock.Text);
-                name = "Warrior";
+
+                byte[] imageBytes = File.ReadAllBytes(war.Path);
+                war.ImageBytes = imageBytes;
+                war.Name = NewNameTB.Text;
                 war.AddToDataBase(war);
             }
 
@@ -332,10 +333,34 @@ namespace GameCharacterEditor
             MS_TB.Text = (Convert.ToInt32(Dexterity_TB.Text) * 2 + 50).ToString();
         }
 
+        private Image BytesArrayToImage(byte[] byteArrayIn)
+        {
+            using(MemoryStream ms = new MemoryStream())
+            {
+                ms.Write(byteArrayIn, 0, byteArrayIn.Length);
+                return Image.FromStream(ms, true);
+            }
+        }
+
         private void OpenShopBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShopWindow shopWindow = new ShopWindow();
-            shopWindow.Show();
+            string name = NewNameTB.Text;
+            Hero hero = FindFromDB(name);
+            byte[] imageBytes = hero.ImageBytes;
+
+            using (FileStream fs = new FileStream("C:/Users/211925/Desktop/picture.jpg", FileMode.OpenOrCreate))
+            {
+                fs.Write(hero.ImageBytes, 0, hero.ImageBytes.Length);
+            }
+        }
+
+        private byte[] ImageToByte(Image image)
+        {
+            using(MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
         }
         //public static void Serializer(object obj)
         //{

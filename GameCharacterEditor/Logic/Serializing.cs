@@ -15,7 +15,31 @@ namespace GameCharacterEditor.Logic
         {
             BinaryFormatter formatter = new BinaryFormatter();
             string path = warrior.Path;
-            using (FileStream fs = new FileStream("C:/Users/Администратор/Desktop/serializedImage.txt", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("C:/Users/211925/Desktop/serializedImageWar.txt", FileMode.OpenOrCreate))
+            {
+                Bitmap bitmap = new Bitmap(path);
+                formatter.Serialize(fs, bitmap);
+                fs.Close();
+            }
+        }
+
+        public static void Serializer(Sorcerer sorcecer)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            string path = sorcecer.Path;
+            using (FileStream fs = new FileStream("C:/Users/211925/Desktop/serializedImageSorc.txt", FileMode.OpenOrCreate))
+            {
+                Bitmap bitmap = new Bitmap(path);
+                formatter.Serialize(fs, bitmap);
+                fs.Close();
+            }
+        }
+
+        public static void Serializer(Rogue rogue)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            string path = rogue.Path;
+            using (FileStream fs = new FileStream("C:/Users/211925/Desktop/serializedImageRogue.txt", FileMode.OpenOrCreate))
             {
                 Bitmap bitmap = new Bitmap(path);
                 formatter.Serialize(fs, bitmap);

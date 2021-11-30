@@ -13,6 +13,18 @@ namespace GameCharacterEditor.Models
         [BsonId]
         ObjectId _id;
 
+        protected string name;
+        [BsonElement("Name")]
+        public string Name
+        {
+            get => name;
+            set
+            {
+                name = value;
+            }
+        }
+
+
         protected int strenght;
         [BsonElement("Strenght")]
         public virtual int Strenght 
@@ -168,9 +180,20 @@ namespace GameCharacterEditor.Models
             }
         }
 
+        
         protected Bitmap image;
         public Bitmap Image => image;
-        
+
+        protected byte[] imageByte;
+        [BsonElement("Image")]
+        public byte[] ImageBytes
+        {
+            get => imageByte;
+            set
+            {
+                imageByte = value;
+            }
+        }
 
 
         public Hero(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image)
@@ -197,7 +220,7 @@ namespace GameCharacterEditor.Models
     [Serializable]
     public class Warrior : Hero
     {
-        private static string path = "C:/Users/Администратор/Desktop/Warrior.jpg";
+        private static string path = "C:/Users/211925/Desktop/Warrior.jpg";
         public string Path => path;
 
         public Warrior() : base(35, 30, 10, 10, 0, 1, new Bitmap(path))
@@ -266,7 +289,10 @@ namespace GameCharacterEditor.Models
     [Serializable]
     public class Sorcerer : Hero
     {
-        public Sorcerer() : base (15, 25, 10, 35, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Sorcecer.jpg"))
+        private static string path = "C:/Users/211925/Desktop/Sorcecer.jpg";
+        public string Path => path;
+
+        public Sorcerer() : base (15, 25, 10, 35, 0, 1, new Bitmap(path))
         { }
 
         public Sorcerer(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image) : base(strenght, constitution, dexterity, intelligence, extra, level, image)
@@ -330,7 +356,10 @@ namespace GameCharacterEditor.Models
     [Serializable]
     public class Rogue : Hero
     {
-        public Rogue() : base (20, 15, 35, 15, 0, 1, new Bitmap("C:/Users/211925/Source/Repos/NacharVS/Game/GameCharacterEditor/Images/Rogue.jpg"))
+        private static string path = "C:/Users/211925/Desktop/Rogue.jpg";
+        public string Path => path;
+
+        public Rogue() : base (20, 15, 35, 15, 0, 1, new Bitmap(path))
         { }
 
         public Rogue(int strenght, int constitution, int dexterity, int intelligence, int extra, int level, Bitmap image) : base(strenght, constitution, dexterity, intelligence, extra, level, image)
