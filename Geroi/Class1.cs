@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.DrawingCore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace Geroi
         protected double Intelligence;
         protected string Name;
         protected string Class;
+        private static string path = "C:/Users/211925/Desktop/Warrior.jpg";
+        public string Path => path;
         private int v1;
         private int v2;
         private int v3;
@@ -43,9 +46,11 @@ namespace Geroi
         public double _agility { get => v2; set => Agility = value; }
         [BsonElement]
         public double _intelligence { get => v3; set => Intelligence = value; }
-        
-        
-        
+        [BsonElement]
+        public string _image { get => path; set => path = value; }
+
+
+
 
         public void Add(Unit unit)
         {

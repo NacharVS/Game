@@ -19,7 +19,7 @@
             </Image.RenderTransform>
         </Image>
         <TextBlock HorizontalAlignment="Left" Margin="59,55,0,0" TextWrapping="Wrap" Text="Назад" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF99128"/>
-        <Image HorizontalAlignment="Left" Height="425" Margin="-1,178,0,0" VerticalAlignment="Top" Width="426" Source="/Geroi;component/resource/mag.png" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="ImageClass" HorizontalAlignment="Left" Height="425" Margin="-1,178,0,0" VerticalAlignment="Top" Width="426" Source="/Geroi;component/resource/mag.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -73,6 +73,5 @@
         <TextBlock HorizontalAlignment="Left" Margin="423,74,0,0" TextWrapping="Wrap" Text="Оружие" VerticalAlignment="Top" Height="63" Width="156" FontSize="36" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="666,-1,0,0" TextWrapping="Wrap" Text="dmg" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="671,45,0,0" TextWrapping="Wrap" Text="Crit" VerticalAlignment="Top" Height="68" Width="140" FontSize="36" Foreground="Red"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="1005,377,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

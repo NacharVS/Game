@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +9,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MongoDB.Driver;
+using System.Runtime.Serialization;
+using System.IO;
+using System.Drawing;
+using System.DrawingCore;
+using System;
 
 namespace Geroi
 {
@@ -22,6 +28,20 @@ namespace Geroi
         public Window1()
         {
             InitializeComponent();
+        }
+        private static BitmapImage Bmp2BmpImg(Bitmap bitmap)
+        {
+            using (var memory = new MemoryStream())
+            {
+                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitImg = new BitmapImage();
+                bitImg.BeginInit();
+                bitImg.StreamSource = memory;
+                bitImg.CacheOption = BitmapCacheOption.OnLoad;
+                bitImg.EndInit();
+                return bitImg;
+            }
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -213,14 +233,8 @@ namespace Geroi
         private void pol_Click(object sender, RoutedEventArgs e)
         {
             Unit unit = new Unit(int.Parse(Strenght.Text),int.Parse(Agility.Text),int.Parse(Intelligence.Text),Convert.ToString(OMA.Text),Convert.ToString(OM.Text));
+            byte[] imagebytes = File.ReadAllBytes(unit.Path);
             unit.Add(unit);
-            MessageBox.Show("Занесено в базу!");
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Unit unit = new Unit(int.Parse(Strenght.Text), int.Parse(Agility.Text), int.Parse(Intelligence.Text), Convert.ToString(OMA.Text), Convert.ToString(OM.Text));
-            Unit.FindFrom(unit);
             MessageBox.Show("Занесено в базу!");
         }
     }
