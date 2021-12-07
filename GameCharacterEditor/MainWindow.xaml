@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:GameCharacterEditor"
         FontFamily="Comic Sans MS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="570" Width="1089" ResizeMode="NoResize">
-    <Grid RenderTransformOrigin="0.97,0.056" Margin="0,0,0,-6">
+        Title="MainWindow" Height="690" Width="1319" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.97,0.056" Margin="0,0,-301,-215">
         <Grid.Background>
             <ImageBrush ImageSource="/Задний фон.jpg"/>
         </Grid.Background>
@@ -71,10 +71,19 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="669,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="78" IsEnabled="False" TextAlignment="Center" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"/>
-        <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="572,33,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="294" FontWeight="Bold"/>
-        <TextBox x:Name="lvltxt" HorizontalAlignment="Left" Margin="670,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Text="0" TextAlignment="Center" FontSize="20" IsEnabled="False" />
-        <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="612,159,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16" Height="28" Width="236" FontWeight="Bold"/>
+        <TextBox x:Name="textpoint" HorizontalAlignment="Left" Margin="1097,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Height="134" IsEnabled="False" TextAlignment="Center" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.37"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.394"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Количество дополнительных очков" HorizontalAlignment="Left" Margin="977,314,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="22" Height="44" Width="413" FontWeight="Bold"/>
+        <TextBox x:Name="lvltxt" HorizontalAlignment="Left" Margin="1101,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="100" Text="0" TextAlignment="Center" FontSize="36" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" />
+        <Label Content="Уровень вашего персонажа" HorizontalAlignment="Left" Margin="1027,525,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="22" Height="40" Width="318" FontWeight="Bold"/>
         <ComboBox x:Name="Hero" HorizontalAlignment="Left" Margin="291,280,0,0" VerticalAlignment="Top" Width="239" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Comic Sans MS" FontSize="16" Background="{x:Null}" Height="45" BorderBrush="{x:Null}">
             <ComboBox.Effect>
                 <DropShadowEffect/>
@@ -88,32 +97,66 @@
         <TextBox x:Name="Healthtxt" HorizontalAlignment="Left" Margin="291,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="129" IsEnabled="False" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="24"/>
         <Label x:Name="labelmp" Content="Мана персонажа" HorizontalAlignment="Left" Margin="54,339,0,0" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" FontSize="20" Width="174" FontWeight="Bold"/>
         <Label x:Name="labelhp" Content="Здоровье персонажа" HorizontalAlignment="Left" Margin="265,339,0,0" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="Wol_Speed" HorizontalAlignment="Left" Margin="718,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="At_Speed" HorizontalAlignment="Left" Margin="718,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Mg_Def" HorizontalAlignment="Left" Margin="876,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Ph_Attack" HorizontalAlignment="Left" Margin="552,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Ph_Deh" HorizontalAlignment="Left" Margin="552,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Mg_Attack" HorizontalAlignment="Left" Margin="876,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Физическая атака" HorizontalAlignment="Left" Margin="554,349,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16"/>
-        <Label Content="Физическая защита" HorizontalAlignment="Left" Margin="546,443,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
-        <Label Content="Скорость Атаки" HorizontalAlignment="Left" Margin="726,349,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
-        <Label Content="Скорость бега" HorizontalAlignment="Left" Margin="732,443,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16"/>
-        <Label Content="Магическая атака" HorizontalAlignment="Left" Margin="876,349,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
-        <Label Content="Магическая защита" HorizontalAlignment="Left" Margin="876,438,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
-        <Image HorizontalAlignment="Left" Height="38" Margin="656,384,0,0" VerticalAlignment="Top" Width="36" Stretch="Uniform" Source="/Меч_Алмаз.png"/>
-        <Image HorizontalAlignment="Left" Height="34" Margin="658,479,0,0" VerticalAlignment="Top" Width="34" Source="/Щит_Физика.png"/>
-        <Image HorizontalAlignment="Left" Height="35" Margin="823,384,0,0" VerticalAlignment="Top" Width="36" Source="/Атак_Спид.jfif"/>
-        <Image HorizontalAlignment="Left" Height="28" Margin="809,482,0,0" VerticalAlignment="Top" Width="50" Source="/Скорость_бега.jfif"/>
-        <Image HorizontalAlignment="Left" Height="33" Margin="978,385,0,0" VerticalAlignment="Top" Width="39" Source="/Магическая_Атака.jfif"/>
-        <Image HorizontalAlignment="Left" Height="35" Margin="983,479,0,0" VerticalAlignment="Top" Width="34" Source="/Магичекая_защита.jpg"/>
-        <TextBox x:Name="makslvl" HorizontalAlignment="Left" Margin="1000,188,0,0" TextWrapping="Wrap" Text="2000" VerticalAlignment="Top" Width="76" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="makslvl_TextChanged" Height="30"/>
-        <TextBox x:Name="_0lvl" HorizontalAlignment="Left" Margin="898,188,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="_0lvl_TextChanged" Height="30"/>
-        <Button x:Name="btn_click1000" Content="+1000" HorizontalAlignment="Left" Margin="906,123,0,0" VerticalAlignment="Top" Background="#FF09D8E8" Click="btn_click1000_Click" Height="48" Width="60"/>
-        <Button x:Name="btn_click2000" Content="+2000" HorizontalAlignment="Left" Margin="1008,123,0,0" VerticalAlignment="Top" Background="#FF0FE5ED" Click="btn_click2000_Click" Height="48" Width="60"/>
-        <Label Content="Повышение уровня" HorizontalAlignment="Left" Margin="898,79,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="36" Width="170"/>
-        <Label Content="ИЗ" HorizontalAlignment="Left" Margin="974,188,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="30" Width="26" RenderTransformOrigin="0.515,0.463"/>
-        <Button x:Name="btn_bd" Content="Добавление в базу данных" HorizontalAlignment="Left" Margin="647,280,0,0" VerticalAlignment="Top" Click="btn_bd_Click" FontSize="16" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF25EE31" Height="49" Width="286"/>
-
-
+        <TextBox x:Name="Wol_Speed" HorizontalAlignment="Left" Margin="677,591,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="At_Speed" HorizontalAlignment="Left" Margin="677,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Mg_Def" HorizontalAlignment="Left" Margin="835,591,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Ph_Attack" HorizontalAlignment="Left" Margin="511,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Ph_Deh" HorizontalAlignment="Left" Margin="511,591,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Mg_Attack" HorizontalAlignment="Left" Margin="835,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="42" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Физическая атака" HorizontalAlignment="Left" Margin="513,465,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16"/>
+        <Label Content="Физическая защита" HorizontalAlignment="Left" Margin="505,559,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
+        <Label Content="Скорость Атаки" HorizontalAlignment="Left" Margin="685,465,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
+        <Label Content="Скорость бега" HorizontalAlignment="Left" Margin="691,559,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="16"/>
+        <Label Content="Магическая атака" HorizontalAlignment="Left" Margin="835,465,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
+        <Label Content="Магическая защита" HorizontalAlignment="Left" Margin="835,554,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="615,500,0,0" VerticalAlignment="Top" Width="36" Stretch="Uniform" Source="/Меч_Алмаз.png"/>
+        <Image HorizontalAlignment="Left" Height="34" Margin="617,595,0,0" VerticalAlignment="Top" Width="34" Source="/Щит_Физика.png"/>
+        <Image HorizontalAlignment="Left" Height="35" Margin="782,500,0,0" VerticalAlignment="Top" Width="36" Source="/Атак_Спид.jfif"/>
+        <Image HorizontalAlignment="Left" Height="28" Margin="768,598,0,0" VerticalAlignment="Top" Width="50" Source="/Скорость_бега.jfif"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="937,501,0,0" VerticalAlignment="Top" Width="39" Source="/Магическая_Атака.jfif"/>
+        <Image HorizontalAlignment="Left" Height="35" Margin="942,595,0,0" VerticalAlignment="Top" Width="34" Source="/Магичекая_защита.jpg"/>
+        <TextBox x:Name="makslvl" HorizontalAlignment="Left" Margin="1146,218,0,0" TextWrapping="Wrap" Text="2000" VerticalAlignment="Top" Width="76" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="makslvl_TextChanged" Height="51" FontSize="20"/>
+        <TextBox x:Name="_0lvl" HorizontalAlignment="Left" Margin="1011,218,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="_0lvl_TextChanged" Height="51" FontSize="20"/>
+        <Button x:Name="btn_click1000" Content="+1000" HorizontalAlignment="Left" Margin="958,91,0,0" VerticalAlignment="Top" Background="#FF09D8E8" Click="btn_click1000_Click" Height="108" Width="126" RenderTransformOrigin="0.5,0.5" FontSize="18">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.018"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btn_click2000" Content="+2000" HorizontalAlignment="Left" Margin="1146,90,0,0" VerticalAlignment="Top" Background="#FF0FE5ED" Click="btn_click2000_Click" Height="110" Width="124" FontSize="18"/>
+        <Label Content="Повышение уровня" HorizontalAlignment="Left" Margin="936,18,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Height="66" Width="357" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.039"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="ИЗ" HorizontalAlignment="Left" Margin="1101,228,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="30" Width="32" RenderTransformOrigin="0.515,0.463" FontSize="16"/>
+        <Button x:Name="btn_bd" Content="Добавление в базу данных" HorizontalAlignment="Left" Margin="606,396,0,0" VerticalAlignment="Top" Click="btn_bd_Click" FontSize="16" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF25EE31" Height="49" Width="286"/>
+        <ComboBox x:Name="cmb_boxraritem" HorizontalAlignment="Left" Margin="782,63,0,0" VerticalAlignment="Top" Width="149" Height="56">
+            <ComboBoxItem Content="Меч двуручный"/>
+            <ComboBoxItem Content="Нож одноручный"/>
+            <ComboBoxItem Content="Топор одноручный"/>
+            <ComboBoxItem Content="Лук двуручный"/>
+            <ComboBoxItem Content="Магическая палка"/>
+            <ComboBoxItem Content="Меч одноручный"/>
+        </ComboBox>
+        <Button x:Name="btn_add" Content="Добавить" HorizontalAlignment="Left" Margin="818,140,0,0" VerticalAlignment="Top" Height="46" Width="78" FontSize="14" Click="btn_add_Click"/>
+        <ListView x:Name="lstView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="583,53,651,561">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="PrevBtn" Content="Button" HorizontalAlignment="Left" Height="62" Margin="606,263,0,0" VerticalAlignment="Top" Width="72" Click="PrevBtn_Click"/>
+        <Button x:Name="NextBtn" Content="Button" HorizontalAlignment="Left" Height="57" Margin="719,263,0,0" VerticalAlignment="Top" Width="74" Click="NextBtn_Click"/>
     </Grid>
 </Window>

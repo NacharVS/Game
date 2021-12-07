@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GameCharacterEditor
 {
-    internal class Raritem
+     class Raritem
     {
         protected double Strengt;
         protected double Dexterity;
@@ -17,16 +17,25 @@ namespace GameCharacterEditor
         protected double WeaponDamage = 100;
         protected double MinDamage;
         protected double MaxDamage;
+
+        public Raritem()
+        {
+
+        }
+        public Raritem(double str,double dex,double intele)
+        {
+            Full_Phisical_Damage = WeaponDamage + ((WeaponDamage * (0.5 * str)) + (WeaponDamage * (0.5 * dex)));
+            Full_Magic_Damage = WeaponDamage + (WeaponDamage * (0.3 * intele));
+        }
+        
     }
     class Sword : Raritem
     {
         Raritem rt;
         public Sword(double str, double dex, double intele, int state)
         {
-            Critdamage = 1.5;
+            Critdamage = 1.5 * WeaponDamage;
             CriticalChance = 2;
-            Full_Phisical_Damage = WeaponDamage + ((WeaponDamage * (0.5 * str)) + (WeaponDamage * (0.5 * dex)));
-            Full_Magic_Damage = WeaponDamage + (WeaponDamage * (0.3 * intele));
             if (state == 2)
                 rt = new Two_Handed_Weapon();
             else if (state == 1)
@@ -58,6 +67,7 @@ namespace GameCharacterEditor
             CriticalChance = 1;
             Critdamage = 4;
             ohw = new One_Handed_Weapon();
+            
         }
     }
     class Bow : Two_Handed_Weapon
@@ -72,18 +82,22 @@ namespace GameCharacterEditor
     }
     class Magic_Stick : Raritem
     {
+        One_Handed_Weapon tp;
         public Magic_Stick()
         {
             CriticalChance = 1.3;
             Critdamage = 3;
+            tp = new One_Handed_Weapon();
         }
     }
     class Dagger : Raritem
     {
+        One_Handed_Weapon pt;
         public Dagger()
         {
             Critdamage = 1.3;
             CriticalChance = 4;
+            pt = new One_Handed_Weapon();
         }
     }
 }

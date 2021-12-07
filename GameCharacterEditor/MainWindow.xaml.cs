@@ -1,6 +1,8 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,17 +23,21 @@ namespace GameCharacterEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<string> Itemlist = new List<string>();
         double strenghtt = 0;
         double dexterityy = 0;
         double intelegense = 0;
         double constribution = 0;
         double extraPoint = 0;
+        int x = 0;
         Unit unit1;
+        List<Unit> lst;
 
         public MainWindow()
         {
             InitializeComponent();
-
+            lst = Unit.TakeList();
+            //GetInfo();
         }
 
         private void ChooseHero_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -86,8 +92,18 @@ namespace GameCharacterEditor
                 image.UriSource = new Uri(ofd.FileName);
                 image.EndInit();
                 ChooseHero.Source = image;
+                unit1.Image = hetBytefromImage(ChooseHero.Source as BitmapImage);
             }
 
+        }
+
+        public byte[] hetBytefromImage(BitmapImage imageC)
+        {
+            MemoryStream ms = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(ms);
+            return ms.ToArray();
         }
         private void Characters(Unit unit)
         {
@@ -104,6 +120,34 @@ namespace GameCharacterEditor
             Wol_Speed.Text = unit.Wooling_Speed.ToString();
             Mg_Def.Text = unit.Magic_Defence.ToString();
             Mg_Attack.Text = unit.Magic_Attack.ToString();
+
+        }  
+        private void GetInfo()
+        {
+            labelstrenght.Text = lst[x].Strenght.ToString();
+            labeldexterity.Text = lst[x].Dexterity.ToString();
+            labelintelegence.Text = lst[x].Intelegence.ToString();
+            constitutionlabel.Text = lst[x].Constitution.ToString();
+            Manatxt.Text = lst[x].MP_Unit.ToString();
+            Healthtxt.Text = lst[x].HP_Unit.ToString();
+            textpoint.Text = lst[x].Extra.ToString();
+            Ph_Attack.Text = lst[x].Phusical_Attack.ToString();
+            Ph_Deh.Text = lst[x].Phisical_Defence.ToString();
+            At_Speed.Text = lst[x].AttackSpeed.ToString();
+            Wol_Speed.Text = lst[x].Wooling_Speed.ToString();
+            Mg_Def.Text = lst[x].Magic_Defence.ToString();
+            Mg_Attack.Text = lst[x].Magic_Attack.ToString();
+            try
+            {
+
+                MemoryStream memory = new MemoryStream(lst[x].Image);
+                Bitmap bmp = new Bitmap(memory);
+                ChooseHero.Source = bmp.BitmapToImageSource();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -325,6 +369,58 @@ namespace GameCharacterEditor
         {
             Unit.Add(unit1);
             MessageBox.Show("Занесено в базу!");
+        }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            Itemlist.Add(cmb_boxraritem.SelectedItem.ToString().Substring(38)+"\n");
+            lstView.Items.Add(cmb_boxraritem.SelectedItem.ToString().Substring(38));
+        }
+
+        private void NextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            lst = Unit.TakeList();
+            if(x+1 <= lst.Count-1)
+            {
+                x++;
+            }
+            else
+            {
+                x = 0;
+            }
+            GetInfo();
+        }
+
+        private void PrevBtn_Click(object sender, RoutedEventArgs e)
+        {
+            lst = Unit.TakeList();
+            if (x-1 >= 0)
+            {
+                x--;
+            }
+            else
+            {
+                x = lst.Count - 1;
+            }
+            GetInfo();
+        }
+    }
+
+    public static class Extensions
+    {
+        public static BitmapImage BitmapToImageSource(this Bitmap bmp)
+        {
+            using (MemoryStream memory = new MemoryStream())
+            {
+                bmp.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitmapimage = new BitmapImage();
+                bitmapimage.BeginInit();
+                bitmapimage.StreamSource = memory;
+                bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapimage.EndInit();
+                return bitmapimage;
+            }
         }
     }
 }

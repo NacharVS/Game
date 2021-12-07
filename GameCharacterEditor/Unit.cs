@@ -59,6 +59,8 @@ namespace GameCharacterEditor
         public double Wooling_Speed { get => woolding_Speed; set => woolding_Speed = value; }
         [BsonElement]
         public double Experience { get => experience; set => experience = value; }
+        [BsonElement]
+        public byte[] Image { get; set; }
         public static double MaxStrenght { get; set; }
         public static double MaxdDexterity { get; set; }
         public  static double MaxIntelegence { get; set; }
@@ -71,7 +73,13 @@ namespace GameCharacterEditor
             var a = hrbase.GetCollection<Unit>("Krasnovich_base");
             a.InsertOne(unit);
         }
-        
+
+        public static List<Unit> TakeList()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("Herobase");
+            var collection = db.GetCollection<Unit>("Krasnovich_base");
+            return collection.Find(x => true).ToList();
+        }
     }
-    
 }
