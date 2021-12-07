@@ -10,14 +10,8 @@ using System.Threading.Tasks;
 
 namespace Geroi
 {
-    class Image
-    {
-        public static string mag = "C:/Users/211923/source/repos/Game88/Geroi/resource/mag.png";
-        public static string luchnik = "C:/Users/211923/source/repos/Game88/Geroi/resource/luchnik.png";
-        public static string razboinik = "C:/Users/211923/source/repos/Game88/Geroi/resource/razboinik.png";
-        public static string mechnik = "C:/Users/211923/source/repos/Game88/Geroi/resource/mechnik.png";
-    }
-    class Unit : Image
+
+    class Unit4
     {
         [BsonId]
         [BsonIgnoreIfDefault]
@@ -27,28 +21,23 @@ namespace Geroi
         protected double Intelligence;
         protected string Name;
         protected string Class;
-        private static string path_mag = mag;
-        private static string path_luchnik = luchnik;
+        public static string razboinik = "C:/Users/211923/source/repos/Game88/Geroi/resource/razboinik.png";
         private static string path_razboinik = razboinik;
-        private static string path_mechnik = mechnik;
         private int v1;
         private int v2;
         private int v3;
         private string v4;
         private string v5;
-        public string Path => path_mag;
-        public string Path1 => path_luchnik;
-        public string Path2 => path_razboinik;
-        public string Path3 => path_mechnik;
+        public string Path => path_razboinik;
 
-        public Unit(int v1, int v2, int v3, string v4, string v5)
+        public Unit4(int v1, int v2, int v3, string v4, string v5)
         {
             this.v1 = v1;
             this.v2 = v2;
             this.v3 = v3;
             this.v4 = v4;
             this.v5 = v5;
-    }
+        }
 
         public string _class { get => v5; set => Class = value; }
         [BsonElement]
@@ -60,31 +49,29 @@ namespace Geroi
         [BsonElement]
         public double _intelligence { get => v3; set => Intelligence = value; }
         [BsonElement]
-        public string _image { get => Path; set => path_mag = value; }
-        public string _image1 { get => Path1; set => path_luchnik = value; }
-        public string _image2 { get => Path2; set => path_razboinik = value; }
-        public string _image3 { get => Path3; set => path_mechnik = value; }
+        public string _image { get => Path; set => path_razboinik = value; }
 
 
 
 
-        public void Add(Unit unit)
+        public void Add(Unit4 unit)
         {
             MongoClient client = new MongoClient();
             var abase = client.GetDatabase("111");
-            var b = abase.GetCollection<Unit>("Shakirov_DB");
+            var b = abase.GetCollection<Unit4>("Shakirov_DB");
             b.InsertOne(unit);
         }
-        public static void FindFrom(Unit unit)
+        public static void FindFrom(Unit4 unit)
         {
             MongoClient client = new MongoClient();
             var abase = client.GetDatabase("111");
-            var b = abase.GetCollection<Unit>("Shakirov_DB");
+            var b = abase.GetCollection<Unit4>("Shakirov_DB");
             var listPerson = b.Find(Geroi => unit._name == "ovosh").ToList();
-            foreach (Unit unit1 in listPerson)
+            foreach (Unit4 unit1 in listPerson)
             {
                 Console.WriteLine($"{unit._name}");
             }
         }
     }
 }
+
