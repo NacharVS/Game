@@ -22,22 +22,13 @@ namespace Geroi
         protected string Name;
         protected string Class;
         public static string mag = "C:/Users/211923/source/repos/Game88/Geroi/resource/mag.png";
-        public static string luchnik = "C:/Users/211923/source/repos/Game88/Geroi/resource/luchnik.png";
-        public static string razboinik = "C:/Users/211923/source/repos/Game88/Geroi/resource/razboinik.png";
-        public static string mechnik = "C:/Users/211923/source/repos/Game88/Geroi/resource/mechnik.png";
         private static string path_mag = mag;
-        private static string path_luchnik = luchnik;
-        private static string path_razboinik = razboinik;
-        private static string path_mechnik = mechnik;
         private int v1;
         private int v2;
         private int v3;
         private string v4;
         private string v5;
         public string Path => path_mag;
-        public string Path1 => path_luchnik;
-        public string Path2 => path_razboinik;
-        public string Path3 => path_mechnik;
 
         public Unit(int v1, int v2, int v3, string v4, string v5)
         {
