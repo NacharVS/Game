@@ -10,7 +10,14 @@ using System.Threading.Tasks;
 
 namespace Geroi
 {
-    class Unit
+    class Image
+    {
+        public static string mag = "C:/Users/211923/source/repos/Game88/Geroi/resource/mag.png";
+        public static string luchnik = "C:/Users/211923/source/repos/Game88/Geroi/resource/luchnik.png";
+        public static string razboinik = "C:/Users/211923/source/repos/Game88/Geroi/resource/razboinik.png";
+        public static string mechnik = "C:/Users/211923/source/repos/Game88/Geroi/resource/mechnik.png";
+    }
+    class Unit : Image
     {
         [BsonId]
         [BsonIgnoreIfDefault]
@@ -20,13 +27,19 @@ namespace Geroi
         protected double Intelligence;
         protected string Name;
         protected string Class;
-        private static string path = "C:/Users/211925/Desktop/Warrior.jpg";
-        public string Path => path;
+        private static string path_mag = mag;
+        private static string path_luchnik = luchnik;
+        private static string path_razboinik = razboinik;
+        private static string path_mechnik = mechnik;
         private int v1;
         private int v2;
         private int v3;
         private string v4;
         private string v5;
+        public string Path => path_mag;
+        public string Path1 => path_luchnik;
+        public string Path2 => path_razboinik;
+        public string Path3 => path_mechnik;
 
         public Unit(int v1, int v2, int v3, string v4, string v5)
         {
@@ -35,7 +48,7 @@ namespace Geroi
             this.v3 = v3;
             this.v4 = v4;
             this.v5 = v5;
-        }
+    }
 
         public string _class { get => v5; set => Class = value; }
         [BsonElement]
@@ -47,7 +60,10 @@ namespace Geroi
         [BsonElement]
         public double _intelligence { get => v3; set => Intelligence = value; }
         [BsonElement]
-        public string _image { get => path; set => path = value; }
+        public string _image { get => Path; set => path_mag = value; }
+        public string _image1 { get => Path1; set => path_luchnik = value; }
+        public string _image2 { get => Path2; set => path_razboinik = value; }
+        public string _image3 { get => Path3; set => path_mechnik = value; }
 
 
 

@@ -33,7 +33,7 @@ namespace Geroi
         {
             using (var memory = new MemoryStream())
             {
-                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                bitmap.Save(memory, System.DrawingCore.Imaging.ImageFormat.Bmp);
                 memory.Position = 0;
                 BitmapImage bitImg = new BitmapImage();
                 bitImg.BeginInit();

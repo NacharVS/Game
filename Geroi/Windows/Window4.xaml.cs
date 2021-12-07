@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.DrawingCore;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,20 @@ namespace Geroi
         public Window4()
         {
             InitializeComponent();
+        }
+        private static BitmapImage Bmp2BmpImg(Bitmap bitmap)
+        {
+            using (var memory = new MemoryStream())
+            {
+                bitmap.Save(memory, System.DrawingCore.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitImg = new BitmapImage();
+                bitImg.BeginInit();
+                bitImg.StreamSource = memory;
+                bitImg.CacheOption = BitmapCacheOption.OnLoad;
+                bitImg.EndInit();
+                return bitImg;
+            }
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -196,6 +212,7 @@ namespace Geroi
         private void pol_Click(object sender, RoutedEventArgs e)
         {
             Unit unit = new Unit(int.Parse(Strenght.Text), int.Parse(Agility.Text), int.Parse(Intelligence.Text), Convert.ToString(OMA.Text), Convert.ToString(OM.Text));
+            byte[] imagebytes = File.ReadAllBytes(unit.Path2);
             unit.Add(unit);
             MessageBox.Show("Занесено в базу!");
         }
