@@ -267,7 +267,7 @@ namespace CharacterEditor.Pages
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            DB db = new DB(int.Parse(Strenght.Text), int.Parse(Agility.Text), int.Parse(Intelligence.Text), Convert.ToString(LvL.Text), Convert.ToString(HP.Text), Convert.ToString(Mana.Text), Convert.ToString(Class.Text));
+            DB_Mage db = new DB_Mage(int.Parse(Strenght.Text), int.Parse(Agility.Text), int.Parse(Intelligence.Text), Convert.ToString(LvL.Text), Convert.ToString(HP.Text), Convert.ToString(Mana.Text), Convert.ToString(Class.Text));
             db.Add(db);
             MessageBox.Show("Entered to the DataBase!");
         }
