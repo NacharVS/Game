@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pictures for characters\FonBandit.jpg" />
+    <None Remove="Pictures for characters\FonHealer.png" />
+    <None Remove="Pictures for characters\FonMag.jpg" />
+    <None Remove="Pictures for characters\FonRobber.jpg" />
     <None Remove="Pictures for characters\FonWarrior.jpg" />
     <None Remove="Pictures\Background.jpg" />
     <None Remove="Pictures\Bandit.png" />
@@ -17,6 +21,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pictures for characters\FonBandit.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures for characters\FonHealer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures for characters\FonMag.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures for characters\FonRobber.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pictures for characters\FonWarrior.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

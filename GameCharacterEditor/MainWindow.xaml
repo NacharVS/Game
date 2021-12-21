@@ -9,11 +9,11 @@
     <Grid>
         <Image Source="Pictures\Background.jpg"/>
 
-        <Image Source="Pictures\Bandit.png" Margin="834,273,360,261"/>
-        <Image Source="Pictures\Healer.png" Margin="360,269,799,246"/>
-        <Image Source="Pictures\Mag.png" Margin="1029,223,125,251"/>
+        <Image Source="Pictures\Bandit.png" Margin="834,273,360,261" MouseLeftButtonDown="Per_b" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="Pictures\Healer.png" Margin="360,269,799,246" MouseLeftButtonDown="Per_h" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Image Source="Pictures\Mag.png" Margin="1029,223,125,251" MouseLeftButtonDown="Per_m" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Image Source="Pictures\Warrior.png" Margin="600,267,582,249" MouseLeftButtonDown="Per_w" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-        <Image Source="Pictures\Robber.png" Margin="89,249,1043,232"/>
+        <Image Source="Pictures\Robber.png" Margin="89,249,1043,232" MouseLeftButtonDown="Per_r" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="365,79,0,0" Text="Choose a character" TextWrapping="Wrap" VerticalAlignment="Top" Height="90" Width="660" FontSize="64" TextAlignment="Center" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="650,257,0,0" Text="Warrior" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Constantia" FontSize="22" Foreground="White" Width="80"/>

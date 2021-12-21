@@ -13,10 +13,12 @@ using System.Windows.Shapes;
 
 namespace GameCharacterEditor.Pages
 {
-    public partial class WindowWarrior : Window
+    /// <summary>
+    /// Логика взаимодействия для WindowHealer.xaml
+    /// </summary>
+    public partial class WindowHealer : Window
     {
-
-        public WindowWarrior()
+        public WindowHealer()
         {
             InitializeComponent();
         }
@@ -229,21 +231,11 @@ namespace GameCharacterEditor.Pages
             }
         }
 
-        private void Image_MouseLeave1(object sender, MouseEventArgs e)
-        {
-            Mouse.OverrideCursor = Cursors.Arrow;
-        }
-
-        private void Image_MouseEnter1(object sender, MouseEventArgs e)
-        {
-            Mouse.OverrideCursor = Cursors.Hand;
-        }
-
         private void btn_bd_Click(object sender, RoutedEventArgs e)
         {
-            Unit_Warrior unit = new Unit_Warrior(int.Parse(Agility.Text), int.Parse(Strenght.Text), int.Parse(Intelligence.Text));
+            Unit_Healer unit = new Unit_Healer(int.Parse(Agility.Text), int.Parse(Strenght.Text), int.Parse(Intelligence.Text));
             byte[] imagebytes = File.ReadAllBytes(unit.IMG);
-            Unit_Warrior.Add(unit);
+            Unit_Healer.Add(unit);
             MessageBox.Show("Занесено в базу!");
         }
     }

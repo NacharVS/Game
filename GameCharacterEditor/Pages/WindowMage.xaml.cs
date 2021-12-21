@@ -13,19 +13,14 @@ using System.Windows.Shapes;
 
 namespace GameCharacterEditor.Pages
 {
-    public partial class WindowWarrior : Window
+    /// <summary>
+    /// Логика взаимодействия для WindowMage.xaml
+    /// </summary>
+    public partial class WindowMage : Window
     {
-
-        public WindowWarrior()
+        public WindowMage()
         {
             InitializeComponent();
-        }
-
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            WindowWarrior MW = new WindowWarrior();
-            MW.Show();
-            this.Close();
         }
 
         private void Plus_Click_Str(object sender, RoutedEventArgs e)
@@ -229,21 +224,11 @@ namespace GameCharacterEditor.Pages
             }
         }
 
-        private void Image_MouseLeave1(object sender, MouseEventArgs e)
-        {
-            Mouse.OverrideCursor = Cursors.Arrow;
-        }
-
-        private void Image_MouseEnter1(object sender, MouseEventArgs e)
-        {
-            Mouse.OverrideCursor = Cursors.Hand;
-        }
-
         private void btn_bd_Click(object sender, RoutedEventArgs e)
         {
-            Unit_Warrior unit = new Unit_Warrior(int.Parse(Agility.Text), int.Parse(Strenght.Text), int.Parse(Intelligence.Text));
+            Unit_Mage unit = new Unit_Mage(int.Parse(Agility.Text), int.Parse(Strenght.Text), int.Parse(Intelligence.Text));
             byte[] imagebytes = File.ReadAllBytes(unit.IMG);
-            Unit_Warrior.Add(unit);
+            Unit_Mage.Add(unit);
             MessageBox.Show("Занесено в базу!");
         }
     }

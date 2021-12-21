@@ -1,4 +1,4 @@
-﻿<Window x:Class="GameCharacterEditor.Pages.WindowWarrior"
+﻿<Window x:Class="GameCharacterEditor.Pages.WindowBandit"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,17 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1300" ResizeMode="NoResize">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="317*"/>
-            <RowDefinition Height="75*"/>
-        </Grid.RowDefinitions>
-        <Image Source="/Pictures for characters/FonWarrior.jpg" Margin="-100,-289,0,-281" Grid.RowSpan="2"/>
+        <Image Source="/Pictures for characters/FonBandit.jpg" Margin="-125,-1,0,-230" Stretch="Fill" />
 
-        <Image Source="/Pictures\Warrior.png" Margin="570,99,584,345"/>
-        <TextBlock x:Name="Name1" HorizontalAlignment="Left" Margin="595,32,0,0" Text="Warrior" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Constantia" FontSize="22" Foreground="White" Width="80" Background="{x:Null}"/>
+        <Image Source="/Pictures\Bandit.png" Margin="545,99,590,495" Stretch="Fill"/>
+        <TextBlock x:Name="Name1" HorizontalAlignment="Left" Margin="595,19,0,0" Text="Bandit" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Constantia" FontSize="22" Foreground="White" Width="80" RenderTransformOrigin="0.75,0.56" Background="{x:Null}"/>
 
-        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Margin="570,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="30" Opacity="0.3" TextAlignment="Center" FontSize="20" Text="18"/>
-        <TextBox x:Name="Agility" HorizontalAlignment="Left" Margin="570,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="30" Opacity="0.3" TextAlignment="Center" FontSize="20" Text="10"/>
+        <TextBox x:Name="Strenght" HorizontalAlignment="Left" Margin="570,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="30" Opacity="0.3" TextAlignment="Center" FontSize="20" Text="22"/>
+        <TextBox x:Name="Agility" HorizontalAlignment="Left" Margin="570,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="30" Opacity="0.3" TextAlignment="Center" FontSize="20" Text="22"/>
         <TextBox x:Name="Intelligence" HorizontalAlignment="Left" Margin="570,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="30" Opacity="0.3" TextAlignment="Center" FontSize="20" Text="12"/>
         <TextBox x:Name="Point" HorizontalAlignment="Left" Margin="590,534,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Height="30" Opacity="0.3" TextAlignment="Center" Text="5" FontSize="20"/>
 
@@ -34,14 +30,14 @@
         <Label Content="Intelligence" HorizontalAlignment="Left" Margin="589,429,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF355AFF" FontSize="16"/>
         <Label Content="Pumping points" HorizontalAlignment="Left" Margin="575,503,0,0" VerticalAlignment="Top" FontSize="16" Background="{x:Null}" Foreground="#FF8C9307"/>
 
-        <Button x:Name="Experience1" Content="1000" HorizontalAlignment="Left" Margin="515,40,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="{x:Null}" FontSize="16" Opacity="0.8" Click="Experience1_Click" Grid.Row="1"/>
-        <Button x:Name="Experience2" Content="2000" HorizontalAlignment="Left" Margin="610,40,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="{x:Null}" FontSize="16" Opacity="0.8" Click="Experience2_Click" Grid.Row="1"/>
-        <Button x:Name="Experience3" Content="3000" HorizontalAlignment="Left" Margin="700,40,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="{x:Null}" FontSize="16" Opacity="0.8" Click="Experience3_Click" Grid.Row="1"/>
+        <Button x:Name="Experience1" Content="1000" HorizontalAlignment="Left" Margin="515,674,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="{x:Null}" FontSize="16" Opacity="0.8" Click="Experience1_Click"/>
+        <Button x:Name="Experience2" Content="2000" HorizontalAlignment="Left" Margin="610,674,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="{x:Null}" FontSize="16" Opacity="0.8" Click="Experience2_Click"/>
+        <Button x:Name="Experience3" Content="3000" HorizontalAlignment="Left" Margin="700,674,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="{x:Null}" FontSize="16" Opacity="0.8" Click="Experience3_Click"/>
 
         <TextBox x:Name="FirstLvl" HorizontalAlignment="Left" Margin="535,611,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="23" Background="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontSize="16" TextAlignment="Center" Opacity="0.3"/>
         <TextBox x:Name="NeedExp" HorizontalAlignment="Left" Margin="665,611,0,0" Text="1000" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="23" Background="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontSize="16" TextAlignment="Center" Opacity="0.3"/>
         <Label Content="from" HorizontalAlignment="Left" Margin="615,608,0,0" VerticalAlignment="Top" Foreground="White"/>
 
-        <Button Content="Adding to the database" HorizontalAlignment="Left" Margin="160,60,0,0" VerticalAlignment="Top" Height="40" Width="195" FontSize="16" Background="#FFDDDDDD" BorderBrush="{x:Null}" Opacity="0.8"  Click="btn_bd_Click" Grid.Row="1"/>
+        <Button Content="Adding to the database" HorizontalAlignment="Left" Margin="160,694,0,0" VerticalAlignment="Top" Height="40" Width="195" FontSize="16" Background="#FFDDDDDD" BorderBrush="{x:Null}" Opacity="0.8"  Click="btn_bd_Click"/>
     </Grid>
 </Window>

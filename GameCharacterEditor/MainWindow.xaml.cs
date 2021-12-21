@@ -27,7 +27,35 @@ namespace GameCharacterEditor
 
         private void Per_w(object sender, MouseButtonEventArgs e)
         {
-            Class_Warrior CW = new Class_Warrior();
+            Pages.WindowWarrior CW = new Pages.WindowWarrior();
+            CW.Show();
+            this.Close();
+        }
+
+        private void Per_m(object sender, MouseButtonEventArgs e)
+        {
+            Pages.WindowMage CW = new Pages.WindowMage();
+            CW.Show();
+            this.Close();
+        }
+
+        private void Per_h(object sender, MouseButtonEventArgs e)
+        {
+            Pages.WindowHealer CW = new Pages.WindowHealer();
+            CW.Show();
+            this.Close();
+        }
+
+        private void Per_r(object sender, MouseButtonEventArgs e)
+        {
+            Pages.WindowRobber CW = new Pages.WindowRobber();
+            CW.Show();
+            this.Close();
+        }
+
+        private void Per_b(object sender, MouseButtonEventArgs e)
+        {
+            Pages.WindowBandit CW = new Pages.WindowBandit();
             CW.Show();
             this.Close();
         }
